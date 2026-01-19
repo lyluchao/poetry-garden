@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# 站点地图
+Sitemap: https://lyluchao.github.io/poetry-garden/sitemap.xml
+
+# 爬虫指令
+Crawl-delay: 2  # 减慢爬取速度，避免服务器压力
