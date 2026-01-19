@@ -1,0 +1,341 @@
+/* 赋文系列专用样式 */
+
+/* 页面整体样式 */
+.fu-page-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #FAF9F6;
+    font-family: "STSong", "SimSun", serif;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* 赋文标题样式 */
+.fu-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #8B4513;
+    margin: 2rem 0;
+    font-family: "STKaiti", "KaiTi", serif;
+    border-bottom: 3px double #D4A76A;
+    padding-bottom: 1rem;
+}
+
+/* 章节标题 */
+.fu-chapter-title {
+    font-size: 1.5rem;
+    color: #5D4037;
+    margin: 2rem 0 1rem;
+    padding-left: 1rem;
+    border-left: 4px solid #8B4513;
+    font-family: "STKaiti", "KaiTi", serif;
+}
+
+/* 赋文正文 */
+.fu-content {
+    font-size: 1.1rem;
+    text-align: justify;
+    margin: 1.5rem 0;
+}
+
+/* 骈句特殊样式 */
+.fu-parallel {
+    margin: 1rem 0;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(90deg, transparent, #FFF8E1 10%, #FFF8E1 90%, transparent);
+    border-left: 3px solid #D4A76A;
+}
+
+.fu-parallel .line {
+    display: block;
+    margin: 0.3rem 0;
+}
+
+.fu-parallel .couplet {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+}
+
+/* 解析部分样式 */
+.fu-analysis {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: #FFF8E1;
+    border: 1px solid #D7CCC8;
+    border-radius: 8px;
+}
+
+.analysis-title {
+    font-size: 1.4rem;
+    color: #5D4037;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* 表格样式 */
+.fu-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.fu-table th {
+    background: #8B4513;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-family: "STKaiti", "KaiTi", serif;
+}
+
+.fu-table td {
+    padding: 10px;
+    border: 1px solid #D7CCC8;
+    vertical-align: top;
+}
+
+.fu-table tr:nth-child(even) {
+    background: #FFF8E1;
+}
+
+/* 思想体系图 */
+.thought-diagram {
+    background: white;
+    border: 2px solid #5D4037;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 10px;
+    font-family: "STKaiti", "KaiTi", monospace;
+    line-height: 1.8;
+    text-align: center;
+    white-space: pre-wrap;
+}
+
+/* 引用块样式 */
+.fu-quote {
+    font-style: italic;
+    color: #795548;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    border-left: 4px solid #8B4513;
+    background: #FFF3E0;
+    font-size: 1.05rem;
+}
+
+/* 互动部分 */
+.fu-interactive {
+    background: #E8F5E9;
+    border: 1px solid #C8E6C9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.interactive-title {
+    color: #2E7D32;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.interactive-title::before {
+    content: "💭";
+    margin-right: 10px;
+}
+
+/* 时间线样式 */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+    margin: 2rem 0;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #8B4513;
+}
+
+.timeline-item {
+    position: relative;
+    margin: 1.5rem 0;
+    padding-left: 20px;
+}
+
+.timeline-item::before {
+    content: "●";
+    position: absolute;
+    left: -8px;
+    color: #8B4513;
+    font-size: 1.2em;
+    background: white;
+    border-radius: 50%;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .fu-page-container {
+        padding: 1rem;
+    }
+    
+    .fu-title {
+        font-size: 1.8rem;
+    }
+    
+    .fu-parallel .couplet {
+        flex-direction: column;
+    }
+    
+    .fu-table {
+        font-size: 0.9rem;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .fu-page-container {
+        max-width: none;
+        padding: 0;
+        background: white;
+    }
+    
+    .fu-interactive,
+    .timeline {
+        page-break-inside: avoid;
+    }
+    
+    .fu-title {
+        color: black;
+    }
+}
+
+/* 讨论问题样式 */
+.discussion-question {
+    background: #F3E5F5;
+    border: 2px solid #8E24AA;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.question-marker {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: #8E24AA;
+    color: white;
+    padding: 4px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-family: "STKaiti", "KaiTi", serif;
+}
+
+.discussion-answer {
+    background: #EDE7F6;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    border-left: 3px solid #7B1FA2;
+}
+
+/* 附录演进图式样式 */
+.appendix-evolution {
+    background: #E8F5E9;
+    border: 1px solid #4CAF50;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+.tree-root {
+    font-weight: bold;
+    color: #2E7D32;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-family: "STKaiti", "KaiTi", serif;
+}
+
+.evolution-level {
+    margin: 0.8rem 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.evolution-level::before {
+    content: "├─";
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+}
+
+.evolution-content {
+    padding: 5px 10px;
+    background: white;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+/* 创作练习样式 */
+.creation-exercise {
+    background: #E1F5FE;
+    border: 1px solid #0288D1;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.exercise-title {
+    color: #01579B;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #81D4FA;
+    padding-bottom: 0.5rem;
+    font-family: "STKaiti", "KaiTi", serif;
+}
+
+.exercise-hint {
+    background: #B3E5FC;
+    padding: 0.8rem;
+    border-radius: 5px;
+    font-style: italic;
+    color: #0277BD;
+    margin: 0.8rem 0;
+}
+
+/* 延伸阅读样式 */
+.extended-reading {
+    background: #FFF3E0;
+    border: 1px solid #F57C00;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.reading-category {
+    color: #E65100;
+    font-size: 1.2rem;
+    margin: 1.5rem 0 1rem;
+    padding-left: 10px;
+    border-left: 4px solid #FF9800;
+}
+
+.reading-item {
+    margin: 1rem 0;
+    padding: 0.8rem;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid #FFE0B2;
+}

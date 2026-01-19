@@ -1,0 +1,353 @@
+
+/* 诗词文章特殊样式 */
+.post-tag-ciqu {
+    background: linear-gradient(135deg, #8B4513, #A0522D);
+    color: #FFF8E1;
+    font-family: "STKaiti", "楷体", serif;
+    border-radius: 15px;
+    padding: 2px 12px;
+    margin-right: 5px;
+}
+
+/* 词牌名样式 */
+.rhythm-title {
+    text-align: center;
+    font-family: "STKaiti", "楷体", serif;
+    font-size: 2.2em;
+    color: #8B4513;
+    margin: 1.5em 0;
+    padding: 10px;
+    border-top: 2px solid #D7CCC8;
+    border-bottom: 2px solid #D7CCC8;
+}
+
+/* 词作正文 */
+.poem-content {
+    font-family: "STKaiti", "楷体", serif;
+    font-size: 1.3em;
+    line-height: 2.2;
+    text-align: center;
+    color: #5D4037;
+    background: #FFF8E1;
+    padding: 2em;
+    margin: 2em 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+}
+
+.poem-line {
+    margin: 0.8em 0;
+}
+
+/* 赏析部分 */
+.appreciation {
+    border-left: 3px solid #A1887F;
+    background: #F5F5F5;
+    padding: 1.5em;
+    margin: 1.5em 0;
+    font-family: "STSong", "宋体", serif;
+}
+
+.appreciation h3 {
+    color: #8B4513;
+    font-family: "STKaiti", "楷体", serif;
+    border-bottom: 1px dashed #BCAAA4;
+    padding-bottom: 0.5em;
+}
+
+/* 格律表 */
+.rhythm-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-family: "STKaiti", "楷体", monospace;
+}
+
+.rhythm-table th {
+    background: #EFEBE9;
+    color: #8B4513;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #D7CCC8;
+}
+
+.rhythm-table td {
+    padding: 8px;
+    border: 1px solid #D7CCC8;
+    text-align: center;
+}
+
+/* 意象分析 */
+.imagery-item {
+    display: inline-block;
+    background: #FFF8E1;
+    border: 1px solid #D7CCC8;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin: 5px;
+    font-size: 0.9em;
+    color: #5D4037;
+}
+
+/* 创作背景框 */
+.creation-background {
+    background: linear-gradient(135deg, #FFF8E1, #EFEBE9);
+    border: 2px solid #A1887F;
+    border-radius: 10px;
+    padding: 1.5em;
+    margin: 2em 0;
+    font-style: italic;
+    position: relative;
+}
+
+.creation-background::before {
+    content: "✦";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    background: #8B4513;
+    color: #FFF8E1;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+}
+
+/* 赋文特殊样式 */
+.fu-article {
+    counter-reset: section;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: "STSong", "宋体", serif;
+}
+
+/* 序言样式 */
+.preface {
+    background: linear-gradient(135deg, #FFF8E1, #EFEBE9);
+    border: 2px solid #A1887F;
+    border-radius: 10px;
+    padding: 2em;
+    margin: 2em 0;
+    position: relative;
+    font-style: italic;
+}
+
+.preface::before {
+    content: "序";
+    position: absolute;
+    top: -15px;
+    left: 30px;
+    background: #8B4513;
+    color: #FFF8E1;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-family: "STKaiti", "楷体", serif;
+    font-size: 1.2em;
+}
+
+/* 赋文章节 */
+.fu-chapter {
+    margin: 3em 0;
+    padding: 2em;
+    border-left: 4px solid #8B4513;
+    background: #FFF;
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+    position: relative;
+}
+
+.fu-chapter::before {
+    counter-increment: section;
+    content: counter(section, upper-roman);
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    background: #8B4513;
+    color: #FFF8E1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "STKaiti", "楷体", serif;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* 骈偶对仗样式 */
+.parallel-sentence {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5em 0;
+    line-height: 2;
+}
+
+.parallel-left, .parallel-right {
+    width: 48%;
+    text-align: center;
+    padding: 1em;
+    background: #F5F5F5;
+    border-radius: 5px;
+    border: 1px solid #E0E0E0;
+}
+
+.parallel-left {
+    border-right: 2px solid #8B4513;
+}
+
+.parallel-right {
+    border-left: 2px solid #A0522D;
+}
+
+/* 哲理分析框 */
+.philosophy-box {
+    background: #FFF;
+    border: 2px dashed #BCAAA4;
+    border-radius: 8px;
+    padding: 1.5em;
+    margin: 2em 0;
+    position: relative;
+}
+
+.philosophy-box::before {
+    content: "哲思";
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: #FFF;
+    color: #8B4513;
+    padding: 0 10px;
+    font-family: "STKaiti", "楷体", serif;
+    font-size: 0.9em;
+}
+
+/* 结构表格 */
+.structure-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2em 0;
+    font-size: 0.9em;
+}
+
+.structure-table th {
+    background: #8B4513;
+    color: #FFF8E1;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #A0522D;
+    font-family: "STKaiti", "楷体", serif;
+}
+
+.structure-table td {
+    padding: 10px;
+    border: 1px solid #D7CCC8;
+    vertical-align: top;
+}
+
+.structure-table tr:nth-child(even) {
+    background: #FFF8E1;
+}
+
+/* 意象标签 */
+.imagery-tag {
+    display: inline-block;
+    margin: 5px;
+    padding: 3px 12px;
+    border-radius: 15px;
+    font-size: 0.85em;
+    font-family: "STKaiti", "楷体", serif;
+}
+
+.tag-moon {
+    background: #E3F2FD;
+    color: #1565C0;
+    border: 1px solid #90CAF9;
+}
+
+.tag-star {
+    background: #F3E5F5;
+    color: #7B1FA2;
+    border: 1px solid #CE93D8;
+}
+
+.tag-sword {
+    background: #FFEBEE;
+    color: #C62828;
+    border: 1px solid #EF9A9A;
+}
+
+.tag-nature {
+    background: #E8F5E9;
+    color: #2E7D32;
+    border: 1px solid #A5D6A7;
+}
+
+/* 结尾歌谣 */
+.ending-song {
+    text-align: center;
+    font-family: "STKaiti", "楷体", serif;
+    font-size: 1.5em;
+    color: #8B4513;
+    margin: 3em 0;
+    padding: 2em;
+    background: linear-gradient(135deg, #FFF8E1, #EFEBE9);
+    border-radius: 10px;
+    border: 2px solid #A1887F;
+    position: relative;
+}
+
+.ending-song::before, .ending-song::after {
+    content: "❖";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    color: #A0522D;
+}
+
+.ending-song::before {
+    left: 20px;
+}
+
+.ending-song::after {
+    right: 20px;
+}
+
+/* 读者互动区 */
+.reader-interaction {
+    background: #FFF;
+    border: 2px solid #D7CCC8;
+    border-radius: 8px;
+    padding: 2em;
+    margin: 3em 0;
+}
+
+.interaction-title {
+    font-family: "STKaiti", "楷体", serif;
+    color: #8B4513;
+    border-bottom: 2px solid #BCAAA4;
+    padding-bottom: 0.5em;
+    margin-bottom: 1.5em;
+}
+
+.thinking-question {
+    background: #F5F5F5;
+    padding: 1em;
+    margin: 1em 0;
+    border-left: 3px solid #8B4513;
+    border-radius: 3px;
+}
+
+/* 跋语 */
+.postscript {
+    font-style: italic;
+    text-align: right;
+    padding: 2em;
+    margin-top: 3em;
+    border-top: 2px dashed #BCAAA4;
+    color: #795548;
+    background: #FFF8E1;
+}

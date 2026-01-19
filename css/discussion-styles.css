@@ -1,0 +1,52 @@
+/* 讨论问题专用样式 */
+.discussion-question {
+    background: white;
+    padding: 1.8em;
+    margin: 1.5em 0;
+    border-radius: 12px;
+    border: 2px solid #E1BEE7;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+}
+
+.discussion-question:hover {
+    border-color: #9C27B0;
+    box-shadow: 0 6px 18px rgba(156, 39, 176, 0.15);
+    transform: translateY(-3px);
+}
+
+.question-marker {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: #9C27B0;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-family: "STKaiti", "楷体", serif;
+    font-size: 0.95em;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(156, 39, 176, 0.3);
+    z-index: 1;
+}
+
+.discussion-answer {
+    margin-top: 1.2em;
+    padding-top: 1.2em;
+    border-top: 2px dashed #E1BEE7;
+    color: #5D4037;
+    line-height: 1.7;
+    font-size: 0.95em;
+    background: linear-gradient(135deg, #F5F5F5, #FAFAFA);
+    padding: 1em 1.2em;
+    border-radius: 8px;
+    border-left: 4px solid #7B1FA2;
+    font-style: italic;
+}
+
+.discussion-question strong {
+    color: #7B1FA2;
+    font-family: "STKaiti", "楷体", serif;
+    font-size: 1.05em;
+}

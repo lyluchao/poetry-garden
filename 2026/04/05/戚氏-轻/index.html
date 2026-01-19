@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>踏月诗阁 | 星河照卷帙，墨锋映秋霜</title>
+    
+    <!-- 引入Google字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    
+    <!-- 引入Font Awesome图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* 古典诗词主题色调 */
+            --classical-paper: #f8f5e6;      /* 宣纸底色 */
+            --classical-ink: #3a2615;        /* 墨色 */
+            --classical-red: #c33;           /* 朱砂红 */
+            --classical-gold: #c19a6b;       /* 金色 */
+            --classical-brown: #8b4513;      /* 赭石色 */
+            --classical-blue: #5d8aa8;       /* 石青色 */
+            --classical-border: #d4b483;     /* 边框色 */
+            --classical-shadow: rgba(58, 38, 21, 0.1); /* 阴影色 */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: var(--classical-paper);
+            color: var(--classical-ink);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(193, 154, 107, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 30%),
+                linear-gradient(135deg, #f8f5e6 0%, #f0e6d6 100%);
+        }
+        
+        /* === 古典页眉 === */
+        .classical-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(248, 245, 230, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--classical-border);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px var(--classical-shadow);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .site-logo {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 1.8rem;
+            color: var(--classical-brown);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .site-logo i {
+            color: var(--classical-red);
+            font-size: 1.5rem;
+        }
+        
+        /* === 古典导航 === */
+        .classical-nav {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--classical-red);
+            border-color: var(--classical-red);
+            background: rgba(195, 51, 51, 0.05);
+        }
+        
+        .nav-link.active {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            color: white;
+            border: none;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+        
+        /* === 主容器 === */
+        .classical-container {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 30px 20px;
+            min-height: calc(100vh - 150px);
+        }
+        
+        /* === 古典页脚 === */
+        .classical-footer {
+            background: rgba(248, 245, 230, 0.95);
+            border-top: 2px solid var(--classical-border);
+            padding: 50px 0 40px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid var(--classical-border);
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .footer-link:hover {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            border-color: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .footer-info {
+            text-align: center;
+            color: var(--classical-blue);
+            padding-top: 30px;
+            border-top: 1px solid var(--classical-border);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .footer-seal {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--classical-red);
+            color: white;
+            border-radius: 50%;
+            line-height: 40px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        
+        /* === 响应式设计 === */
+        @media (max-width: 900px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .classical-nav {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .footer-nav {
+                gap: 15px;
+            }
+            
+            .nav-link {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <!-- 古典页眉 -->
+    <header class="classical-header">
+        <div class="header-container">
+            <a href="/poetry-garden/" class="site-logo">
+                <i class="fas fa-feather-alt"></i>
+                踏月诗阁
+            </a>
+            
+            <nav class="classical-nav">
+                <a href="/poetry-garden/" class="nav-link ">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="/poetry-garden/archives" class="nav-link ">
+                    <i class="fas fa-archive"></i> 归档
+                </a>
+                <a href="/poetry-garden/categories" class="nav-link ">
+                    <i class="fas fa-layer-group"></i> 分类
+                </a>
+                <a href="/poetry-garden/tags" class="nav-link ">
+                    <i class="fas fa-tags"></i> 标签
+                </a>
+                <a href="/poetry-garden/about" class="nav-link ">
+                    <i class="fas fa-book"></i> 关于
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- 主内容 -->
+    <main class="classical-container">
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>戚氏·轻 · 踏月诗阁</title><meta name="description" content="戚氏·轻
+
+
+
+夜沉沉，一灯摇影到天心青灯影外，长风袖底，万籁俱沉
+
+
+
+宋词长调 · 禅意之境
+
+
+
+
+
+
+2026-04-05
+
+|
+
+
+原创词作
+
+|
+
+
+戚氏·三叠长调
+
+
+
+
+
+
+
+
+📜 词牌简介 · 戚氏
+
+《戚氏》为北宋柳永创制，三叠二百十二字，前段九平韵，中段六平韵，后段六平韵两仄"><meta name="og:description" content="戚氏·轻
+
+
+
+夜沉沉，一灯摇影到天心青灯影外，长风袖底，万籁俱沉
+
+
+
+宋词长调 · 禅意之境
+
+
+
+
+
+
+2026-04-05
+
+|
+
+
+原创词作
+
+|
+
+
+戚氏·三叠长调
+
+
+
+
+
+
+
+
+📜 词牌简介 · 戚氏
+
+《戚氏》为北宋柳永创制，三叠二百十二字，前段九平韵，中段六平韵，后段六平韵两仄"><meta name="twitter:site" content="踏月诗阁"><meta name="twitter:title" content="戚氏·轻"><meta name="twitter:card" content="summary"><meta name="keywords" content="诗词,宋词,古典诗词,文学,诗歌"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/poetry-garden/css/bootstrap.min.css"><link rel="stylesheet" href="/poetry-garden/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/poetry-garden/">Home</a></li><li><a href="/poetry-garden/archives">Archive</a></li><li><a href="/poetry-garden/categories">Categories</a></li><li><a href="/poetry-garden/tags">Tags</a></li><!-- +make_page_links() // 暂时禁用--><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post"><h1 class="post-title">戚氏·轻</h1><div class="post-meta"><span class="post-time">post.posted 2026-04-05</span> | <span class="post-category"><a href="/poetry-garden/categories/%E8%AF%8D%E4%BD%9C/">词作</a></span> | <span class="post-tags"><a href="/poetry-garden/tags/%E5%AE%8B%E8%AF%8D/">宋词</a>, <a href="/poetry-garden/tags/%E6%88%9A%E6%B0%8F/">戚氏</a>, <a href="/poetry-garden/tags/%E9%95%BF%E8%B0%83/">长调</a>, <a href="/poetry-garden/tags/%E5%AD%A4%E5%AF%82/">孤寂</a>, <a href="/poetry-garden/tags/%E8%B6%85%E8%84%B1/">超脱</a>, <a href="/poetry-garden/tags/%E7%A6%85%E6%84%8F/">禅意</a></span></div><div class="post-content"><div style="font-family: 'STKaiti', 'SimSun', 'Source Han Serif SC', serif; line-height: 1.8; color: #2c3e50; max-width: 800px; margin: 0 auto; padding: 0 1rem;">
+
+<!-- 标题区域 -->
+<div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 3.5rem 2rem 3rem 2rem; margin: 2rem 0 4rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); min-height: 280px; display: flex; flex-direction: column; justify-content: center; border-radius: 18px; width: 100%;">
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
+    radial-gradient(circle at 20% 40%, rgba(26, 188, 156, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 60%, rgba(22, 160, 133, 0.3) 0%, transparent 50%),
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.08) 2px, rgba(255,255,255,0.08) 4px);"></div>
+<div style="position: relative; z-index: 2;">
+<div style="font-size: 2.8rem; font-weight: bold; margin: 0; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9); letter-spacing: 3px; font-family: 'STKaiti', serif; line-height: 1.2; padding-bottom: 0.5rem;">
+戚氏·轻
+</div>
+<div style="width: 120px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent); margin: 1.5rem auto; opacity: 0.7;"></div>
+<div style="font-size: 1.3rem; opacity: 0.95; margin: 0; font-weight: 300; letter-spacing: 1px; line-height: 1.5; padding: 0 1rem;">
+夜沉沉，一灯摇影到天心<br>青灯影外，长风袖底，万籁俱沉
+</div>
+<div style="margin-top: 2rem;">
+<div style="display: inline-block; background: rgba(255, 255, 255, 0.15); padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2);">
+宋词长调 · 禅意之境
+</div>
+</div>
+<div style="margin-top: 2.5rem;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.85);">
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 6v2h14V6H5z"/></svg>
+2026-04-05
+</span>
+<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;">|</span>
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+原创词作
+</span>
+<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;">|</span>
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+戚氏·三叠长调
+</span>
+</div>
+</div>
+</div>
+</div>
+
+<div style="position: relative; z-index: 1; margin-top: 0;">
+<div style="background: rgba(26, 188, 156, 0.08); padding: 2.2rem; border-radius: 12px; margin: 0 0 3rem 0; border-left: 4px solid #1abc9c; min-height: 180px;">
+<div style="color: #148f77; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">📜 词牌简介 · 戚氏</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem; padding: 0.5rem 0;">
+《戚氏》为北宋柳永创制，三叠二百十二字，前段九平韵，中段六平韵，后段六平韵两仄韵，乃词中长调之最。因篇幅宏大，结构复杂，宜铺叙展衍，抒写深沉复杂之情。苏轼曾赞柳永《戚氏》"不减唐人高处"。本词依《戚氏》正格填制，于三叠铺陈中展现从孤寂情愁到禅意超脱的心灵历程。
+</div>
+</div>
+
+<div style="background: linear-gradient(145deg, rgba(26, 188, 156, 0.1), rgba(22, 160, 133, 0.05)); padding: 2.5rem; border-radius: 14px; border: 1px solid rgba(26, 188, 156, 0.2); margin: 2.5rem 0; font-style: italic; color: #4a5568; position: relative; min-height: 200px;">
+<div style="position: absolute; top: -14px; left: 25px; background: white; color: #1abc9c; padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: bold; border: 1px solid rgba(26, 188, 156, 0.3); box-shadow: 0 3px 8px rgba(0,0,0,0.08);">词前小序</div>
+<div style="padding-top: 1.2rem; font-size: 1.08rem; line-height: 1.9;">
+戊午年深秋，夜宿山寺。窗外万籁俱寂，室内一灯如豆。忆昔年竹外梅边之约，叹今朝苔阶尘满之寂。断雁声里旧约沉，暗风吹絮满袖秋。玉壶冰，锦瑟枯，字字秋心触微澜。忽觉身轻如羽，任危崖千丈，水自千寻。素心不染尘，孤灯伴月明。月落峰缝烟沉处，天阔江平一舟轻。算浮名何用苦相寻？青灯影外，长风袖底，万籁俱沉时，方得真轻安。遂填此《戚氏》长调，以记此心灵轻安之境。
+</div>
+</div>
+
+<h2 id="词文详析·三叠铺陈"><a href="#词文详析·三叠铺陈" class="headerlink" title="词文详析·三叠铺陈"></a>词文详析·三叠铺陈</h2><!-- 第一叠 -->
+<div style="background: linear-gradient(145deg, #e8f6f3 0%, #d1f2eb 100%); border: 2px solid #1abc9c; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 380px;">
+<div style="position: absolute; top: -16px; left: 25px; background: #1abc9c; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">第一叠 · 夜深沉</div>
+<div style="text-align: center; margin-bottom: 2rem;">
+<div style="color: #148f77; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; font-family: 'STKaiti', serif; letter-spacing: 0.5px;">夜沉沉。一灯摇影到天心。</div>
+<div style="color: #4a5568; line-height: 2; font-size: 1.15rem; letter-spacing: 0.5px;">
+瘦影依窗，冷魂绕枕，薄霜侵。<br>
+静静。隔烟深。断雁声里旧约沉。<br>
+断萍无迹，暗风吹絮，满袖秋阴。
+</div>
+</div>
+<div style="background: rgba(26, 188, 156, 0.1); padding: 2.2rem; border-radius: 12px; margin-top: 2.2rem; border-left: 3px solid #1abc9c; min-height: 250px;">
+<div style="color: #148f77; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🌌 第一叠解析 · 孤灯寒夜</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+<strong>"夜沉沉。一灯摇影到天心。"</strong> 开篇七字，意境全出。"夜沉沉"写时间之深，"一灯摇影"写空间之寂，"到天心"则巧妙连接天地，孤灯之微光竟似摇至天心，显内心孤寂之广大无垠。灯影摇曳，既是实景，亦是人心的晃动不安。<br><br>
+
+<p><strong>“瘦影依窗，冷魂绕枕，薄霜侵。”</strong> 三句铺陈孤寂状态。”瘦影”写形销骨立，”冷魂”写心寒如冰，”薄霜侵”既写秋夜寒露，亦写岁月风霜侵蚀身心。人、魂、境三层递进，孤寂感层层加深。<br><br></p>
+<p><strong>“断雁声里旧约沉。断萍无迹，暗风吹絮，满袖秋阴。”</strong> 从听觉、视觉、触觉全方位渲染。”断雁声”喻音信断绝，”旧约沉”言承诺失落。”断萍无迹”写漂泊无依，”暗风吹絮”喻心事纷乱，”满袖秋阴”则将所有愁绪具象化为袖中秋意。四句如四幅画面，构成完整的秋夜愁思图。</p>
+</div>
+</div>
+</div>
+
+<!-- 第二叠 -->
+<div style="background: linear-gradient(145deg, #e8f8f8 0%, #d1f7f7 100%); border: 2px solid #17a2b8; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 400px;">
+<div style="position: absolute; top: -16px; left: 25px; background: #17a2b8; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">第二叠 · 忆前尘</div>
+<div style="text-align: center; margin-bottom: 2rem;">
+<div style="color: #138496; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; font-family: 'STKaiti', serif; letter-spacing: 0.5px;">竹外曾立，梅边同语，如今音信都沉。</div>
+<div style="color: #4a5568; line-height: 2; font-size: 1.15rem; letter-spacing: 0.5px;">
+叹苔阶尘满，月移花静，半帘云深。<br><br>
+石上痕消。远山望断，天地共萧森。<br>
+疏窗下、香痕凝处，露草寒金。<br>
+两沉吟。玉壶冰冷，锦瑟弦枯，不必沾襟。
+</div>
+</div>
+<div style="background: rgba(23, 162, 184, 0.1); padding: 2.2rem; border-radius: 12px; margin-top: 2.2rem; border-left: 3px solid #17a2b8; min-height: 280px;">
+<div style="color: #138496; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🍂 第二叠解析 · 物是人非</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+<strong>"竹外曾立，梅边同语，如今音信都沉。"</strong> 今昔对比，痛彻心扉。"竹外""梅边"是中国古典文学中经典的诗意场景，象征高洁情谊。当年曾并肩立竹外，共语梅边，何等风雅亲密。"如今"二字陡转，"音信都沉"四字如石沉大海，再无回音。十二字中，蕴藏巨大情感落差。<br><br>
+
+<p><strong>“石上痕消。远山望断，天地共萧森。”</strong> 时空拓展，境界扩大。”石上痕消”喻岁月无情，连石头上的痕迹都会消失，何况人情？”远山望断”写极目远眺，望穿秋水，不见伊人。”天地共萧森”则将个人愁绪扩展为天地间的萧瑟，主观情感对象化为客观景象。<br><br></p>
+<p><strong>“玉壶冰冷，锦瑟弦枯，不必沾襟。”</strong> 情感转折的关键。”玉壶冰”化用王昌龄”一片冰心在玉壶”，但此处”冰冷”写热情已冷；”锦瑟弦枯”化用李商隐”锦瑟无端五十弦”，但此处”弦枯”写情思已断。最妙在”不必沾襟”——不再流泪，不是无情，而是看透后的淡然，是超脱的开始。</p>
+</div>
+</div>
+</div>
+
+<!-- 第三叠 -->
+<div style="background: linear-gradient(145deg, #f0f8ff 0%, #e6f7ff 100%); border: 2px solid #0f3460; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 450px;">
+<div style="position: absolute; top: -16px; left: 25px; background: #0f3460; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">第三叠 · 得轻安</div>
+<div style="text-align: center; margin-bottom: 2rem;">
+<div style="color: #1a1a2e; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; font-family: 'STKaiti', serif; letter-spacing: 0.5px;">清歌漫听，字字秋心，初触微澜而今。</div>
+<div style="color: #4a5568; line-height: 2; font-size: 1.15rem; letter-spacing: 0.5px;">
+笔底当年诺，樽前一寸念，都付霜霖。<br><br>
+忽觉衣轻，任危崖千丈，水自千寻。<br>
+素心不染，孤灯伴月，袖卷秋林。<br>
+月落峰，缝里烟沉。<br>
+悄行处、天阔江平。<br>
+算浮名、何用苦相寻。<br>
+青灯影外，长风袖底，万籁俱沉。
+</div>
+</div>
+<div style="background: rgba(15, 52, 96, 0.1); padding: 2.2rem; border-radius: 12px; margin-top: 2.2rem; border-left: 3px solid #0f3460; min-height: 320px;">
+<div style="color: #1a1a2e; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🕊️ 第三叠解析 · 心灵超脱</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+<strong>"忽觉衣轻，任危崖千丈，水自千寻。"</strong> 全词转折点，也是题眼"轻"的体现。"忽觉"写顿悟瞬间，"衣轻"既写身体感受，更写心灵卸下重负后的轻安。"任危崖千丈"写面对险境的从容，"水自千寻"写看透世事的淡然。三句如禅宗公案，蕴含深刻哲理：放下执念，方得自在。<br><br>
+
+<p><strong>“素心不染，孤灯伴月，袖卷秋林。”</strong> 超脱后的境界。”素心不染”是心境的纯净，”孤灯伴月”是处境的孤高而不孤寂，”袖卷秋林”是行动的自在洒脱——衣袖轻卷，便收尽整个秋林景色。这是从”满袖秋阴”（装满愁绪）到”袖卷秋林”（欣赏秋色）的质变。<br><br></p>
+<p><strong>“青灯影外，长风袖底，万籁俱沉。”</strong> 结尾九字，境界全出。”青灯影外”写超越小我，”长风袖底”写胸怀博大，”万籁俱沉”则是禅定的最高境界——不是死寂，而是喧嚣平息后的真静。从开篇”夜沉沉”的压抑，到结尾”万籁俱沉”的宁静，完成了从苦到乐、从缚到脱的完整心灵旅程。</p>
+</div>
+</div>
+</div>
+
+<h2 id="心灵三境·从缚到脱"><a href="#心灵三境·从缚到脱" class="headerlink" title="心灵三境·从缚到脱"></a>心灵三境·从缚到脱</h2><div style="background: linear-gradient(145deg, #e8f6f3 0%, #d1f2eb 100%); border: 2px solid #1abc9c; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(26, 188, 156, 0.12); min-height: 500px;">
+<div style="text-align: center; margin-bottom: 2.8rem;">
+<div style="color: #148f77; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🌊 心灵升华三境界</div>
+<div style="color: #5d6d7e; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">从孤灯寒夜的束缚，到看透放下的转折，最终抵达万籁俱沉的轻安</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #1abc9c; position: relative; overflow: hidden; min-height: 320px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(26, 188, 156, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #148f77; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🕯️ 第一境 · 孤灯缚</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>夜沉沉，一灯摇影到天心</strong> - 孤寂的无限扩大</li>
+<li style="margin-bottom: 0.8rem;"><strong>瘦影依窗，冷魂绕枕</strong> - 身心的双重困顿</li>
+<li style="margin-bottom: 0.8rem;"><strong>断雁声里旧约沉</strong> - 往事的沉重负担</li>
+<li style="margin-bottom: 0.8rem;"><strong>满袖秋阴</strong> - 愁绪的具象承载</li>
+<li><strong>竹外梅边音信沉</strong> - 美好记忆的失落</li>
+</ul>
+<div style="color: #1abc9c; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
+"一灯摇影到天心"——孤寂可以充满整个宇宙
+</div>
+</div>
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #17a2b8; position: relative; overflow: hidden; min-height: 320px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(23, 162, 184, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #138496; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🔄 第二境 · 转折处</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>石上痕消，天地萧森</strong> - 看透无常的本质</li>
+<li style="margin-bottom: 0.8rem;"><strong>玉壶冰冷，锦瑟弦枯</strong> - 接受情感的冷却</li>
+<li style="margin-bottom: 0.8rem;"><strong>不必沾襟</strong> - 停止悲伤的决断</li>
+<li style="margin-bottom: 0.8rem;"><strong>笔底诺，樽前念，都付霜霖</strong> - 过往的彻底放下</li>
+<li><strong>清歌漫听，字字秋心</strong> - 以审美距离观照痛苦</li>
+</ul>
+<div style="color: #17a2b8; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
+"不必沾襟"——不是无情，而是超越了情的束缚
+</div>
+</div>
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #0f3460; position: relative; overflow: hidden; min-height: 320px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(15, 52, 96, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #1a1a2e; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🕊️ 第三境 · 轻安得</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.
+<li style="margin-bottom: 0.8rem;"><strong>忽觉衣轻</strong> - 卸下重负的瞬间体验</li>
+<li style="margin-bottom: 0.8rem;"><strong>任危崖千丈，水自千寻</strong> - 面对困境的从容</li>
+<li style="margin-bottom: 0.8rem;"><strong>素心不染，孤灯伴月</strong> - 内心的纯净与自足</li>
+<li style="margin-bottom: 0.8rem;"><strong>天阔江平</strong> - 境界的开阔与平和</li>
+<li><strong>万籁俱沉</strong> - 最终极的宁静与轻安</li>
+</ul>
+<div style="color: #0f3460; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
+"万籁俱沉"——不是无声，而是心静故万物皆静
+</div>
+</div>
+</div>
+</div>
+
+<h2 id="艺术特色·长调匠心"><a href="#艺术特色·长调匠心" class="headerlink" title="艺术特色·长调匠心"></a>艺术特色·长调匠心</h2><div style="background: linear-gradient(145deg, #fff8e1 0%, #fff3cd 100%); border: 2px solid #d4a017; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(212, 160, 23, 0.1); min-height: 450px;">
+<div style="text-align: center; margin-bottom: 2.5rem;">
+<div style="color: #8b4513; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🎭 长调艺术特色</div>
+<div style="color: #a68a64; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">结构宏大、意象密集、炼字精绝、境界三层递进</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 380px;">
+<div style="color: #8b4513; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 2px solid #f0e6d2; padding-bottom: 1rem; font-size: 1.2rem;">🏛️ 结构匠心·三叠递进</div>
+<div style="margin-top: 1.2rem;">
+<div style="margin-bottom: 1.5rem;">
+<div style="color: #c05621; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">第一叠·铺陈孤寂</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">从"夜沉沉"到"满袖秋阴"，层层渲染孤寂氛围。运用视觉（灯影、瘦影）、听觉（断雁）、触觉（薄霜侵）等多重感官，构建完整的秋夜孤寂图景。</div>
+</div>
+<div style="margin-bottom: 1.5rem;">
+<div style="color: #c05621; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">第二叠·今昔对比</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">从"竹外曾立"到"不必沾襟"，通过今昔对比展现情感变化。空间上从具体场景（竹外、梅边）扩展到天地萧森，情感上从追忆到淡然。</div>
+</div>
+<div style="margin-bottom: 1.5rem;">
+<div style="color: #c05621; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">第三叠·升华超脱</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">从"忽觉衣轻"到"万籁俱沉"，完成心灵升华。节奏由缓到急再到缓，情感由苦到悟到安，结构完整如一部心灵史诗。</div>
+</div>
+</div>
+</div>
+
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 380px;">
+<div style="color: #8b4513; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 2px solid #f0e6d2; padding-bottom: 1rem; font-size: 1.2rem;">✨ 意象与炼字</div>
+<div style="margin-top: 1.2rem;">
+<div style="margin-bottom: 1.8rem;">
+<div style="color: #c05621; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">"轻"字的哲学</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">全词围绕"轻"字展开：开篇是"夜沉沉"的重，结尾是"万籁俱沉"的轻。"忽觉衣轻"是转折点——不是衣服变轻，而是心灵卸下重负。从"满袖秋阴"到"袖卷秋林"，同一"袖"字，境界全变。</div>
+</div>
+<div style="margin-bottom: 1.8rem;">
+<div style="color: #c05621; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">"沉"字的复调</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">全词七处用"沉"：夜沉沉、旧约沉、音信都沉、天地共萧森（沉）、缝里烟沉、万籁俱沉。从压抑的"沉"到宁静的"沉"，同一个字，随着情感变化而含义不同，形成 linguistic echo 效果。</div>
+</div>
+<div style="margin-bottom: 1.8rem;">
+<div style="color: #c05621; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">对仗的妙用</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">"竹外曾立，梅边同语"（美好回忆），"石上痕消，远山望断"（岁月无情），"危崖千丈，水自千寻"（面对困境），"青灯影外，长风袖底"（超脱境界）。工整对仗中见情感递进。</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<h2 id="禅意境界·词中三昧"><a href="#禅意境界·词中三昧" class="headerlink" title="禅意境界·词中三昧"></a>禅意境界·词中三昧</h2><div style="background: linear-gradient(145deg, #f3e8ff 0%, #e9d8fd 100%); border: 2px solid #6f42c1; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(111, 66, 193, 0.12); min-height: 400px;">
+<div style="text-align: center; margin-bottom: 2.8rem;">
+<div style="color: #553c9a; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🕉️ 词中禅意三昧</div>
+<div style="color: #718096; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">从执着到放下，从痛苦到轻安，从有限到无限</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin: 2rem 0;">
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-top: 4px solid #6f42c1;">
+<div style="color: #6f42c1; font-weight: bold; margin-bottom: 1rem; font-size: 1.15rem;">一昧·看透无常</div>
+<div style="color: #4a5568; font-size: 1.05rem; line-height: 1.7;">
+"石上痕消"四字，蕴含深刻禅理。石本坚固，痕应永存，但连石上痕迹都会消失，何况人情世事？"竹外梅边"的美好，"笔底樽前"的承诺，皆如石上痕，看似深刻，终会消逝。看透无常，是解脱的第一步。
+</div>
+</div>
+
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-top: 4px solid #20c997;">
+<div style="color: #20c997; font-weight: bold; margin-bottom: 1rem; font-size: 1.15rem;">二昧·当下顿悟</div>
+<div style="color: #4a5568; font-size: 1.05rem; line-height: 1.7;">
+"忽觉衣轻"的"忽"字，点明顿悟特性。禅宗讲"当下即是"，放下不在未来计划中，而在某个瞬间的体认。不是慢慢变轻，而是忽然觉察：原来重负早可卸下。"任危崖千丈，水自千寻"——看透后，危险不再可怕，深水自有其深，与我何干？
+</div>
+</div>
+
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-top: 4px solid #0f3460;">
+<div style="color: #0f3460; font-weight: bold; margin-bottom: 1rem; font-size: 1.15rem;">三昧·究竟轻安</div>
+<div style="color: #4a5568; font-size: 1.05rem; line-height: 1.7;">
+"万籁俱沉"非死寂，而是"心静故万物皆静"的禅定境界。从"夜沉沉"的被动承受，到"万籁俱沉"的主动融入，完成了主体与客体的合一。"青灯影外，长风袖底"——我在影外，也在风中；既超然物外，又与万物一体。这才是真正的轻安。
+</div>
+</div>
+</div>
+
+<div style="text-align: center; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px dashed #e2e8f0;">
+<div style="color: #6f42c1; font-size: 1.1rem; font-style: italic; line-height: 1.7;">
+"算浮名、何用苦相寻"——勘破名相<br>
+"素心不染，孤灯伴月"——守护本心<br>
+"天阔江平，万籁俱沉"——抵达究竟
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://lyluchao.github.io/2026/04/05/戚氏-轻/%20踏月诗阁%20戚氏·轻"></a></span></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/poetry-garden/2026/03/10/%E5%85%AB%E5%A3%B0%E7%94%98%E5%B7%9E-%E5%AD%A4%E9%A6%86%E7%A7%8B/" title="八声甘州·孤馆秋">Next post: 八声甘州·孤馆秋&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/poetry-garden/js/jquery-3.1.0.min.js"></script><script src="/poetry-garden/js/bootstrap.min.js"></script><script src="/poetry-garden/js/jquery-migrate-1.2.1.min.js"></script><script src="/poetry-garden/js/jquery.appear.js"></script><script src="/poetry-garden/js/google-analytics.js"></script><script src="/poetry-garden/js/typography.js"></script><!-- hexo injector body_end start -->
+<script>
+// 检测是否需要加载 Mermaid
+if (document.querySelector('.mermaid')) {
+  // 动态加载 Mermaid 库
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+  script.onload = function() {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      flowchart: {
+        useMaxWidth: true,
+        htmlLabels: true
+      },
+      securityLevel: 'loose'
+    });
+    
+    // 重新渲染所有图表
+    mermaid.init();
+  };
+  document.head.appendChild(script);
+}
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 为可折叠 callout 添加点击事件
+  const collapsibleCallouts = document.querySelectorAll('.callout.is-collapsible');
+  
+  collapsibleCallouts.forEach(function(callout) {
+    const title = callout.querySelector('.callout-title');
+    
+    if (title) {
+      // 添加点击事件
+      title.addEventListener('click', function(e) {
+        // 如果点击的是链接，不触发折叠
+        if (e.target.tagName === 'A') return;
+        
+        callout.classList.toggle('is-collapsed');
+      });
+      
+      // 添加鼠标悬停效果
+      title.addEventListener('mouseenter', function() {
+        this.style.cursor = 'pointer';
+      });
+      
+      // 添加键盘支持（可访问性）
+      title.setAttribute('tabindex', '0');
+      title.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          callout.classList.toggle('is-collapsed');
+        }
+      });
+    }
+  });
+});
+</script>
+<!-- hexo injector body_end end --></body></html>
+    </main>
+    
+    <!-- 古典页脚 -->
+    <footer class="classical-footer">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <a href="/poetry-garden/" class="footer-link">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="/poetry-garden/archives" class="footer-link">
+                    <i class="fas fa-archive"></i> 归档
+                </a>
+                <a href="/poetry-garden/categories" class="footer-link">
+                    <i class="fas fa-layer-group"></i> 分类
+                </a>
+                <a href="/poetry-garden/tags" class="footer-link">
+                    <i class="fas fa-tags"></i> 标签
+                </a>
+                <a href="/poetry-garden/about" class="footer-link">
+                    <i class="fas fa-book"></i> 关于
+                </a>
+            </nav>
+            
+            <div class="footer-info">
+                <div>
+                    © 2026 <span class="footer-seal">诗</span> 踏月诗阁 <span class="footer-seal">阁</span>
+                </div>
+                <div style="margin-top: 15px; font-style: italic; color: var(--classical-gold);">
+                    墨香永驻 · 诗魂长存 · 雅韵流芳
+                </div>
+                <div style="margin-top: 10px; font-size: 0.8rem; color: var(--classical-blue);">
+                    主题：古典诗韵 · 由 Hexo 驱动
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 页眉滚动效果
+            const header = document.querySelector('.classical-header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 5px 20px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                } else {
+                    header.style.boxShadow = '0 2px 10px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

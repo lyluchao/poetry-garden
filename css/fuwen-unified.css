@@ -1,0 +1,322 @@
+/* 赋文统一样式库 */
+
+/* ===== 基础布局 ===== */
+.fu-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2em;
+    font-family: "STSong", "宋体", serif;
+    line-height: 2;
+    color: #5D4037;
+    background: #FFFDFA;
+}
+
+/* ===== 标题系统 ===== */
+.fu-main-title {
+    text-align: center;
+    font-family: "STKaiti", "楷体", serif;
+    font-size: 2.8em;
+    color: #8B4513;
+    margin: 1.5em 0;
+    padding-bottom: 0.5em;
+    border-bottom: 3px double #A1887F;
+    position: relative;
+}
+
+.fu-main-title::before, .fu-main-title::after {
+    content: "〖";
+    position: absolute;
+    top: 0;
+    color: #D7CCC8;
+    font-size: 1.2em;
+}
+
+.fu-main-title::after {
+    content: "〗";
+    right: 0;
+}
+
+.fu-subtitle {
+    font-family: "STKaiti", "楷体", serif;
+    font-size: 1.8em;
+    color: #A0522D;
+    margin: 2em 0 1em;
+    padding-left: 1em;
+    border-left: 4px solid #8B4513;
+    background: linear-gradient(to right, #FFF8E1, transparent);
+}
+
+/* ===== 序跋样式 ===== */
+.fu-preface, .fu-epilogue {
+    background: linear-gradient(135deg, #FFF8E1, #FFECB3);
+    border: 2px solid #A1887F;
+    border-radius: 12px;
+    padding: 2em;
+    margin: 2em 0;
+    position: relative;
+    font-style: italic;
+}
+
+.fu-preface::before {
+    content: "序";
+    position: absolute;
+    top: -18px;
+    left: 30px;
+    background: #8B4513;
+    color: #FFF8E1;
+    padding: 6px 24px;
+    border-radius: 24px;
+    font-family: "STKaiti", "楷体", serif;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.fu-epilogue::before {
+    content: "跋";
+    position: absolute;
+    top: -18px;
+    left: 30px;
+    background: #5D4037;
+    color: #FFF8E1;
+    padding: 6px 24px;
+    border-radius: 24px;
+    font-family: "STKaiti", "楷体", serif;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+/* ===== 赋文主体 ===== */
+.fu-body {
+    margin: 2em 0;
+    padding: 2em;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
+}
+
+.fu-paragraph {
+    margin: 1.8em 0;
+    text-align: justify;
+    text-indent: 2em;
+}
+
+.fu-paragraph.parallel {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em 0;
+    text-indent: 0;
+}
+
+.fu-paragraph-left, .fu-paragraph-right {
+    width: 48%;
+    padding: 1em;
+    background: #F5F5F5;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.fu-paragraph-left {
+    border-right: 2px solid #8B4513;
+}
+
+.fu-paragraph-right {
+    border-left: 2px solid #A0522D;
+}
+
+/* ===== 章节标记 ===== */
+.fu-chapter {
+    counter-reset: section;
+    margin: 3em 0;
+    position: relative;
+}
+
+.fu-chapter-title {
+    font-family: "STKaiti", "楷体", serif;
+    font-size: 2em;
+    color: #8B4513;
+    margin: 1.5em 0 1em;
+    padding-left: 2em;
+    position: relative;
+}
+
+.fu-chapter-title::before {
+    counter-increment: section;
+    content: counter(section, cjk-ideographic) "、";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #A0522D;
+    font-weight: bold;
+}
+
+/* ===== 解析区域 ===== */
+.fu-analysis {
+    background: #F5F5F5;
+    border-left: 4px solid #8B4513;
+    padding: 2em;
+    margin: 3em 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.fu-analysis-title {
+    font-family: "STKaiti", "楷体", serif;
+    color: #5D4037;
+    margin-bottom: 1.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px dashed #BCAAA4;
+}
+
+.fu-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: 0.95em;
+}
+
+.fu-table th {
+    background: #8B4513;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-family: "STKaiti", "楷体", serif;
+    border: 1px solid #A0522D;
+}
+
+.fu-table td {
+    padding: 10px;
+    border: 1px solid #D7CCC8;
+    vertical-align: top;
+}
+
+.fu-table tr:nth-child(even) {
+    background: #FFF8E1;
+}
+
+/* ===== 代码/结构图 ===== */
+.fu-structure {
+    background: #2E2E2E;
+    color: #F5F5F5;
+    padding: 1.5em;
+    margin: 2em 0;
+    border-radius: 6px;
+    font-family: "Courier New", monospace;
+    font-size: 0.9em;
+    line-height: 1.6;
+    overflow-x: auto;
+}
+
+.fu-structure .indent-1 { padding-left: 1em; }
+.fu-structure .indent-2 { padding-left: 2em; }
+.fu-structure .indent-3 { padding-left: 3em; }
+.fu-structure .indent-4 { padding-left: 4em; }
+
+/* ===== 标签系统 ===== */
+.fu-tag {
+    display: inline-block;
+    margin: 0.3em;
+    padding: 0.3em 0.8em;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-family: "STKaiti", "楷体", serif;
+}
+
+.tag-theme { background: #E3F2FD; color: #1565C0; border: 1px solid #90CAF9; }
+.tag-form { background: #F3E5F5; color: #7B1FA2; border: 1px solid #CE93D8; }
+.tag-philosophy { background: #FFF8E1; color: #F57C00; border: 1px solid #FFCC80; }
+.tag-literature { background: #E8F5E9; color: #2E7D32; border: 1px solid #A5D6A7; }
+
+/* ===== 交互区域 ===== */
+.fu-interaction {
+    background: white;
+    border: 2px solid #D7CCC8;
+    border-radius: 10px;
+    padding: 2.5em;
+    margin: 3em 0;
+}
+
+.fu-question {
+    background: #FFF8E1;
+    padding: 1.2em;
+    margin: 1em 0;
+    border-left: 3px solid #8B4513;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.fu-question:hover {
+    background: #FFECB3;
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15);
+}
+
+/* ===== 引用强调 ===== */
+.fu-emphasis {
+    background: linear-gradient(135deg, #FFF8E1, #FFECB3);
+    border: 2px solid #FFB300;
+    padding: 1.5em;
+    margin: 2em 0;
+    border-radius: 8px;
+    font-style: italic;
+    position: relative;
+}
+
+.fu-emphasis::before {
+    content: "✦";
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: white;
+    color: #FFB300;
+    padding: 0 8px;
+    font-size: 1.2em;
+}
+
+/* ===== 页尾装饰 ===== */
+.fu-footer {
+    text-align: center;
+    padding: 3em 0;
+    margin-top: 4em;
+    border-top: 2px dashed #BCAAA4;
+    color: #795548;
+    font-family: "STKaiti", "楷体", serif;
+    font-size: 1.1em;
+    position: relative;
+}
+
+.fu-footer::before {
+    content: "※";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 0 20px;
+    color: #8B4513;
+    font-size: 1.5em;
+}
+
+/* ===== 响应式设计 ===== */
+@media (max-width: 768px) {
+    .fu-container {
+        padding: 1em;
+    }
+    
+    .fu-main-title {
+        font-size: 2em;
+    }
+    
+    .fu-paragraph.parallel {
+        flex-direction: column;
+    }
+    
+    .fu-paragraph-left, .fu-paragraph-right {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+    
+    .fu-table {
+        font-size: 0.85em;
+        display: block;
+        overflow-x: auto;
+    }
+}

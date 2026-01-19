@@ -1,0 +1,70 @@
+/* 诗文博客自定义样式 */
+
+/* 赋文特殊样式 */
+.fu-article {
+    border-left: 3px solid #8B4513;
+    padding-left: 2em;
+    margin: 2em 0;
+}
+
+.fu-title {
+    font-family: "STKaiti", "楷体", serif;
+    color: #5D4037;
+    border-bottom: 1px dashed #BCAAA4;
+    padding-bottom: 0.5em;
+}
+
+/* 骈偶句样式 */
+.parallel-sentence {
+    margin: 1.5em 0;
+    padding: 1em;
+    background: #FFF8E1;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 2;
+}
+
+/* 词牌样式 */
+.ci-card {
+    background: linear-gradient(135deg, #FFF, #FFF8E1);
+    border: 2px solid #D7CCC8;
+    border-radius: 10px;
+    padding: 2em;
+    margin: 2em 0;
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+}
+
+/* 引用样式 */
+blockquote.poem-quote {
+    border-left: 4px solid #A1887F;
+    background: #FFF8E1;
+    font-style: italic;
+    font-family: "STSong", "宋体", serif;
+    padding: 1.5em;
+    margin: 2em 0;
+}
+
+/* 页脚美化 */
+.footer {
+    border-top: 2px solid #D7CCC8;
+    padding-top: 2em;
+    color: #795548;
+}
+
+/* 标签云样式 */
+.tag-cloud a {
+    display: inline-block;
+    background: #EFEBE9;
+    color: #5D4037;
+    padding: 3px 12px;
+    margin: 5px;
+    border-radius: 15px;
+    border: 1px solid #D7CCC8;
+    transition: all 0.3s;
+}
+
+.tag-cloud a:hover {
+    background: #8B4513;
+    color: white;
+    transform: translateY(-2px);
+}

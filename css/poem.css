@@ -1,0 +1,52 @@
+/* 诗文博客自定义样式 */
+
+/* 古典边框 */
+.post {
+    border-left: 3px solid #8B4513;
+    padding-left: 20px;
+}
+
+/* 诗文标题样式 */
+.post-title {
+    font-family: "STKaiti", "楷体", serif;
+    color: #5D4037;
+    border-bottom: 1px dashed #BCAAA4;
+    padding-bottom: 10px;
+}
+
+/* 引用样式 */
+blockquote {
+    border-left: 4px solid #A1887F;
+    background-color: #FFF8E1;
+    font-style: italic;
+    padding: 15px;
+    margin: 20px 0;
+    font-family: "STSong", "宋体", serif;
+}
+
+/* 代码块样式（文言文注释） */
+code {
+    background-color: #F5F5F5;
+    border: 1px solid #E0E0E0;
+    font-family: "STKaiti", "楷体", monospace;
+}
+
+/* 链接样式 */
+a {
+    color: #5D4037;
+    text-decoration: none;
+    border-bottom: 1px dotted #A1887F;
+}
+
+a:hover {
+    color: #8B4513;
+    border-bottom: 1px solid #8B4513;
+}
+
+/* 页脚样式 */
+.footer {
+    border-top: 2px solid #D7CCC8;
+    padding-top: 20px;
+    font-size: 0.9em;
+    color: #795548;
+}

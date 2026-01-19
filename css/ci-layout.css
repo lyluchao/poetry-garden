@@ -1,0 +1,403 @@
+/* 词作文章基础布局样式 - ci-layout.css */
+
+/* 基础容器 */
+.ci-container {
+    font-family: 'STKaiti', 'SimSun', 'Source Han Serif SC', serif;
+    line-height: 1.8;
+    color: #2c3e50;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* 标题区域基础布局 */
+.ci-title-section {
+    padding: 3.5rem 2rem 3rem 2rem;
+    margin: 2rem 0 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 18px;
+    width: 100%;
+}
+
+.ci-title-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.ci-title-content {
+    position: relative;
+    z-index: 2;
+}
+
+.ci-main-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+    letter-spacing: 3px;
+    font-family: 'STKaiti', serif;
+    line-height: 1.2;
+    padding-bottom: 0.5rem;
+}
+
+.ci-title-divider {
+    width: 120px;
+    height: 2px;
+    margin: 1.5rem auto;
+    opacity: 0.7;
+}
+
+.ci-opening-line {
+    font-size: 1.3rem;
+    opacity: 0.95;
+    margin: 0;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    padding: 0 1rem;
+}
+
+.ci-tag {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    backdrop-filter: blur(5px);
+    border: 1px solid;
+    margin-top: 2rem;
+}
+
+.ci-meta-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1rem;
+    margin-top: 2.5rem;
+}
+
+.ci-meta-item {
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+}
+
+.ci-meta-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.4rem;
+}
+
+.ci-meta-separator {
+    font-size: 0.8rem;
+}
+
+/* 内容区域包装 */
+.ci-content-wrapper {
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+}
+
+/* 词牌简介基础布局 */
+.ci-intro-section {
+    padding: 2.2rem;
+    border-radius: 12px;
+    margin: 0 0 3rem 0;
+    border-left: 4px solid;
+    min-height: 180px;
+}
+
+.ci-section-title {
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.ci-section-content {
+    line-height: 1.8;
+    font-size: 1.05rem;
+    padding: 0.5rem 0;
+}
+
+/* 词前小序基础布局 */
+.ci-preface {
+    padding: 2.5rem;
+    border-radius: 14px;
+    border: 1px solid;
+    margin: 2.5rem 0;
+    font-style: italic;
+    position: relative;
+    min-height: 200px;
+}
+
+.ci-preface-label {
+    position: absolute;
+    top: -14px;
+    left: 25px;
+    padding: 0.4rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 1px solid;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.ci-preface-content {
+    padding-top: 1.2rem;
+    font-size: 1.08rem;
+    line-height: 1.9;
+}
+
+/* 词文详析通用布局 */
+.ci-stanza {
+    border-radius: 16px;
+    padding: 2.8rem;
+    margin: 2.8rem 0;
+    position: relative;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    min-height: 380px;
+    border: 2px solid;
+}
+
+.ci-stanza-label {
+    position: absolute;
+    top: -16px;
+    left: 25px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.ci-stanza-content {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.ci-stanza-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    font-family: 'STKaiti', serif;
+    letter-spacing: 0.5px;
+}
+
+.ci-stanza-text {
+    line-height: 2;
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+}
+
+.ci-analysis {
+    border-radius: 12px;
+    padding: 2.2rem;
+    margin-top: 2.2rem;
+    border-left: 3px solid;
+    min-height: 250px;
+}
+
+.ci-analysis-title {
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.15rem;
+}
+
+.ci-analysis-content {
+    line-height: 1.85;
+    font-size: 1.05rem;
+}
+
+/* 三重境界基础布局 */
+.ci-three-realms {
+    border-radius: 18px;
+    padding: 3rem;
+    margin: 3rem 0;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+    min-height: 450px;
+    border: 2px solid;
+}
+
+.ci-realms-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.ci-realms-subtitle {
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+    text-align: center;
+}
+
+.ci-realms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.2rem;
+    margin: 2.5rem 0;
+}
+
+.ci-realm-card {
+    padding: 2.2rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+}
+
+.ci-realm-decor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 0 0 0 70px;
+}
+
+.ci-realm-card-title {
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.ci-realm-list {
+    font-size: 1.05rem;
+    padding-left: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.ci-realm-list li {
+    margin-bottom: 0.8rem;
+}
+
+.ci-realm-quote {
+    font-size: 0.95rem;
+    font-style: italic;
+    padding-top: 1.2rem;
+    border-top: 1px dashed;
+}
+
+/* 艺术特色基础布局 */
+.ci-art-features {
+    border-radius: 18px;
+    padding: 3rem;
+    margin: 3rem 0;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+    min-height: 400px;
+    border: 2px solid;
+}
+
+.ci-art-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.ci-art-subtitle {
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+    text-align: center;
+}
+
+.ci-art-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.2rem;
+    margin: 2.5rem 0;
+}
+
+.ci-art-card {
+    padding: 2rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    min-height: 320px;
+}
+
+.ci-art-card-title {
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 2px solid;
+    padding-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.ci-art-item {
+    margin-bottom: 1.5rem;
+}
+
+.ci-art-item-title {
+    font-weight: bold;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+}
+
+.ci-art-item-content {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .ci-main-title {
+        font-size: 2.2rem;
+    }
+    
+    .ci-opening-line {
+        font-size: 1.1rem;
+    }
+    
+    .ci-meta-info {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .ci-meta-separator {
+        display: none;
+    }
+    
+    .ci-realms-grid,
+    .ci-art-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ci-stanza {
+        padding: 2rem;
+    }
+    
+    .ci-analysis {
+        padding: 1.8rem;
+    }
+}

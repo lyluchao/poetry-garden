@@ -1,0 +1,110 @@
+/* 词作展示专用样式 */
+
+/* 词牌标题 */
+.poem-title {
+    font-family: "STKaiti", "楷体", serif;
+    font-size: 1.8em;
+    color: #8B4513;
+    text-align: center;
+    margin: 2em 0 1em;
+    border-bottom: 2px double #A1887F;
+    padding-bottom: 0.5em;
+}
+
+/* 词作者 */
+.poem-author {
+    font-family: "STSong", "宋体", serif;
+    font-size: 1.1em;
+    color: #795548;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 2em;
+}
+
+/* 词正文 */
+.poem-content {
+    font-family: "STKaiti", "楷体", serif;
+    font-size: 1.2em;
+    line-height: 2.2;
+    text-align: center;
+    color: #5D4037;
+    background: linear-gradient(to right, #FFF8E1, #FFECB3);
+    padding: 2em;
+    border-radius: 8px;
+    border: 1px solid #D7CCC8;
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+    margin: 2em auto;
+    max-width: 800px;
+}
+
+/* 词牌信息 */
+.poem-info {
+    background: #F5F5F5;
+    border-left: 4px solid #A1887F;
+    padding: 1.5em;
+    margin: 2em 0;
+    font-family: "STSong", "宋体", serif;
+}
+
+.poem-info dt {
+    font-weight: bold;
+    color: #8B4513;
+    margin-top: 0.8em;
+}
+
+.poem-info dd {
+    margin-left: 1em;
+    color: #5D4037;
+}
+
+/* 赏析部分 */
+.poem-analysis {
+    background: #FFF8E1;
+    border: 1px solid #D7CCC8;
+    padding: 2em;
+    margin: 2em 0;
+    border-radius: 6px;
+}
+
+.poem-analysis h3 {
+    color: #8B4513;
+    border-bottom: 1px dashed #BCAAA4;
+    padding-bottom: 0.5em;
+}
+
+/* 格律对照 */
+.rhyme-scheme {
+    font-family: "Courier New", "STKaiti", monospace;
+    background: #F5F5F5;
+    padding: 1.5em;
+    border: 1px solid #E0E0E0;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    font-size: 0.95em;
+    color: #5D4037;
+}
+
+/* 引用样式 */
+.poem-quote {
+    font-family: "STKaiti", "楷体", serif;
+    font-style: italic;
+    color: #795548;
+    border-left: 3px solid #8B4513;
+    padding-left: 1.5em;
+    margin: 1.5em 0;
+    background: #FFF8E1;
+    padding: 1em;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .poem-content {
+        font-size: 1.1em;
+        padding: 1.5em;
+        line-height: 2;
+    }
+    
+    .poem-title {
+        font-size: 1.5em;
+    }
+}

@@ -1,0 +1,148 @@
+/* 诗词专用样式 - 古典文学风格 */
+
+/* 诗词内容区域 */
+.poem-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+    background: #FFF8E1;
+    border: 1px solid #D7CCC8;
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15);
+    position: relative;
+}
+
+/* 古典字体 */
+.classical-font {
+    font-family: "STKaiti", "楷体", "KaiTi", "SimKai", serif;
+    line-height: 2.2;
+    color: #5D4037;
+}
+
+/* 词牌标题 */
+.poem-title {
+    text-align: center;
+    font-size: 2.2em;
+    color: #8B4513;
+    margin-bottom: 1em;
+    border-bottom: 2px double #A1887F;
+    padding-bottom: 0.5em;
+    letter-spacing: 0.5em;
+}
+
+/* 作者信息 */
+.poem-author {
+    text-align: center;
+    font-size: 1.1em;
+    color: #795548;
+    margin-bottom: 2em;
+    font-family: "STSong", "宋体", serif;
+}
+
+/* 词作正文 */
+.poem-text {
+    font-size: 1.3em;
+    text-align: center;
+    margin: 2em 0;
+    white-space: pre-line;
+}
+
+/* 词句样式 */
+.poem-line {
+    margin: 0.8em 0;
+    padding: 0.5em;
+    transition: all 0.3s ease;
+}
+
+.poem-line:hover {
+    background: rgba(139, 69, 19, 0.05);
+    border-left: 3px solid #A1887F;
+    padding-left: 1em;
+}
+
+/* 格律对照 */
+.meter-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2em 0;
+    font-family: "STSong", "宋体", serif;
+    font-size: 0.9em;
+}
+
+.meter-table th, .meter-table td {
+    border: 1px solid #D7CCC8;
+    padding: 0.8em;
+    text-align: center;
+}
+
+.meter-table th {
+    background: #EFEBE9;
+    color: #5D4037;
+    font-weight: normal;
+}
+
+/* 赏析区域 */
+.analysis-section {
+    background: #F5F5F5;
+    border-left: 4px solid #8B4513;
+    padding: 1.5em;
+    margin: 2em 0;
+    font-family: "STSong", "宋体", serif;
+}
+
+.analysis-section h3 {
+    color: #5D4037;
+    border-bottom: 1px dashed #BCAAA4;
+    padding-bottom: 0.5em;
+}
+
+/* 引用样式 */
+.poem-quote {
+    font-style: italic;
+    color: #795548;
+    border-left: 3px solid #A1887F;
+    padding-left: 1.5em;
+    margin: 1.5em 0;
+    background: #FFF8E1;
+    padding: 1em;
+}
+
+/* 页脚注释 */
+.poem-footnote {
+    text-align: right;
+    font-size: 0.9em;
+    color: #8D6E63;
+    border-top: 1px solid #D7CCC8;
+    padding-top: 1em;
+    margin-top: 2em;
+    font-family: "STSong", "宋体", serif;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .poem-content {
+        padding: 1em;
+        margin: 0.5em;
+    }
+    
+    .poem-title {
+        font-size: 1.8em;
+        letter-spacing: 0.3em;
+    }
+    
+    .poem-text {
+        font-size: 1.1em;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .poem-content {
+        border: none;
+        box-shadow: none;
+        background: white;
+    }
+    
+    .poem-title {
+        color: black;
+    }
+}

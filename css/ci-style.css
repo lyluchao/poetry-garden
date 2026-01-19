@@ -1,0 +1,545 @@
+/* 词作文章专用样式 - ci-style.css */
+
+/* 基础容器 */
+.ci-container {
+    font-family: 'STKaiti', 'SimSun', 'Source Han Serif SC', serif;
+    line-height: 1.8;
+    color: #2c3e50;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* 标题区域 */
+.ci-title-section {
+    background: linear-gradient(135deg, #4a235a 0%, #6c3483 50%, #4a235a 100%);
+    color: white;
+    padding: 3.5rem 2rem 3rem 2rem;
+    margin: 2rem 0 4rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 18px;
+    width: 100%;
+}
+
+.ci-title-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 40%, rgba(186, 104, 200, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 80% 60%, rgba(155, 89, 182, 0.3) 0%, transparent 50%),
+        repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.08) 2px, rgba(255,255,255,0.08) 4px);
+}
+
+.ci-title-content {
+    position: relative;
+    z-index: 2;
+}
+
+.ci-main-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+    letter-spacing: 3px;
+    font-family: 'STKaiti', serif;
+    line-height: 1.2;
+    padding-bottom: 0.5rem;
+}
+
+.ci-title-divider {
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+    margin: 1.5rem auto;
+    opacity: 0.7;
+}
+
+.ci-opening-line {
+    font-size: 1.3rem;
+    opacity: 0.95;
+    margin: 0;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    padding: 0 1rem;
+}
+
+.ci-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 2rem;
+}
+
+.ci-meta-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 2.5rem;
+}
+
+.ci-meta-item {
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+}
+
+.ci-meta-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.4rem;
+}
+
+.ci-meta-separator {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+}
+
+/* 内容区域包装 */
+.ci-content-wrapper {
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+}
+
+/* 词牌简介 */
+.ci-intro-section {
+    background: rgba(186, 104, 200, 0.08);
+    padding: 2.2rem;
+    border-radius: 12px;
+    margin: 0 0 3rem 0;
+    border-left: 4px solid #ba68c8;
+    min-height: 180px;
+}
+
+.ci-section-title {
+    color: #6a1b9a;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.ci-section-content {
+    color: #4a5568;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    padding: 0.5rem 0;
+}
+
+/* 词前小序 */
+.ci-preface {
+    background: linear-gradient(145deg, rgba(186, 104, 200, 0.1), rgba(155, 89, 182, 0.05));
+    padding: 2.5rem;
+    border-radius: 14px;
+    border: 1px solid rgba(186, 104, 200, 0.2);
+    margin: 2.5rem 0;
+    font-style: italic;
+    color: #4a5568;
+    position: relative;
+    min-height: 200px;
+}
+
+.ci-preface-label {
+    position: absolute;
+    top: -14px;
+    left: 25px;
+    background: white;
+    color: #ba68c8;
+    padding: 0.4rem 1.2rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 1px solid rgba(186, 104, 200, 0.3);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.ci-preface-content {
+    padding-top: 1.2rem;
+    font-size: 1.08rem;
+    line-height: 1.9;
+}
+
+/* 词文详析通用样式 */
+.ci-stanza {
+    border-radius: 16px;
+    padding: 2.8rem;
+    margin: 2.8rem 0;
+    position: relative;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    min-height: 380px;
+}
+
+.ci-stanza-label {
+    position: absolute;
+    top: -16px;
+    left: 25px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    color: white;
+}
+
+.ci-stanza-content {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.ci-stanza-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    font-family: 'STKaiti', serif;
+    letter-spacing: 0.5px;
+}
+
+.ci-stanza-text {
+    line-height: 2;
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+}
+
+.ci-analysis {
+    border-radius: 12px;
+    padding: 2.2rem;
+    margin-top: 2.2rem;
+    border-left: 3px solid;
+    min-height: 250px;
+}
+
+.ci-analysis-title {
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.15rem;
+}
+
+.ci-analysis-content {
+    line-height: 1.85;
+    font-size: 1.05rem;
+}
+
+/* 上阕特定样式 */
+.ci-stanza-up {
+    background: linear-gradient(145deg, #f8f4fc 0%, #f3e8fd 100%);
+    border: 2px solid #ba68c8;
+}
+
+.ci-stanza-up-label {
+    background: #ba68c8;
+}
+
+.ci-stanza-up-title {
+    color: #6a1b9a;
+}
+
+.ci-stanza-up-text {
+    color: #4a5568;
+}
+
+.ci-analysis-up {
+    background: rgba(186, 104, 200, 0.1);
+    border-left-color: #ba68c8;
+}
+
+.ci-analysis-up-title {
+    color: #6a1b9a;
+}
+
+.ci-analysis-up-content {
+    color: #4a5568;
+}
+
+/* 下阕特定样式 */
+.ci-stanza-down {
+    background: linear-gradient(145deg, #f0f8ff 0%, #e6f7ff 100%);
+    border: 2px solid #87ceeb;
+    min-height: 400px;
+}
+
+.ci-stanza-down-label {
+    background: #87ceeb;
+}
+
+.ci-stanza-down-title {
+    color: #2c5282;
+}
+
+.ci-stanza-down-text {
+    color: #4a5568;
+}
+
+.ci-analysis-down {
+    background: rgba(135, 206, 235, 0.1);
+    border-left-color: #87ceeb;
+    min-height: 280px;
+}
+
+.ci-analysis-down-title {
+    color: #2c5282;
+}
+
+.ci-analysis-down-content {
+    color: #4a5568;
+}
+
+/* 三重境界 */
+.ci-three-realms {
+    background: linear-gradient(145deg, #f3e8ff 0%, #e9d8fd 100%);
+    border: 2px solid #9f7aea;
+    border-radius: 18px;
+    padding: 3rem;
+    margin: 3rem 0;
+    box-shadow: 0 10px 35px rgba(159, 122, 234, 0.12);
+    min-height: 450px;
+}
+
+.ci-realms-title {
+    color: #553c9a;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.ci-realms-subtitle {
+    color: #718096;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+    text-align: center;
+}
+
+.ci-realms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.2rem;
+    margin: 2.5rem 0;
+}
+
+.ci-realm-card {
+    background: white;
+    padding: 2.2rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+}
+
+.ci-realm-decor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 0 0 0 70px;
+}
+
+.ci-realm-card-title {
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.ci-realm-list {
+    font-size: 1.05rem;
+    padding-left: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.ci-realm-list li {
+    margin-bottom: 0.8rem;
+}
+
+.ci-realm-quote {
+    font-size: 0.95rem;
+    font-style: italic;
+    padding-top: 1.2rem;
+    border-top: 1px dashed #e2e8f0;
+}
+
+/* 第一境 */
+.ci-realm-first {
+    border-top: 4px solid #ba68c8;
+}
+
+.ci-realm-first .ci-realm-decor {
+    background: rgba(186, 104, 200, 0.1);
+}
+
+.ci-realm-first .ci-realm-card-title {
+    color: #6a1b9a;
+}
+
+.ci-realm-first .ci-realm-quote {
+    color: #ba68c8;
+}
+
+/* 第二境 */
+.ci-realm-second {
+    border-top: 4px solid #6c757d;
+}
+
+.ci-realm-second .ci-realm-decor {
+    background: rgba(108, 117, 125, 0.1);
+}
+
+.ci-realm-second .ci-realm-card-title {
+    color: #2d3748;
+}
+
+.ci-realm-second .ci-realm-quote {
+    color: #6c757d;
+}
+
+/* 第三境 */
+.ci-realm-third {
+    border-top: 4px solid #87ceeb;
+}
+
+.ci-realm-third .ci-realm-decor {
+    background: rgba(135, 206, 235, 0.1);
+}
+
+.ci-realm-third .ci-realm-card-title {
+    color: #2c5282;
+}
+
+.ci-realm-third .ci-realm-quote {
+    color: #87ceeb;
+}
+
+/* 艺术特色 */
+.ci-art-features {
+    background: linear-gradient(145deg, #fff8e1 0%, #fff3cd 100%);
+    border: 2px solid #d4a017;
+    border-radius: 18px;
+    padding: 3rem;
+    margin: 3rem 0;
+    box-shadow: 0 10px 35px rgba(212, 160, 23, 0.1);
+    min-height: 400px;
+}
+
+.ci-art-title {
+    color: #8b4513;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.ci-art-subtitle {
+    color: #a68a64;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+    text-align: center;
+}
+
+.ci-art-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.2rem;
+    margin: 2.5rem 0;
+}
+
+.ci-art-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    min-height: 320px;
+}
+
+.ci-art-card-title {
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 2px solid #f0e6d2;
+    padding-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.ci-art-item {
+    margin-bottom: 1.5rem;
+}
+
+.ci-art-item-title {
+    color: #c05621;
+    font-weight: bold;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+}
+
+.ci-art-item-content {
+    color: #718096;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .ci-main-title {
+        font-size: 2.2rem;
+    }
+    
+    .ci-opening-line {
+        font-size: 1.1rem;
+    }
+    
+    .ci-meta-info {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .ci-meta-separator {
+        display: none;
+    }
+    
+    .ci-realms-grid,
+    .ci-art-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ci-stanza {
+        padding: 2rem;
+    }
+    
+    .ci-analysis {
+        padding: 1.8rem;
+    }
+}
