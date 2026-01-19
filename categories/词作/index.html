@@ -244,25 +244,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>诗词分类 | 踏月诗阁</title>
+    <title>词作 - 踏月诗阁</title>
     
-    <!-- 引入Google字体 -->
     <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
-    
-    <!-- 引入Font Awesome图标 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
-            /* 古典诗词主题色调 */
-            --classical-paper: #f8f5e6;      /* 宣纸底色 */
-            --classical-ink: #3a2615;        /* 墨色 */
-            --classical-red: #c33;           /* 朱砂红 */
-            --classical-gold: #c19a6b;       /* 金色 */
-            --classical-brown: #8b4513;      /* 赭石色 */
-            --classical-blue: #5d8aa8;       /* 石青色 */
-            --classical-border: #d4b483;     /* 边框色 */
-            --classical-shadow: rgba(58, 38, 21, 0.1); /* 阴影色 */
+            --classical-paper: #f8f5e6;
+            --classical-ink: #3a2615;
+            --classical-red: #c33;
+            --classical-gold: #c19a6b;
+            --classical-brown: #8b4513;
+            --classical-blue: #5d8aa8;
+            --classical-border: #d4b483;
+            --classical-shadow: rgba(58, 38, 21, 0.1);
         }
         
         * {
@@ -281,9 +277,9 @@
                 radial-gradient(circle at 10% 20%, rgba(193, 154, 107, 0.05) 0%, transparent 30%),
                 radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 30%),
                 linear-gradient(135deg, #f8f5e6 0%, #f0e6d6 100%);
+            padding-top: 80px;
         }
         
-        /* === 古典页眉 === */
         .classical-header {
             position: fixed;
             top: 0;
@@ -321,7 +317,6 @@
             font-size: 1.5rem;
         }
         
-        /* === 古典导航 === */
         .classical-nav {
             display: flex;
             gap: 15px;
@@ -337,7 +332,6 @@
             border: 1px solid transparent;
             transition: all 0.3s ease;
             font-size: 0.95rem;
-            position: relative;
         }
         
         .nav-link:hover {
@@ -353,78 +347,103 @@
             box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
         }
         
-        /* === 主容器 === */
-        .classical-container {
+        .category-page-container {
             max-width: 1200px;
-            margin: 80px auto 0;
-            padding: 30px 20px;
-            min-height: calc(100vh - 150px);
+            margin: 0 auto;
+            padding: 40px 20px;
         }
         
-        /* === 分类页面样式 === */
         .category-header {
             text-align: center;
             margin-bottom: 50px;
-            padding: 30px;
-            border-bottom: 2px solid var(--classical-border);
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--classical-border);
+            border-radius: 20px;
         }
         
         .category-title {
             font-family: 'Ma Shan Zheng', cursive;
             font-size: 2.5rem;
             color: var(--classical-red);
-            margin-bottom: 15px;
-        }
-        
-        .category-subtitle {
-            color: var(--classical-gold);
-            font-size: 1.2rem;
-        }
-        
-        .category-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-            margin: 0 auto;
-            max-width: 1000px;
-        }
-        
-        .category-item {
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid var(--classical-border);
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            transition: all 0.3s;
-            text-decoration: none;
-            color: var(--classical-ink);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .category-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--classical-red);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .category-name {
-            font-size: 1.3rem;
-            font-family: 'Ma Shan Zheng', cursive;
-            color: var(--classical-brown);
+            margin-bottom: 10px;
         }
         
         .category-count {
-            background: var(--classical-gold);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.9rem;
+            color: var(--classical-gold);
+            font-size: 1.3rem;
+            font-style: italic;
         }
         
-        /* === 古典页脚 === */
+        .post-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .post-item {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--classical-border);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+        }
+        
+        .post-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--classical-red);
+            box-shadow: 0 10px 25px var(--classical-shadow);
+        }
+        
+        .post-link {
+            text-decoration: none;
+            color: var(--classical-brown);
+            font-size: 1.3rem;
+            font-family: 'Ma Shan Zheng', cursive;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .post-link:hover {
+            color: var(--classical-red);
+        }
+        
+        .post-date {
+            color: var(--classical-blue);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .post-excerpt {
+            color: var(--classical-ink);
+            line-height: 1.7;
+            border-left: 3px solid var(--classical-gold);
+            padding-left: 15px;
+            font-style: italic;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 40px;
+            padding: 12px 25px;
+            background: var(--classical-gold);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        .back-link:hover {
+            background: var(--classical-brown);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
+        }
+        
         .classical-footer {
             background: rgba(248, 245, 230, 0.95);
             border-top: 2px solid var(--classical-border);
@@ -484,43 +503,6 @@
             margin: 0 10px;
             font-weight: bold;
         }
-        
-        /* === 响应式设计 === */
-        @media (max-width: 900px) {
-            .header-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .classical-nav {
-                gap: 10px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .category-list {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .footer-nav {
-                gap: 15px;
-            }
-            
-            .nav-link {
-                padding: 6px 15px;
-                font-size: 0.9rem;
-            }
-            
-            .category-title {
-                font-size: 2rem;
-            }
-            
-            .category-list {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
 </head>
 <body>
@@ -552,55 +534,236 @@
         </div>
     </header>
     
-    <!-- 主内容容器 -->
-    <main class="classical-container">
-        <!-- 分类页面内容 -->
+    <main class="category-page-container">
         <div class="category-header">
-            <h1 class="category-title">诗词分类</h1>
-            <p class="category-subtitle">按体裁和主题分类的诗篇</p>
+            <h1 class="category-title">
+                <i class="fas fa-folder-open"></i> 分类：词作
+            </h1>
+            <p class="category-count">
+                共收录 2 篇诗章
+            </p>
         </div>
         
-        <div class="category-list">
-            
-                <a href="/poetry-garden/categories/%E5%BE%8B%E8%AF%97/" class="category-item">
-                    <div class="category-name">律诗</div>
-                    <div class="category-count">1 篇</div>
-                </a>
-            
-                <a href="/poetry-garden/categories/%E7%BB%9D%E5%8F%A5/" class="category-item">
-                    <div class="category-name">绝句</div>
-                    <div class="category-count">1 篇</div>
-                </a>
-            
-                <a href="/poetry-garden/categories/%E5%94%90%E8%AF%97/" class="category-item">
-                    <div class="category-name">唐诗</div>
-                    <div class="category-count">1 篇</div>
-                </a>
-            
-                <a href="/poetry-garden/categories/%E8%AF%8D%E4%BD%9C/" class="category-item">
-                    <div class="category-name">词作</div>
-                    <div class="category-count">2 篇</div>
-                </a>
-            
-                <a href="/poetry-garden/categories/%E5%AE%8B%E8%AF%8D/" class="category-item">
-                    <div class="category-name">宋词</div>
-                    <div class="category-count">1 篇</div>
-                </a>
-            
-                <a href="/poetry-garden/categories/%E8%AF%97%E8%AF%8D/" class="category-item">
-                    <div class="category-name">诗词</div>
-                    <div class="category-count">1 篇</div>
-                </a>
-            
+        
+            <div class="post-list">
+                
+                    <article class="post-item">
+                        <a href="/poetry-garden/2026/04/05/%E6%88%9A%E6%B0%8F-%E8%BD%BB/" class="post-link">
+                            《戚氏·轻》
+                        </a>
+                        
+                        <div class="post-date">
+                            <i class="far fa-calendar"></i>
+                            2026年04月05日
+                            
+                                <span style="margin-left: 20px;">
+                                    <i class="fas fa-tags"></i>
+                                    
+                                        
+                                            <span style="margin: 0 5px; color: var(--classical-brown);">宋词</span>
+                                        
+                                    
+                                        
+                                            <span style="margin: 0 5px; color: var(--classical-brown);">戚氏</span>
+                                        
+                                    
+                                        
+                                            <span style="margin: 0 5px; color: var(--classical-brown);">长调</span>
+                                        
+                                    
+                                        
+                                    
+                                        
+                                    
+                                        
+                                    
+                                </span>
+                            
+                        </div>
+                        
+                        
+                            <div class="post-excerpt">
+                                
+                                
+
+
+
+
+
+
+戚氏·轻
+
+
+
+夜沉沉，一灯摇影到天心青灯影外，长风袖底，万籁俱沉
+
+
+
+宋词长调 · 禅意之境
+
+
+
+
+
+
+2026-04-05
+
+|
+
+
+原创词作
+
+|
+
+
+戚氏·三叠长调
+
+
+
+
+
+
+
+
+📜 词牌简介 · 戚氏
+
+《戚氏》为北宋柳永创制，三叠二百十二字，前段九平韵，中段六平韵，...
+                            </div>
+                        
+                    </article>
+                
+                    <article class="post-item">
+                        <a href="/poetry-garden/2026/03/10/%E5%85%AB%E5%A3%B0%E7%94%98%E5%B7%9E-%E5%AD%A4%E9%A6%86%E7%A7%8B/" class="post-link">
+                            《八声甘州·孤馆秋》
+                        </a>
+                        
+                        <div class="post-date">
+                            <i class="far fa-calendar"></i>
+                            2026年03月10日
+                            
+                                <span style="margin-left: 20px;">
+                                    <i class="fas fa-tags"></i>
+                                    
+                                        
+                                            <span style="margin: 0 5px; color: var(--classical-brown);">八声甘州</span>
+                                        
+                                    
+                                        
+                                            <span style="margin: 0 5px; color: var(--classical-brown);">宋词</span>
+                                        
+                                    
+                                        
+                                            <span style="margin: 0 5px; color: var(--classical-brown);">孤馆秋</span>
+                                        
+                                    
+                                        
+                                    
+                                        
+                                    
+                                        
+                                    
+                                </span>
+                            
+                        </div>
+                        
+                        
+                            <div class="post-excerpt">
+                                
+                                
+
+
+
+
+
+
+八声甘州·孤馆秋
+
+
+
+记同途风雨岁华深，殷勤共此襟
+
+
+
+宋词 · 秋日之思
+
+
+
+
+
+
+2026-03-10
+
+|
+
+
+原创词作
+
+|
+
+
+八声甘州
+
+
+
+
+
+
+
+
+📜 词牌简介 · 八声甘州
+
+《八声甘州》简称《甘州》，唐边塞曲，因全词共八韵，故称&#34;八声&#34;。双调九十七字，前后段...
+                            </div>
+                        
+                    </article>
+                
+            </div>
+        
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="/poetry-garden/categories/" class="back-link">
+                <i class="fas fa-arrow-left"></i> 返回所有分类
+            </a>
         </div>
     </main>
     
-    
+    <!-- 古典页脚 -->
+    <footer class="classical-footer">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <a href="/poetry-garden/" class="footer-link">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="/poetry-garden/archives" class="footer-link">
+                    <i class="fas fa-archive"></i> 归档
+                </a>
+                <a href="/poetry-garden/categories" class="footer-link">
+                    <i class="fas fa-layer-group"></i> 分类
+                </a>
+                <a href="/poetry-garden/tags" class="footer-link">
+                    <i class="fas fa-tags"></i> 标签
+                </a>
+                <a href="/poetry-garden/about" class="footer-link">
+                    <i class="fas fa-book"></i> 关于
+                </a>
+            </nav>
+            
+            <div class="footer-info">
+                <div>
+                    © 2026 <span class="footer-seal">诗</span> 踏月诗阁 <span class="footer-seal">阁</span>
+                </div>
+                <div style="margin-top: 15px; font-style: italic; color: var(--classical-gold);">
+                    墨香永驻 · 诗魂长存 · 雅韵流芳
+                </div>
+                <div style="margin-top: 10px; font-size: 0.8rem; color: var(--classical-blue);">
+                    主题：古典诗韵 · 由 Hexo 驱动
+                </div>
+            </div>
+        </div>
+    </footer>
     
     <script>
-        // 交互效果
         document.addEventListener('DOMContentLoaded', function() {
-            // 页眉滚动效果
             const header = document.querySelector('.classical-header');
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 50) {
@@ -610,6 +773,18 @@
                     header.style.boxShadow = '0 2px 10px rgba(58, 38, 21, 0.1)';
                     header.style.background = 'rgba(248, 245, 230, 0.98)';
                 }
+            });
+            
+            // 文章卡片效果
+            const postItems = document.querySelectorAll('.post-item');
+            postItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '100';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
             });
         });
     </script>
