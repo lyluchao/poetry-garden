@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>踏月诗阁 | 星河照卷帙，墨锋映秋霜</title>
+    
+    <!-- 引入Google字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    
+    <!-- 引入Font Awesome图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* 古典诗词主题色调 */
+            --classical-paper: #f8f5e6;      /* 宣纸底色 */
+            --classical-ink: #3a2615;        /* 墨色 */
+            --classical-red: #c33;           /* 朱砂红 */
+            --classical-gold: #c19a6b;       /* 金色 */
+            --classical-brown: #8b4513;      /* 赭石色 */
+            --classical-blue: #5d8aa8;       /* 石青色 */
+            --classical-border: #d4b483;     /* 边框色 */
+            --classical-shadow: rgba(58, 38, 21, 0.1); /* 阴影色 */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: var(--classical-paper);
+            color: var(--classical-ink);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(193, 154, 107, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 30%),
+                linear-gradient(135deg, #f8f5e6 0%, #f0e6d6 100%);
+        }
+        
+        /* === 古典页眉 === */
+        .classical-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(248, 245, 230, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--classical-border);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px var(--classical-shadow);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .site-logo {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 1.8rem;
+            color: var(--classical-brown);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .site-logo i {
+            color: var(--classical-red);
+            font-size: 1.5rem;
+        }
+        
+        /* === 古典导航 === */
+        .classical-nav {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--classical-red);
+            border-color: var(--classical-red);
+            background: rgba(195, 51, 51, 0.05);
+        }
+        
+        .nav-link.active {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            color: white;
+            border: none;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+        
+        /* === 主容器 === */
+        .classical-container {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 30px 20px;
+            min-height: calc(100vh - 150px);
+        }
+        
+        /* === 古典页脚 === */
+        .classical-footer {
+            background: rgba(248, 245, 230, 0.95);
+            border-top: 2px solid var(--classical-border);
+            padding: 50px 0 40px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid var(--classical-border);
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .footer-link:hover {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            border-color: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .footer-info {
+            text-align: center;
+            color: var(--classical-blue);
+            padding-top: 30px;
+            border-top: 1px solid var(--classical-border);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .footer-seal {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--classical-red);
+            color: white;
+            border-radius: 50%;
+            line-height: 40px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        
+        /* === 响应式设计 === */
+        @media (max-width: 900px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .classical-nav {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .footer-nav {
+                gap: 15px;
+            }
+            
+            .nav-link {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <!-- 古典页眉 -->
+    <header class="classical-header">
+        <div class="header-container">
+            <a href="/poetry-garden/" class="site-logo">
+                <i class="fas fa-feather-alt"></i>
+                踏月诗阁
+            </a>
+            
+            <nav class="classical-nav">
+                <a href="/poetry-garden/" class="nav-link ">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="/poetry-garden/archives" class="nav-link ">
+                    <i class="fas fa-archive"></i> 归档
+                </a>
+                <a href="/poetry-garden/categories" class="nav-link ">
+                    <i class="fas fa-layer-group"></i> 分类
+                </a>
+                <a href="/poetry-garden/tags" class="nav-link ">
+                    <i class="fas fa-tags"></i> 标签
+                </a>
+                <a href="/poetry-garden/about" class="nav-link ">
+                    <i class="fas fa-book"></i> 关于
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- 主内容 -->
+    <main class="classical-container">
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>黄鹤楼·崔颢 · 踏月诗阁</title><meta name="description" content="黄鹤楼
+
+
+
+黄鹤一去不复返，白云千载空悠悠日暮乡关何处是？烟波江上使人愁
+
+
+
+唐诗七律 · 千古绝唱
+
+
+
+
+
+
+唐·开元天宝年间
+
+|
+
+
+崔颢·才子诗人
+
+|
+
+
+七言律诗
+
+
+
+
+
+
+
+
+📜 诗体简介 · 七言律诗
+
+七言律诗是唐代近体诗的重要形式，八句五十六字，讲究平仄对仗，结构严谨。"><meta name="og:description" content="黄鹤楼
+
+
+
+黄鹤一去不复返，白云千载空悠悠日暮乡关何处是？烟波江上使人愁
+
+
+
+唐诗七律 · 千古绝唱
+
+
+
+
+
+
+唐·开元天宝年间
+
+|
+
+
+崔颢·才子诗人
+
+|
+
+
+七言律诗
+
+
+
+
+
+
+
+
+📜 诗体简介 · 七言律诗
+
+七言律诗是唐代近体诗的重要形式，八句五十六字，讲究平仄对仗，结构严谨。"><meta name="twitter:site" content="踏月诗阁"><meta name="twitter:title" content="黄鹤楼·崔颢"><meta name="twitter:card" content="summary"><meta name="keywords" content="诗词,宋词,古典诗词,文学,诗歌"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/poetry-garden/css/bootstrap.min.css"><link rel="stylesheet" href="/poetry-garden/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/poetry-garden/">Home</a></li><li><a href="/poetry-garden/archives">Archive</a></li><li><a href="/poetry-garden/categories">Categories</a></li><li><a href="/poetry-garden/tags">Tags</a></li><!-- +make_page_links() // 暂时禁用--><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post"><h1 class="post-title">黄鹤楼·崔颢</h1><div class="post-meta"><span class="post-time">post.posted 2026-05-10</span> | <span class="post-category"><a href="/poetry-garden/categories/%E8%AF%97%E4%BD%9C/">诗作</a></span> | <span class="post-tags"><a href="/poetry-garden/tags/%E5%94%90%E8%AF%97/">唐诗</a>, <a href="/poetry-garden/tags/%E5%B4%94%E9%A2%A2/">崔颢</a>, <a href="/poetry-garden/tags/%E9%BB%84%E9%B9%A4%E6%A5%BC/">黄鹤楼</a>, <a href="/poetry-garden/tags/%E4%B9%A1%E6%84%81/">乡愁</a>, <a href="/poetry-garden/tags/%E6%80%80%E5%8F%A4/">怀古</a>, <a href="/poetry-garden/tags/%E4%B8%83%E5%BE%8B/">七律</a></span></div><div class="post-content"><div style="font-family: 'STKaiti', 'SimSun', 'Source Han Serif SC', serif; line-height: 1.8; color: #2c3e50; max-width: 800px; margin: 0 auto; padding: 0 1rem;">
+
+<!-- 标题区域 -->
+<div style="background: linear-gradient(135deg, #d35400 0%, #e67e22 50%, #f39c12 100%); color: white; padding: 3.5rem 2rem 3rem 2rem; margin: 2rem 0 4rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25); min-height: 280px; display: flex; flex-direction: column; justify-content: center; border-radius: 18px; width: 100%;">
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
+    radial-gradient(circle at 20% 40%, rgba(243, 156, 18, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 60%, rgba(231, 126, 34, 0.3) 0%, transparent 50%),
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.08) 2px, rgba(255,255,255,0.08) 4px);"></div>
+<div style="position: relative; z-index: 2;">
+<div style="font-size: 2.8rem; font-weight: bold; margin: 0; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9); letter-spacing: 3px; font-family: 'STKaiti', serif; line-height: 1.2; padding-bottom: 0.5rem;">
+黄鹤楼
+</div>
+<div style="width: 120px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent); margin: 1.5rem auto; opacity: 0.7;"></div>
+<div style="font-size: 1.3rem; opacity: 0.95; margin: 0; font-weight: 300; letter-spacing: 1px; line-height: 1.5; padding: 0 1rem;">
+黄鹤一去不复返，白云千载空悠悠<br>日暮乡关何处是？烟波江上使人愁
+</div>
+<div style="margin-top: 2rem;">
+<div style="display: inline-block; background: rgba(255, 255, 255, 0.15); padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2);">
+唐诗七律 · 千古绝唱
+</div>
+</div>
+<div style="margin-top: 2.5rem;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.85);">
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 6v2h14V6H5z"/></svg>
+唐·开元天宝年间
+</span>
+<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;">|</span>
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+崔颢·才子诗人
+</span>
+<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;">|</span>
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+七言律诗
+</span>
+</div>
+</div>
+</div>
+</div>
+
+<div style="position: relative; z-index: 1; margin-top: 0;">
+<div style="background: rgba(230, 126, 34, 0.08); padding: 2.2rem; border-radius: 12px; margin: 0 0 3rem 0; border-left: 4px solid #e67e22; min-height: 180px;">
+<div style="color: #d35400; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">📜 诗体简介 · 七言律诗</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem; padding: 0.5rem 0;">
+七言律诗是唐代近体诗的重要形式，八句五十六字，讲究平仄对仗，结构严谨。崔颢此诗虽不完全合律，但气韵生动，意境高远，被严羽《沧浪诗话》评为"唐人七言律诗，当以崔颢《黄鹤楼》为第一"。此诗前四句以古风笔法写神话传说，后四句转工整写景抒情，古今交融，虚实相生，开创了七律的新境界。李白登黄鹤楼见此诗，叹曰："眼前有景道不得，崔颢题诗在上头。"
+</div>
+</div>
+
+<div style="background: linear-gradient(145deg, rgba(230, 126, 34, 0.1), rgba(211, 84, 0, 0.05)); padding: 2.5rem; border-radius: 14px; border: 1px solid rgba(230, 126, 34, 0.2); margin: 2.5rem 0; font-style: italic; color: #4a5568; position: relative; min-height: 200px;">
+<div style="position: absolute; top: -14px; left: 25px; background: white; color: #e67e22; padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: bold; border: 1px solid rgba(230, 126, 34, 0.3); box-shadow: 0 3px 8px rgba(0,0,0,0.08);">诗前小序</div>
+<div style="padding-top: 1.2rem; font-size: 1.08rem; line-height: 1.9;">
+开元年间，崔颢游历武昌，登临黄鹤楼。传说仙人子安曾乘黄鹤过此，又传费祎登仙驾鹤于此。眼前楼阁巍峨，江汉奔流，鹦鹉洲芳草萋萋，汉阳树历历在目。日暮时分，烟波浩渺，诗人忽生乡关之思。前四句三提"黄鹤"，打破七律常规，却如白云舒卷，自然天成。后四句对仗工整，写景如画，情景交融。严羽评："唐人七言律诗，当以崔颢《黄鹤楼》为第一。"李白为之搁笔，后作《登金陵凤凰台》欲与争胜，亦成千古名篇。
+</div>
+</div>
+
+<h2 id="诗文详析·四联八句"><a href="#诗文详析·四联八句" class="headerlink" title="诗文详析·四联八句"></a>诗文详析·四联八句</h2><div style="background: linear-gradient(145deg, #fef5e7 0%, #fdebd0 100%); border: 2px solid #e67e22; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 500px;">
+<div style="position: absolute; top: -16px; left: 25px; background: #e67e22; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">全诗四联</div>
+
+<div style="text-align: center; margin-bottom: 2.5rem;">
+<div style="color: #d35400; font-size: 1.8rem; font-weight: bold; margin-bottom: 1.5rem; font-family: 'STKaiti', serif; letter-spacing: 1px; line-height: 1.8;">
+昔人已乘黄鹤去，此地空余黄鹤楼。<br>
+黄鹤一去不复返，白云千载空悠悠。<br>
+晴川历历汉阳树，芳草萋萋鹦鹉洲。<br>
+日暮乡关何处是？烟波江上使人愁。
+</div>
+<div style="color: #4a5568; font-size: 1.1rem; font-style: italic; max-width: 500px; margin: 0 auto;">
+——崔颢《黄鹤楼》· 唐诗七律第一
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.2rem; margin-top: 2.2rem;">
+<div style="background: rgba(230, 126, 34, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #e67e22;">
+<div style="color: #d35400; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🏯 首联·神话起兴</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+<strong>"昔人已乘黄鹤去，此地空余黄鹤楼。"</strong><br>
+开篇即入神话传说。"昔人"指仙人子安或费祎，"乘黄鹤去"写出飘逸仙气。但"已""空"二字顿生感慨：仙人已去，空留楼阁。黄鹤楼因仙鹤得名，如今鹤去楼空，只有名字留存。这种"名存实亡"的对比，蕴含深沉的历史沧桑感。两句中"黄鹤"重复出现，打破七律常规，却如民歌般自然流转。
+</div>
+</div>
+
+<div style="background: rgba(52, 152, 219, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #3498db;">
+<div style="color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">☁️ 颔联·时空浩渺</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+<strong>"黄鹤一去不复返，白云千载空悠悠。"</strong><br>
+第三句"黄鹤"第三次出现，强化主题。"一去不复返"写时间的不可逆性，充满无奈。"白云千载"将时间拉长到千年尺度，"空悠悠"三字妙绝："空"是空间的空无，"悠悠"是时间的漫长。白云千年来徒然飘荡，与黄鹤的不返形成呼应。此联完全不对仗，如古风歌行，却气韵生动，被沈德潜赞为"意得象先，神行语外"。
+</div>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.2rem; margin-top: 2.2rem;">
+<div style="background: rgba(46, 204, 113, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #2ecc71;">
+<div style="color: #27ae60; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🌳 颈联·晴川如画</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+<strong>"晴川历历汉阳树，芳草萋萋鹦鹉洲。"</strong><br>
+从神话时空转到现实景物，从古风转到工整对仗。"晴川"对"芳草"，"历历"对"萋萋"，"汉阳树"对"鹦鹉洲"，对仗精工，色彩明丽。"历历"写树木清晰可见，"萋萋"写芳草茂盛繁密。晴空下汉阳树木清晰，江中鹦鹉洲芳草萋萋，构成一幅壮丽的江汉春色图。此联为尾联的乡愁作反衬——美景虽好，终非故土。
+</div>
+</div>
+
+<div style="background: rgba(155, 89, 182, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #9b59b6;">
+<div style="color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🌅 尾联·日暮乡愁</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+<strong>"日暮乡关何处是？烟波江上使人愁。"</strong><br>
+全诗情感升华处。"日暮"点明时间，黄昏最易引发乡愁。"乡关何处是"不是问路，而是心灵叩问：故乡在何方？归途在何处？"烟波江上"回应前文"白云""晴川"，但意境转为迷茫浩渺。江上烟波与心中愁绪融为一体，景即情，情即景。以"愁"字作结，余韵悠长，千年来触动无数游子心弦。
+</div>
+</div>
+</div>
+</div>
+
+<h2 id="艺术特色·破律为高"><a href="#艺术特色·破律为高" class="headerlink" title="艺术特色·破律为高"></a>艺术特色·破律为高</h2><div style="background: linear-gradient(145deg, #fff8e1 0%, #fff3cd 100%); border: 2px solid #d4a017; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(212, 160, 23, 0.1); min-height: 500px;">
+<div style="text-align: center; margin-bottom: 2.8rem;">
+<div style="color: #8b4513; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🎭 艺术特色分析</div>
+<div style="color: #a68a64; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">古律交融·虚实相生·情景合一·气韵天成</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #e67e22; position: relative; overflow: hidden; min-height: 320px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(230, 126, 34, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #d35400; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🔄 古律交融</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>前四句古风笔法</strong> - 三提"黄鹤"，不拘格律</li>
+<li style="margin-bottom: 0.8rem;"><strong>后四句工整对仗</strong> - 晴川对芳草，历历对萋萋</li>
+<li style="margin-bottom: 0.8rem;"><strong>破律为高</strong> - 看似不合律，实为创新</li>
+<li style="margin-bottom: 0.8rem;"><strong>严羽评</strong>："唐人七言律诗，当以崔颢《黄鹤楼》为第一"</li>
+<li><strong>沈德潜评</strong>："意得象先，神行语外"</li>
+</ul>
+<div style="color: #e67e22; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
+"以古笔为律诗，盛唐诸公有此格"——清代方东树
+</div>
+</div>
+
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #3498db; position: relative; overflow: hidden; min-height: 320px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(52, 152, 219, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🎨 虚实相生</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>虚写神话</strong> - 昔人乘鹤，白云千载</li>
+<li style="margin-bottom: 0.8rem;"><strong>实写景物</strong> - 汉阳树，鹦鹉洲，烟波江</li>
+<li style="margin-bottom: 0.8rem;"><strong>时空交织</strong> - 千年白云与眼前晴川</li>
+<li style="margin-bottom: 0.8rem;"><strong>仙凡对照</strong> - 仙人已去，游子思乡</li>
+<li><strong>金圣叹评</strong>："此诗正以浩浩大笔，连写三'黄鹤'字为奇"</li>
+</ul>
+<div style="color: #3498db; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
+"实者虚之，虚者实之，唐人三昧"——明代李攀龙
+</div>
+</div>
+
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #2ecc71; position: relative; overflow: hidden; min-height: 320px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(46, 204, 113, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #27ae60; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🌊 情景合一</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>景中有情</strong> - 白云"空悠悠"，芳草"萋萋"</li>
+<li style="margin-bottom: 0.8rem;"><strong>情借景发</strong> - 烟波江上"使人愁"</li>
+<li style="margin-bottom: 0.8rem;"><strong>日暮时分</strong> - 最易引发乡愁的时间</li>
+<li style="margin-bottom: 0.8rem;"><strong>空间转换</strong> - 从楼到江，从江到乡关</li>
+<li><strong>王国维评</strong>："一切景语皆情语"之典范</li>
+</ul>
+<div style="color: #2ecc71; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
+"情融乎内而深且长，景耀乎外而远且大"——唐代皎然
+</div>
+</div>
+</div>
+</div>
+
+<h2 id="李白搁笔·诗坛佳话"><a href="#李白搁笔·诗坛佳话" class="headerlink" title="李白搁笔·诗坛佳话"></a>李白搁笔·诗坛佳话</h2><div style="background: linear-gradient(145deg, #e8f4fc 0%, #d6eaf8 100%); border: 2px solid #3498db; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(52, 152, 219, 0.12); min-height: 400px;">
+<div style="text-align: center; margin-bottom: 2.5rem;">
+<div style="color: #1a5276; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">✍️ 李白搁笔的千古佳话</div>
+<div style="color: #5d6d7e; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">"眼前有景道不得，崔颢题诗在上头"——诗仙的谦逊与超越</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 2rem 0;">
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-left: 4px solid #e67e22;">
+<div style="color: #d35400; font-weight: bold; margin-bottom: 1.2rem; border-bottom: 2px solid #f0e6d2; padding-bottom: 1rem; font-size: 1.2rem;">📖 《唐才子传》记载</div>
+<div style="margin-top: 1.2rem;">
+<div style="color: #4a5568; font-size: 1.05rem; line-height: 1.8; font-family: 'STKaiti', serif;">
+李白登黄鹤楼，放眼欲赋诗，忽见崔颢诗于壁上，读之再三，叹曰："眼前有景道不得，崔颢题诗在上头。"遂搁笔而去。
+</div>
+<div style="margin-top: 1.5rem; color: #7f8c8d; font-size: 1rem; line-height: 1.7;">
+此记载见于元代辛文房《唐才子传》。虽可能为后人附会，但反映了此诗在唐代诗坛的崇高地位。连诗仙李白都自叹弗如，可见崔颢此诗的艺术成就。
+</div>
+</div>
+</div>
+
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-left: 4px solid #9b59b6;">
+<div style="color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; border-bottom: 2px solid #f0e6d2; padding-bottom: 1rem; font-size: 1.2rem;">🏆 李白的回应与超越</div>
+<div style="margin-top: 1.2rem;">
+<div style="color: #4a5568; font-size: 1.05rem; line-height: 1.8;">
+李白后来作《登金陵凤凰台》，有意与崔颢争胜：
+<div style="font-family: 'STKaiti', serif; margin: 1rem 0; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+凤凰台上凤凰游，凤去台空江自流。<br>
+吴宫花草埋幽径，晋代衣冠成古丘。<br>
+三山半落青天外，二水中分白鹭洲。<br>
+总为浮云能蔽日，长安不见使人愁。
+</div>
+此诗明显模仿《黄鹤楼》结构，同样从神话起笔，同样写登临所见，同样以"愁"作结。两诗各有千秋，成为唐诗七律双璧。
+</div>
+</div>
+</div>
+</div>
+
+<div style="background: rgba(52, 152, 219, 0.1); padding: 2rem; border-radius: 14px; margin-top: 2.5rem; border: 1px dashed #3498db;">
+<div style="color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🎭 两诗比较</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+<div>
+<div style="color: #d35400; font-weight: bold; margin-bottom: 0.5rem; font-size: 1.05rem;">《黄鹤楼》</div>
+<ul style="color: #4a5568; font-size: 1rem; padding-left: 1.5rem; line-height: 1.7;">
+<li>前四句古风，后四句工整</li>
+<li>三提"黄鹤"，一气呵成</li>
+<li>乡愁纯粹，触景生情</li>
+<li>严羽评"唐人七律第一"</li>
+</ul>
+</div>
+<div>
+<div style="color: #6c3483; font-weight: bold; margin-bottom: 0.5rem; font-size: 1.05rem;">《登金陵凤凰台》</div>
+<ul style="color: #4a5568; font-size: 1rem; padding-left: 1.5rem; line-height: 1.7;">
+<li>全篇合律，对仗工整</li>
+<li>历史厚重感更强</li>
+<li>政治隐喻（浮云蔽日）</li>
+<li>李白七律代表作</li>
+</ul>
+</div>
+</div>
+<div style="color: #7f8c8d; font-size: 0.95rem; margin-top: 1.5rem; font-style: italic;">
+两首诗如双峰并峙，展现了盛唐诗歌的不同风貌：崔诗自然天成，李诗雄浑俊逸。
+</div>
+</div>
+</div>
+
+<h2 id="黄鹤楼·历史与文化"><a href="#黄鹤楼·历史与文化" class="headerlink" title="黄鹤楼·历史与文化"></a>黄鹤楼·历史与文化</h2><div style="background: linear-gradient(145deg, #e8f6f3 0%, #d1f2eb 100%); border: 2px solid #1abc9c; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(26, 188, 156, 0.1); min-height: 450px;">
+<div style="text-align: center; margin-bottom: 2.8rem;">
+<div style="color: #148f77; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🏯 黄鹤楼的历史与文化</div>
+<div style="color: #5d6d7e; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">从三国军事楼到唐代诗意楼，一座楼阁的文化演变</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #e67e22;">
+<div style="color: #d35400; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">📜 历史沿革</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
+<strong>三国时期</strong>：公元223年，孙权为军事目的建楼，名"望楼"或"戍楼"。<br><br>
+<strong>唐代</strong>：成为游览胜地，文人墨客登临赋诗，崔颢诗使其名声大噪。<br><br>
+<strong>宋代</strong>：多次重建，成为"江南三大名楼"之一（另为岳阳楼、滕王阁）。<br><br>
+<strong>明清</strong>：屡毁屡建，现存建筑为1985年重建，以清代"同治楼"为蓝本。<br><br>
+<strong>现代</strong>：武汉地标，国家5A级旅游景区，中华文化重要象征。
+</div>
+</div>
+
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #3498db;">
+<div style="color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🎭 神话传说</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
+<strong>子安驾鹤</strong>：传说仙人子安（一说王子安）曾乘黄鹤过此，故名黄鹤楼。《南齐书》记载："仙人子安乘黄鹤过此。"<br><br>
+<strong>费祎登仙</strong>：《太平寰宇记》载："费祎登仙，每乘黄鹤于此憩驾。"三国蜀汉名臣费祎成仙后常乘黄鹤在此休息。<br><br>
+<strong>辛氏酒楼</strong>：民间传说有辛氏在此卖酒，一道士常来饮酒不付钱，辛氏不怪。道士临别用橘皮在墙上画黄鹤，鹤能起舞助兴。十年后道士复来，吹笛乘鹤而去。辛氏建楼纪念，名黄鹤楼。<br><br>
+这些传说为黄鹤楼增添了神秘色彩，也启发了崔颢的诗思。
+</div>
+</div>
+</div>
+
+<div style="background: rgba(26, 188, 156, 0.1); padding: 2.2rem; border-radius: 14px; margin-top: 2.5rem; border: 1px dashed #1abc9c;">
+<div style="color: #148f77; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">📖 历代题咏选录</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.2rem;">
+<div>
+<div style="color: #d35400; font-weight: bold; margin-bottom: 0.5rem; font-size: 1.05rem;">李白《黄鹤楼送孟浩然之广陵》</div>
+<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
+故人西辞黄鹤楼，烟花三月下扬州。<br>
+孤帆远影碧空尽，唯见长江天际流。
+</div>
+</div>
+<div>
+<div style="color: #1a5276; font-weight: bold; margin-bottom: 0.5rem; font-size: 1.05rem;">岳飞《满江红·登黄鹤楼有感》</div>
+<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
+遥望中原，荒烟外、许多城郭。<br>
+想当年、花遮柳护，凤楼龙阁。<br>
+万岁山前珠翠绕，蓬壶殿里笙歌作。
+</div>
+</div>
+<div>
+<div style="color: #6c3483; font-weight: bold; margin-bottom: 0.5rem; font-size: 1.05rem;">毛泽东《菩萨蛮·黄鹤楼》</div>
+<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
+茫茫九派流中国，沉沉一线穿南北。<br>
+烟雨莽苍苍，龟蛇锁大江。
+</div>
+</div>
+</div>
+<div style="color: #7f8c8d; font-size: 0.95rem; margin-top: 1.5rem; font-style: italic;">
+一座黄鹤楼，半部中国诗。从崔颢到李白，从岳飞到毛泽东，无数诗人在此留下千古绝唱。
+</div>
+</div>
+</div>
+
+<h2 id="延伸阅读·登高诗传统"><a href="#延伸阅读·登高诗传统" class="headerlink" title="延伸阅读·登高诗传统"></a>延伸阅读·登高诗传统</h2><div style="background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #6c757d; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(108, 117, 125, 0.1); min-height: 350px;">
+<div style="text-align: center; margin-bottom: 2rem;">
+<div style="color: #495057; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">📖 登高诗传统选读</div>
+<div style="color: #6c757d; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">"登高能赋，可以为大夫"——中国古代的登临文化</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+<div style="background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #e67e22;">
+<div style="color: #d35400; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">王勃《滕王阁诗》</div>
+<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
+滕王高阁临江渚，佩玉鸣鸾罢歌舞。<br>
+画栋朝飞南浦云，珠帘暮卷西山雨。<br>
+闲云潭影日悠悠，物换星移几度秋。<br>
+阁中帝子今何在？槛外长江空自流。
+</div>
+<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
+评：与《黄鹤楼》异曲同工，皆以楼阁起兴，感慨物是人非。
+</div>
+</div>
+
+<div style="background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #3498db;">
+<div style="color: #1a5276; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">杜甫《登高》</div>
+<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
+风急天高猿啸哀，渚清沙白鸟飞回。<br>
+无边落木萧萧下，不尽长江滚滚来。<br>
+万里悲秋常作客，百年多病独登台。<br>
+艰难苦恨繁霜鬓，潦倒新停浊酒杯。
+</div>
+<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
+评：被誉为"七律之冠"，与《黄鹤楼》同为登高诗巅峰。
+</div>
+</div>
+
+<div style="background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #2ecc71;">
+<div style="color: #27ae60; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">陈子昂《登幽州台歌》</div>
+<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
+前不见古人，后不见来者。<br>
+念天地之悠悠，独怆然而涕下。
+</div>
+<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
+评：虽非七律，但同样表达登临的时空感慨，与"白云千载空悠悠"意境相通。
+</div>
+</div>
+</div>
+
+<div style="text-align: center; margin-top: 2rem; color: #6c757d; font-size: 1rem; font-style: italic;">
+登高望远是中国文人的传统，黄鹤楼因崔颢一诗而成为登临文化的象征。
+</div>
+</div>
+
+</div>
+</div>
+</div></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://lyluchao.github.io/2026/05/10/黄鹤楼-崔颢/%20踏月诗阁%20黄鹤楼·崔颢"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/poetry-garden/2026/06/01/%E6%98%9F%E6%B2%B3%E5%89%91%E8%B5%8B/" title="星河剑赋"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 星河剑赋</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/poetry-garden/2026/04/20/%E9%9D%99%E5%A4%9C%E6%80%9D-%E6%9D%8E%E7%99%BD/" title="静夜思">Next post: 静夜思&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/poetry-garden/js/jquery-3.1.0.min.js"></script><script src="/poetry-garden/js/bootstrap.min.js"></script><script src="/poetry-garden/js/jquery-migrate-1.2.1.min.js"></script><script src="/poetry-garden/js/jquery.appear.js"></script><script src="/poetry-garden/js/google-analytics.js"></script><script src="/poetry-garden/js/typography.js"></script><!-- hexo injector body_end start -->
+<script>
+// 检测是否需要加载 Mermaid
+if (document.querySelector('.mermaid')) {
+  // 动态加载 Mermaid 库
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+  script.onload = function() {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      flowchart: {
+        useMaxWidth: true,
+        htmlLabels: true
+      },
+      securityLevel: 'loose'
+    });
+    
+    // 重新渲染所有图表
+    mermaid.init();
+  };
+  document.head.appendChild(script);
+}
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 为可折叠 callout 添加点击事件
+  const collapsibleCallouts = document.querySelectorAll('.callout.is-collapsible');
+  
+  collapsibleCallouts.forEach(function(callout) {
+    const title = callout.querySelector('.callout-title');
+    
+    if (title) {
+      // 添加点击事件
+      title.addEventListener('click', function(e) {
+        // 如果点击的是链接，不触发折叠
+        if (e.target.tagName === 'A') return;
+        
+        callout.classList.toggle('is-collapsed');
+      });
+      
+      // 添加鼠标悬停效果
+      title.addEventListener('mouseenter', function() {
+        this.style.cursor = 'pointer';
+      });
+      
+      // 添加键盘支持（可访问性）
+      title.setAttribute('tabindex', '0');
+      title.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          callout.classList.toggle('is-collapsed');
+        }
+      });
+    }
+  });
+});
+</script>
+<!-- hexo injector body_end end --></body></html>
+    </main>
+    
+    <!-- 古典页脚 -->
+    <footer class="classical-footer">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <a href="/poetry-garden/" class="footer-link">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="/poetry-garden/archives" class="footer-link">
+                    <i class="fas fa-archive"></i> 归档
+                </a>
+                <a href="/poetry-garden/categories" class="footer-link">
+                    <i class="fas fa-layer-group"></i> 分类
+                </a>
+                <a href="/poetry-garden/tags" class="footer-link">
+                    <i class="fas fa-tags"></i> 标签
+                </a>
+                <a href="/poetry-garden/about" class="footer-link">
+                    <i class="fas fa-book"></i> 关于
+                </a>
+            </nav>
+            
+            <div class="footer-info">
+                <div>
+                    © 2026 <span class="footer-seal">诗</span> 踏月诗阁 <span class="footer-seal">阁</span>
+                </div>
+                <div style="margin-top: 15px; font-style: italic; color: var(--classical-gold);">
+                    墨香永驻 · 诗魂长存 · 雅韵流芳
+                </div>
+                <div style="margin-top: 10px; font-size: 0.8rem; color: var(--classical-blue);">
+                    主题：古典诗韵 · 由 Hexo 驱动
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 页眉滚动效果
+            const header = document.querySelector('.classical-header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 5px 20px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                } else {
+                    header.style.boxShadow = '0 2px 10px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
