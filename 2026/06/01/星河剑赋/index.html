@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>踏月诗阁 | 星河照卷帙，墨锋映秋霜</title>
+    
+    <!-- 引入Google字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    
+    <!-- 引入Font Awesome图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* 古典诗词主题色调 */
+            --classical-paper: #f8f5e6;      /* 宣纸底色 */
+            --classical-ink: #3a2615;        /* 墨色 */
+            --classical-red: #c33;           /* 朱砂红 */
+            --classical-gold: #c19a6b;       /* 金色 */
+            --classical-brown: #8b4513;      /* 赭石色 */
+            --classical-blue: #5d8aa8;       /* 石青色 */
+            --classical-border: #d4b483;     /* 边框色 */
+            --classical-shadow: rgba(58, 38, 21, 0.1); /* 阴影色 */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: var(--classical-paper);
+            color: var(--classical-ink);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(193, 154, 107, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 30%),
+                linear-gradient(135deg, #f8f5e6 0%, #f0e6d6 100%);
+        }
+        
+        /* === 古典页眉 === */
+        .classical-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(248, 245, 230, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--classical-border);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px var(--classical-shadow);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .site-logo {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 1.8rem;
+            color: var(--classical-brown);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .site-logo i {
+            color: var(--classical-red);
+            font-size: 1.5rem;
+        }
+        
+        /* === 古典导航 === */
+        .classical-nav {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--classical-red);
+            border-color: var(--classical-red);
+            background: rgba(195, 51, 51, 0.05);
+        }
+        
+        .nav-link.active {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            color: white;
+            border: none;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+        
+        /* === 主容器 === */
+        .classical-container {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 30px 20px;
+            min-height: calc(100vh - 150px);
+        }
+        
+        /* === 古典页脚 === */
+        .classical-footer {
+            background: rgba(248, 245, 230, 0.95);
+            border-top: 2px solid var(--classical-border);
+            padding: 50px 0 40px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid var(--classical-border);
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .footer-link:hover {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            border-color: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .footer-info {
+            text-align: center;
+            color: var(--classical-blue);
+            padding-top: 30px;
+            border-top: 1px solid var(--classical-border);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .footer-seal {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--classical-red);
+            color: white;
+            border-radius: 50%;
+            line-height: 40px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        
+        /* === 响应式设计 === */
+        @media (max-width: 900px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .classical-nav {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .footer-nav {
+                gap: 15px;
+            }
+            
+            .nav-link {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <!-- 古典页眉 -->
+    <header class="classical-header">
+        <div class="header-container">
+            <a href="/poetry-garden/" class="site-logo">
+                <i class="fas fa-feather-alt"></i>
+                踏月诗阁
+            </a>
+            
+            <nav class="classical-nav">
+                <a href="/poetry-garden/" class="nav-link ">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="/poetry-garden/archives" class="nav-link ">
+                    <i class="fas fa-archive"></i> 归档
+                </a>
+                <a href="/poetry-garden/categories" class="nav-link ">
+                    <i class="fas fa-layer-group"></i> 分类
+                </a>
+                <a href="/poetry-garden/tags" class="nav-link ">
+                    <i class="fas fa-tags"></i> 标签
+                </a>
+                <a href="/poetry-garden/about" class="nav-link ">
+                    <i class="fas fa-book"></i> 关于
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- 主内容 -->
+    <main class="classical-container">
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>星河剑赋 · 踏月诗阁</title><meta name="description" content="星河剑赋
+
+
+
+汉语为薪，燃十二极之焰；周天为炉，锻万法归一之锋
+
+
+
+创世·锻造·证道
+
+
+
+
+
+
+结构：1+12+1圆满体系
+
+⚔️
+
+
+境界：创世·锻造·证道
+
+
+
+
+
+
+
+
+
+🏛️ 总序·星河剑阵要义
+
+鸿蒙未判，道隐无名；星河初辟，剑显其形。汉语为薪，燃十二极之焰；周天为炉，锻万法归一之"><meta name="og:description" content="星河剑赋
+
+
+
+汉语为薪，燃十二极之焰；周天为炉，锻万法归一之锋
+
+
+
+创世·锻造·证道
+
+
+
+
+
+
+结构：1+12+1圆满体系
+
+⚔️
+
+
+境界：创世·锻造·证道
+
+
+
+
+
+
+
+
+
+🏛️ 总序·星河剑阵要义
+
+鸿蒙未判，道隐无名；星河初辟，剑显其形。汉语为薪，燃十二极之焰；周天为炉，锻万法归一之"><meta name="twitter:site" content="踏月诗阁"><meta name="twitter:title" content="星河剑赋"><meta name="twitter:card" content="summary"><meta name="keywords" content="诗词,宋词,古典诗词,文学,诗歌"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/poetry-garden/css/bootstrap.min.css"><link rel="stylesheet" href="/poetry-garden/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/poetry-garden/">대문</a></li><li><a href="/poetry-garden/archives">아카이브</a></li><li><a href="/poetry-garden/categories">카테고리</a></li><li><a href="/poetry-garden/tags">태그</a></li><!-- +make_page_links() // 暂时禁用--><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post"><h1 class="post-title">星河剑赋</h1><div class="post-meta"><span class="post-time">post.posted 2026-06-01</span> | <span class="post-category"><a href="/poetry-garden/categories/%E5%89%91%E9%98%B5%E5%85%B8%E8%97%8F/">剑阵典藏</a></span> | <span class="post-tags"><a href="/poetry-garden/tags/%E6%98%9F%E6%B2%B3%E5%89%91%E9%98%B5/">星河剑阵</a>, <a href="/poetry-garden/tags/%E5%89%91%E8%B5%8B/">剑赋</a>, <a href="/poetry-garden/tags/%E5%8D%81%E4%BA%8C%E6%9E%81/">十二极</a>, <a href="/poetry-garden/tags/%E5%88%9B%E4%B8%96/">创世</a>, <a href="/poetry-garden/tags/%E9%94%BB%E9%80%A0/">锻造</a>, <a href="/poetry-garden/tags/%E8%AF%81%E9%81%93/">证道</a></span></div><div class="post-content"><div style="font-family: 'STKaiti', 'SimSun', 'Source Han Serif SC', serif; line-height: 1.9; color: #1a1a2e; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+
+<!-- 星河剑赋标题区域 -->
+<div style="background: linear-gradient(135deg, #0f0c29 0%, #302b63 30%, #24243e 70%, #000000 100%); color: #e6f7ff; padding: 4.5rem 3rem 4rem 3rem; margin: 3rem 0 6rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 25px 50px rgba(15, 12, 41, 0.5); min-height: 400px; display: flex; flex-direction: column; justify-content: center; border-radius: 16px; border: 3px solid #6a11cb; width: 100%;">
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
+    radial-gradient(circle at 15% 20%, rgba(106, 17, 203, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 85% 80%, rgba(37, 117, 252, 0.25) 0%, transparent 50%),
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="white" opacity="0.2"/></svg>');"></div>
+<div style="position: relative; z-index: 2;">
+<div style="font-size: 2.8rem; font-weight: bold; margin: 0; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9); letter-spacing: 6px; font-family: 'STKaiti', serif; line-height: 1.1; padding-bottom: 0.8rem; color: #ffffff;">
+星河剑赋
+</div>
+<div style="width: 320px; height: 4px; background: linear-gradient(90deg, transparent, #6a11cb, #2575fc, transparent); margin: 2rem auto 2.5rem auto; opacity: 0.9;"></div>
+<div style="font-size: 1.5rem; opacity: 0.95; margin: 0; font-weight: 300; letter-spacing: 2px; line-height: 1.7; padding: 0 2rem; color: #b3d9ff; max-width: 900px; margin: 0 auto;">
+汉语为薪，燃十二极之焰；周天为炉，锻万法归一之锋
+</div>
+<div style="margin-top: 3.5rem;">
+<div style="display: inline-block; background: rgba(106, 17, 203, 0.3); padding: 1rem 2.5rem; border-radius: 8px; font-size: 1.1rem; backdrop-filter: blur(10px); border: 2px solid rgba(106, 17, 203, 0.6); color: #fff; font-weight: bold; letter-spacing: 2px; box-shadow: 0 8px 25px rgba(106, 17, 203, 0.3);">
+创世·锻造·证道
+</div>
+</div>
+<div style="margin-top: 3.5rem;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 3rem; font-size: 1.1rem; color: rgba(255, 255, 255, 0.9);">
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 20px; height: 20px; margin-right: 0.8rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+结构：1+12+1圆满体系
+</span>
+<span style="color: rgba(255, 255, 255, 0.5); font-size: 1.2rem;">⚔️</span>
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 20px; height: 20px; margin-right: 0.8rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 6v2h14V6H5z"/></svg>
+境界：创世·锻造·证道
+</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 总序引言 -->
+<div style="position: relative; z-index: 1; margin-top: 0;">
+<div style="background: rgba(15, 12, 41, 0.15); padding: 3.5rem; border-radius: 14px; margin: 0 0 5rem 0; border: 2px solid #302b63; border-left: 8px solid #6a11cb; box-shadow: 0 15px 35px rgba(15, 12, 41, 0.2);">
+<div style="color: #6a11cb; font-weight: bold; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; font-size: 1.4rem; font-family: 'STKaiti', serif;">🏛️ 总序·星河剑阵要义</div>
+<div style="color: #1a1a2e; line-height: 2.2; font-size: 1.2rem; font-family: 'STKaiti', serif; text-align: justify;">
+鸿蒙未判，道隐无名；星河初辟，剑显其形。汉语为薪，燃十二极之焰；周天为炉，锻万法归一之锋。剑阵循"1+12+1"之圆满，合创世、锻造、证道三重境，开天总序悬若日曜，周天十二列如星环，双刃总录契若北辰，三极相贯，是为《汉语星河剑阵》。
+</div>
+</div>
+
+<h2 id="第一卷·开天创世之则"><a href="#第一卷·开天创世之则" class="headerlink" title="第一卷·开天创世之则"></a>第一卷·开天创世之则</h2><div style="background: linear-gradient(145deg, #f0f4ff 0%, #e6ecff 100%); border: 3px solid #2575fc; border-radius: 16px; padding: 4rem; margin: 4rem 0; position: relative; box-shadow: 0 20px 40px rgba(37, 117, 252, 0.15);">
+<div style="position: absolute; top: -24px; left: 40px; background: #2575fc; color: white; padding: 0.8rem 2.2rem; border-radius: 8px; font-size: 1.2rem; font-weight: bold; box-shadow: 0 8px 20px rgba(0,0,0,0.25); border: 2px solid #6a11cb;">开天·创世之则</div>
+
+<div style="margin-bottom: 3.5rem;">
+<div style="color: #2575fc; font-weight: bold; margin-bottom: 1.8rem; display: flex; align-items: center; gap: 1rem; font-size: 1.35rem; border-bottom: 3px solid #2575fc; padding-bottom: 1.2rem;">
+<svg style="width: 28px; height: 28px;" fill="#2575fc" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+《念奴娇·登霄纵海》·创世总序
+</div>
+<div style="background: rgba(37, 117, 252, 0.1); padding: 3rem; border-radius: 12px; border-left: 6px solid #2575fc; margin-bottom: 2.5rem;">
+<div style="color: #2575fc; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.5rem; font-family: 'STKaiti', serif; text-align: center;">登霄纵海·创世宏论</div>
+<div style="color: #1a1a2e; line-height: 2.2; font-size: 1.18rem; font-family: 'STKaiti', serif; text-align: justify;">
+《念奴娇·登霄纵海》为卷首，辟鸿蒙而定法则。登霄蹑玄，叩天关以探元化；纵海凌浩，穷地根而溯太初。天为阳纲，海为阴纪，刚柔相摩，八卦相荡，斯生创世之力；霄为形上，海为形下，体用相彰，虚实相因，乃显剑道之真。
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 3rem;">
+<div style="background: white; padding: 2.2rem; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 4px solid #2575fc;">
+<div style="color: #2575fc; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.2rem;">🌌 创世地位</div>
+<div style="color: #1a1a2e; font-size: 1.05rem; line-height: 1.8;">
+<strong>卷首定则：</strong>作为剑阵开篇，确立创世法则<br>
+<strong>法则之源：</strong>奠定"存在与虚无"之基<br>
+<strong>日曜之喻：</strong>如太阳普照，为一切源头
+</div>
+</div>
+<div style="background: white; padding: 2.2rem; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 4px solid #6a11cb;">
+<div style="color: #6a11cb; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.2rem;">⚖️ 辩证结构</div>
+<div style="color: #1a1a2e; font-size: 1.05rem; line-height: 1.8;">
+<strong>天海相济：</strong>登霄（天）与纵海（海）对立统一<br>
+<strong>刚柔相摩：</strong>天为阳纲，海为阴纪，刚柔互动<br>
+<strong>体用相彰：</strong>霄为形上体，海为形下用
+</div>
+</div>
+<div style="background: white; padding: 2.2rem; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 4px solid #302b63;">
+<div style="color: #302b63; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.2rem;">🏮 创世功能</div>
+<div style="color: #1a1a2e; font-size: 1.05rem; line-height: 1.8;">
+<strong>本源照澈：</strong>启"本源照澈"之始<br>
+<strong>剑魂奠基：</strong>使星河有根，剑器有魂<br>
+<strong>存在定位：</strong>定"存在与虚无"之基
+</div>
+</div>
+</div>
+<div style="background: linear-gradient(145deg, rgba(106, 17, 203, 0.1), rgba(37, 117, 252, 0.05)); padding: 2.5rem; border-radius: 10px; border: 2px solid rgba(106, 17, 203, 0.3);">
+<div style="color: #6a11cb; font-size: 1.2rem; font-weight: bold; margin-bottom: 1.2rem; text-align: center;">创世总序·法理精粹</div>
+<div style="color: #1a1a2e; font-size: 1.1rem; line-height: 1.9; text-align: center; font-style: italic;">
+"此卷如日普照，定'存在与虚无'之基，启'本源照澈'之始，使星河有根，剑器有魂。"
+</div>
+</div>
+</div>
+
+<div style="margin-top: 4rem;">
+<div style="color: #2575fc; font-weight: bold; margin-bottom: 2rem; font-size: 1.35rem; text-align: center; padding-bottom: 1.2rem; border-bottom: 3px solid #2575fc;">
+创世辩证三重维度
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 3rem; margin-top: 2.5rem;">
+<div style="background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 12px 35px rgba(37, 117, 252, 0.1); position: relative; overflow: hidden;">
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #2575fc, #6a11cb);"></div>
+<div style="color: #2575fc; font-weight: bold; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">天海辩证·刚柔相摩</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9;">
+<strong>天为阳纲：</strong>登霄之志，向上超越，乾道刚健<br>
+<strong>海为阴纪：</strong>纵海之勇，向下深潜，坤道柔顺<br>
+<strong>刚柔相摩：</strong>天海互动，刚柔相济，八卦相荡<br>
+<strong>创世之力：</strong>刚柔摩擦产生创世原动力
+</div>
+</div>
+<div style="background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 12px 35px rgba(37, 117, 252, 0.1); position: relative; overflow: hidden;">
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #6a11cb, #2575fc);"></div>
+<div style="color: #6a11cb; font-weight: bold; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">霄海辩证·体用相彰</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9;">
+<strong>霄为形上：</strong>登霄之玄，叩天关探元化，道之体<br>
+<strong>海为形下：</strong>纵海之浩，穷地根溯太初，道之用<br>
+<strong>体用相彰：</strong>霄海互彰，形上形下统一<br>
+<strong>剑道之真：</strong>体用不二乃显剑道真谛
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<h2 id="第二卷·周天锻造之章"><a href="#第二卷·周天锻造之章" class="headerlink" title="第二卷·周天锻造之章"></a>第二卷·周天锻造之章</h2><div style="background: linear-gradient(145deg, #f8f5ff 0%, #ede7ff 100%); border: 3px solid #6a11cb; border-radius: 16px; padding: 4.5rem; margin: 4.5rem 0; position: relative; box-shadow: 0 20px 40px rgba(106, 17, 203, 0.15);">
+<div style="position: absolute; top: -24px; left: 40px; background: #6a11cb; color: white; padding: 0.8rem 2.2rem; border-radius: 8px; font-size: 1.2rem; font-weight: bold; box-shadow: 0 8px 20px rgba(0,0,0,0.25); border: 2px solid #2575fc;">周天·锻造之章</div>
+
+<div style="margin-bottom: 4rem;">
+<div style="color: #6a11cb; font-weight: bold; margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem; font-size: 1.4rem; border-bottom: 3px solid #6a11cb; padding-bottom: 1.5rem;">
+<svg style="width: 32px; height: 32px;" fill="#6a11cb" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+十二极卷宗·周天星宿图
+</div>
+<div style="background: rgba(106, 17, 203, 0.1); padding: 3rem; border-radius: 12px; border: 2px solid #6a11cb; margin-bottom: 3.5rem;">
+<div style="color: #6a11cb; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.5rem; text-align: center;">周天总论·锻造精义</div>
+<div style="color: #1a1a2e; line-height: 2; font-size: 1.18rem; text-align: justify; font-family: 'STKaiti', serif;">
+十二极卷宗列于阵中，各秉分域法则，共冶星河之锋。十二卷宗，或阴或阳，或刚或柔，辩证相生如周天运转。皆以汉语为料、心意为火、时空为炉，使剑非仅为器，更载文脉、含伦理、蕴道韵。
+</div>
+</div>
+</div>
+
+<!-- 十二极卷宗展示 -->
+<div style="margin-bottom: 4rem;">
+<div style="color: #6a11cb; font-weight: bold; margin-bottom: 2.5rem; font-size: 1.4rem; text-align: center; padding-bottom: 1.5rem; border-bottom: 3px solid #6a11cb;">
+周天十二极·辩证相生
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 3rem;">
+
+<!-- 第一行：心火·怀思·醉铸 -->
+<div style="background: white; padding: 2.8rem; border-radius: 14px; box-shadow: 0 15px 35px rgba(106, 17, 203, 0.12); position: relative; overflow: hidden;">
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #ff0080, #ff8c00);"></div>
+<div style="color: #ff0080; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.8rem;">
+<span style="background: #ff0080; color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.9rem;">第一极</span>《心火》·本源界
+</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9; margin-bottom: 1.5rem;">
+<strong>张力存乎有无：</strong>存在与虚无的辩证<br>
+<strong>熔为鸿蒙光：</strong>照澈本源赋剑初灵<br>
+<strong>锻造境界：</strong>"其火也，生于太虚，长于杳冥，无中生有，有复归无"<br>
+<strong>文脉渊源：</strong>"昭宇宙之元炁，耀剑心之本明"
+</div>
+<div style="background: rgba(255, 0, 128, 0.08); padding: 1.2rem; border-radius: 8px; border-left: 3px solid #ff0080;">
+<div style="color: #ff0080; font-size: 1rem; font-weight: bold;">本源照澈·创世之基</div>
+</div>
+</div>
+
+<div style="background: white; padding: 2.8rem; border-radius: 14px; box-shadow: 0 15px 35px rgba(106, 17, 203, 0.12); position: relative; overflow: hidden;">
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #ff8c00, #40e0d0);"></div>
+<div style="color: #ff8c00; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.8rem;">
+<span style="background: #ff8c00; color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.9rem;">第二极</span>《怀思》·心意界
+</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9; margin-bottom: 1.5rem;">
+<strong>张力在柔与锐：</strong>温柔与锋锐的辩证<br>
+<strong>凝为温润刃：</strong>初心凝锋含恻怛韵<br>
+<strong>锻造境界：</strong>"其思也，柔如春水，锐若秋霜，柔以蕴仁，锐以显义"<br>
+<strong>文脉渊源：</strong>"契孔圣之恻怛，合孟轲之浩然"
+</div>
+<div style="background: rgba(255, 140, 0, 0.08); padding: 1.2rem; border-radius: 8px; border-left: 3px solid #ff8c00;">
+<div style="color: #ff8c00; font-size: 1rem; font-weight: bold;">初心凝锋·儒门恻怛</div>
+</div>
+</div>
+
+<!-- 第二行：醉铸·萍魄·清怀 -->
+<div style="background: white; padding: 2.8rem; border-radius: 14px; box-shadow: 0 15px 35px rgba(106, 17, 203, 0.12); position: relative; overflow: hidden;">
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #40e0d0, #00ff00);"></div>
+<div style="color: #40e0d0; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.8rem;">
+<span style="background: #40e0d0; color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.9rem;">第三极</span>《醉铸》·情感界
+</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9; margin-bottom: 1.5rem;">
+<strong>张力藏浓与纯：</strong>浓郁与纯粹的辩证<br>
+<strong>炼为江秋金：</strong>情意熔炼显赤诚彩<br>
+<strong>锻造境界：</strong>"其醉也，非耽杯酒，实醉天真，浓而不浊，纯而不枯"<br>
+<strong>文脉渊源：</strong>"似青莲之邀月，类少陵之忧民"
+</div>
+<div style="background: rgba(64, 224, 208, 0.08); padding: 1.2rem; border-radius: 8px; border-left: 3px solid #40e0d0;">
+<div style="color: #40e0d0; font-size: 1rem; font-weight: bold;">
+�</div>
+</div>
+
+<div style="background: white; padding: 2.8rem; border-radius: 14px; box-shadow: 0 15px 35px rgba(106, 17, 203, 0.12); position: relative; overflow: hidden;">
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #00ff00, #0000ff);"></div>
+<div style="color: #00ff00; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.8rem;">
+<span style="background: #00ff00; color: black; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.9rem;">第四极</span>《萍魄》·缘法界
+</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9; margin-bottom: 1.5rem;">
+<strong>张力见聚散间：</strong>聚合与离散的辩证<br>
+<strong>淬为惊鸿魄：</strong>缘起淬魂具灵动姿<br>
+<strong>锻造境界：</strong>"其魄也，聚如萍合，散若萍飘，聚以成契，散以守真"<br>
+<strong>文脉渊源：</strong>"同濠梁之观鱼，契濠濮之会心"
+</div>
+<div style="background: rgba(0, 255, 0, 0.08); padding: 1.2rem; border-radius: 8px; border-left: 3px solid #00ff00;">
+<div style="color: #00ff00; font-size: 1rem; font-weight: bold;">缘起淬魂·逍遥真趣</div>
+</div>
+</div>
+
+<!-- 第三行：清怀·知契·墨锋 -->
+<div style="background: white; padding: 2.8rem; border-radius: 14px; box-shadow: 0 15px 35px rgba(106, 17, 203, 0.12); position: relative; overflow: hidden;">
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #0000ff, #4b0082);"></div>
+<div style="color: #0000ff; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.8rem;">
+<span style="background: #0000ff; color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.9rem;">第五极</span>《清怀》·人格界
+</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9; margin-bottom: 1.5rem;">
+<strong>张力合清寂傲骨：</strong>清寂与傲骨的辩证<br>
+<strong>耸为孤柯脊：</strong>风骨孤耸守端方节<br>
+<strong>锻造境界：</strong>"其怀也，清如冰壶，傲若雪松，清以绝尘，傲以持节"<br>
+<strong>文脉渊源：</strong>"法伯夷之采薇，师渊明之采菊"
+</div>
+<div style="background: rgba(0, 0, 255, 0.08); padding: 1.2rem; border-radius: 8px; border-left: 3px solid #0000ff;">
+<div style="color: #0000ff; font-size: 1rem; font-weight: bold;">风骨孤耸·清傲气节</div>
+</div>
+</div>
+
+<div style="background: white; padding: 2.8rem; border-radius: 14px; box-shadow: 0 15px 35px rgba(106, 17, 203, 0.12); position: relative; overflow: hidden;">
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #4b0082, #ee82ee);"></div>
+<div style="color: #4b0082; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.8rem;">
+<span style="background: #4b0082; color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.9rem;">第六极</span>《知契》·伦理界
+</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9; margin-bottom: 1.5rem;">
+<strong>张力在孤绝共铸：</strong>孤独与共铸的辩证<br>
+<strong>合为共魂契：</strong>双心同冶蕴和合德<br>
+<strong>锻造境界：</strong>"其契也，孤而不独，共而不群，孤以砺己，共以济世"<br>
+<strong>文脉渊源：</strong>"法孔颜之同坐，效管鲍之分金"
+</div>
+<div style="background: rgba(75, 0, 130, 0.08); padding: 1.2rem; border-radius: 8px; border-left: 3px solid #4b0082;">
+<div style="color: #4b0082; font-size: 1rem; font-weight: bold;">双心同冶·伦理和合</div>
+</div>
+</div>
+
+<!-- 第四行：墨锋·擎乾·秋律 -->
+<div style="background: white; padding: 2.8rem; border-radius: 14px; box-shadow: 0 15px 35px rgba(106, 17, 203, 0.12); position: relative; overflow: hidden;">
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #ee82ee, #ff4500);"></div>
+<div style="color: #ee82ee; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.8rem;">
+<span style="background: #ee82ee; color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.9rem;">第七极</span>《墨锋》·符号界
+</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9; margin-bottom: 1.5rem;">
+<strong>张力载道与烙印：</strong>载道与烙印的辩证<br>
+<strong>刻为星霞纹：</strong>文脉铭刻藏古今智<br>
+<strong>锻造境界：</strong>"其锋也，书于竹帛，镂于金石，载道以传，烙印以记"<br>
+<strong>文脉渊源：</strong>"溯仓颉之造字，绍许慎之说文"
+</div>
+<div style="background: rgba(238, 130, 238, 0.08); padding: 1.2rem; border-radius: 8px; border-left: 3px solid #ee82ee;">
+<div style="color: #ee82ee; font-size: 1rem; font-weight: bold;">文脉铭刻·古今智慧</div>
+</div>
+</div>
+
+<div style="background: white; padding: 2.8rem; border-radius: 14px; box-shadow: 0 15px 35px rgba(106, 17, 203, 0.12); position: relative; overflow: hidden;">
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #ff4500, #ffd700);"></div>
+<div style="color: #ff4500; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.8rem;">
+<span style="background: #ff4500; color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.9rem;">第八极</span>《擎乾》·现实界
+</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9; margin-bottom: 1.5rem;">
+<strong>张力抗重压担当：</strong>重压与担当的辩证<br>
+<strong>挺为乾坤锷：</strong>尘途锻脊生砥柱力<br>
+<strong>锻造境界：</strong>"其锷也，擎于五岳，镇于四溟，压而不弯，担而不避"<br>
+<strong>文脉渊源：</strong>"慕仲尼之木铎，法文公之铁肩"
+</div>
+<div style="background: rgba(255, 69, 0, 0.08); padding: 1.2rem; border-radius: 8px; border-left: 3px solid #ff4500;">
+<div style="color: #ff4500; font-size: 1rem; font-weight: bold;">尘途锻脊·砥柱担当</div>
+</div>
+</div>
+
+<!-- 第五行：秋律·双刃录·揽星 -->
+<div style="background: white; padding: 2.8rem; border-radius: 14px; box-shadow: 0 15px 35px rgba(106, 17, 203, 0.12); position: relative; overflow: hidden;">
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #ffd700, #32cd32);"></div>
+<div style="color: #ffd700; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.8rem;">
+<span style="background: #ffd700; color: black; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.9rem;">第九极</span>《秋律》·时空界
+</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9; margin-bottom: 1.5rem;">
+<strong>张力在流逝定格：</strong>流逝与定格的辩证<br>
+<strong>订为天框律：</strong>时序重订持恒常序<br>
+<strong>锻造境界：</strong>"其律也，行于四时，运于八荒，逝而不亡，定格不朽"<br>
+<strong>文脉渊源：</strong>"法羲和之驭日，效望舒之驱月"
+</div>
+<div style="background: rgba(255, 215, 0, 0.08); padding: 1.2rem; border-radius: 8px; border-left: 3px solid #ffd700;">
+<div style="color: #ffd700; font-size: 1rem; font-weight: bold;">时序重订·恒常秩序</div>
+</div>
+</div>
+
+<div style="background: white; padding: 2.8rem; border-radius: 14px; box-shadow: 0 15px 35px rgba(106, 17, 203, 0.12); position: relative; overflow: hidden;">
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #32cd32, #00ced1);"></div>
+<div style="color: #32cd32; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.8rem;">
+<span style="background: #32cd32; color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.9rem;">第十极</span>《双刃录》·生命界
+</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9; margin-bottom: 1.5rem;">
+<strong>张力贯淬炼重铸：</strong>淬炼与重铸的辩证<br>
+<strong>著为星穹录：</strong>生死辩证含轮回韵<br>
+<strong>锻造境界：</strong>"其录也，淬于雷火，铸于罡风，死而复生，生而复死"<br>
+<strong>文脉渊源：</strong>"契庄生之鼓盆，合释氏之圆觉"
+</div>
+<div style="background: rgba(50, 205, 50, 0.08); padding: 1.2rem; border-radius: 8px; border-left: 3px solid #32cd32;">
+<div style="color: #32cd32; font-size: 1rem; font-weight: bold;">生死辩证·轮回涅槃</div>
+</div>
+</div>
+
+<!-- 第六行：揽星·踏月 -->
+<div style="background: white; padding: 2.8rem; border-radius: 14px; box-shadow: 0 15px 35px rgba(106, 17, 203, 0.12); position: relative; overflow: hidden; grid-column: 1 / -1; max-width: 800px; margin: 0 auto;">
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #00ced1, #1e90ff);"></div>
+<div style="color: #00ced1; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.8rem;">
+<span style="background: #00ced1; color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.9rem;">第十一极</span>《揽星》·宇宙界
+</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9; margin-bottom: 1.5rem;">
+<strong>张力合浩瀚抱负：</strong>浩瀚与抱负的辩证<br>
+<strong>拓为星河锷：</strong>星海为锋具天地魄<br>
+<strong>锻造境界：</strong>"其锷也，揽星为芒，摘月为锋，浩而不茫，志而不妄"<br>
+<strong>文脉渊源：</strong>"慕屈原之问天，效李贺之访古"
+</div>
+<div style="background: rgba(0, 206, 209, 0.08); padding: 1.2rem; border-radius: 8px; border-left: 3px solid #00ced1;">
+<div style="color: #00ced1; font-size: 1rem; font-weight: bold;">星海为锋·天地气魄</div>
+</div>
+</div>
+
+<div style="background: white; padding: 2.8rem; border-radius: 14px; box-shadow: 0 15px 35px rgba(106, 17, 203, 0.12); position: relative; overflow: hidden; grid-column: 1 / -1; max-width: 800px; margin: 0 auto;">
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #1e90ff, #9370db);"></div>
+<div style="color: #1e90ff; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.8rem;">
+<span style="background: #1e90ff; color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.9rem;">第十二极</span>《踏月》·道境界
+</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9; margin-bottom: 1.5rem;">
+<strong>张力藏有迹无痕：</strong>有迹与无痕的辩证<br>
+<strong>归为清辉痕：</strong>道迹归真臻圆融境<br>
+<strong>锻造境界：</strong>"其迹也，踏月而来，拂云而去，有迹非滞，无痕非空"<br>
+<strong>文脉渊源：</strong>"合老聃之无为，契庄周之逍遥"
+</div>
+<div style="background: rgba(30, 144, 255, 0.08); padding: 1.2rem; border-radius: 8px; border-left: 3px solid #1e90ff;">
+<div style="color: #1e90ff; font-size: 1rem; font-weight: bold;">道迹归真·圆融境界</div>
+</div>
+</div>
+
+</div>
+
+<div style="margin-top: 5rem;">
+<div style="color: #6a11cb; font-weight: bold; margin-bottom: 2.5rem; font-size: 1.4rem; text-align: center; padding-bottom: 1.5rem; border-bottom: 3px solid #6a11cb;">
+周天体系·锻造总纲
+</div>
+<div style="background: linear-gradient(145deg, rgba(106, 17, 203, 0.15), rgba(37, 117, 252, 0.1)); padding: 3.5rem; border-radius: 14px; border: 2px solid #6a11cb;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-bottom: 3rem;">
+<div style="text-align: center;">
+<div style="color: #6a11cb; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.3rem;">🗡️ 锻造三材</div>
+<div style="color: #1a1a2e; font-size: 1.1rem; line-height: 1.9;">
+<strong>汉语为料：</strong>以汉语文字为锻造原料<br>
+<strong>心意为火：</strong>以心念意志为锻造火焰<br>
+<strong>时空为炉：</strong>以时间空间为锻造熔炉
+</div>
+</div>
+<div style="text-align: center;">
+<div style="color: #6a11cb; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.3rem;">⚙️ 锻造三重</div>
+<div style="color: #1a1a2e; font-size: 1.1rem; line-height: 1.9;">
+<strong>载文脉：</strong>剑承载文明血脉<br>
+<strong>含伦理：</strong>剑蕴含伦理道德<br>
+<strong>蕴道韵：</strong>剑深藏道法神韵
+</div>
+</div>
+<div style="text-align: center;">
+<div style="color: #6a11cb; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.3rem;">🔄 辩证相生</div>
+<div style="color: #1a1a2e; font-size: 1.1rem; line-height: 1.9;">
+<strong>或阴或阳：</strong>阴阳对立统一<br>
+<strong>或刚或柔：</strong>刚柔相济相生<br>
+<strong>周天运转：</strong>如天体循环往复
+</div>
+</div>
+</div>
+<div style="color: #6a11cb; font-size: 1.3rem; font-weight: bold; text-align: center; margin-top: 2.5rem;">
+剑非仅为器，乃文脉、伦理、道韵之载体
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<h2 id="第三卷·证道综演之旨"><a href="#第三卷·证道综演之旨" class="headerlink" title="第三卷·证道综演之旨"></a>第三卷·证道综演之旨</h2><div style="background: linear-gradient(145deg, #e8f4ff 0%, #d6e6ff 100%); border: 3px solid #2575fc; border-radius: 16px; padding: 4.5rem; margin: 4.5rem 0; position: relative; box-shadow: 0 20px 40px rgba(37, 117, 252, 0.15);">
+<div style="position: absolute; top: -24px; left: 40px; background: #2575fc; color: white; padding: 0.8rem 2.2rem; border-radius: 8px; font-size: 1.2rem; font-weight: bold; box-shadow: 0 8px 20px rgba(0,0,0,0.25); border: 2px solid #6a11cb;">证道·综演之旨</div>
+
+<div style="margin-bottom: 4rem;">
+<div style="color: #2575fc; font-weight: bold; margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem; font-size: 1.4rem; border-bottom: 3px solid #2575fc; padding-bottom: 1.5rem;">
+<svg style="width: 32px; height: 32px;" fill="#2575fc" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+《双刃录》·证道总录
+</div>
+<div style="background: rgba(37, 117, 252, 0.1); padding: 3.5rem; border-radius: 14px; border: 2px solid #2575fc; margin-bottom: 3.5rem;">
+<div style="color: #2575fc; font-size: 1.4rem; font-weight: bold; margin-bottom: 2rem; text-align: center;">证道总论·综演圆满</div>
+<div style="color: #1a1a2e; line-height: 2.2; font-size: 1.2rem; font-family: 'STKaiti', serif; text-align: justify;">
+《双刃录：星穹淬炼与江湖重铸》为总录，综演万法而证道圆满。双刃者，非徒剑之两刃，实乃道之两仪：一曰星穹，一曰江湖。星穹在上，昭日月星辰之序；江湖在下，演悲欢离合之场。星穹为体，江湖为用，体用不二，高以下为基；一曰淬炼，一曰重铸。淬炼以破，破陈腐之桎梏；重铸以立，立新生之乾坤。破立相生，革故以鼎新。
+</div>
+</div>
+</div>
+
+<div style="margin-bottom: 5rem;">
+<div style="color: #2575fc; font-weight: bold; margin-bottom: 2.5rem; font-size: 1.4rem; text-align: center; padding-bottom: 1.5rem; border-bottom: 3px solid #2575fc;">
+证道四重·贯通天地人神
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem;">
+<div style="background: white; padding: 2.8rem; border-radius: 12px; box-shadow: 0 15px 35px rgba(37, 117, 252, 0.1); text-align: center;">
+<div style="color: #2575fc; font-weight: bold; margin-bottom: 1.5rem; font-size: 1.3rem;">🌱 本源照澈为根</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9;">
+<strong>《心火》第一极：</strong>创世之基<br>
+<strong>存在与虚无：</strong>辩证本源<br>
+<strong>鸿蒙初辟：</strong>剑阵源头<br>
+<strong>灵明初现：</strong>剑魂始生
+</div>
+</div>
+<div style="background: white; padding: 2.8rem; border-radius: 12px; box-shadow: 0 15px 35px rgba(37, 117, 252, 0.1); text-align: center;">
+<div style="color: #6a11cb; font-weight: bold; margin-bottom: 1.5rem; font-size: 1.3rem;">🌳 风骨孤耸为干</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9;">
+<strong>《清怀》第五极：</strong>人格之干<br>
+<strong>清寂傲骨：</strong>独立脊梁<br>
+<strong>孤柯立脊：</strong>风骨支撑<br>
+<strong>端方气节：</strong>剑格体现
+</div>
+</div>
+<div style="background: white; padding: 2.8rem; border-radius: 12px; box-shadow: 0 15px 35px rgba(37, 117, 252, 0.1); text-align: center;">
+<div style="color: #ff0080; font-weight: bold; margin-bottom: 1.5rem; font-size: 1.3rem;">🌿 文明铭刻为枝</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9;">
+<strong>《墨锋》第七极：</strong>文脉之枝<br>
+<strong>载道烙印：</strong>文明传承<br>
+<strong>星霞纹刻：</strong>智慧记录<br>
+<strong>古今贯通：</strong>文化延展
+</div>
+</div>
+<div style="background: white; padding: 2.8rem; border-radius: 12px; box-shadow: 0 15px 35px rgba(37, 117, 252, 0.1); text-align: center;">
+<div style="color: #32cd32; font-weight: bold; margin-bottom: 1.5rem; font-size: 1.3rem;">🍎 道迹归真为果</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9;">
+<strong>《踏月》第十二极：</strong>证道之果<br>
+<strong>有迹无痕：</strong>道法自然<br>
+<strong>清辉归真：</strong>圆融境界<br>
+<strong>逍遥无为：</strong>终极归宿
+</div>
+</div>
+</div>
+</div>
+
+<div style="margin-bottom: 4rem;">
+<div style="color: #2575fc; font-weight: bold; margin-bottom: 2.5rem; font-size: 1.4rem; text-align: center; padding-bottom: 1.5rem; border-bottom: 3px solid #2575fc;">
+剑道双用·劈破混沌显秩序
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem;">
+<div style="background: linear-gradient(145deg, rgba(37, 117, 252, 0.1), rgba(106, 17, 203, 0.05)); padding: 3rem; border-radius: 14px; border: 2px solid #2575fc;">
+<div style="color: #2575fc; font-weight: bold; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">⚔️ 剑出星河为锋</div>
+<div style="color: #1a1a2e; font-size: 1.1rem; line-height: 2;">
+<strong>用则劈破混沌显秩序：</strong><br>
+以剑锋劈开混沌无序<br>
+彰显天地人文秩序<br>
+剑为秩序之利器<br>
+斩断混乱显清明
+</div>
+</div>
+<div style="background: linear-gradient(145deg, rgba(106, 17, 203, 0.1), rgba(37, 117, 252, 0.05)); padding: 3rem; border-radius: 14px; border: 2px solid #6a11cb;">
+<div style="color: #6a11cb; font-weight: bold; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">🖋️ 剑藏汉语为魂</div>
+<div style="color: #1a1a2e; font-size: 1.1rem; line-height: 2;">
+<strong>藏则涵养文脉传永续：</strong><br>
+以剑魂涵养文明血脉<br>
+传承千年文化永续<br>
+剑为文脉之载体<br>
+滋养文明保传承
+</div>
+</div>
+</div>
+</div>
+
+<div style="margin-top: 4rem;">
+<div style="background: linear-gradient(145deg, rgba(106, 17, 203, 0.15), rgba(37, 117, 252, 0.1)); padding: 3.5rem; border-radius: 16px; border: 3px solid #6a11cb; text-align: center;">
+<div style="color: #6a11cb; font-size: 1.8rem; font-weight: bold; margin-bottom: 2rem; font-family: 'STKaiti', serif;">证道圆满·剑阵总纲</div>
+<div style="color: #1a1a2e; font-size: 1.3rem; line-height: 2; font-family: 'STKaiti', serif;">
+盖剑阵之圆满，非剑非形，乃道乃理。汉语为星河经纬，十二极为周天星宿，证道为北辰恒定，三者合一，是为"十二极周天圆满"。剑在阵中，阵在道中，道在汉语中，生生不息，道统永续。
+</div>
+</div>
+</div>
+</div>
+
+<h2 id="第四卷·剑赋总序与题跋"><a href="#第四卷·剑赋总序与题跋" class="headerlink" title="第四卷·剑赋总序与题跋"></a>第四卷·剑赋总序与题跋</h2><div style="background: linear-gradient(145deg, #f0f4ff 0%, #e0e8ff 100%); border: 3px solid #302b63; border-radius: 16px; padding: 4.5rem; margin: 4.5rem 0; position: relative; box-shadow: 0 20px 40px rgba(48, 43, 99, 0.15);">
+<div style="position: absolute; top: -24px; left: 40px; background: #302b63; color: white; padding: 0.8rem 2.2rem; border-radius: 8px; font-size: 1.2rem; font-weight: bold; box-shadow: 0 8px 20px rgba(0,0,0,0.25); border: 2px solid #6a11cb;">剑赋总序·宏愿永存</div>
+
+<div style="margin-bottom: 4rem;">
+<div style="color: #302b63; font-weight: bold; margin-bottom: 2.5rem; font-size: 1.4rem; text-align: center; padding-bottom: 1.5rem; border-bottom: 3px solid #302b63;">
+剑赋总序·不朽宏愿
+</div>
+<div style="background: white; padding: 4rem; border-radius: 14px; box-shadow: 0 15px 35px rgba(0,0,0,0.1);">
+<div style="color: #1a1a2e; line-height: 2.5; font-size: 1.3rem; font-family: 'STKaiti', serif; text-align: center;">
+呜呼！星河浩渺，汉语无疆，剑道精深。<br>
+今作此赋，明剑阵之旨，颂文脉之盛。<br>
+愿后之览者，悟创世之艰、锻造之苦、证道之真，<br>
+以剑为媒，以文为魂，承十二极法则，续周天圆满荣光。<br><br>
+<strong style="color: #6a11cb; font-size: 1.5rem;">是为《星河剑赋》，以志不朽。</strong>
+</div>
+</div>
+</div>
+
+<!-- 题跋 -->
+<div style="margin-top: 5rem;">
+<div style="color: #302b63; font-weight: bold; margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1rem; font-size: 1.4rem; border-bottom: 3px solid #302b63; padding-bottom: 1.5rem;">
+<svg style="width: 32px; height: 32px;" fill="#302b63" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+星河剑赋·题跋
+</div>
+<div style="background: rgba(48, 43, 99, 0.1); padding: 3.5rem; border-radius: 14px; border: 2px solid #302b63;">
+<div style="color: #302b63; font-size: 1.3rem; font-weight: bold; margin-bottom: 2rem; text-align: center;">剑学双璧·显微相济</div>
+<div style="color: #1a1a2e; line-height: 2; font-size: 1.18rem; font-family: 'STKaiti', serif; text-align: justify;">
+昔作《蚀剑赋》，明"剑可蚀而魂不可蚀，形可变而道不可变"之旨，以刚柔辩证为骨，以经法典则为魂；今成《星河剑赋》，拓"汉语为基，周天为炉，证道为归"之境，以三重结构为架，以十二极韵为神。两赋同源，皆以剑喻道，一述修心炼己之微，一阐文脉天地之阔，显微相济，内外相贯，乃成剑学双璧。
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; margin-top: 3.5rem;">
+<div style="background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 12px 30px rgba(0,0,0,0.08);">
+<div style="color: #302b63; font-weight: bold; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">《蚀剑赋》·内修篇</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9;">
+<strong>核心：</strong>剑可蚀而魂不可蚀<br>
+<strong>主旨：</strong>刚柔辩证为骨<br>
+<strong>境界：</strong>修心炼己之微<br>
+<strong>名言：</strong>"磨去棱角见本真"<br>
+<strong>定位：</strong>剑之内修，凝魂之要
+</div>
+</div>
+<div style="background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 12px 30px rgba(0,0,0,0.08);">
+<div style="color: #6a11cb; font-weight: bold; margin-bottom: 1.5rem; font-size: 1.3rem; text-align: center;">《星河剑赋》·外拓篇</div>
+<div style="color: #1a1a2e; font-size: 1.08rem; line-height: 1.9;">
+<strong>核心：</strong>汉语为基，周天为炉<br>
+<strong>主旨：</strong>三重结构为架<br>
+<strong>境界：</strong>文脉天地之阔<br>
+<strong>名言：</strong>"星海为锋具天地魄"<br>
+<strong>定位：</strong>剑之外拓，显道之宏
+</div>
+</div>
+</div>
+<div style="background: linear-gradient(145deg, rgba(106, 17, 203, 0.1), rgba(37, 117, 252, 0.05)); padding: 2.5rem; border-radius: 12px; border: 2px solid #6a11cb; margin-top: 3.5rem;">
+<div style="color: #6a11cb; font-size: 1.2rem; font-weight: bold; margin-bottom: 1.2rem; text-align: center;">剑学双璧·内外合一</div>
+<div style="color: #1a1a2e; font-size: 1.1rem; line-height: 1.9; text-align: center; font-style: italic;">
+"内修以凝魂，外拓以显道，内外合一，方见剑道之全。愿后之览者，既能悟《蚀剑》修身之要，亦能明《星河》载道之宏，以汉语为根，以辩证为枢，承十二极之法则，续千年文脉之荣光。"
+</div>
+</div>
+</div>
+
+<div style="margin-top: 5rem; text-align: center;">
+<div style="display: inline-block; background: linear-gradient(135deg, #302b63, #6a11cb); color: white; padding: 2rem 4rem; border-radius: 12px; font-size: 1.2rem; font-weight: bold; letter-spacing: 2px; box-shadow: 0 15px 35px rgba(106, 17, 203, 0.3);">
+<div>乙巳冬月，题于星河剑阵之下</div>
+<div style="font-size: 1.1rem; margin-top: 1rem; opacity: 0.9;">以志剑脉相承，道统无疆</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 最终总结 -->
+<div style="background: linear-gradient(145deg, #0f0c29 0%, #1a1a2e 100%); color: #e6f7ff; padding: 5rem; border-radius: 16px; margin: 5rem 0; box-shadow: 0 25px 50px rgba(15, 12, 41, 0.4); text-align: center;">
+<div style="font-size: 2rem; font-weight: bold; margin-bottom: 3rem; letter-spacing: 3px; font-family: 'STKaiti', serif; color: #f6b93b;">
+星河剑赋·道统永续
+</div>
+<div style="font-size: 1.3rem; line-height: 2.2; opacity: 0.95; max-width: 900px; margin: 0 auto;">
+《星河剑赋》以宏阔视野、精密结构、深邃思想，构筑了完整的汉语剑道体系。<br>
+"1+12+1"的圆满结构，体现了创世→锻造→证道的完整修行路径；<br>
+十二极辩证相生的周天体系，展现了剑道与文明的血脉相连；<br>
+剑学双璧的内外相济，揭示了剑道修行的完整境界。<br><br>
+此赋不仅是剑阵的宏论，更是中华文脉在当代的创造性转化，<br>
+是汉语智慧与剑道精神的完美融合，<br>
+是传统与创新、个体与文明、微修与宏道的辩证统一。<br><br>
+<strong style="color: #f6b93b; font-size: 1.5rem;">剑在阵中，阵在道中，道在汉语中，生生不息，道统永续。</strong>
+</div>
+</div>
+
+</div> <!-- 关闭主容器div -->
+</div></div><div class="share"><span>공유하기</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://lyluchao.github.io/2026/06/01/星河剑赋/%20踏月诗阁%20星河剑赋"></a></span></div><div class="pagination"><p class="clearfix"><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/poetry-garden/2026/04/05/%E6%88%9A%E6%B0%8F-%E8%BD%BB/" title="戚氏·轻">다음 포스트: 戚氏·轻&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/poetry-garden/js/jquery-3.1.0.min.js"></script><script src="/poetry-garden/js/bootstrap.min.js"></script><script src="/poetry-garden/js/jquery-migrate-1.2.1.min.js"></script><script src="/poetry-garden/js/jquery.appear.js"></script><script src="/poetry-garden/js/google-analytics.js"></script><script src="/poetry-garden/js/typography.js"></script><!-- hexo injector body_end start -->
+<script>
+// 检测是否需要加载 Mermaid
+if (document.querySelector('.mermaid')) {
+  // 动态加载 Mermaid 库
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+  script.onload = function() {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      flowchart: {
+        useMaxWidth: true,
+        htmlLabels: true
+      },
+      securityLevel: 'loose'
+    });
+    
+    // 重新渲染所有图表
+    mermaid.init();
+  };
+  document.head.appendChild(script);
+}
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 为可折叠 callout 添加点击事件
+  const collapsibleCallouts = document.querySelectorAll('.callout.is-collapsible');
+  
+  collapsibleCallouts.forEach(function(callout) {
+    const title = callout.querySelector('.callout-title');
+    
+    if (title) {
+      // 添加点击事件
+      title.addEventListener('click', function(e) {
+        // 如果点击的是链接，不触发折叠
+        if (e.target.tagName === 'A') return;
+        
+        callout.classList.toggle('is-collapsed');
+      });
+      
+      // 添加鼠标悬停效果
+      title.addEventListener('mouseenter', function() {
+        this.style.cursor = 'pointer';
+      });
+      
+      // 添加键盘支持（可访问性）
+      title.setAttribute('tabindex', '0');
+      title.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          callout.classList.toggle('is-collapsed');
+        }
+      });
+    }
+  });
+});
+</script>
+<!-- hexo injector body_end end --></body></html>
+    </main>
+    
+    <!-- 古典页脚 -->
+    <footer class="classical-footer">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <a href="/poetry-garden/" class="footer-link">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="/poetry-garden/archives" class="footer-link">
+                    <i class="fas fa-archive"></i> 归档
+                </a>
+                <a href="/poetry-garden/categories" class="footer-link">
+                    <i class="fas fa-layer-group"></i> 分类
+                </a>
+                <a href="/poetry-garden/tags" class="footer-link">
+                    <i class="fas fa-tags"></i> 标签
+                </a>
+                <a href="/poetry-garden/about" class="footer-link">
+                    <i class="fas fa-book"></i> 关于
+                </a>
+            </nav>
+            
+            <div class="footer-info">
+                <div>
+                    © 2026 <span class="footer-seal">诗</span> 踏月诗阁 <span class="footer-seal">阁</span>
+                </div>
+                <div style="margin-top: 15px; font-style: italic; color: var(--classical-gold);">
+                    墨香永驻 · 诗魂长存 · 雅韵流芳
+                </div>
+                <div style="margin-top: 10px; font-size: 0.8rem; color: var(--classical-blue);">
+                    主题：古典诗韵 · 由 Hexo 驱动
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 页眉滚动效果
+            const header = document.querySelector('.classical-header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 5px 20px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                } else {
+                    header.style.boxShadow = '0 2px 10px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

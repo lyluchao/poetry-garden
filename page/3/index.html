@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>踏月诗阁 | 星河照卷帙，墨锋映秋霜</title>
+    
+    <!-- 引入Google字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    
+    <!-- 引入Font Awesome图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* 古典诗词主题色调 */
+            --classical-paper: #f8f5e6;      /* 宣纸底色 */
+            --classical-ink: #3a2615;        /* 墨色 */
+            --classical-red: #c33;           /* 朱砂红 */
+            --classical-gold: #c19a6b;       /* 金色 */
+            --classical-brown: #8b4513;      /* 赭石色 */
+            --classical-blue: #5d8aa8;       /* 石青色 */
+            --classical-border: #d4b483;     /* 边框色 */
+            --classical-shadow: rgba(58, 38, 21, 0.1); /* 阴影色 */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: var(--classical-paper);
+            color: var(--classical-ink);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(193, 154, 107, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 30%),
+                linear-gradient(135deg, #f8f5e6 0%, #f0e6d6 100%);
+        }
+        
+        /* === 古典页眉 === */
+        .classical-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(248, 245, 230, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--classical-border);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px var(--classical-shadow);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .site-logo {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 1.8rem;
+            color: var(--classical-brown);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .site-logo i {
+            color: var(--classical-red);
+            font-size: 1.5rem;
+        }
+        
+        /* === 古典导航 === */
+        .classical-nav {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--classical-red);
+            border-color: var(--classical-red);
+            background: rgba(195, 51, 51, 0.05);
+        }
+        
+        .nav-link.active {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            color: white;
+            border: none;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+        
+        /* === 主容器 === */
+        .classical-container {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 30px 20px;
+            min-height: calc(100vh - 150px);
+        }
+        
+        /* === 古典页脚 === */
+        .classical-footer {
+            background: rgba(248, 245, 230, 0.95);
+            border-top: 2px solid var(--classical-border);
+            padding: 50px 0 40px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid var(--classical-border);
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .footer-link:hover {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            border-color: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .footer-info {
+            text-align: center;
+            color: var(--classical-blue);
+            padding-top: 30px;
+            border-top: 1px solid var(--classical-border);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .footer-seal {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--classical-red);
+            color: white;
+            border-radius: 50%;
+            line-height: 40px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        
+        /* === 响应式设计 === */
+        @media (max-width: 900px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .classical-nav {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .footer-nav {
+                gap: 15px;
+            }
+            
+            .nav-link {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/poetry-garden/atom.xml" title="踏月诗阁" type="application/atom+xml">
+</head>
+<body>
+    <!-- 古典页眉 -->
+    <header class="classical-header">
+        <div class="header-container">
+            <a href="/poetry-garden/" class="site-logo">
+                <i class="fas fa-feather-alt"></i>
+                踏月诗阁
+            </a>
+            
+            <nav class="classical-nav">
+                <a href="/poetry-garden/" class="nav-link ">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="/poetry-garden/archives" class="nav-link ">
+                    <i class="fas fa-archive"></i> 归档
+                </a>
+                <a href="/poetry-garden/categories" class="nav-link ">
+                    <i class="fas fa-layer-group"></i> 分类
+                </a>
+                <a href="/poetry-garden/tags" class="nav-link ">
+                    <i class="fas fa-tags"></i> 标签
+                </a>
+                <a href="/poetry-garden/about" class="nav-link ">
+                    <i class="fas fa-book"></i> 关于
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- 主内容 -->
+    <main class="classical-container">
+        <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>踏月诗阁 | 古典诗词专阁</title>
+    
+    <!-- 引入Google字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    
+    <!-- 引入Font Awesome图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* 古典诗词主题色调 */
+            --classical-paper: #f8f5e6;      /* 宣纸底色 */
+            --classical-ink: #3a2615;        /* 墨色 */
+            --classical-red: #c33;           /* 朱砂红 */
+            --classical-gold: #c19a6b;       /* 金色 */
+            --classical-brown: #8b4513;      /* 赭石色 */
+            --classical-blue: #5d8aa8;       /* 石青色 */
+            --classical-border: #d4b483;     /* 边框色 */
+            --classical-shadow: rgba(58, 38, 21, 0.1); /* 阴影色 */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: var(--classical-paper);
+            color: var(--classical-ink);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(193, 154, 107, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 30%),
+                linear-gradient(135deg, #f8f5e6 0%, #f0e6d6 100%);
+        }
+        
+        /* === 古典页眉 === */
+        .classical-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(248, 245, 230, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--classical-border);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px var(--classical-shadow);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .site-logo {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 1.8rem;
+            color: var(--classical-brown);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .site-logo i {
+            color: var(--classical-red);
+            font-size: 1.5rem;
+        }
+        
+        /* === 古典导航 === */
+        .classical-nav {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--classical-red);
+            border-color: var(--classical-red);
+            background: rgba(195, 51, 51, 0.05);
+        }
+        
+        .nav-link.active {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            color: white;
+            border: none;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+        
+        /* === 主容器 === */
+        .classical-container {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 30px 20px;
+            min-height: calc(100vh - 150px);
+        }
+        
+        /* === 古典英雄区域 === */
+        .hero-section {
+            text-align: center;
+            margin: 40px auto 60px;
+            padding: 40px 20px;
+            position: relative;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><path d="M100,50 Q150,50 150,100 T100,150 Q50,150 50,100 T100,50" fill="none" stroke="%23c19a6b" stroke-width="1" opacity="0.2"/></svg>') center/contain no-repeat;
+            z-index: -1;
+        }
+        
+        .site-title {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 3.5rem;
+            color: var(--classical-brown);
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+            letter-spacing: 4px;
+        }
+        
+        .site-subtitle {
+            font-size: 1.4rem;
+            color: var(--classical-gold);
+            margin-bottom: 20px;
+            font-family: 'ZCOOL QingKe HuangYou', cursive;
+            letter-spacing: 3px;
+        }
+        
+        .site-motto {
+            font-size: 1.1rem;
+            color: var(--classical-blue);
+            font-style: italic;
+            max-width: 600px;
+            margin: 20px auto 0;
+            padding: 20px;
+            border: 2px dashed var(--classical-border);
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* === 古典文章网格 === */
+        .classical-section {
+            margin: 60px 0;
+        }
+        
+        .section-title {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 2.2rem;
+            color: var(--classical-brown);
+            text-align: center;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            position: relative;
+        }
+        
+        .section-title::before,
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--classical-gold));
+        }
+        
+        .section-title::after {
+            background: linear-gradient(90deg, var(--classical-gold), transparent);
+        }
+        
+        .classical-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 0 auto;
+        }
+        
+        /* 古典卡片 */
+        .classical-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 25px;
+            border: 2px solid var(--classical-border);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--classical-shadow);
+        }
+        
+        .classical-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                var(--classical-red),
+                var(--classical-gold),
+                var(--classical-brown));
+        }
+        
+        .classical-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(58, 38, 21, 0.15);
+            border-color: var(--classical-red);
+        }
+        
+        /* 卡片顶部 */
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--classical-border);
+        }
+        
+        .card-date {
+            color: var(--classical-blue);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .card-category {
+            background: rgba(195, 51, 51, 0.1);
+            color: var(--classical-red);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border: 1px solid rgba(195, 51, 51, 0.2);
+        }
+        
+        /* 卡片标题 */
+        .card-title {
+            font-size: 1.3rem;
+            margin: 0 0 15px 0;
+            line-height: 1.4;
+            font-family: 'Ma Shan Zheng', cursive;
+            color: var(--classical-brown);
+        }
+        
+        .title-link {
+            color: var(--classical-brown);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+        }
+        
+        .title-link:hover {
+            color: var(--classical-red);
+        }
+        
+        /* 标签 */
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .tag-pill {
+            background: rgba(139, 69, 19, 0.1);
+            color: var(--classical-brown);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            border: 1px solid rgba(139, 69, 19, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .tag-pill:hover {
+            background: var(--classical-brown);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        /* 文章摘要 */
+        .card-excerpt {
+            color: var(--classical-ink);
+            line-height: 1.8;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--classical-gold);
+            padding-left: 15px;
+            font-style: italic;
+            background: rgba(193, 154, 107, 0.05);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* 阅读按钮 */
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--classical-brown);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: bold;
+            padding: 8px 20px;
+            border: 2px solid var(--classical-brown);
+            border-radius: 20px;
+            transition: all 0.3s;
+            background: white;
+        }
+        
+        .read-more:hover {
+            background: var(--classical-brown);
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        /* === 古典分页 === */
+        .classical-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin: 80px 0 50px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            border: 2px solid var(--classical-border);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+        
+        .page-btn.prev {
+            background: white;
+            color: var(--classical-brown);
+            border: 2px solid var(--classical-brown);
+        }
+        
+        .page-btn.next {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            color: white;
+            border: 2px solid transparent;
+        }
+        
+        .page-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139, 69, 19, 0.2);
+        }
+        
+        .page-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: #f0f0f0;
+            color: #999;
+            border: 2px solid #ddd;
+        }
+        
+        .page-info {
+            color: var(--classical-blue);
+            font-size: 1rem;
+            padding: 8px 25px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            border: 1px solid var(--classical-border);
+        }
+        
+        /* === 古典页脚 === */
+        .classical-footer {
+            background: rgba(248, 245, 230, 0.95);
+            border-top: 2px solid var(--classical-border);
+            padding: 50px 0 40px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid var(--classical-border);
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .footer-link:hover {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            border-color: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .footer-info {
+            text-align: center;
+            color: var(--classical-blue);
+            padding-top: 30px;
+            border-top: 1px solid var(--classical-border);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .footer-seal {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--classical-red);
+            color: white;
+            border-radius: 50%;
+            line-height: 40px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        
+        /* === 无文章样式 === */
+        .empty-posts {
+            text-align: center;
+            padding: 80px 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            border: 2px dashed var(--classical-border);
+            grid-column: 1 / -1;
+        }
+        
+        .empty-icon {
+            font-size: 4rem;
+            color: var(--classical-gold);
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .empty-posts h3 {
+            color: var(--classical-brown);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+        
+        .empty-posts p {
+            color: var(--classical-blue);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        /* === 诗词卡片特色 === */
+        .poem-signature {
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            color: var(--classical-gold);
+            font-size: 0.8rem;
+            font-style: italic;
+            opacity: 0.8;
+        }
+        
+        /* === 响应式设计 === */
+        @media (max-width: 1200px) {
+            .classical-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .classical-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .classical-nav {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .site-title {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .classical-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .site-title {
+                font-size: 2.2rem;
+                letter-spacing: 2px;
+            }
+            
+            .site-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .classical-pagination {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+            
+            .page-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .footer-nav {
+                gap: 15px;
+            }
+            
+            .nav-link {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 古典页眉 -->
+    <header class="classical-header">
+        <div class="header-container">
+            <a href="/poetry-garden/" class="site-logo">
+                <i class="fas fa-feather-alt"></i>
+                踏月诗阁
+            </a>
+            
+            <nav class="classical-nav">
+                <a href="/poetry-garden/" class="nav-link active">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="/poetry-garden/archives" class="nav-link">
+                    <i class="fas fa-archive"></i> 归档
+                </a>
+                <a href="/poetry-garden/categories" class="nav-link">
+                    <i class="fas fa-layer-group"></i> 分类
+                </a>
+                <a href="/poetry-garden/tags" class="nav-link">
+                    <i class="fas fa-tags"></i> 标签
+                </a>
+                <a href="/poetry-garden/about" class="nav-link">
+                    <i class="fas fa-book"></i> 关于
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- 主内容容器 -->
+    <main class="classical-container">
+        <!-- 古典英雄区域 -->
+        <section class="hero-section">
+            <h1 class="site-title">踏月诗阁</h1>
+            <h2 class="site-subtitle">星河照卷帙 · 墨锋映秋霜</h2>
+            <p class="site-motto">
+                <i class="fas fa-quote-left"></i>
+                独坐寒窗对月吟，一砚清辉万古心。诗魂剑魄长相守，墨海词林自在行。
+                <i class="fas fa-quote-right"></i>
+            </p>
+        </section>
+        
+        <!-- 古典文章网格 -->
+        <section class="classical-section">
+            <h2 class="section-title">
+                <i class="fas fa-feather"></i>
+                最新诗卷
+                <i class="fas fa-feather"></i>
+            </h2>
+            
+            
+                <div class="classical-grid">
+                    
+                        <article class="classical-card">
+                            <div class="card-header">
+                                <div class="card-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <time>01月16日</time>
+                                </div>
+                                
+                                
+                                    <a href="/poetry-garden/categories/%E8%AF%8D%E4%BD%9C/" class="card-category">
+                                        词作
+                                    </a>
+                                
+                            </div>
+                            
+                            <h3 class="card-title">
+                                <a href="/poetry-garden/2026/01/16/%E6%B0%B4%E8%B0%83%E6%AD%8C%E5%A4%B4-%E9%97%AE%E6%9C%88/" class="title-link">
+                                    《水调歌头·问月》
+                                </a>
+                            </h3>
+                            
+                            
+                                <div class="card-tags">
+                                    
+                                        <a href="/poetry-garden/tags/%E9%97%AE%E6%9C%88/" class="tag-pill">
+                                            <i class="fas fa-hashtag"></i> 问月
+                                        </a>
+                                    
+                                        <a href="/poetry-garden/tags/%E5%AE%8B%E8%AF%8D/" class="tag-pill">
+                                            <i class="fas fa-hashtag"></i> 宋词
+                                        </a>
+                                    
+                                        <a href="/poetry-garden/tags/%E6%9C%88%E5%A4%9C/" class="tag-pill">
+                                            <i class="fas fa-hashtag"></i> 月夜
+                                        </a>
+                                    
+                                        <a href="/poetry-garden/tags/%E8%B6%85%E7%84%B6/" class="tag-pill">
+                                            <i class="fas fa-hashtag"></i> 超然
+                                        </a>
+                                    
+                                </div>
+                            
+                            
+                            <div class="card-excerpt">
+                                
+                                    
+                                    
+
+
+
+
+
+
+
+水调歌头·问月
+
+
+
+
+
+
+
+云薄浮月明，风软织清寒。举杯邀清影，相对两萧然
+
+
+
+
+
+宋词 · 月夜之思
+
+
+
+
+
+
+
+
+2026-01-16
+
+|
+
+
+原创词作
+
+|
+
+
+水调歌头...
+                                
+                            </div>
+                            
+                            <a href="/poetry-garden/2026/01/16/%E6%B0%B4%E8%B0%83%E6%AD%8C%E5%A4%B4-%E9%97%AE%E6%9C%88/" class="read-more">
+                                <i class="fas fa-book-reader"></i> 品读诗韵
+                            </a>
+                            
+                            <div class="poem-signature">
+                                <i class="fas fa-pen-nib"></i> 踏月诗客
+                            </div>
+                        </article>
+                    
+                        <article class="classical-card">
+                            <div class="card-header">
+                                <div class="card-date">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <time>12月14日</time>
+                                </div>
+                                
+                                
+                                    <a href="/poetry-garden/categories/%E5%89%91%E7%BB%8F%E6%B3%95%E5%85%B8/" class="card-category">
+                                        剑经法典
+                                    </a>
+                                
+                            </div>
+                            
+                            <h3 class="card-title">
+                                <a href="/poetry-garden/2025/12/14/%E8%9A%80%E5%89%91%E8%B5%8B/" class="title-link">
+                                    《蚀剑·赋》
+                                </a>
+                            </h3>
+                            
+                            
+                                <div class="card-tags">
+                                    
+                                        <a href="/poetry-garden/tags/%E8%9A%80%E5%89%91/" class="tag-pill">
+                                            <i class="fas fa-hashtag"></i> 蚀剑
+                                        </a>
+                                    
+                                        <a href="/poetry-garden/tags/%E5%89%91%E7%BB%8F/" class="tag-pill">
+                                            <i class="fas fa-hashtag"></i> 剑经
+                                        </a>
+                                    
+                                        <a href="/poetry-garden/tags/%E5%89%91%E9%81%93/" class="tag-pill">
+                                            <i class="fas fa-hashtag"></i> 剑道
+                                        </a>
+                                    
+                                        <a href="/poetry-garden/tags/%E8%BE%A9%E8%AF%81/" class="tag-pill">
+                                            <i class="fas fa-hashtag"></i> 辩证
+                                        </a>
+                                    
+                                </div>
+                            
+                            
+                            <div class="card-excerpt">
+                                
+                                    
+                                    
+
+
+
+
+
+蚀剑·赋
+剑可蚀而魂不可蚀，形可变而道不可变
+
+
+
+蚀剑·剑经序
+序文
+
+
+天地化阴阳，万物蕴刚柔，阴阳相推、刚柔相济，此乃辩证之枢。剑为百兵之君，非恃锋刃，实载大道。昔风胡子辨三剑，分庶...
+                                
+                            </div>
+                            
+                            <a href="/poetry-garden/2025/12/14/%E8%9A%80%E5%89%91%E8%B5%8B/" class="read-more">
+                                <i class="fas fa-book-reader"></i> 品读诗韵
+                            </a>
+                            
+                            <div class="poem-signature">
+                                <i class="fas fa-pen-nib"></i> 踏月诗客
+                            </div>
+                        </article>
+                    
+                </div>
+            
+        </section>
+        
+        <!-- 古典分页 -->
+        
+            <div class="classical-pagination">
+                
+                    <a href="/poetry-garden/page/2/" class="page-btn prev">
+                        <i class="fas fa-chevron-left"></i> 上一页
+                    </a>
+                
+                
+                <div class="page-info">
+                    第 <strong>3</strong> 卷 / 共 <strong>3</strong> 卷
+                </div>
+                
+                
+                    <span class="page-btn next disabled">
+                        下一页 <i class="fas fa-chevron-right"></i>
+                    </span>
+                
+            </div>
+        
+    </main>
+    
+    <!-- 注意：这里只有一个页脚 -->
+    <!-- 古典页脚 -->
+    
+    <script>
+        // 古典交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 页眉滚动效果
+            const header = document.querySelector('.classical-header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 5px 20px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                } else {
+                    header.style.boxShadow = '0 2px 10px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                }
+            });
+            
+            // 卡片悬停效果
+            const cards = document.querySelectorAll('.classical-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '100';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+            
+            // 诗词签名效果
+            const signatures = document.querySelectorAll('.poem-signature');
+            signatures.forEach(sig => {
+                sig.addEventListener('mouseenter', function() {
+                    this.style.opacity = '1';
+                    this.style.transform = 'scale(1.1)';
+                });
+                
+                sig.addEventListener('mouseleave', function() {
+                    this.style.opacity = '0.8';
+                    this.style.transform = 'scale(1)';
+                });
+            });
+            
+            // 添加页面加载动画
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
+
+    </main>
+    
+    <!-- 古典页脚 -->
+    <footer class="classical-footer">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <a href="/poetry-garden/" class="footer-link">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="/poetry-garden/archives" class="footer-link">
+                    <i class="fas fa-archive"></i> 归档
+                </a>
+                <a href="/poetry-garden/categories" class="footer-link">
+                    <i class="fas fa-layer-group"></i> 分类
+                </a>
+                <a href="/poetry-garden/tags" class="footer-link">
+                    <i class="fas fa-tags"></i> 标签
+                </a>
+                <a href="/poetry-garden/about" class="footer-link">
+                    <i class="fas fa-book"></i> 关于
+                </a>
+            </nav>
+            
+            <div class="footer-info">
+                <div>
+                    © 2026 <span class="footer-seal">诗</span> 踏月诗阁 <span class="footer-seal">阁</span>
+                </div>
+                <div style="margin-top: 15px; font-style: italic; color: var(--classical-gold);">
+                    墨香永驻 · 诗魂长存 · 雅韵流芳
+                </div>
+                <div style="margin-top: 10px; font-size: 0.8rem; color: var(--classical-blue);">
+                    主题：古典诗韵 · 由 Hexo 驱动
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 页眉滚动效果
+            const header = document.querySelector('.classical-header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 5px 20px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                } else {
+                    header.style.boxShadow = '0 2px 10px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>踏月诗阁 | 星河照卷帙，墨锋映秋霜</title>
+    
+    <!-- 引入Google字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    
+    <!-- 引入Font Awesome图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* 古典诗词主题色调 */
+            --classical-paper: #f8f5e6;      /* 宣纸底色 */
+            --classical-ink: #3a2615;        /* 墨色 */
+            --classical-red: #c33;           /* 朱砂红 */
+            --classical-gold: #c19a6b;       /* 金色 */
+            --classical-brown: #8b4513;      /* 赭石色 */
+            --classical-blue: #5d8aa8;       /* 石青色 */
+            --classical-border: #d4b483;     /* 边框色 */
+            --classical-shadow: rgba(58, 38, 21, 0.1); /* 阴影色 */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: var(--classical-paper);
+            color: var(--classical-ink);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(193, 154, 107, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 30%),
+                linear-gradient(135deg, #f8f5e6 0%, #f0e6d6 100%);
+        }
+        
+        /* === 古典页眉 === */
+        .classical-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(248, 245, 230, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--classical-border);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px var(--classical-shadow);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .site-logo {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 1.8rem;
+            color: var(--classical-brown);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .site-logo i {
+            color: var(--classical-red);
+            font-size: 1.5rem;
+        }
+        
+        /* === 古典导航 === */
+        .classical-nav {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--classical-red);
+            border-color: var(--classical-red);
+            background: rgba(195, 51, 51, 0.05);
+        }
+        
+        .nav-link.active {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            color: white;
+            border: none;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+        
+        /* === 主容器 === */
+        .classical-container {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 30px 20px;
+            min-height: calc(100vh - 150px);
+        }
+        
+        /* === 古典页脚 === */
+        .classical-footer {
+            background: rgba(248, 245, 230, 0.95);
+            border-top: 2px solid var(--classical-border);
+            padding: 50px 0 40px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid var(--classical-border);
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .footer-link:hover {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            border-color: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .footer-info {
+            text-align: center;
+            color: var(--classical-blue);
+            padding-top: 30px;
+            border-top: 1px solid var(--classical-border);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .footer-seal {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--classical-red);
+            color: white;
+            border-radius: 50%;
+            line-height: 40px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        
+        /* === 响应式设计 === */
+        @media (max-width: 900px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .classical-nav {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .footer-nav {
+                gap: 15px;
+            }
+            
+            .nav-link {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <!-- 古典页眉 -->
+    <header class="classical-header">
+        <div class="header-container">
+            <a href="/poetry-garden/" class="site-logo">
+                <i class="fas fa-feather-alt"></i>
+                踏月诗阁
+            </a>
+            
+            <nav class="classical-nav">
+                <a href="/poetry-garden/" class="nav-link ">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="/poetry-garden/archives" class="nav-link ">
+                    <i class="fas fa-archive"></i> 归档
+                </a>
+                <a href="/poetry-garden/categories" class="nav-link ">
+                    <i class="fas fa-layer-group"></i> 分类
+                </a>
+                <a href="/poetry-garden/tags" class="nav-link ">
+                    <i class="fas fa-tags"></i> 标签
+                </a>
+                <a href="/poetry-garden/about" class="nav-link ">
+                    <i class="fas fa-book"></i> 关于
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- 主内容 -->
+    <main class="classical-container">
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>水调歌头·问剑 · 踏月诗阁</title><meta name="description" content="水调歌头·问剑
+
+
+
+
+
+
+
+三尺青锋在，匣底夜长鸣一剑光寒处，万象始更新
+
+
+
+
+
+剑气凌云 · 初心不灭
+
+
+
+
+
+
+
+
+2026-01-17
+
+|
+
+
+原创词作
+
+|
+
+
+水调歌头
+
+
+
+
+
+
+
+
+
+
+
+⚔️ 词牌简介 · 水调歌头
+
+《水调歌头》本为隋唐曲调，宋代定型为词牌。双调九十五字，前"><meta name="og:description" content="水调歌头·问剑
+
+
+
+
+
+
+
+三尺青锋在，匣底夜长鸣一剑光寒处，万象始更新
+
+
+
+
+
+剑气凌云 · 初心不灭
+
+
+
+
+
+
+
+
+2026-01-17
+
+|
+
+
+原创词作
+
+|
+
+
+水调歌头
+
+
+
+
+
+
+
+
+
+
+
+⚔️ 词牌简介 · 水调歌头
+
+《水调歌头》本为隋唐曲调，宋代定型为词牌。双调九十五字，前"><meta name="twitter:site" content="踏月诗阁"><meta name="twitter:title" content="水调歌头·问剑"><meta name="twitter:card" content="summary"><meta name="keywords" content="诗词,宋词,古典诗词,文学,诗歌"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/poetry-garden/css/bootstrap.min.css"><link rel="stylesheet" href="/poetry-garden/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/poetry-garden/">대문</a></li><li><a href="/poetry-garden/archives">아카이브</a></li><li><a href="/poetry-garden/categories">카테고리</a></li><li><a href="/poetry-garden/tags">태그</a></li><!-- +make_page_links() // 暂时禁用--><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post"><h1 class="post-title">水调歌头·问剑</h1><div class="post-meta"><span class="post-time">post.posted 2026-01-17</span> | <span class="post-category"><a href="/poetry-garden/categories/%E8%AF%8D%E4%BD%9C/">词作</a></span> | <span class="post-tags"><a href="/poetry-garden/tags/%E9%97%AE%E5%89%91/">问剑</a>, <a href="/poetry-garden/tags/%E5%AE%8B%E8%AF%8D/">宋词</a>, <a href="/poetry-garden/tags/%E6%B0%B4%E8%B0%83%E6%AD%8C%E5%A4%B4/">水调歌头</a>, <a href="/poetry-garden/tags/%E5%89%91%E6%B0%94/">剑气</a>, <a href="/poetry-garden/tags/%E8%B1%AA%E6%83%85/">豪情</a>, <a href="/poetry-garden/tags/%E5%88%9D%E5%BF%83/">初心</a></span></div><div class="post-content"><div style="font-family: 'STKaiti', 'SimSun', 'Source Han Serif SC', serif; line-height: 1.8; color: #2c3e50; max-width: 800px; margin: 0 auto; padding: 0 1rem;">
+
+<!-- 标题区域 - 剑气凌云主题 -->
+<div style="background: linear-gradient(135deg, #0f2027 0%, #203a43 30%, #2c5364 70%, #0f3443 100%); color: white; padding: 3.5rem 2rem 3rem 2rem; margin: 2rem 0 4rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); min-height: 300px; display: flex; flex-direction: column; justify-content: center; border-radius: 18px; width: 100%;">
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
+    radial-gradient(circle at 20% 30%, rgba(44, 83, 100, 0.4) 0%, transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(15, 52, 67, 0.3) 0%, transparent 60%),
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 5 L55 45 L95 50 L55 55 L50 95 L45 55 L5 50 L45 45 Z" fill="none" stroke="rgba(173,216,230,0.05)" stroke-width="0.3"/></svg>');"></div>
+<div style="position: relative; z-index: 2;">
+<!-- 主要标题 -->
+<div style="font-size: 2.8rem; font-weight: bold; margin: 0; text-shadow: 0 2px 15px rgba(0, 0, 0, 0.9), 0 0 20px rgba(64, 224, 208, 0.3); letter-spacing: 4px; font-family: 'STKaiti', serif; line-height: 1.2; padding-bottom: 0.5rem;">
+水调歌头·问剑
+</div>
+
+<!-- 分隔线 -->
+<div style="width: 150px; height: 2px; background: linear-gradient(90deg, transparent, rgba(64, 224, 208, 0.7), transparent); margin: 1.5rem auto; opacity: 0.8;"></div>
+
+<!-- 核心句 -->
+<div style="font-size: 1.3rem; opacity: 0.95; margin: 0; font-weight: 300; letter-spacing: 2px; line-height: 1.5; padding: 0 1rem; text-shadow: 0 1px 8px rgba(0,0,0,0.6);">
+三尺青锋在，匣底夜长鸣<br>一剑光寒处，万象始更新
+</div>
+
+<!-- 装饰性点缀 -->
+<div style="margin-top: 2.5rem;">
+<div style="display: inline-block; background: rgba(64, 224, 208, 0.15); padding: 0.6rem 2rem; border-radius: 25px; font-size: 1rem; backdrop-filter: blur(8px); border: 1px solid rgba(64, 224, 208, 0.3); letter-spacing: 1px;">
+剑气凌云 · 初心不灭
+</div>
+</div>
+
+<!-- 日期信息 -->
+<div style="margin-top: 2.5rem;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 1.8rem; font-size: 1.05rem; color: rgba(255, 255, 255, 0.9);">
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.5rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 6v2h14V6H5z"/></svg>
+2026-01-17
+</span>
+<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.9rem;">|</span>
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.5rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+原创词作
+</span>
+<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.9rem;">|</span>
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.5rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+水调歌头
+</span>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- 词牌简介 -->
+<div style="position: relative; z-index: 1; margin-top: 0;">
+
+<div style="background: linear-gradient(145deg, rgba(64, 224, 208, 0.1), rgba(32, 58, 67, 0.05)); padding: 2.2rem; border-radius: 12px; margin: 0 0 3rem 0; border-left: 4px solid #40e0d0; min-height: 180px;">
+<div style="color: #2c5364; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">⚔️ 词牌简介 · 水调歌头</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem; padding: 0.5rem 0;">
+《水调歌头》本为隋唐曲调，宋代定型为词牌。双调九十五字，前后段各四平韵，声情豪放激越，宜抒壮怀激烈。辛弃疾《水调歌头·盟鸥》为此调豪放典范，苏轼《水调歌头·明月几时有》则融合豪放与哲思。本词承辛弃疾豪放遗风，融剑客精神于词章，写剑气纵横，抒初心不改，于剑光寒处见万象更新。
+</div>
+</div>
+
+<!-- 创作心语 -->
+<div style="background: linear-gradient(145deg, rgba(44, 83, 100, 0.08), rgba(15, 52, 67, 0.04)); padding: 2.5rem; border-radius: 14px; border: 1px solid rgba(64, 224, 208, 0.2); margin: 2.5rem 0; font-style: italic; color: #4a5568; position: relative; min-height: 220px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+<div style="position: absolute; top: -14px; left: 25px; background: white; color: #2c5364; padding: 0.4rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: bold; border: 1px solid rgba(64, 224, 208, 0.3); box-shadow: 0 3px 10px rgba(0,0,0,0.1); letter-spacing: 1px;">剑客心语</div>
+<div style="padding-top: 1.5rem; font-size: 1.08rem; line-height: 1.9;">
+夜深人静时，忽闻匣中剑鸣。不是金属的振动，是灵魂的共鸣。想起少年时，三尺青锋在手，敢向千山试刃，敢向寒江斩浪，敢以凡躯淬星魂。而今剑蒙尘埃，初心可曾蒙尘？不，剑在，剑气就在；初心在，锐气就在。此词不为怀旧而作，为唤醒而歌——唤醒匣中剑，唤醒心中剑。斩浮云，断荆棘，破坚冰，哪怕此道少人行。拭净霜锋，守定初心，待一剑光寒时，万象自此更新。
+</div>
+</div>
+
+<h2 id="词文详析"><a href="#词文详析" class="headerlink" title="词文详析"></a>词文详析</h2><!-- 上阕 -->
+<div style="background: linear-gradient(145deg, #0a1929 0%, #1a2b3a 100%); border: 2px solid #40e0d0; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.25), 0 0 30px rgba(64, 224, 208, 0.1); min-height: 400px;">
+<div style="position: absolute; top: -16px; left: 25px; background: #40e0d0; color: #0a1929; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 12px rgba(64, 224, 208, 0.4); letter-spacing: 1px;">上阕 · 剑气长鸣</div>
+
+<div style="text-align: center; margin-bottom: 2rem; color: rgba(255, 255, 255, 0.9);">
+<div style="color: #7fffd4; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; font-family: 'STKaiti', serif; letter-spacing: 1px; text-shadow: 0 1px 8px rgba(0,0,0,0.5), 0 0 10px rgba(127, 255, 212, 0.3);">
+三尺青锋在，匣底夜长鸣。
+</div>
+<div style="color: rgba(255, 255, 255, 0.85); line-height: 2; font-size: 1.15rem; letter-spacing: 0.5px; text-shadow: 0 1px 5px rgba(0,0,0,0.3);">
+挑灯看剑，犹记年少气纵横。<br>
+曾向千山试刃，曾向寒江斩浪，何惧淬星魂。<br>
+今日尘埃满，谁与共磨铮。
+</div>
+</div>
+
+<!-- 上阕解析 -->
+<div style="background: rgba(64, 224, 208, 0.15); padding: 2.2rem; border-radius: 12px; margin-top: 2.2rem; border-left: 3px solid #7fffd4; min-height: 280px; color: rgba(255, 255, 255, 0.9);">
+<div style="color: #7fffd4; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🗡️ 上阕解析 · 少年剑气</div>
+<div style="line-height: 1.85; font-size: 1.05rem;">
+<strong>"三尺青锋在，匣底夜长鸣。"</strong> 开篇如剑出鞘，寒光四射。"三尺"是剑的标准长度，也是剑客精神的尺度。"青锋"不是普通的剑，是经过千锤百炼的名剑。"匣底夜长鸣"——剑在匣中，心却未死；夜虽深沉，剑气长鸣。这"鸣"是剑的渴望，也是心的呼唤。<br><br>
+
+<p><strong>“挑灯看剑，犹记年少气纵横。”</strong> 化用辛弃疾”醉里挑灯看剑”，却出以新意。辛词是醉后的悲壮，本词是清醒的追忆。”气纵横”三字，写尽少年豪情——气贯长虹，纵横天地。<br><br></p>
+<p><strong>“曾向千山试刃，曾向寒江斩浪，何惧淬星魂。”</strong> 三个”曾”字，如三重剑气，层层递进。”千山试刃”是征服自然的勇气，”寒江斩浪”是挑战逆境的魄力，”淬星魂”更是惊人之语——以星辰之魂淬炼剑锋，这是何等气魄！<br><br></p>
+<p><strong>“今日尘埃满，谁与共磨铮。”</strong> 从豪情万丈转到现实感慨。”尘埃满”是时间的沉淀，也是现实的磨蚀。”谁与共磨铮”——铮，是金属相击之声，也是剑客相知之意。这是孤独的叩问，也是寻找同道的呼唤。</p>
+</div>
+</div>
+</div>
+
+<!-- 下阕 -->
+<div style="background: linear-gradient(145deg, #1a2b3a 0%, #2a3b4a 100%); border: 2px solid #7fffd4; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.25), 0 0 30px rgba(127, 255, 212, 0.1); min-height: 420px;">
+<div style="position: absolute; top: -16px; left: 25px; background: #7fffd4; color: #1a2b3a; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 12px rgba(127, 255, 212, 0.4); letter-spacing: 1px;">下阕 · 初心如剑</div>
+
+<div style="text-align: center; margin-bottom: 2rem; color: rgba(255, 255, 255, 0.9);">
+<div style="color: #40e0d0; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; font-family: 'STKaiti', serif; letter-spacing: 1px; text-shadow: 0 1px 8px rgba(0,0,0,0.5), 0 0 10px rgba(64, 224, 208, 0.3);">
+斩浮云，断荆棘，破坚冰。
+</div>
+<div style="color: rgba(255, 255, 255, 0.85); line-height: 2; font-size: 1.15rem; letter-spacing: 0.5px; text-shadow: 0 1px 5px rgba(0,0,0,0.3);">
+莫嗟路远，此道从来少人还。<br>
+且把霜锋拭净，且把初心守定，浩气自峥嵘。<br>
+一剑光寒处，万象始更新。
+</div>
+</div>
+
+<!-- 下阕解析 -->
+<div style="background: rgba(127, 255, 212, 0.15); padding: 2.2rem; border-radius: 12px; margin-top: 2.2rem; border-left: 3px solid #40e0d0; min-height: 320px; color: rgba(255, 255, 255, 0.9);">
+<div style="color: #40e0d0; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">✨ 下阕解析 · 万象更新</div>
+<div style="line-height: 1.85; font-size: 1.05rem;">
+<strong>"斩浮云，断荆棘，破坚冰。"</strong> 三字短句，节奏铿锵，如剑招连环。"浮云"是虚妄的阻碍，"荆棘"是现实的困难，"坚冰"是内心的冻结。斩、断、破，三字三境界，一剑破万障。<br><br>
+
+<p><strong>“莫嗟路远，此道从来少人还。”</strong> 清醒的认知，坚定的选择。”路远”不仅是空间距离，更是精神历程。”少人还”——真正的剑道，从来孤独。但正因为”少人还”，才显珍贵；正因为孤独，才需坚守。<br><br></p>
+<p><strong>“且把霜锋拭净，且把初心守定，浩气自峥嵘。”</strong> 两个”且把”，如两个坚定的动作。”拭净霜锋”是外在的修持，”守定初心”是内在的坚守。”浩气自峥嵘”——浩然的剑气，自然峥嵘挺立。这是自信，更是自证。<br><br></p>
+<p><strong>“一剑光寒处，万象始更新。”</strong> 结句如惊雷破空，光照天地。”一剑光寒”不仅是剑光的寒冷，更是剑气的凛然。”万象更新”——一剑之威，能令天地万象重新开始。这不是破坏，是创生；不是终结，是开端。将剑道提升到宇宙更新的高度，气势磅礴，意境高远。</p>
+</div>
+</div>
+</div>
+
+<h2 id="剑气三重境"><a href="#剑气三重境" class="headerlink" title="剑气三重境"></a>剑气三重境</h2><div style="background: linear-gradient(145deg, rgba(15, 52, 67, 0.1), rgba(44, 83, 100, 0.05)); border: 2px solid #2c5364; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(44, 83, 100, 0.15); min-height: 500px;">
+
+<div style="text-align: center; margin-bottom: 2.8rem;">
+<div style="color: #2c5364; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">⚔️ 剑气修炼三重境</div>
+<div style="color: #40e0d0; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">从剑气长鸣到初心守定，从尘埃满剑到万象更新</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
+
+<!-- 第一境 -->
+<div style="background: linear-gradient(145deg, #0a1929 0%, #1a2b3a 100%); padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.3); border-top: 4px solid #40e0d0; position: relative; overflow: hidden; min-height: 320px; color: rgba(255, 255, 255, 0.9);">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(64, 224, 208, 0.3); border-radius: 0 0 0 70px;"></div>
+<div style="color: #7fffd4; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🗡️ 第一境 · 剑气长鸣</div>
+<ul style="font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>匣底夜长鸣</strong> - 剑在匣中，心未死</li>
+<li style="margin-bottom: 0.8rem;"><strong>年少气纵横</strong> - 少年豪情，气贯天地</li>
+<li style="margin-bottom: 0.8rem;"><strong>千山试刃，寒江斩浪</strong> - 征服自然的勇气</li>
+<li style="margin-bottom: 0.8rem;"><strong>何惧淬星魂</strong> - 以星辰淬剑的魄力</li>
+<li><strong>今日尘埃满</strong> - 现实的磨蚀与沉淀</li>
+</ul>
+<div style="color: #40e0d0; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed rgba(255,255,255,0.1);">
+"淬星魂"——凡人躯体，星辰气魄
+</div>
+</div>
+
+<!-- 第二境 -->
+<div style="background: linear-gradient(145deg, #1a2b3a 0%, #2a3b4a 100%); padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.3); border-top: 4px solid #7fffd4; position: relative; overflow: hidden; min-height: 320px; color: rgba(255, 255, 255, 0.9);">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(127, 255, 212, 0.3); border-radius: 0 0 0 70px;"></div>
+<div style="color: #40e0d0; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🔥 第二境 · 斩破万障</div>
+<ul style="font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>斩浮云</strong> - 斩破虚妄与幻象</li>
+<li style="margin-bottom: 0.8rem;"><strong>断荆棘</strong> - 斩断现实的阻碍</li>
+<li style="margin-bottom: 0.8rem;"><strong>破坚冰</strong> - 破除内心的冻结</li>
+<li style="margin-bottom: 0.8rem;"><strong>此道少人还</strong> - 剑道的孤独本质</li>
+<li><strong>莫嗟路远</strong> - 坚定的前行意志</li>
+</ul>
+<div style="color: #7fffd4; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed rgba(255,255,255,0.1);">
+"斩浮云，断荆棘，破坚冰"——三剑破三障
+</div>
+</div>
+
+<!-- 第三境 -->
+<div style="background: linear-gradient(145deg, #2a3b4a 0%, #3a4b5a 100%); padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.3); border-top: 4px solid #b0e0e6; position: relative; overflow: hidden; min-height: 320px; color: rgba(255, 255, 255, 0.9);">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(176, 224, 230, 0.3); border-radius: 0 0 0 70px;"></div>
+<div style="color: #b0e0e6; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">✨ 第三境 · 万象更新</div>
+<ul style="font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>拭净霜锋</strong> - 外在的修持与磨砺</li>
+<li style="margin-bottom: 0.8rem;"><strong>守定初心</strong> - 内在的坚守与澄明</li>
+<li style="margin-bottom: 0.8rem;"><strong>浩气自峥嵘</strong> - 浩然剑气的自然挺立</li>
+<li style="margin-bottom: 0.8rem;"><strong>一剑光寒</strong> - 剑气的终极绽放</li>
+<li><strong>万象始更新</strong> - 剑道的创生境界</li>
+</ul>
+<div style="color: #b0e0e6; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed rgba(255,255,255,0.1);">
+"万象始更新"——一剑开创新天地
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- 剑之四重象征 -->
+<div style="background: linear-gradient(145deg, rgba(64, 224, 208, 0.08), rgba(127, 255, 212, 0.05)); border: 2px solid #40e0d0; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(64, 224, 208, 0.12); min-height: 500px;">
+
+<div style="text-align: center; margin-bottom: 2.5rem;">
+<div style="color: #2c5364; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🔱 剑之四重象征</div>
+<div style="color: #40e0d0; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">从器物到精神，从技艺到境界</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
+
+<!-- 器物之剑 -->
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); min-height: 400px; border-top: 4px solid #2c5364;">
+<div style="color: #2c5364; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 2px solid #e6f7ff; padding-bottom: 1rem; font-size: 1.2rem;">🗡️ 器物之剑 · 青锋</div>
+<div style="margin-top: 1.2rem;">
+<div style="margin-bottom: 1.8rem;">
+<div style="color: #0a1929; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">三尺青锋</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">"三尺"是礼制尺度，也是实用长度。"青锋"指剑刃的寒光，也指剑身的质地。器物之剑，是千锤百炼的结晶，是匠人精神的体现。</div>
+</div>
+<div style="margin-bottom: 1.8rem;">
+<div style="color: #0a1929; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">匣底夜长鸣</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">剑在匣中，依然有灵。这"鸣"是金属的振动，更是剑的渴望——渴望出鞘，渴望饮血，渴望实现存在的价值。</div>
+</div>
+<div style="margin-bottom: 1.8rem;">
+<div style="color: #0a1929; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">尘埃满</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">时间的尘埃，现实的蒙尘。但真正的名剑，尘埃掩不住锋芒，时间磨不灭剑气。</div>
+</div>
+</div>
+</div>
+
+<!-- 精神之剑 -->
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); min-height: 400px; border-top: 4px solid #40e0d0;">
+<div style="color: #40e0d0; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 2px solid #f0ffff; padding-bottom: 1rem; font-size: 1.2rem;">💫 精神之剑 · 剑气</div>
+<div style="margin-top: 1.2rem;">
+<div style="margin-bottom: 1.8rem;">
+<div style="color: #2c5364; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">淬星魂</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">以星辰之魂淬炼剑锋，这是精神的升华。剑不再是金属，是凝聚了宇宙精华的精神载体。</div>
+</div>
+<div style="margin-bottom: 1.8rem;">
+<div style="color: #2c5364; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">浩气自峥嵘</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">浩然之气，自然峥嵘。这是内在精神的自然流露，不需要刻意表现，只需守定初心。</div>
+</div>
+<div style="margin-bottom: 1.8rem;">
+<div style="color: #2c5364; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">一剑光寒</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">剑光之寒，是精神的凛然。这种"寒"不是冷漠，是清澈；不是疏离，是纯粹。</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- 技艺之剑 -->
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); min-height: 400px; border-top: 4px solid #7fffd4; margin-top: 2.2rem;">
+<div style="color: #7fffd4; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 2px solid #f0fff0; padding-bottom: 1rem; font-size: 1.2rem;">🎯 技艺之剑 · 剑道</div>
+<div style="margin-top: 1.2rem;">
+<div style="margin-bottom: 1.8rem;">
+<div style="color: #2c5364; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">千山试刃</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">以千山为试剑石，这是技艺的极致追求。每一座山都是挑战，每一次试刃都是精进。</div>
+</div>
+<div style="margin-bottom: 1.8rem;">
+<div style="color: #2c5364; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">斩浮云，断荆棘，破坚冰</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">三种剑法，三重境界：斩虚、断实、破固。这是剑术的全面，也是技艺的圆融。</div>
+</div>
+<div style="margin-bottom: 1.8rem;">
+<div style="color: #2c5364; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">拭净霜锋</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">拭剑不仅是保养，是仪式，是修心。在擦拭中与剑对话，在磨砺中与己对话。</div>
+</div>
+</div>
+</div>
+
+<!-- 境界之剑 -->
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); min-height: 400px; border-top: 4px solid #b0e0e6; margin-top: 2.2rem;">
+<div style="color: #b0e0e6; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 2px solid #f0f8ff; padding-bottom: 1rem; font-size: 1.2rem;">🌌 境界之剑 · 剑心</div>
+<div style="margin-top: 1.2rem;">
+<div style="margin-bottom: 1.8rem;">
+<div style="color: #2c5364; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">守定初心</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">初心如剑，最纯粹，最锋利。守定初心，就是守住剑道的根本，守住自我的本真。</div>
+</div>
+<div style="margin-bottom: 1.8rem;">
+<div style="color: #2c5364; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">万象始更新</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">剑道的最高境界不是破坏，是创生；不是终结，是开端。一剑出，万象新——这是剑的慈悲，剑的智慧。</div>
+</div>
+<div style="margin-bottom: 1.8rem;">
+<div style="color: #2c5364; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">此道少人还</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">真正的剑道，是孤独的朝圣。不是没有人走，是走的人大多中途而返。正因为"少人还"，才显珍贵。</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- 与辛弃疾《破阵子》的对话 -->
+<div style="background: linear-gradient(145deg, rgba(15, 52, 67, 0.05), rgba(44, 83, 100, 0.02)); border: 2px solid #2c5364; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(44, 83, 100, 0.1); min-height: 400px;">
+
+<div style="text-align: center; margin-bottom: 2.5rem;">
+<div style="color: #2c5364; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">⚔️ 与辛弃疾的剑魂对话</div>
+<div style="color: #40e0d0; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">跨越八百年的剑气共鸣，不同的时代，同样的剑心</div>
+</div>
+
+<div style="color: #4a5568; line-height: 1.9; font-size: 1.08rem;">
+
+<p><strong>辛弃疾《破阵子》：</strong><br><br>“醉里挑灯看剑，梦回吹角连营。八百里分麾下炙，五十弦翻塞外声。”<br><br><strong>本词回应：</strong><br><br>“挑灯看剑，犹记年少气纵横。曾向千山试刃，曾向寒江斩浪，何惧淬星魂。”<br><br></p>
+<p><strong>辛弃疾的悲壮：</strong><br><br>“了却君王天下事，赢得生前身后名。可怜白发生！”<br><br><strong>本词的超越：</strong><br><br>“莫嗟路远，此道从来少人还。且把霜锋拭净，且把初心守定，浩气自峥嵘。”<br><br></p>
+<div style="background: rgba(44, 83, 100, 0.08); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0; border-left: 3px solid #2c5364;">
+<strong>剑魂的对话：</strong><br>
+辛弃疾的剑，是报国之剑，承载着"了却君王天下事"的壮志；<br>
+本词的剑，是初心之剑，承载着"守定初心"的自我坚守。<br><br>
+辛弃疾在"白发生"中慨叹时光流逝，壮志难酬；<br>
+本词在"万象始更新"中宣告重新开始，永不止息。<br><br>
+这是从"为国"到"为己"的转变，从"功名"到"初心"的升华，从"慨叹"到"行动"的跨越。
+</div>
+
+<p><strong>共同的剑心：</strong><br><br>无论时代如何变迁，无论剑指何方，真正的剑客，都有同样的剑心——<br><br>剑在，剑气就在；<br><br>心在，初心就在；<br><br>人在，浩气就在。<br><br><br>这是跨越八百年的剑气共鸣，这是永恒不灭的剑客精神。</p>
+</div>
+</div>
+
+<!-- 结语 -->
+<div style="background: linear-gradient(145deg, #e6f7ff 0%, #d1ecff 100%); border: 2px solid #2c5364; border-radius: 18px; padding: 2.5rem; margin: 3rem 0; text-align: center; box-shadow: 0 10px 25px rgba(44, 83, 100, 0.1);">
+<div style="color: #2c5364; font-size: 1.4rem; font-weight: bold; margin-bottom: 1.5rem; letter-spacing: 1px;">⚔️ 剑客宣言</div>
+<div style="color: #4a5568; line-height: 1.9; font-size: 1.1rem; font-style: italic; max-width: 700px; margin: 0 auto;">
+剑在匣中，不是沉睡，是蓄势；<br>
+剑蒙尘埃，不是锈蚀，是沉淀；<br>
+剑气长鸣，不是喧哗，是呼唤。<br><br>
+斩浮云，是为看清真实；<br>
+断荆棘，是为开辟道路；<br>
+破坚冰，是为融化隔阂。<br><br>
+拭净霜锋，是为保持锋利；<br>
+守定初心，是为不忘来路；<br>
+浩气峥嵘，是为挺立天地。<br><br>
+当一剑光寒时，<br>
+不是终结的破坏，<br>
+是创生的开始——<br>
+万象自此更新，<br>
+天地自此重启。
+</div>
+</div>
+
+</div> <!-- 关闭z-index包装div -->
+
+</div> <!-- 关闭主容器div -->
+</div></div><div class="share"><span>공유하기</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://lyluchao.github.io/2026/01/17/水调歌头-问剑/%20踏月诗阁%20水调歌头·问剑"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/poetry-garden/2026/01/17/%E5%AE%87%E5%AE%99%E5%89%91%E7%A2%91-%E6%8F%BD%E6%98%9F%E9%93%AD%E5%88%BB/" title="宇宙剑碑·揽星卷宗铭刻记录"><i class="fa fa-angle-double-left"></i>&nbsp;이전 포스트: 宇宙剑碑·揽星卷宗铭刻记录</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/poetry-garden/2026/01/16/%E5%A3%B0%E5%A3%B0%E6%85%A2-%E8%9C%95%E9%B3%9E%E9%9C%9E/" title="声声慢·蜕鳞霞">다음 포스트: 声声慢·蜕鳞霞&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/poetry-garden/js/jquery-3.1.0.min.js"></script><script src="/poetry-garden/js/bootstrap.min.js"></script><script src="/poetry-garden/js/jquery-migrate-1.2.1.min.js"></script><script src="/poetry-garden/js/jquery.appear.js"></script><script src="/poetry-garden/js/google-analytics.js"></script><script src="/poetry-garden/js/typography.js"></script><!-- hexo injector body_end start -->
+<script>
+// 检测是否需要加载 Mermaid
+if (document.querySelector('.mermaid')) {
+  // 动态加载 Mermaid 库
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+  script.onload = function() {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      flowchart: {
+        useMaxWidth: true,
+        htmlLabels: true
+      },
+      securityLevel: 'loose'
+    });
+    
+    // 重新渲染所有图表
+    mermaid.init();
+  };
+  document.head.appendChild(script);
+}
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 为可折叠 callout 添加点击事件
+  const collapsibleCallouts = document.querySelectorAll('.callout.is-collapsible');
+  
+  collapsibleCallouts.forEach(function(callout) {
+    const title = callout.querySelector('.callout-title');
+    
+    if (title) {
+      // 添加点击事件
+      title.addEventListener('click', function(e) {
+        // 如果点击的是链接，不触发折叠
+        if (e.target.tagName === 'A') return;
+        
+        callout.classList.toggle('is-collapsed');
+      });
+      
+      // 添加鼠标悬停效果
+      title.addEventListener('mouseenter', function() {
+        this.style.cursor = 'pointer';
+      });
+      
+      // 添加键盘支持（可访问性）
+      title.setAttribute('tabindex', '0');
+      title.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          callout.classList.toggle('is-collapsed');
+        }
+      });
+    }
+  });
+});
+</script>
+<!-- hexo injector body_end end --></body></html>
+    </main>
+    
+    <!-- 古典页脚 -->
+    <footer class="classical-footer">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <a href="/poetry-garden/" class="footer-link">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="/poetry-garden/archives" class="footer-link">
+                    <i class="fas fa-archive"></i> 归档
+                </a>
+                <a href="/poetry-garden/categories" class="footer-link">
+                    <i class="fas fa-layer-group"></i> 分类
+                </a>
+                <a href="/poetry-garden/tags" class="footer-link">
+                    <i class="fas fa-tags"></i> 标签
+                </a>
+                <a href="/poetry-garden/about" class="footer-link">
+                    <i class="fas fa-book"></i> 关于
+                </a>
+            </nav>
+            
+            <div class="footer-info">
+                <div>
+                    © 2026 <span class="footer-seal">诗</span> 踏月诗阁 <span class="footer-seal">阁</span>
+                </div>
+                <div style="margin-top: 15px; font-style: italic; color: var(--classical-gold);">
+                    墨香永驻 · 诗魂长存 · 雅韵流芳
+                </div>
+                <div style="margin-top: 10px; font-size: 0.8rem; color: var(--classical-blue);">
+                    主题：古典诗韵 · 由 Hexo 驱动
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 页眉滚动效果
+            const header = document.querySelector('.classical-header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 5px 20px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                } else {
+                    header.style.boxShadow = '0 2px 10px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

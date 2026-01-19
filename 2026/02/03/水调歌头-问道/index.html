@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>踏月诗阁 | 星河照卷帙，墨锋映秋霜</title>
+    
+    <!-- 引入Google字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    
+    <!-- 引入Font Awesome图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* 古典诗词主题色调 */
+            --classical-paper: #f8f5e6;      /* 宣纸底色 */
+            --classical-ink: #3a2615;        /* 墨色 */
+            --classical-red: #c33;           /* 朱砂红 */
+            --classical-gold: #c19a6b;       /* 金色 */
+            --classical-brown: #8b4513;      /* 赭石色 */
+            --classical-blue: #5d8aa8;       /* 石青色 */
+            --classical-border: #d4b483;     /* 边框色 */
+            --classical-shadow: rgba(58, 38, 21, 0.1); /* 阴影色 */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: var(--classical-paper);
+            color: var(--classical-ink);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(193, 154, 107, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 30%),
+                linear-gradient(135deg, #f8f5e6 0%, #f0e6d6 100%);
+        }
+        
+        /* === 古典页眉 === */
+        .classical-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(248, 245, 230, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--classical-border);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px var(--classical-shadow);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .site-logo {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 1.8rem;
+            color: var(--classical-brown);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .site-logo i {
+            color: var(--classical-red);
+            font-size: 1.5rem;
+        }
+        
+        /* === 古典导航 === */
+        .classical-nav {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--classical-red);
+            border-color: var(--classical-red);
+            background: rgba(195, 51, 51, 0.05);
+        }
+        
+        .nav-link.active {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            color: white;
+            border: none;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+        
+        /* === 主容器 === */
+        .classical-container {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 30px 20px;
+            min-height: calc(100vh - 150px);
+        }
+        
+        /* === 古典页脚 === */
+        .classical-footer {
+            background: rgba(248, 245, 230, 0.95);
+            border-top: 2px solid var(--classical-border);
+            padding: 50px 0 40px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid var(--classical-border);
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .footer-link:hover {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            border-color: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .footer-info {
+            text-align: center;
+            color: var(--classical-blue);
+            padding-top: 30px;
+            border-top: 1px solid var(--classical-border);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .footer-seal {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--classical-red);
+            color: white;
+            border-radius: 50%;
+            line-height: 40px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        
+        /* === 响应式设计 === */
+        @media (max-width: 900px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .classical-nav {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .footer-nav {
+                gap: 15px;
+            }
+            
+            .nav-link {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <!-- 古典页眉 -->
+    <header class="classical-header">
+        <div class="header-container">
+            <a href="/poetry-garden/" class="site-logo">
+                <i class="fas fa-feather-alt"></i>
+                踏月诗阁
+            </a>
+            
+            <nav class="classical-nav">
+                <a href="/poetry-garden/" class="nav-link ">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="/poetry-garden/archives" class="nav-link ">
+                    <i class="fas fa-archive"></i> 归档
+                </a>
+                <a href="/poetry-garden/categories" class="nav-link ">
+                    <i class="fas fa-layer-group"></i> 分类
+                </a>
+                <a href="/poetry-garden/tags" class="nav-link ">
+                    <i class="fas fa-tags"></i> 标签
+                </a>
+                <a href="/poetry-garden/about" class="nav-link ">
+                    <i class="fas fa-book"></i> 关于
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- 主内容 -->
+    <main class="classical-container">
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>水调歌头·问道 · 踏月诗阁</title><meta name="description" content="水调歌头·问道
+
+
+
+
+
+
+
+天外月孤巡，寂寂照何尊
+
+
+
+
+
+哲学词 · 天人探微
+
+
+
+
+
+
+
+
+2026-02-03
+
+|
+
+
+原创词作
+
+|
+
+
+水调歌头
+
+
+
+
+
+
+
+
+
+
+
+📜 词牌简介 · 水调歌头
+
+《水调歌头》词牌名源于隋炀帝开凿汴河时所作《水调歌》，至宋代演为词牌。此调九十五字"><meta name="og:description" content="水调歌头·问道
+
+
+
+
+
+
+
+天外月孤巡，寂寂照何尊
+
+
+
+
+
+哲学词 · 天人探微
+
+
+
+
+
+
+
+
+2026-02-03
+
+|
+
+
+原创词作
+
+|
+
+
+水调歌头
+
+
+
+
+
+
+
+
+
+
+
+📜 词牌简介 · 水调歌头
+
+《水调歌头》词牌名源于隋炀帝开凿汴河时所作《水调歌》，至宋代演为词牌。此调九十五字"><meta name="twitter:site" content="踏月诗阁"><meta name="twitter:title" content="水调歌头·问道"><meta name="twitter:card" content="summary"><meta name="keywords" content="诗词,宋词,古典诗词,文学,诗歌"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/poetry-garden/css/bootstrap.min.css"><link rel="stylesheet" href="/poetry-garden/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/poetry-garden/">대문</a></li><li><a href="/poetry-garden/archives">아카이브</a></li><li><a href="/poetry-garden/categories">카테고리</a></li><li><a href="/poetry-garden/tags">태그</a></li><!-- +make_page_links() // 暂时禁用--><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post"><h1 class="post-title">水调歌头·问道</h1><div class="post-meta"><span class="post-time">post.posted 2026-02-03</span> | <span class="post-category"><a href="/poetry-garden/categories/%E8%AF%8D%E4%BD%9C/">词作</a></span> | <span class="post-tags"><a href="/poetry-garden/tags/%E9%97%AE%E9%81%93/">问道</a>, <a href="/poetry-garden/tags/%E5%AE%8B%E8%AF%8D/">宋词</a>, <a href="/poetry-garden/tags/%E8%B6%85%E8%84%B1/">超脱</a>, <a href="/poetry-garden/tags/%E6%B0%B4%E8%B0%83%E6%AD%8C%E5%A4%B4/">水调歌头</a>, <a href="/poetry-garden/tags/%E5%93%B2%E5%AD%A6/">哲学</a></span></div><div class="post-content"><div style="font-family: 'STKaiti', 'SimSun', 'Source Han Serif SC', serif; line-height: 1.8; color: #2c3e50; max-width: 800px; margin: 0 auto; padding: 0 1rem;">
+
+<!-- 标题区域 - 问道主题 -->
+<div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%); color: white; padding: 3.5rem 2rem 3rem 2rem; margin: 2rem 0 4rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); min-height: 320px; display: flex; flex-direction: column; justify-content: center; border-radius: 18px; width: 100%;">
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
+    radial-gradient(circle at 20% 40%, rgba(14, 165, 233, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 60%, rgba(6, 182, 212, 0.3) 0%, transparent 50%),
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.08) 2px, rgba(255,255,255,0.08) 4px);"></div>
+<div style="position: relative; z-index: 2;">
+<!-- 主要标题 -->
+<div style="font-size: 2.8rem; font-weight: bold; margin: 0; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9); letter-spacing: 3px; font-family: 'STKaiti', serif; line-height: 1.2; padding-bottom: 0.5rem;">
+水调歌头·问道
+</div>
+
+<!-- 分隔线 -->
+<div style="width: 120px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent); margin: 1.5rem auto; opacity: 0.7;"></div>
+
+<!-- 核心句 -->
+<div style="font-size: 1.3rem; opacity: 0.95; margin: 0; font-weight: 300; letter-spacing: 1px; line-height: 1.5; padding: 0 1rem;">
+天外月孤巡，寂寂照何尊
+</div>
+
+<!-- 装饰性点缀 -->
+<div style="margin-top: 2rem;">
+<div style="display: inline-block; background: rgba(255, 255, 255, 0.15); padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2);">
+哲学词 · 天人探微
+</div>
+</div>
+
+<!-- 日期信息 -->
+<div style="margin-top: 2.5rem;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.85);">
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 6v2h14V6H5z"/></svg>
+2026-02-03
+</span>
+<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;">|</span>
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+原创词作
+</span>
+<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;">|</span>
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+水调歌头
+</span>
+</div>
+</div>
+
+</div>
+</div>
+
+<div style="position: relative; z-index: 1; margin-top: 0;">
+
+<!-- 词牌简介 -->
+<div style="background: rgba(14, 165, 233, 0.08); padding: 2.2rem; border-radius: 12px; margin: 0 0 3rem 0; border-left: 4px solid #0ea5e9; min-height: 180px;">
+<div style="color: #0369a1; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">📜 词牌简介 · 水调歌头</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem; padding: 0.5rem 0;">
+《水调歌头》词牌名源于隋炀帝开凿汴河时所作《水调歌》，至宋代演为词牌。此调九十五字，前后片各四平韵，气势雄浑，意境开阔，适宜抒写豪迈情怀与哲学思考。苏轼"明月几时有"为千古绝唱。本词继承东坡遗风，以月为引，探寻天人关系，展现道家哲学境界。
+</div>
+</div>
+
+<!-- 词前小序 -->
+<div style="background: linear-gradient(145deg, rgba(14, 165, 233, 0.1), rgba(6, 182, 212, 0.05)); padding: 2.5rem; border-radius: 14px; border: 1px solid rgba(14, 165, 233, 0.2); margin: 2.5rem 0; font-style: italic; color: #4a5568; position: relative; min-height: 200px;">
+<div style="position: absolute; top: -14px; left: 25px; background: white; color: #0ea5e9; padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: bold; border: 1px solid rgba(14, 165, 233, 0.3); box-shadow: 0 3px 8px rgba(0,0,0,0.08);">词前小序</div>
+<div style="padding-top: 1.2rem; font-size: 1.08rem; line-height: 1.9;">
+丙午年秋夜，独坐山巅。天外孤月，寂寂巡行；人间万象，冷冷更新。忽有所悟：问道不在天，不在剑，而在守天真、纳太虚、见本真之间。月为镜，锋为笔，醉醒为眼，勘破虚幻，识得道在有无之垠。遂作此词，书写"我即道之垠"之境界，愿如孤雁逐风，闲度秋云。
+</div>
+</div>
+
+<h2 id="词文详析"><a href="#词文详析" class="headerlink" title="词文详析"></a>词文详析</h2><!-- 第一境：问天守真 -->
+<div style="background: linear-gradient(145deg, #f0f9ff 0%, #e0f2fe 100%); border: 2px solid #0ea5e9; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 350px;">
+<div style="position: absolute; top: -16px; left: 25px; background: #0ea5e9; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">第一境 · 问天守真</div>
+
+<div style="text-align: center; margin-bottom: 2rem;">
+<div style="color: #0369a1; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; font-family: 'STKaiti', serif; letter-spacing: 0.5px;">天外月孤巡，寂寂照何尊。</div>
+<div style="color: #4a5568; line-height: 2; font-size: 1.15rem; letter-spacing: 0.5px;">
+青锋淬雪冷，万象入更新。<br>
+守得天真在，太虚纳此身。<br>
+不借苍天力，不询剑底魂。
+</div>
+</div>
+
+<!-- 第一境解析 -->
+<div style="background: rgba(14, 165, 233, 0.1); padding: 2.2rem; border-radius: 12px; margin-top: 2.2rem; border-left: 3px solid #0ea5e9; min-height: 240px;">
+<div style="color: #0369a1; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🌌 意境解析 · 天人初问</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+<strong>"天外月孤巡，寂寂照何尊。"</strong> 开篇问天，境界宏阔。"天外"写空间之远，"孤巡"状月之独行，"寂寂"显宇宙之静，"照何尊"发哲学之问。此问统领全词：在这浩瀚宇宙中，什么值得尊崇？月如哲人，静静巡视，静静发问。<br><br>
+
+<p><strong>“守得天真在，太虚纳此身。”</strong> 提出核心主张。”天真”指本性本真，道家所谓”复归于婴儿”；”太虚”指宇宙本源，庄子所谓”太虚寥廓”。”守”是主动持守，”纳”是被动容纳。既要守住内在天真，又要将自身融入宇宙太虚。这是”天人合一”的第一步。<br><br></p>
+<p><strong>“不借苍天力，不询剑底魂。”</strong> 确立独立精神。”不借”是不依赖外在权威，”不询”是不求外在智慧。真正的力量源于自身，真正的智慧生于本心。这是从”外求”到”内求”的转向。</p>
+</div>
+</div>
+</div>
+
+<!-- 第二境：醉醒见真 -->
+<div style="background: linear-gradient(145deg, #fef3c7 0%, #fde68a 100%); border: 2px solid #d97706; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 320px;">
+<div style="position: absolute; top: -16px; left: 25px; background: #d97706; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">第二境 · 醉醒见真</div>
+
+<div style="text-align: center; margin-bottom: 2rem;">
+<div style="color: #92400e; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; font-family: 'STKaiti', serif; letter-spacing: 0.5px;">醉时观微眇，醒时见本真，勘破镜中痕。</div>
+<div style="color: #4a5568; line-height: 2; font-size: 1.15rem; letter-spacing: 0.5px;">
+天地本无迹，道在有无垠。
+</div>
+</div>
+
+<!-- 第二境解析 -->
+<div style="background: rgba(217, 119, 6, 0.1); padding: 2.2rem; border-radius: 12px; margin-top: 2.2rem; border-left: 3px solid #d97706; min-height: 220px;">
+<div style="color: #92400e; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🍶 意境解析 · 醉醒之眼</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+<strong>"醉时观微眇，醒时见本真，勘破镜中痕。"</strong> 提出认识论的辩证法。"醉时"代表非理性状态，能观察到细微之处；"醒时"代表理性状态，能看清本质真实。"镜中痕"喻虚幻表象。真正的智慧需要醉与醒的结合，才能勘破虚幻，见到本真。<br><br>
+
+<p><strong>“天地本无迹，道在有无垠。”</strong> 对道之本质的阐述。”天地无迹”言宇宙本无固定轨迹，一切都在变化中；”道在有无垠”说道存在于有与无的边界。这是道家思想的深化：道不是具体事物，而是有无之间的那个”垠”——边界、可能、场域。道在”有”与”无”的张力中显现。</p>
+</div>
+</div>
+</div>
+
+<!-- 第三境：我即是道 -->
+<div style="background: linear-gradient(145deg, #dcfce7 0%, #bbf7d0 100%); border: 2px solid #16a34a; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 350px;">
+<div style="position: absolute; top: -16px; left: 25px; background: #16a34a; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">第三境 · 我即是道</div>
+
+<div style="text-align: center; margin-bottom: 2rem;">
+<div style="color: #166534; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; font-family: 'STKaiti', serif; letter-spacing: 0.5px;">且学流云意，且学山石根，我即道之垠。</div>
+<div style="color: #4a5568; line-height: 2; font-size: 1.15rem; letter-spacing: 0.5px;">
+孤雁逐风远，闲度秋云深。
+</div>
+</div>
+
+<!-- 第三境解析 -->
+<div style="background: rgba(22, 163, 74, 0.1); padding: 2.2rem; border-radius: 12px; margin-top: 2.2rem; border-left: 3px solid #16a34a; min-height: 240px;">
+<div style="color: #166534; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">⚡ 意境解析 · 道成于己</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+<strong>"且学流云意，且学山石根，我即道之垠。"</strong> 全词核心句，哲学突破点。"流云意"喻自由无拘，随性而动；"山石根"喻坚定有本，守真不移。"且学"是学习、效法，但"我即"是成为、是。从"学"到"即"，从"效法自然"到"成为自然"，完成了质的飞跃。"我即道之垠"是终极领悟：如果道在有无之垠，而我就是那个连接有无、创造意义的"垠"，那么，我即道之垠。<br><br>
+
+<p><strong>“孤雁逐风远，闲度秋云深。”</strong> 超然自在的境界。”孤雁”不再是孤独的象征，而是自由的化身；”逐风”是顺应自然；”闲度”是从容不迫；”秋云深”是深邃高远的境界。这是问道的终点：不是找到某个答案，而是成为那个”闲度秋云深”的自在生命。</p>
+</div>
+</div>
+</div>
+
+<h2 id="三重哲学境界"><a href="#三重哲学境界" class="headerlink" title="三重哲学境界"></a>三重哲学境界</h2><div style="background: linear-gradient(145deg, #f3f4f6 0%, #e5e7eb 100%); border: 2px solid #6b7280; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(107, 114, 128, 0.12); min-height: 500px;">
+
+<div style="text-align: center; margin-bottom: 2.8rem;">
+<div style="color: #374151; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🌊 问道三重境</div>
+<div style="color: #6b7280; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">从问天守真到醉醒见真，从我学自然到我即道垠</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
+
+<!-- 第一境 -->
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #0ea5e9; position: relative; overflow: hidden; min-height: 280px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(14, 165, 233, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #0369a1; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🌌 第一境 · 问天守真</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>天外月孤巡</strong> - 向天发问</li>
+<li style="margin-bottom: 0.8rem;"><strong>守得天真在</strong> - 守住本性</li>
+<li style="margin-bottom: 0.8rem;"><strong>太虚纳此身</strong> - 融入宇宙</li>
+<li><strong>不借苍天力</strong> - 独立自主</li>
+</ul>
+<div style="color: #0ea5e9; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
+"守天真，纳太虚"——向内守住，向外融入
+</div>
+</div>
+
+<!-- 第二境 -->
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #d97706; position: relative; overflow: hidden; min-height: 280px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(217, 119, 6, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #92400e; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🍶 第二境 · 醉醒见真</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>醉时观微眇</strong> - 非理性观察</li>
+<li style="margin-bottom: 0.8rem;"><strong>醒时见本真</strong> - 理性认知</li>
+<li style="margin-bottom: 0.8rem;"><strong>勘破镜中痕</strong> - 看透虚幻</li>
+<li><strong>道在有无垠</strong> - 把握道之本质</li>
+</ul>
+<div style="color: #d97706; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
+"醉观微眇，醒见本真"——两种眼光的辩证
+</div>
+</div>
+
+<!-- 第三境 -->
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #16a34a; position: relative; overflow: hidden; min-height: 280px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(22, 163, 74, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #166534; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">⚡ 第三境 · 我即是道</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>且学流云意</strong> - 学习自由</li>
+<li style="margin-bottom: 0.8rem;"><strong>且学山石根</strong> - 学习坚定</li>
+<li style="margin-bottom: 0.8rem;"><strong>我即道之垠</strong> - 成为道的边界</li>
+<li><strong>闲度秋云深</strong> - 达到超然境界</li>
+</ul>
+<div style="color: #16a34a; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
+"我即道垠"——从问道者到成道者
+</div>
+</div>
+</div>
+
+<!-- 哲学辩证 -->
+<div style="background: rgba(107, 114, 128, 0.1); padding: 2.5rem; border-radius: 14px; margin-top: 2.5rem; border: 1px solid rgba(107, 114, 128, 0.2);">
+<div style="color: #374151; font-weight: bold; margin-bottom: 1.5rem; text-align: center; font-size: 1.2rem;">🔄 核心哲学辩证</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+<div style="background: white; padding: 1.5rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #0ea5e9; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">天与人</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.6;">天外月孤巡<br>我即道之垠</div>
+</div>
+<div style="background: white; padding: 1.5rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #d97706; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">醉与醒</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.6;">醉时观微眇<br>醒时见本真</div>
+</div>
+<div style="background: white; padding: 1.5rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #16a34a; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">学与即</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.6;">且学流云意<br>我即道之垠</div>
+</div>
+<div style="background: white; padding: 1.5rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #8b5cf6; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">有与无</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.6;">天地本无迹<br>道在有无垠</div>
+</div>
+</div>
+</div>
+</div>
+
+<h2 id="艺术特色分析"><a href="#艺术特色分析" class="headerlink" title="艺术特色分析"></a>艺术特色分析</h2><div style="background: linear-gradient(145deg, #fce7f3 0%, #fbcfe8 100%); border: 2px solid #be185d; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(190, 24, 93, 0.12); min-height: 450px;">
+
+<div style="text-align: center; margin-bottom: 2.5rem;">
+<div style="color: #9d174d; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🎭 艺术手法精析</div>
+<div style="color: #be185d; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">意象宏大·炼字精微·结构严谨·境界升华</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
+
+<!-- 意象系统 -->
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 320px;">
+<div style="color: #9d174d; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 2px solid #fce7f3; padding-bottom: 1rem; font-size: 1.2rem;">🌌 意象系统</div>
+<div style="margin-top: 1.2rem;">
+<div style="margin-bottom: 1.5rem;">
+<div style="color: #be185d; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">天外孤月</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">宇宙的哲思者，静观万象，孤寂巡行。既是发问者，也是见证者。</div>
+</div>
+<div style="margin-bottom: 1.5rem;">
+<div style="color: #be185d; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">青锋淬雪</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">精神的磨砺者，在寒冷中淬炼，在更新中重生。剑喻人，淬喻炼。</div>
+</div>
+<div style="margin-bottom: 1.5rem;">
+<div style="color: #be185d; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">流云山石</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">自然的辩证法，流云的自由与山石的坚定，构成完整的生命智慧。</div>
+</div>
+</div>
+</div>
+
+<!-- 炼字艺术 -->
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 320px;">
+<div style="color: #9d174d; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 2px solid #fce7f3; padding-bottom: 1rem; font-size: 1.2rem;">✍️ 炼字艺术</div>
+<div style="margin-top: 1.2rem;">
+<div style="margin-bottom: 1.8rem;">
+<div style="color: #be185d; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">巡 · 月孤巡</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">"巡"字拟人，月如哲人巡视宇宙。孤而不寂，巡而不急，显从容气度。</div>
+</div>
+<div style="margin-bottom: 1.8rem;">
+<div style="color: #be185d; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">淬 · 青锋淬</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">"淬"字双关，既是铸剑工序，又是精神磨砺。淬中见冷，冷中见新。</div>
+</div>
+<div style="margin-bottom: 1.8rem;">
+<div style="color: #be185d; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">垠 · 道之垠</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">"垠"字点睛，边界之意。道在有无之垠，我在道之垠，三层境界，一字贯通。</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- 结构分析 -->
+<div style="background: rgba(190, 24, 93, 0.1); padding: 2.5rem; border-radius: 14px; margin-top: 2.5rem; border: 1px solid rgba(190, 24, 93, 0.2);">
+<div style="color: #9d174d; font-weight: bold; margin-bottom: 1.5rem; text-align: center; font-size: 1.2rem;">🏛️ 结构匠心 · 三重递进</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+<div style="background: white; padding: 1.5rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #0ea5e9; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">起 · 问天</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.6;">天外月孤巡<br>寂寂照何尊</div>
+</div>
+<div style="background: white; padding: 1.5rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #d97706; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">承 · 守真</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.6;">守得天真在<br>太虚纳此身</div>
+</div>
+<div style="background: white; padding: 1.5rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #16a34a; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">转 · 见道</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.6;">天地本无迹<br>道在有无垠</div>
+</div>
+<div style="background: white; padding: 1.5rem; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #8b5cf6; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">合 · 成道</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.6;">我即道之垠<br>闲度秋云深</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<h2 id="创作后记：山巅问道"><a href="#创作后记：山巅问道" class="headerlink" title="创作后记：山巅问道"></a>创作后记：山巅问道</h2><div style="background: linear-gradient(145deg, rgba(248, 250, 252, 0.9), rgba(240, 242, 245, 0.8)); border-radius: 18px; padding: 3rem; margin: 3.5rem 0; border: 1px solid #e2e8f0; box-shadow: 0 10px 35px rgba(0,0,0,0.05); position: relative; min-height: 350px;">
+
+<div style="color: #0369a1; font-weight: bold; margin-bottom: 1.8rem; font-size: 1.3rem; text-align: center; position: relative; padding-bottom: 1.2rem;">
+<div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100px; height: 3px; background: linear-gradient(to right, #0ea5e9, #16a34a);"></div>
+创作心路：从问天到我即
+</div>
+
+<div style="color: #4a5568; line-height: 1.9; margin-bottom: 2rem; font-size: 1.08rem;">
+《水调歌头·问道》诞生于一次真实的山巅夜坐。丙午年秋，独登华山，夜宿东峰。子夜时分，云开月出，那一轮明月确实如词中所写——"天外月孤巡，寂寂照何尊"。
+</div>
+
+<div style="background: rgba(14, 165, 233, 0.08); padding: 1.8rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #0ea5e9;">
+<div style="color: #0369a1; font-weight: bold; margin-bottom: 0.8rem;">💡 顿悟时刻：我即道之垠</div>
+<div style="color: #4a5568; line-height: 1.8;">
+"我即道之垠"的涌现是创作中的突破。最初写"我见道之垠"，后觉"见"字太被动；改为"我在道之垠"，又觉"在"字太静态。最终"即"字如电光石火——不是看见，不是处在，而是"就是"。如果道在有无之垠，而我就是那个连接有无、创造意义的"垠"，那么，我即道之垠。
+</div>
+</div>
+
+<div style="color: #4a5568; line-height: 1.9; margin-bottom: 2rem; font-size: 1.08rem;">
+"青锋淬雪冷"是当时的真实感受——山风如刀，寒意刺骨。但奇妙的是，在寒冷中反而感觉"万象入更新"。或许，真正的更新都需要经过寒冷的淬炼。那夜的华山，在月光下确实显得"万象更新"，旧的沉睡，新的苏醒。
+</div>
+
+<div style="background: rgba(22, 163, 74, 0.08); padding: 1.8rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #16a34a;">
+<div style="color: #166534; font-weight: bold; margin-bottom: 0.8rem;">🌌 结构设计：三重境界</div>
+<div style="color: #4a5568; line-height: 1.8;">
+全词结构经过精心设计：第一境问天守真（向外问，向内守），第二境醉醒见真（辩证看，识本质），第三境我即是道（学自然，成自然）。每境都有核心意象：月、剑、醉醒、流云山石、孤雁秋云。意象递进，境界升华。
+</div>
+</div>
+
+<div style="text-align: center; margin: 2.5rem 0; padding: 2.2rem; background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(22, 163, 74, 0.1)); border-radius: 14px; border: 1px solid rgba(14, 165, 233, 0.15);">
+<div style="color: #0369a1; font-weight: bold; margin-bottom: 1rem; font-size: 1.2rem;">问道真谛</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.08rem;">
+真正的问道，不是向天要答案，<br>
+而是在天外孤月的巡行中，<br>
+找到自己发问的声音；<br>
+不是向剑求智慧，<br>
+而是在青锋淬雪的寒冷中，<br>
+淬炼自己成道的可能。<br>
+最终明白：<br>
+我即道之垠，<br>
+闲度秋云深。
+</div>
+</div>
+
+<div style="text-align: center; margin-top: 2.5rem; padding-top: 1.8rem; border-top: 1px solid #e2e8f0;">
+<div style="color: #0369a1; font-weight: bold; margin-bottom: 0.8rem;">道者之悟</div>
+<div style="color: #718096; font-style: italic; font-size: 1.08rem;">
+最好的问道，<br>
+是让天外的月，成为心中的镜；<br>
+让淬雪的锋，成为笔下的诗；<br>
+让有无的垠，成为我的边界；<br>
+让秋云的深，成为我的闲度。
+</div>
+</div>
+
+<div style="text-align: right; color: #a0aec0; font-size: 0.95rem; margin-top: 2.5rem; font-family: 'STKaiti', serif;">
+丙午年秋分 记于华山问道台
+</div>
+</div>
+
+<!-- 词作定位 -->
+<hr style="border: 1px solid #e2e8f0; margin: 3rem 0;">
+
+<div style="background: rgba(248, 250, 252, 0.9); border-radius: 14px; padding: 2rem; margin: 2.5rem 0; text-align: center; border: 1px solid #e2e8f0;">
+<div style="color: #0369a1; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.2rem;">在哲学词中的定位</div>
+<div style="color: #4a5568; line-height: 1.8; max-width: 700px; margin: 0 auto; font-size: 1.05rem;">
+此词在哲学深度上直承苏轼《水调歌头·明月几时有》，但又有新的突破：<strong style="color: #0ea5e9;">从"问青天"到"我即道之垠"</strong>，完成了从外向追问到内向确立的主体性觉醒。在道家思想表达上，继承了庄子"天地与我并生，万物与我为一"的齐物思想，又融入了<strong style="color: #16a34a;">现代存在主义</strong>的自我创造精神，形成了独特的<strong style="color: #d97706;">古典与现代交融</strong>的哲学词风。
+</div>
+</div>
+
+</div> <!-- 关闭z-index包装div -->
+
+</div> <!-- 关闭主容器div -->
+</div></div><div class="share"><span>공유하기</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://lyluchao.github.io/2026/02/03/水调歌头-问道/%20踏月诗阁%20水调歌头·问道"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/poetry-garden/2026/02/20/%E4%B8%89%E9%97%AE%E8%87%BB%E8%B5%8B%E5%B9%B6%E5%BA%8F/" title="三问臻赋并序"><i class="fa fa-angle-double-left"></i>&nbsp;이전 포스트: 三问臻赋并序</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/poetry-garden/2026/02/02/%E5%A3%B0%E5%A3%B0%E6%85%A2-%E7%A7%8B%E7%81%AF%E5%AF%84%E6%85%A8/" title="声声慢·秋灯寄慨">다음 포스트: 声声慢·秋灯寄慨&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/poetry-garden/js/jquery-3.1.0.min.js"></script><script src="/poetry-garden/js/bootstrap.min.js"></script><script src="/poetry-garden/js/jquery-migrate-1.2.1.min.js"></script><script src="/poetry-garden/js/jquery.appear.js"></script><script src="/poetry-garden/js/google-analytics.js"></script><script src="/poetry-garden/js/typography.js"></script><!-- hexo injector body_end start -->
+<script>
+// 检测是否需要加载 Mermaid
+if (document.querySelector('.mermaid')) {
+  // 动态加载 Mermaid 库
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+  script.onload = function() {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      flowchart: {
+        useMaxWidth: true,
+        htmlLabels: true
+      },
+      securityLevel: 'loose'
+    });
+    
+    // 重新渲染所有图表
+    mermaid.init();
+  };
+  document.head.appendChild(script);
+}
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 为可折叠 callout 添加点击事件
+  const collapsibleCallouts = document.querySelectorAll('.callout.is-collapsible');
+  
+  collapsibleCallouts.forEach(function(callout) {
+    const title = callout.querySelector('.callout-title');
+    
+    if (title) {
+      // 添加点击事件
+      title.addEventListener('click', function(e) {
+        // 如果点击的是链接，不触发折叠
+        if (e.target.tagName === 'A') return;
+        
+        callout.classList.toggle('is-collapsed');
+      });
+      
+      // 添加鼠标悬停效果
+      title.addEventListener('mouseenter', function() {
+        this.style.cursor = 'pointer';
+      });
+      
+      // 添加键盘支持（可访问性）
+      title.setAttribute('tabindex', '0');
+      title.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          callout.classList.toggle('is-collapsed');
+        }
+      });
+    }
+  });
+});
+</script>
+<!-- hexo injector body_end end --></body></html>
+    </main>
+    
+    <!-- 古典页脚 -->
+    <footer class="classical-footer">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <a href="/poetry-garden/" class="footer-link">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="/poetry-garden/archives" class="footer-link">
+                    <i class="fas fa-archive"></i> 归档
+                </a>
+                <a href="/poetry-garden/categories" class="footer-link">
+                    <i class="fas fa-layer-group"></i> 分类
+                </a>
+                <a href="/poetry-garden/tags" class="footer-link">
+                    <i class="fas fa-tags"></i> 标签
+                </a>
+                <a href="/poetry-garden/about" class="footer-link">
+                    <i class="fas fa-book"></i> 关于
+                </a>
+            </nav>
+            
+            <div class="footer-info">
+                <div>
+                    © 2026 <span class="footer-seal">诗</span> 踏月诗阁 <span class="footer-seal">阁</span>
+                </div>
+                <div style="margin-top: 15px; font-style: italic; color: var(--classical-gold);">
+                    墨香永驻 · 诗魂长存 · 雅韵流芳
+                </div>
+                <div style="margin-top: 10px; font-size: 0.8rem; color: var(--classical-blue);">
+                    主题：古典诗韵 · 由 Hexo 驱动
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 页眉滚动效果
+            const header = document.querySelector('.classical-header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 5px 20px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                } else {
+                    header.style.boxShadow = '0 2px 10px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
