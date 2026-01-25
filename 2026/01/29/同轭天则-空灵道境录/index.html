@@ -414,7 +414,7 @@
         }
         
         .article-content::before {
-            content: '?';
+            content: '❝';
             position: absolute;
             top: 20px;
             left: 20px;
@@ -618,7 +618,7 @@
             font-weight: bold;
         }
         
-        /* Ԥ��Ч����ʽ */
+        /* 预览效果样式 */
         .article-preview {
             position: fixed;
             top: 0;
@@ -731,59 +731,59 @@
     </style>
 </head>
 <body>
-    <!-- �ŵ�ҳü -->
+    <!-- 古典页眉 -->
     <header class="classical-header">
         <div class="header-container">
             <a href="/poetry-garden/" class="site-logo">
                 <i class="fas fa-feather-alt"></i>
-                ̤��ʫ��
+                踏月诗阁
             </a>
             
             <nav class="classical-nav">
                 <a href="/poetry-garden/" class="nav-link">
-                    <i class="fas fa-home"></i> ��ҳ
+                    <i class="fas fa-home"></i> 首页
                 </a>
                 <a href="/poetry-garden/archives" class="nav-link">
-                    <i class="fas fa-archive"></i> �鵵
+                    <i class="fas fa-archive"></i> 归档
                 </a>
                 <a href="/poetry-garden/categories" class="nav-link">
-                    <i class="fas fa-layer-group"></i> ����
+                    <i class="fas fa-layer-group"></i> 分类
                 </a>
                 <a href="/poetry-garden/tags" class="nav-link">
-                    <i class="fas fa-tags"></i> ��ǩ
+                    <i class="fas fa-tags"></i> 标签
                 </a>
                 <a href="/poetry-garden/about" class="nav-link active">
-                    <i class="fas fa-book"></i> ����
+                    <i class="fas fa-book"></i> 文章
                 </a>
             </nav>
         </div>
     </header>
     
-    <!-- ����Ԥ��ģ̬�� -->
+    <!-- 文章预览模态框 -->
     <div class="article-preview" id="articlePreview">
         <div class="preview-container">
             <div class="preview-header">
-                <h2 class="preview-title">����Ԥ��</h2>
+                <h2 class="preview-title">文章预览</h2>
                 <button class="close-preview" onclick="closePreview()">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
             <div class="preview-content" id="previewContent">
-                <!-- Ԥ�����ݽ�ͨ��JavaScript��̬��� -->
+                <!-- 预览内容将通过JavaScript动态填充 -->
             </div>
         </div>
     </div>
     
     <main class="article-container">
-        <!-- ����ͷ�� -->
+        <!-- 文章头部 -->
         <header class="article-header">
-            <h1 class="article-title">��同轭天则·空灵道境录��</h1>
+            <h1 class="article-title">《同轭天则·空灵道境录》</h1>
             
             <div class="article-meta">
                 
                 <div class="meta-item">
                     <i class="far fa-calendar-alt"></i>
-                    <span>2026��01��29��</span>
+                    <span>2026年01月29日</span>
                 </div>
                 
                 
@@ -792,19 +792,19 @@
                 
                 <div class="meta-item">
                     <i class="fas fa-sync-alt"></i>
-                    <span>�����ڣ�2026-01-17</span>
+                    <span>更新于：2026-01-17</span>
                 </div>
                 
                 
-                <!-- ����Ԥ����ť -->
+                <!-- 添加预览按钮 -->
                 <div class="meta-item" onclick="showPreview()" style="cursor: pointer; background: linear-gradient(135deg, var(--classical-gold), var(--classical-red)); color: white;">
                     <i class="fas fa-eye"></i>
-                    <span>Ԥ��Ч��</span>
+                    <span>预览效果</span>
                 </div>
             </div>
         </header>
         
-        <!-- �������� -->
+        <!-- 文章内容 -->
         <article class="article-content">
             &lt;div style=&#34;font-family: &#39;STKaiti&#39;, &#39;SimSun&#39;, &#39;Source Han Serif SC&#39;, serif; line-height: 1.8; color: #fff8e8; max-width: 800px; margin: 0 auto; padding: 0 1rem;&#34;&gt;
 
@@ -1119,7 +1119,7 @@
 
         </article>
         
-        <!-- ��ǩ -->
+        <!-- 标签 -->
         
         <div class="article-tags">
             <i class="fas fa-tags" style="color: var(--classical-brown); margin-right: 10px;"></i>
@@ -1147,7 +1147,7 @@
         </div>
         
         
-        <!-- ���µ��� -->
+        <!-- 文章导航 -->
         <div class="article-navigation">
             
             <a href="/poetry-garden/2026/01/29/%E5%A3%B0%E5%A3%B0%E6%85%A2-%E9%82%80%E6%9C%88/" class="nav-button nav-prev">
@@ -1155,7 +1155,7 @@
                     <i class="fas fa-chevron-left"></i>
                 </div>
                 <div class="nav-content">
-                    <h4>��һƪ</h4>
+                    <h4>上一篇</h4>
                     <span>声声慢·邀月</span>
                 </div>
             </a>
@@ -1164,7 +1164,7 @@
             
             <a href="/poetry-garden/2026/01/29/%E8%B8%8F%E6%9C%88%E5%BD%92%E7%9C%9F%C2%B7%E6%B8%85%E8%BE%89%E9%81%93%E7%97%95%E5%BD%95/" class="nav-button nav-next">
                 <div class="nav-content">
-                    <h4>��һƪ</h4>
+                    <h4>下一篇</h4>
                     <span>踏月归真·清辉道痕录</span>
                 </div>
                 <div class="nav-icon">
@@ -1174,41 +1174,41 @@
             
         </div>
         
-        <!-- �������� -->
+        <!-- 返回链接 -->
         <div style="text-align: center; margin-top: 50px;">
             <a href="/poetry-garden/" class="back-link">
-                <i class="fas fa-home"></i> ������ҳ
+                <i class="fas fa-home"></i> 返回首页
             </a>
         </div>
     </main>
     
-    <!-- ҳ�� -->
+    <!-- 页脚 -->
     <footer class="classical-footer">
         <div class="footer-container">
             <nav class="footer-nav">
-                <a href="/poetry-garden/" class="footer-link">��ҳ</a>
-                <a href="/poetry-garden/archives" class="footer-link">���¹鵵</a>
-                <a href="/poetry-garden/categories" class="footer-link">����Ŀ¼</a>
-                <a href="/poetry-garden/tags" class="footer-link">��ǩ��</a>
-                <a href="/poetry-garden/about" class="footer-link">��������</a>
+                <a href="/poetry-garden/" class="footer-link">首页</a>
+                <a href="/poetry-garden/archives" class="footer-link">文章归档</a>
+                <a href="/poetry-garden/categories" class="footer-link">分类目录</a>
+                <a href="/poetry-garden/tags" class="footer-link">标签云</a>
+                <a href="/poetry-garden/about" class="footer-link">关于我们</a>
             </nav>
             
             <div class="footer-info">
                 <p>
-                    <span class="footer-seal">Ԋ</span>
-                    ��Ȩ���� ? 2026 踏月诗阁
-                    <span class="footer-seal">�w</span>
+                    <span class="footer-seal">詩</span>
+                    版权所有 © 2026 踏月诗阁
+                    <span class="footer-seal">閣</span>
                 </p>
-                <p style="margin-top: 10px;">���йŵ��Ļ���Ʒζʫ������</p>
+                <p style="margin-top: 10px;">传承古典文化，品味诗意人生</p>
                 <p style="margin-top: 5px; font-size: 0.8rem; color: var(--classical-gold);">
-                    ���� 踏月诗客 �� ���ĳ���
+                    基于 踏月诗客 · 倾心呈现
                 </p>
             </div>
         </div>
     </footer>
     
     <script>
-        // ҳ�����Ч��
+        // 页面滚动效果
         document.addEventListener('DOMContentLoaded', function() {
             const header = document.querySelector('.classical-header');
             window.addEventListener('scroll', function() {
@@ -1221,7 +1221,7 @@
                 }
             });
             
-            // �������ݿ齥��Ч��
+            // 文章内容块渐入效果
             const contentBlocks = document.querySelectorAll('.article-content h1, .article-content h2, .article-content h3, .article-content p, .article-content blockquote');
             contentBlocks.forEach((block, index) => {
                 block.style.opacity = '0';
@@ -1234,7 +1234,7 @@
                 }, index * 100);
             });
             
-            // Ϊ��������Ԥ��Ч��
+            // 为链接添加预览效果
             document.querySelectorAll('.article-content a').forEach(link => {
                 link.addEventListener('mouseenter', function(e) {
                     const ripple = document.createElement('span');
@@ -1260,23 +1260,23 @@
                 });
             });
             
-            // �滻ҳ���е�Ӣ���ı�
+            // 替换页面中的英文文本
             replaceEnglishText();
         });
         
-        // ��ʾԤ��Ч��
+        // 显示预览效果
         function showPreview() {
             const preview = document.getElementById('articlePreview');
             const previewContent = document.getElementById('previewContent');
             
-            // ��ȡ���µ�ʵ�����ݣ����ı���
+            // 获取文章的实际内容（纯文本）
             let content = '';
             const articleContent = document.querySelector('.article-content');
             if (articleContent) {
                 content = articleContent.innerText;
             }
             
-            // ��ȡǰ300����ΪԤ��
+            // 截取前300字作为预览
             let excerpt = content.substring(0, 300);
             if (content.length > 300) {
                 excerpt += '...';
@@ -1286,13 +1286,13 @@
                 <div class="preview-excerpt">
                     <p>${excerpt}</p>
                 </div>
-                <p>�������¡�同轭天则·空灵道境录����Ԥ��Ч�����������ڴ˴���ǰ�鿴���µĲ������ݡ�</p>
-                <p>�ŵ����ҳ����ƽ���ͳ��ѧ���ִ���ҳ���������ںϣ�Ϊ����������ʽ���Ķ����顣</p>
+                <p>这是文章《同轭天则·空灵道境录》的预览效果。您可以在此处提前查看文章的部分内容。</p>
+                <p>古典风格的页面设计将传统美学与现代网页技术完美融合，为您带来沉浸式的阅读体验。</p>
                 <p style="color: var(--classical-red); margin-top: 20px;">
-                    <i class="fas fa-heart"></i> ����رհ�ť��ESC�������˳�Ԥ��ģʽ
+                    <i class="fas fa-heart"></i> 点击关闭按钮或ESC键可以退出预览模式
                 </p>
                 <p style="margin-top: 20px; padding: 15px; background: rgba(193, 154, 107, 0.1); border-radius: 10px;">
-                    <i class="fas fa-info-circle"></i> Ԥ�����ܽ���ʾ�������ݣ��Ķ�ȫ���뷵������ҳ��
+                    <i class="fas fa-info-circle"></i> 预览功能仅显示部分内容，阅读全文请返回文章页面
                 </p>
             `;
             
@@ -1300,90 +1300,90 @@
             document.body.style.overflow = 'hidden';
         }
         
-        // �ر�Ԥ��Ч��
+        // 关闭预览效果
         function closePreview() {
             const preview = document.getElementById('articlePreview');
             preview.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
         
-        // ��ESC���ر�Ԥ��
+        // 按ESC键关闭预览
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closePreview();
             }
         });
         
-        // ���Ԥ�������ⲿ�ر�
+        // 点击预览区域外部关闭
         document.getElementById('articlePreview').addEventListener('click', function(e) {
             if (e.target === this) {
                 closePreview();
             }
         });
         
-        // �滻Ӣ���ı�Ϊ����
+        // 替换英文文本为中文
         function replaceEnglishText() {
-            // �滻�����еĿ��ܴ��ڵ�Ӣ��
+            // 替换导航中的可能存在的英文
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
                 if (link.textContent.includes('Home')) {
-                    link.innerHTML = '<i class="fas fa-home"></i> ��ҳ';
+                    link.innerHTML = '<i class="fas fa-home"></i> 首页';
                 }
                 if (link.textContent.includes('Archive')) {
-                    link.innerHTML = '<i class="fas fa-archive"></i> �鵵';
+                    link.innerHTML = '<i class="fas fa-archive"></i> 归档';
                 }
                 if (link.textContent.includes('Categories')) {
-                    link.innerHTML = '<i class="fas fa-layer-group"></i> ����';
+                    link.innerHTML = '<i class="fas fa-layer-group"></i> 分类';
                 }
                 if (link.textContent.includes('Tags')) {
-                    link.innerHTML = '<i class="fas fa-tags"></i> ��ǩ';
+                    link.innerHTML = '<i class="fas fa-tags"></i> 标签';
                 }
                 if (link.textContent.includes('About')) {
-                    link.innerHTML = '<i class="fas fa-book"></i> ����';
+                    link.innerHTML = '<i class="fas fa-book"></i> 关于';
                 }
             });
             
-            // �滻ҳ���еĿ��ܴ��ڵ�Ӣ��
+            // 替换页脚中的可能存在的英文
             const footerLinks = document.querySelectorAll('.footer-link');
             footerLinks.forEach(link => {
                 if (link.textContent.includes('Home')) {
-                    link.textContent = '��ҳ';
+                    link.textContent = '首页';
                 }
                 if (link.textContent.includes('Archive')) {
-                    link.textContent = '���¹鵵';
+                    link.textContent = '文章归档';
                 }
                 if (link.textContent.includes('Categories')) {
-                    link.textContent = '����Ŀ¼';
+                    link.textContent = '分类目录';
                 }
                 if (link.textContent.includes('Tags')) {
-                    link.textContent = '��ǩ��';
+                    link.textContent = '标签云';
                 }
                 if (link.textContent.includes('About')) {
-                    link.textContent = '��������';
+                    link.textContent = '关于我们';
                 }
             });
             
-            // ��鲢�滻ҳ����Ϣ
+            // 检查并替换页脚信息
             const footerInfo = document.querySelector('.footer-info');
             if (footerInfo) {
                 footerInfo.innerHTML = footerInfo.innerHTML
-                    .replace(/? \d{4}.*?Theme.*?by.*?/g, '')
-                    .replace(/Proudly published with Hexo/g, '����Hexo �� ���ĳ���');
+                    .replace(/© \d{4}.*?Theme.*?by.*?/g, '')
+                    .replace(/Proudly published with Hexo/g, '基于Hexo · 倾心呈现');
             }
             
-            // ��鲢�滻�������ܵ�Ӣ���ı�
+            // 检查并替换其他可能的英文文本
             document.body.innerHTML = document.body.innerHTML
-                .replace(/Read More/g, '�Ķ�ȫ��')
-                .replace(/Comments/g, '����')
-                .replace(/Posted on/g, '������')
-                .replace(/Share/g, '����')
-                .replace(/Category/g, '����')
-                .replace(/Tag/g, '��ǩ')
-                .replace(/Posted in/g, '����')
-                .replace(/Author/g, '����');
+                .replace(/Read More/g, '阅读全文')
+                .replace(/Comments/g, '评论')
+                .replace(/Posted on/g, '发布于')
+                .replace(/Share/g, '分享')
+                .replace(/Category/g, '分类')
+                .replace(/Tag/g, '标签')
+                .replace(/Posted in/g, '分类')
+                .replace(/Author/g, '作者');
         }
         
-        // ����CSS����
+        // 添加CSS动画
         const style = document.createElement('style');
         style.textContent = `
             @keyframes ripple {
