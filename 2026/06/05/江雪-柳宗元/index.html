@@ -206,7 +206,8 @@
             }
         }
     </style>
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/poetry-garden/atom.xml" title="踏月诗阁" type="application/atom+xml">
+</head>
 <body>
     <!-- 古典页眉 -->
     <header class="classical-header">
@@ -238,442 +239,1235 @@
     
     <!-- 主内容 -->
     <main class="classical-container">
-        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>江雪-柳宗元 · 踏月诗阁</title><meta name="description" content="江雪
+        <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>江雪-柳宗元 - 踏月诗阁</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --classical-paper: #f8f5e6;
+            --classical-ink: #3a2615;
+            --classical-red: #c33;
+            --classical-gold: #c19a6b;
+            --classical-brown: #8b4513;
+            --classical-blue: #5d8aa8;
+            --classical-border: #d4b483;
+            --classical-shadow: rgba(58, 38, 21, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: var(--classical-paper);
+            color: var(--classical-ink);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(193, 154, 107, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 30%),
+                linear-gradient(135deg, #f8f5e6 0%, #f0e6d6 100%);
+            padding-top: 80px;
+        }
+        
+        .classical-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(248, 245, 230, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--classical-border);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px var(--classical-shadow);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .site-logo {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 1.8rem;
+            color: var(--classical-brown);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .site-logo i {
+            color: var(--classical-red);
+            font-size: 1.5rem;
+        }
+        
+        .classical-nav {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .nav-link:hover {
+            color: var(--classical-red);
+            border-color: var(--classical-red);
+            background: rgba(195, 51, 51, 0.05);
+        }
+        
+        .nav-link.active {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            color: white;
+            border: none;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+        
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 50px 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--classical-border);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--classical-red), var(--classical-gold), var(--classical-blue));
+        }
+        
+        .article-title {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 2.8rem;
+            color: var(--classical-red);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            color: var(--classical-blue);
+            font-size: 1rem;
+            margin-top: 25px;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(139, 69, 19, 0.05);
+            border-radius: 20px;
+            border: 1px solid var(--classical-border);
+        }
+        
+        .article-content {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--classical-border);
+            border-radius: 15px;
+            padding: 60px 50px;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            position: relative;
+        }
+        
+        .article-content::before {
+            content: '?';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 3rem;
+            color: var(--classical-gold);
+            font-family: 'Ma Shan Zheng', cursive;
+            opacity: 0.3;
+        }
+        
+        .article-content h1,
+        .article-content h2,
+        .article-content h3 {
+            font-family: 'Ma Shan Zheng', cursive;
+            color: var(--classical-brown);
+            margin: 30px 0 15px;
+            border-bottom: 2px solid var(--classical-gold);
+            padding-bottom: 5px;
+        }
+        
+        .article-content p {
+            margin-bottom: 25px;
+            text-indent: 2em;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid var(--classical-red);
+            padding: 20px 30px;
+            margin: 30px 0;
+            background: rgba(195, 51, 51, 0.03);
+            font-style: italic;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px dashed var(--classical-border);
+        }
+        
+        .tag-link {
+            padding: 8px 16px;
+            background: linear-gradient(135deg, rgba(193, 154, 107, 0.1), rgba(139, 69, 19, 0.1));
+            border: 1px solid var(--classical-gold);
+            border-radius: 20px;
+            color: var(--classical-brown);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .tag-link:hover {
+            background: linear-gradient(135deg, var(--classical-gold), var(--classical-brown));
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .article-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding: 0 20px;
+        }
+        
+        .nav-button {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--classical-border);
+            border-radius: 15px;
+            text-decoration: none;
+            color: var(--classical-ink);
+            transition: all 0.3s;
+            max-width: 45%;
+            width: 100%;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-5px);
+            border-color: var(--classical-red);
+            box-shadow: 0 10px 25px var(--classical-shadow);
+        }
+        
+        .nav-prev .nav-icon {
+            background: linear-gradient(135deg, var(--classical-blue), var(--classical-gold));
+        }
+        
+        .nav-next .nav-icon {
+            background: linear-gradient(135deg, var(--classical-gold), var(--classical-red));
+        }
+        
+        .nav-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .nav-content h4 {
+            color: var(--classical-brown);
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .nav-content span {
+            color: var(--classical-ink);
+            font-size: 1rem;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 40px;
+            padding: 12px 25px;
+            background: var(--classical-gold);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        .back-link:hover {
+            background: var(--classical-brown);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
+        }
+        
+        .classical-footer {
+            background: rgba(248, 245, 230, 0.95);
+            border-top: 2px solid var(--classical-border);
+            padding: 50px 0 40px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid var(--classical-border);
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .footer-link:hover {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            border-color: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .footer-info {
+            text-align: center;
+            color: var(--classical-blue);
+            padding-top: 30px;
+            border-top: 1px solid var(--classical-border);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .footer-seal {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--classical-red);
+            color: white;
+            border-radius: 50%;
+            line-height: 40px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        
+        /* Ԥ��Ч����ʽ */
+        .article-preview {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(58, 38, 21, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .article-preview.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .preview-container {
+            max-width: 800px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            background: var(--classical-paper);
+            border-radius: 20px;
+            padding: 40px;
+            border: 3px solid var(--classical-gold);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.5s ease;
+        }
+        
+        .article-preview.active .preview-container {
+            transform: scale(1);
+        }
+        
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--classical-border);
+        }
+        
+        .preview-title {
+            font-family: 'Ma Shan Zheng', cursive;
+            color: var(--classical-red);
+            font-size: 1.8rem;
+        }
+        
+        .close-preview {
+            background: var(--classical-red);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .close-preview:hover {
+            background: var(--classical-brown);
+            transform: rotate(90deg);
+        }
+        
+        .preview-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .preview-excerpt {
+            font-style: italic;
+            color: var(--classical-brown);
+            border-left: 3px solid var(--classical-gold);
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .article-content {
+                padding: 40px 20px;
+            }
+            
+            .article-navigation {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-button {
+                max-width: 100%;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- �ŵ�ҳü -->
+    <header class="classical-header">
+        <div class="header-container">
+            <a href="/poetry-garden/" class="site-logo">
+                <i class="fas fa-feather-alt"></i>
+                ̤��ʫ��
+            </a>
+            
+            <nav class="classical-nav">
+                <a href="/poetry-garden/" class="nav-link">
+                    <i class="fas fa-home"></i> ��ҳ
+                </a>
+                <a href="/poetry-garden/archives" class="nav-link">
+                    <i class="fas fa-archive"></i> �鵵
+                </a>
+                <a href="/poetry-garden/categories" class="nav-link">
+                    <i class="fas fa-layer-group"></i> ����
+                </a>
+                <a href="/poetry-garden/tags" class="nav-link">
+                    <i class="fas fa-tags"></i> ��ǩ
+                </a>
+                <a href="/poetry-garden/about" class="nav-link active">
+                    <i class="fas fa-book"></i> ����
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- ����Ԥ��ģ̬�� -->
+    <div class="article-preview" id="articlePreview">
+        <div class="preview-container">
+            <div class="preview-header">
+                <h2 class="preview-title">����Ԥ��</h2>
+                <button class="close-preview" onclick="closePreview()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="preview-content" id="previewContent">
+                <!-- Ԥ�����ݽ�ͨ��JavaScript��̬��� -->
+            </div>
+        </div>
+    </div>
+    
+    <main class="article-container">
+        <!-- ����ͷ�� -->
+        <header class="article-header">
+            <h1 class="article-title">��江雪-柳宗元��</h1>
+            
+            <div class="article-meta">
+                
+                <div class="meta-item">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>2026��06��05��</span>
+                </div>
+                
+                
+                
+                
+                
+                <div class="meta-item">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>�����ڣ�2026-01-19</span>
+                </div>
+                
+                
+                <!-- ����Ԥ����ť -->
+                <div class="meta-item" onclick="showPreview()" style="cursor: pointer; background: linear-gradient(135deg, var(--classical-gold), var(--classical-red)); color: white;">
+                    <i class="fas fa-eye"></i>
+                    <span>Ԥ��Ч��</span>
+                </div>
+            </div>
+        </header>
+        
+        <!-- �������� -->
+        <article class="article-content">
+            &lt;div style=&#34;font-family: &#39;STKaiti&#39;, &#39;SimSun&#39;, &#39;Source Han Serif SC&#39;, serif; line-height: 1.8; color: #2c3e50; max-width: 800px; margin: 0 auto; padding: 0 1rem;&#34;&gt;
 
-
-
-千山鸟飞绝，万径人踪灭孤舟蓑笠翁，独钓寒江雪
-
-
-
-唐诗绝句 · 寒江独钓
-
-
-
-
-
-
-唐·元和年间
-
-|
-
-
-柳宗元·唐宋八大家
-
-|
-
-
-五言绝句
-
-
-
-
-
-
-
-
-📜 诗体与创作背景
-
-《江雪》是柳宗元被贬永州期间所作五言绝句，写于唐宪宗元和二年（807年）。此时柳宗元参加王叔文改"><meta name="og:description" content="江雪
-
-
-
-千山鸟飞绝，万径人踪灭孤舟蓑笠翁，独钓寒江雪
-
-
-
-唐诗绝句 · 寒江独钓
-
-
-
-
-
-
-唐·元和年间
-
-|
-
-
-柳宗元·唐宋八大家
-
-|
-
-
-五言绝句
-
-
-
-
-
-
-
-
-📜 诗体与创作背景
-
-《江雪》是柳宗元被贬永州期间所作五言绝句，写于唐宪宗元和二年（807年）。此时柳宗元参加王叔文改"><meta name="twitter:site" content="踏月诗阁"><meta name="twitter:title" content="江雪-柳宗元"><meta name="twitter:card" content="summary"><meta name="keywords" content="诗词,宋词,古典诗词,文学,诗歌"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/poetry-garden/css/bootstrap.min.css"><link rel="stylesheet" href="/poetry-garden/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/poetry-garden/">Home</a></li><li><a href="/poetry-garden/archives">Archive</a></li><li><a href="/poetry-garden/categories">Categories</a></li><li><a href="/poetry-garden/tags">Tags</a></li><!-- +make_page_links() // 暂时禁用--><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post"><h1 class="post-title">江雪-柳宗元</h1><div class="post-meta"><span class="post-time">post.posted 2026-06-05</span> | <span class="post-category"><a href="/poetry-garden/categories/%E8%AF%97%E4%BD%9C/">诗作</a></span> | <span class="post-tags"><a href="/poetry-garden/tags/%E5%94%90%E8%AF%97/">唐诗</a>, <a href="/poetry-garden/tags/%E5%AD%A4%E5%AF%82/">孤寂</a>, <a href="/poetry-garden/tags/%E7%A6%85%E6%84%8F/">禅意</a>, <a href="/poetry-garden/tags/%E6%9F%B3%E5%AE%97%E5%85%83/">柳宗元</a>, <a href="/poetry-garden/tags/%E6%B1%9F%E9%9B%AA/">江雪</a>, <a href="/poetry-garden/tags/%E5%B1%B1%E6%B0%B4%E8%AF%97/">山水诗</a></span></div><div class="post-content"><div style="font-family: 'STKaiti', 'SimSun', 'Source Han Serif SC', serif; line-height: 1.8; color: #2c3e50; max-width: 800px; margin: 0 auto; padding: 0 1rem;">
-
-<!-- 标题区域 -->
-<div style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #1a5276 100%); color: white; padding: 3.5rem 2rem 3rem 2rem; margin: 2rem 0 4rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25); min-height: 280px; display: flex; flex-direction: column; justify-content: center; border-radius: 18px; width: 100%;">
-<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
+&lt;!-- 标题区域 --&gt;
+&lt;div style=&#34;background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #1a5276 100%); color: white; padding: 3.5rem 2rem 3rem 2rem; margin: 2rem 0 4rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25); min-height: 280px; display: flex; flex-direction: column; justify-content: center; border-radius: 18px; width: 100%;&#34;&gt;
+&lt;div style=&#34;position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
     radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
     radial-gradient(circle at 80% 60%, rgba(52, 152, 219, 0.3) 0%, transparent 50%),
     radial-gradient(circle at 50% 80%, rgba(236, 240, 241, 0.4) 0%, transparent 50%),
-    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.08) 2px, rgba(255,255,255,0.08) 4px);"></div>
-<div style="position: relative; z-index: 2;">
-<div style="font-size: 2.8rem; font-weight: bold; margin: 0; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9); letter-spacing: 3px; font-family: 'STKaiti', serif; line-height: 1.2; padding-bottom: 0.5rem;">
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.08) 2px, rgba(255,255,255,0.08) 4px);&#34;&gt;&lt;/div&gt;
+&lt;div style=&#34;position: relative; z-index: 2;&#34;&gt;
+&lt;div style=&#34;font-size: 2.8rem; font-weight: bold; margin: 0; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9); letter-spacing: 3px; font-family: &#39;STKaiti&#39;, serif; line-height: 1.2; padding-bottom: 0.5rem;&#34;&gt;
 江雪
-</div>
-<div style="width: 120px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent); margin: 1.5rem auto; opacity: 0.7;"></div>
-<div style="font-size: 1.3rem; opacity: 0.95; margin: 0; font-weight: 300; letter-spacing: 1px; line-height: 1.5; padding: 0 1rem;">
-千山鸟飞绝，万径人踪灭<br>孤舟蓑笠翁，独钓寒江雪
-</div>
-<div style="margin-top: 2rem;">
-<div style="display: inline-block; background: rgba(255, 255, 255, 0.15); padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2);">
+&lt;/div&gt;
+&lt;div style=&#34;width: 120px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent); margin: 1.5rem auto; opacity: 0.7;&#34;&gt;&lt;/div&gt;
+&lt;div style=&#34;font-size: 1.3rem; opacity: 0.95; margin: 0; font-weight: 300; letter-spacing: 1px; line-height: 1.5; padding: 0 1rem;&#34;&gt;
+千山鸟飞绝，万径人踪灭&lt;br&gt;孤舟蓑笠翁，独钓寒江雪
+&lt;/div&gt;
+&lt;div style=&#34;margin-top: 2rem;&#34;&gt;
+&lt;div style=&#34;display: inline-block; background: rgba(255, 255, 255, 0.15); padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2);&#34;&gt;
 唐诗绝句 · 寒江独钓
-</div>
-</div>
-<div style="margin-top: 2.5rem;">
-<div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.85);">
-<span style="font-weight: 300; display: flex; align-items: center;">
-<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 6v2h14V6H5z"/></svg>
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&#34;margin-top: 2.5rem;&#34;&gt;
+&lt;div style=&#34;display: flex; justify-content: center; align-items: center; gap: 1.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.85);&#34;&gt;
+&lt;span style=&#34;font-weight: 300; display: flex; align-items: center;&#34;&gt;
+&lt;svg style=&#34;width: 16px; height: 16px; margin-right: 0.4rem;&#34; fill=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path d=&#34;M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 6v2h14V6H5z&#34;/&gt;&lt;/svg&gt;
 唐·元和年间
-</span>
-<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;">|</span>
-<span style="font-weight: 300; display: flex; align-items: center;">
-<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+&lt;/span&gt;
+&lt;span style=&#34;color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;&#34;&gt;|&lt;/span&gt;
+&lt;span style=&#34;font-weight: 300; display: flex; align-items: center;&#34;&gt;
+&lt;svg style=&#34;width: 16px; height: 16px; margin-right: 0.4rem;&#34; fill=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path d=&#34;M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z&#34;/&gt;&lt;/svg&gt;
 柳宗元·唐宋八大家
-</span>
-<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;">|</span>
-<span style="font-weight: 300; display: flex; align-items: center;">
-<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+&lt;/span&gt;
+&lt;span style=&#34;color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;&#34;&gt;|&lt;/span&gt;
+&lt;span style=&#34;font-weight: 300; display: flex; align-items: center;&#34;&gt;
+&lt;svg style=&#34;width: 16px; height: 16px; margin-right: 0.4rem;&#34; fill=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path d=&#34;M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z&#34;/&gt;&lt;/svg&gt;
 五言绝句
-</span>
-</div>
-</div>
-</div>
-</div>
+&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="position: relative; z-index: 1; margin-top: 0;">
-<div style="background: rgba(52, 152, 219, 0.08); padding: 2.2rem; border-radius: 12px; margin: 0 0 3rem 0; border-left: 4px solid #3498db; min-height: 180px;">
-<div style="color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">📜 诗体与创作背景</div>
-<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem; padding: 0.5rem 0;">
-《江雪》是柳宗元被贬永州期间所作五言绝句，写于唐宪宗元和二年（807年）。此时柳宗元参加王叔文改革失败，被贬为永州司马，身处荒僻之地，精神备受打击。此诗以极其简练的笔触，描绘了一幅寒江独钓图，于空寂中见孤傲，于冰雪中见气节。全诗仅二十字，却营造出浩渺无垠的宇宙感和遗世独立的孤独感，被誉为"唐人五绝之冠"。苏轼评柳诗："发纤秾于简古，寄至味于澹泊。"此诗正是典范。
-</div>
-</div>
+&lt;div style=&#34;position: relative; z-index: 1; margin-top: 0;&#34;&gt;
+&lt;div style=&#34;background: rgba(52, 152, 219, 0.08); padding: 2.2rem; border-radius: 12px; margin: 0 0 3rem 0; border-left: 4px solid #3498db; min-height: 180px;&#34;&gt;
+&lt;div style=&#34;color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;&#34;&gt;📜 诗体与创作背景&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem; padding: 0.5rem 0;&#34;&gt;
+《江雪》是柳宗元被贬永州期间所作五言绝句，写于唐宪宗元和二年（807年）。此时柳宗元参加王叔文改革失败，被贬为永州司马，身处荒僻之地，精神备受打击。此诗以极其简练的笔触，描绘了一幅寒江独钓图，于空寂中见孤傲，于冰雪中见气节。全诗仅二十字，却营造出浩渺无垠的宇宙感和遗世独立的孤独感，被誉为&#34;唐人五绝之冠&#34;。苏轼评柳诗：&#34;发纤秾于简古，寄至味于澹泊。&#34;此诗正是典范。
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: linear-gradient(145deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.05)); padding: 2.5rem; border-radius: 14px; border: 1px solid rgba(52, 152, 219, 0.2); margin: 2.5rem 0; font-style: italic; color: #4a5568; position: relative; min-height: 200px;">
-<div style="position: absolute; top: -14px; left: 25px; background: white; color: #3498db; padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: bold; border: 1px solid rgba(52, 152, 219, 0.3); box-shadow: 0 3px 8px rgba(0,0,0,0.08);">诗前小序</div>
-<div style="padding-top: 1.2rem; font-size: 1.08rem; line-height: 1.9;">
-元和二年冬，永州大雪。柳子厚谪居于此，已历三载。政治理想破灭，故交零落，身处蛮荒之地，心境如寒冰。一日大雪封山，江天皆白，万物寂寥。千山不见飞鸟，万径绝了人踪。唯见寒江之上，一叶孤舟，一位蓑笠老翁，独钓于漫天风雪之中。此景此情，触动诗人心灵——天地虽大，吾道孤矣；风雪虽寒，此心不改。遂提笔写下这二十字，于空无中见存在，于孤寂中见坚守，于冰雪中见气节。清人王士禛评："绝唱，雪景如在目前。"刘永济赞："此诗读之便有寒气。"
-</div>
-</div>
+&lt;div style=&#34;background: linear-gradient(145deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.05)); padding: 2.5rem; border-radius: 14px; border: 1px solid rgba(52, 152, 219, 0.2); margin: 2.5rem 0; font-style: italic; color: #4a5568; position: relative; min-height: 200px;&#34;&gt;
+&lt;div style=&#34;position: absolute; top: -14px; left: 25px; background: white; color: #3498db; padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: bold; border: 1px solid rgba(52, 152, 219, 0.3); box-shadow: 0 3px 8px rgba(0,0,0,0.08);&#34;&gt;诗前小序&lt;/div&gt;
+&lt;div style=&#34;padding-top: 1.2rem; font-size: 1.08rem; line-height: 1.9;&#34;&gt;
+元和二年冬，永州大雪。柳子厚谪居于此，已历三载。政治理想破灭，故交零落，身处蛮荒之地，心境如寒冰。一日大雪封山，江天皆白，万物寂寥。千山不见飞鸟，万径绝了人踪。唯见寒江之上，一叶孤舟，一位蓑笠老翁，独钓于漫天风雪之中。此景此情，触动诗人心灵——天地虽大，吾道孤矣；风雪虽寒，此心不改。遂提笔写下这二十字，于空无中见存在，于孤寂中见坚守，于冰雪中见气节。清人王士禛评：&#34;绝唱，雪景如在目前。&#34;刘永济赞：&#34;此诗读之便有寒气。&#34;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<h2 id="诗文详析·二十字乾坤"><a href="#诗文详析·二十字乾坤" class="headerlink" title="诗文详析·二十字乾坤"></a>诗文详析·二十字乾坤</h2><div style="background: linear-gradient(145deg, #e8f4fc 0%, #d6eaf8 100%); border: 2px solid #3498db; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 500px;">
-<div style="position: absolute; top: -16px; left: 25px; background: #3498db; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">全诗四句</div>
+&lt;h2 id=&#34;诗文详析·二十字乾坤&#34;&gt;&lt;a href=&#34;#诗文详析·二十字乾坤&#34; class=&#34;headerlink&#34; title=&#34;诗文详析·二十字乾坤&#34;&gt;&lt;/a&gt;诗文详析·二十字乾坤&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #e8f4fc 0%, #d6eaf8 100%); border: 2px solid #3498db; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 500px;&#34;&gt;
+&lt;div style=&#34;position: absolute; top: -16px; left: 25px; background: #3498db; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);&#34;&gt;全诗四句&lt;/div&gt;
 
-<div style="text-align: center; margin-bottom: 2.5rem;">
-<div style="color: #1a5276; font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; font-family: 'STKaiti', serif; letter-spacing: 1px; line-height: 1.8;">
-千山鸟飞绝，万径人踪灭。<br>
+&lt;div style=&#34;text-align: center; margin-bottom: 2.5rem;&#34;&gt;
+&lt;div style=&#34;color: #1a5276; font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; font-family: &#39;STKaiti&#39;, serif; letter-spacing: 1px; line-height: 1.8;&#34;&gt;
+千山鸟飞绝，万径人踪灭。&lt;br&gt;
 孤舟蓑笠翁，独钓寒江雪。
-</div>
-<div style="color: #4a5568; font-size: 1.1rem; font-style: italic; max-width: 500px; margin: 0 auto;">
+&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; font-size: 1.1rem; font-style: italic; max-width: 500px; margin: 0 auto;&#34;&gt;
 ——柳宗元《江雪》· 唐人五绝之冠
-</div>
-</div>
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.2rem; margin-top: 2.2rem;">
-<div style="background: rgba(52, 152, 219, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #3498db;">
-<div style="color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🏔️ 首句·千山鸟飞绝</div>
-<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
-<strong>字面解析</strong>："千山"极言山之多，"鸟飞绝"写飞鸟绝迹。五字勾勒出连绵群山在雪中沉寂的景象。<br><br>
-<strong>深层意蕴</strong>：山本应有鸟，今却"绝"矣。这不是一只鸟的离去，而是所有生命迹象的消失。"绝"字力度千钧，不仅是景象描写，更是心境的投射——政治环境的严酷，如同这冰雪覆盖的千山，令生机断绝。<br><br>
-<strong>艺术手法</strong>：以大见小。"千山"是宏大背景的铺陈，为后文的"孤舟"作反衬。没有鸟的千山，是死寂的，也是纯净的。
-</div>
-</div>
+&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.2rem; margin-top: 2.2rem;&#34;&gt;
+&lt;div style=&#34;background: rgba(52, 152, 219, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #3498db;&#34;&gt;
+&lt;div style=&#34;color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🏔️ 首句·千山鸟飞绝&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; line-height: 1.85; font-size: 1.05rem;&#34;&gt;
+&lt;strong&gt;字面解析&lt;/strong&gt;：&#34;千山&#34;极言山之多，&#34;鸟飞绝&#34;写飞鸟绝迹。五字勾勒出连绵群山在雪中沉寂的景象。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;深层意蕴&lt;/strong&gt;：山本应有鸟，今却&#34;绝&#34;矣。这不是一只鸟的离去，而是所有生命迹象的消失。&#34;绝&#34;字力度千钧，不仅是景象描写，更是心境的投射——政治环境的严酷，如同这冰雪覆盖的千山，令生机断绝。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;艺术手法&lt;/strong&gt;：以大见小。&#34;千山&#34;是宏大背景的铺陈，为后文的&#34;孤舟&#34;作反衬。没有鸟的千山，是死寂的，也是纯净的。
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: rgba(155, 89, 182, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #9b59b6;">
-<div style="color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🛤️ 次句·万径人踪灭</div>
-<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
-<strong>字面解析</strong>："万径"写路径之多，"人踪灭"言人的踪迹完全消失。与上句形成对仗，从"天上"（鸟）写到"地上"（人）。<br><br>
-<strong>深层意蕴</strong>：路径本应有人行，今却"灭"矣。人间烟火气全然消散，世界回归到原始的空寂状态。"灭"比"绝"更彻底，是彻底的消失，彻底的寂静。<br><br>
-<strong>艺术手法</strong>：对仗工整。"千山"对"万径"，"鸟飞绝"对"人踪灭"，构成宏大的空镜头。两句连用，将宇宙间的生命迹象全部抹去，为后文的"独"作铺垫。
-</div>
-</div>
-</div>
+&lt;div style=&#34;background: rgba(155, 89, 182, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #9b59b6;&#34;&gt;
+&lt;div style=&#34;color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🛤️ 次句·万径人踪灭&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; line-height: 1.85; font-size: 1.05rem;&#34;&gt;
+&lt;strong&gt;字面解析&lt;/strong&gt;：&#34;万径&#34;写路径之多，&#34;人踪灭&#34;言人的踪迹完全消失。与上句形成对仗，从&#34;天上&#34;（鸟）写到&#34;地上&#34;（人）。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;深层意蕴&lt;/strong&gt;：路径本应有人行，今却&#34;灭&#34;矣。人间烟火气全然消散，世界回归到原始的空寂状态。&#34;灭&#34;比&#34;绝&#34;更彻底，是彻底的消失，彻底的寂静。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;艺术手法&lt;/strong&gt;：对仗工整。&#34;千山&#34;对&#34;万径&#34;，&#34;鸟飞绝&#34;对&#34;人踪灭&#34;，构成宏大的空镜头。两句连用，将宇宙间的生命迹象全部抹去，为后文的&#34;独&#34;作铺垫。
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.2rem; margin-top: 2.2rem;">
-<div style="background: rgba(46, 204, 113, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #2ecc71;">
-<div style="color: #27ae60; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🚣 三句·孤舟蓑笠翁</div>
-<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
-<strong>字面解析</strong>："孤舟"一叶小舟，"蓑笠翁"披蓑衣戴斗笠的老翁。三字如特写镜头，从宏大背景聚焦到微小个体。<br><br>
-<strong>深层意蕴</strong>：在"绝""灭"的绝对空寂中，突然出现"孤舟"与"蓑笠翁"，这是强烈的对比。"孤"字点题，既是舟孤，也是人孤，更是心孤。蓑笠是渔人的装束，象征与自然的亲近，也象征与尘世的疏离。<br><br>
-<strong>艺术手法</strong>：从全景到特写。前两句是广角镜头，此句是聚焦特写。"孤"与"千""万"形成数量上的巨大反差，凸显个体在宇宙间的孤独存在。
-</div>
-</div>
+&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.2rem; margin-top: 2.2rem;&#34;&gt;
+&lt;div style=&#34;background: rgba(46, 204, 113, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #2ecc71;&#34;&gt;
+&lt;div style=&#34;color: #27ae60; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🚣 三句·孤舟蓑笠翁&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; line-height: 1.85; font-size: 1.05rem;&#34;&gt;
+&lt;strong&gt;字面解析&lt;/strong&gt;：&#34;孤舟&#34;一叶小舟，&#34;蓑笠翁&#34;披蓑衣戴斗笠的老翁。三字如特写镜头，从宏大背景聚焦到微小个体。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;深层意蕴&lt;/strong&gt;：在&#34;绝&#34;&#34;灭&#34;的绝对空寂中，突然出现&#34;孤舟&#34;与&#34;蓑笠翁&#34;，这是强烈的对比。&#34;孤&#34;字点题，既是舟孤，也是人孤，更是心孤。蓑笠是渔人的装束，象征与自然的亲近，也象征与尘世的疏离。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;艺术手法&lt;/strong&gt;：从全景到特写。前两句是广角镜头，此句是聚焦特写。&#34;孤&#34;与&#34;千&#34;&#34;万&#34;形成数量上的巨大反差，凸显个体在宇宙间的孤独存在。
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: rgba(231, 76, 60, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #e74c3c;">
-<div style="color: #c0392b; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🎣 末句·独钓寒江雪</div>
-<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
-<strong>字面解析</strong>："独钓"独自垂钓，"寒江雪"寒江上的雪。五字完成全诗意境的升华。<br><br>
-<strong>深层意蕴</strong>：钓的不是鱼，而是"寒江雪"——一个不可能钓到的东西。这显然超越了现实的功利目的，成为精神层面的象征。"独"与"孤"呼应，但"独钓"是主动选择，而非被动承受。"寒江雪"三字，将江、寒、雪融为一体，是环境的冷，也是心境的清。<br><br>
-<strong>艺术手法</strong>：点睛之笔。前三句都是静态描写，此句有了"钓"这个动作。在绝对寂静中，这个微小的动作却充满力量。"钓雪"的悖论，使全诗进入哲学境界。
-</div>
-</div>
-</div>
-</div>
+&lt;div style=&#34;background: rgba(231, 76, 60, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #e74c3c;&#34;&gt;
+&lt;div style=&#34;color: #c0392b; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🎣 末句·独钓寒江雪&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; line-height: 1.85; font-size: 1.05rem;&#34;&gt;
+&lt;strong&gt;字面解析&lt;/strong&gt;：&#34;独钓&#34;独自垂钓，&#34;寒江雪&#34;寒江上的雪。五字完成全诗意境的升华。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;深层意蕴&lt;/strong&gt;：钓的不是鱼，而是&#34;寒江雪&#34;——一个不可能钓到的东西。这显然超越了现实的功利目的，成为精神层面的象征。&#34;独&#34;与&#34;孤&#34;呼应，但&#34;独钓&#34;是主动选择，而非被动承受。&#34;寒江雪&#34;三字，将江、寒、雪融为一体，是环境的冷，也是心境的清。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;艺术手法&lt;/strong&gt;：点睛之笔。前三句都是静态描写，此句有了&#34;钓&#34;这个动作。在绝对寂静中，这个微小的动作却充满力量。&#34;钓雪&#34;的悖论，使全诗进入哲学境界。
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<h2 id="艺术特色·五绝巅峰"><a href="#艺术特色·五绝巅峰" class="headerlink" title="艺术特色·五绝巅峰"></a>艺术特色·五绝巅峰</h2><div style="background: linear-gradient(145deg, #fff8e1 0%, #fff3cd 100%); border: 2px solid #d4a017; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(212, 160, 23, 0.1); min-height: 500px;">
-<div style="text-align: center; margin-bottom: 2.8rem;">
-<div style="color: #8b4513; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🎭 艺术特色分析</div>
-<div style="color: #a68a64; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">构图如画·炼字精绝·意境空灵·寄托遥深</div>
-</div>
+&lt;h2 id=&#34;艺术特色·五绝巅峰&#34;&gt;&lt;a href=&#34;#艺术特色·五绝巅峰&#34; class=&#34;headerlink&#34; title=&#34;艺术特色·五绝巅峰&#34;&gt;&lt;/a&gt;艺术特色·五绝巅峰&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #fff8e1 0%, #fff3cd 100%); border: 2px solid #d4a017; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(212, 160, 23, 0.1); min-height: 500px;&#34;&gt;
+&lt;div style=&#34;text-align: center; margin-bottom: 2.8rem;&#34;&gt;
+&lt;div style=&#34;color: #8b4513; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;&#34;&gt;🎭 艺术特色分析&lt;/div&gt;
+&lt;div style=&#34;color: #a68a64; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;&#34;&gt;构图如画·炼字精绝·意境空灵·寄托遥深&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
-<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #3498db; position: relative; overflow: hidden; min-height: 320px;">
-<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(52, 152, 219, 0.1); border-radius: 0 0 0 70px;"></div>
-<div style="color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🎨 构图如画</div>
-<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
-<li style="margin-bottom: 0.8rem;"><strong>散点透视</strong> - 千山、万径、孤舟、寒江，层次分明</li>
-<li style="margin-bottom: 0.8rem;"><strong>留白艺术</strong> - 大面积空白，凸显"空""寂"意境</li>
-<li style="margin-bottom: 0.8rem;"><strong>焦点突出</strong> - 所有线条引向"蓑笠翁"这一点</li>
-<li style="margin-bottom: 0.8rem;"><strong>色彩对比</strong> - 雪的白、江的青、蓑笠的黑、山的灰</li>
-<li><strong>清人评</strong>："如寒江独钓图，咫尺有万里之势"</li>
-</ul>
-<div style="color: #3498db; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
-"诗中有画，画中有诗"——苏轼评王维语，亦适用于此诗
-</div>
-</div>
+&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;&#34;&gt;
+&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #3498db; position: relative; overflow: hidden; min-height: 320px;&#34;&gt;
+&lt;div style=&#34;position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(52, 152, 219, 0.1); border-radius: 0 0 0 70px;&#34;&gt;&lt;/div&gt;
+&lt;div style=&#34;color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;🎨 构图如画&lt;/div&gt;
+&lt;ul style=&#34;color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;&#34;&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;散点透视&lt;/strong&gt; - 千山、万径、孤舟、寒江，层次分明&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;留白艺术&lt;/strong&gt; - 大面积空白，凸显&#34;空&#34;&#34;寂&#34;意境&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;焦点突出&lt;/strong&gt; - 所有线条引向&#34;蓑笠翁&#34;这一点&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;色彩对比&lt;/strong&gt; - 雪的白、江的青、蓑笠的黑、山的灰&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;清人评&lt;/strong&gt;：&#34;如寒江独钓图，咫尺有万里之势&#34;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&#34;color: #3498db; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
+&#34;诗中有画，画中有诗&#34;——苏轼评王维语，亦适用于此诗
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #9b59b6; position: relative; overflow: hidden; min-height: 320px;">
-<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(155, 89, 182, 0.1); border-radius: 0 0 0 70px;"></div>
-<div style="color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">✍️ 炼字精绝</div>
-<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
-<li style="margin-bottom: 0.8rem;"><strong>绝</strong> - 鸟飞绝，生命迹象的彻底消失</li>
-<li style="margin-bottom: 0.8rem;"><strong>灭</strong> - 人踪灭，人间烟火的完全消散</li>
-<li style="margin-bottom: 0.8rem;"><strong>孤</strong> - 孤舟，数量上的唯一性</li>
-<li style="margin-bottom: 0.8rem;"><strong>独</strong> - 独钓，精神上的独立性</li>
-<li><strong>寒</strong> - 寒江雪，物理温度与心理感受的统一</li>
-</ul>
-<div style="color: #9b59b6; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
-"绝""灭""孤""独""寒"——五字定全诗基调
-</div>
-</div>
+&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #9b59b6; position: relative; overflow: hidden; min-height: 320px;&#34;&gt;
+&lt;div style=&#34;position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(155, 89, 182, 0.1); border-radius: 0 0 0 70px;&#34;&gt;&lt;/div&gt;
+&lt;div style=&#34;color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;✍️ 炼字精绝&lt;/div&gt;
+&lt;ul style=&#34;color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;&#34;&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;绝&lt;/strong&gt; - 鸟飞绝，生命迹象的彻底消失&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;灭&lt;/strong&gt; - 人踪灭，人间烟火的完全消散&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;孤&lt;/strong&gt; - 孤舟，数量上的唯一性&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;独&lt;/strong&gt; - 独钓，精神上的独立性&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;寒&lt;/strong&gt; - 寒江雪，物理温度与心理感受的统一&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&#34;color: #9b59b6; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
+&#34;绝&#34;&#34;灭&#34;&#34;孤&#34;&#34;独&#34;&#34;寒&#34;——五字定全诗基调
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #e74c3c; position: relative; overflow: hidden; min-height: 320px;">
-<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(231, 76, 60, 0.1); border-radius: 0 0 0 70px;"></div>
-<div style="color: #c0392b; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🌌 意境空灵</div>
-<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
-<li style="margin-bottom: 0.8rem;"><strong>宇宙意识</strong> - 千山万径，时空无限</li>
-<li style="margin-bottom: 0.8rem;"><strong>空寂之美</strong> - 无鸟无人，纯然寂静</li>
-<li style="margin-bottom: 0.8rem;"><strong>孤傲精神</strong> - 独钓寒江，遗世独立</li>
-<li style="margin-bottom: 0.8rem;"><strong>禅意境界</strong> - 钓雪非鱼，超越功利</li>
-<li><strong>王国维评</strong>："无我之境，以物观物，不知何者为我"</li>
-</ul>
-<div style="color: #e74c3c; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
-"空故纳万境"——苏轼语，此诗正是空灵境界的极致
-</div>
-</div>
-</div>
-</div>
+&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #e74c3c; position: relative; overflow: hidden; min-height: 320px;&#34;&gt;
+&lt;div style=&#34;position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(231, 76, 60, 0.1); border-radius: 0 0 0 70px;&#34;&gt;&lt;/div&gt;
+&lt;div style=&#34;color: #c0392b; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;🌌 意境空灵&lt;/div&gt;
+&lt;ul style=&#34;color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;&#34;&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;宇宙意识&lt;/strong&gt; - 千山万径，时空无限&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;空寂之美&lt;/strong&gt; - 无鸟无人，纯然寂静&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;孤傲精神&lt;/strong&gt; - 独钓寒江，遗世独立&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;禅意境界&lt;/strong&gt; - 钓雪非鱼，超越功利&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;王国维评&lt;/strong&gt;：&#34;无我之境，以物观物，不知何者为我&#34;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&#34;color: #e74c3c; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
+&#34;空故纳万境&#34;——苏轼语，此诗正是空灵境界的极致
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<h2 id="哲学解读·三重境界"><a href="#哲学解读·三重境界" class="headerlink" title="哲学解读·三重境界"></a>哲学解读·三重境界</h2><div style="background: linear-gradient(145deg, #e8f6f3 0%, #d1f2eb 100%); border: 2px solid #1abc9c; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(26, 188, 156, 0.1); min-height: 450px;">
-<div style="text-align: center; margin-bottom: 2.8rem;">
-<div style="color: #148f77; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🕉️ 哲学三重境</div>
-<div style="color: #5d6d7e; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">从宇宙空寂到个体存在，从现实困境到精神超越</div>
-</div>
+&lt;h2 id=&#34;哲学解读·三重境界&#34;&gt;&lt;a href=&#34;#哲学解读·三重境界&#34; class=&#34;headerlink&#34; title=&#34;哲学解读·三重境界&#34;&gt;&lt;/a&gt;哲学解读·三重境界&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #e8f6f3 0%, #d1f2eb 100%); border: 2px solid #1abc9c; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(26, 188, 156, 0.1); min-height: 450px;&#34;&gt;
+&lt;div style=&#34;text-align: center; margin-bottom: 2.8rem;&#34;&gt;
+&lt;div style=&#34;color: #148f77; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;&#34;&gt;🕉️ 哲学三重境&lt;/div&gt;
+&lt;div style=&#34;color: #5d6d7e; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;&#34;&gt;从宇宙空寂到个体存在，从现实困境到精神超越&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
-<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #3498db; position: relative; overflow: hidden; min-height: 320px;">
-<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(52, 152, 219, 0.1); border-radius: 0 0 0 70px;"></div>
-<div style="color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🌌 第一境·宇宙空寂</div>
-<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
-<li style="margin-bottom: 0.8rem;"><strong>千山鸟飞绝</strong> - 天上世界的消逝</li>
-<li style="margin-bottom: 0.8rem;"><strong>万径人踪灭</strong> - 人间世界的消失</li>
-<li style="margin-bottom: 0.8rem;"><strong>绝对的空无</strong> - 生命迹象完全抹去</li>
-<li style="margin-bottom: 0.8rem;"><strong>时间的冻结</strong> - 雪封万物，时间停滞</li>
-<li><strong>庄子的"无何有之乡"</strong> - 纯粹的空间，绝对的空寂</li>
-</ul>
-<div style="color: #3498db; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
-"前不见古人，后不见来者"——陈子昂的时空浩叹
-</div>
-</div>
+&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;&#34;&gt;
+&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #3498db; position: relative; overflow: hidden; min-height: 320px;&#34;&gt;
+&lt;div style=&#34;position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(52, 152, 219, 0.1); border-radius: 0 0 0 70px;&#34;&gt;&lt;/div&gt;
+&lt;div style=&#34;color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;🌌 第一境·宇宙空寂&lt;/div&gt;
+&lt;ul style=&#34;color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;&#34;&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;千山鸟飞绝&lt;/strong&gt; - 天上世界的消逝&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;万径人踪灭&lt;/strong&gt; - 人间世界的消失&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;绝对的空无&lt;/strong&gt; - 生命迹象完全抹去&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;时间的冻结&lt;/strong&gt; - 雪封万物，时间停滞&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;庄子的&#34;无何有之乡&#34;&lt;/strong&gt; - 纯粹的空间，绝对的空寂&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&#34;color: #3498db; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
+&#34;前不见古人，后不见来者&#34;——陈子昂的时空浩叹
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #9b59b6; position: relative; overflow: hidden; min-height: 320px;">
-<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(155, 89, 182, 0.1); border-radius: 0 0 0 70px;"></div>
-<div style="color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">👤 第二境·个体存在</div>
-<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
-<li style="margin-bottom: 0.8rem;"><strong>孤舟蓑笠翁</strong> - 在空无中凸显存在</li>
-<li style="margin-bottom: 0.8rem;"><strong>从"无"到"有"</strong> - 绝对空寂中的唯一存在</li>
-<li style="margin-bottom: 0.8rem;"><strong>存在的勇气</strong> - 在荒芜宇宙中坚持存在</li>
-<li style="margin-bottom: 0.8rem;"><strong>渺小与伟大</strong> - 个体虽微，却充满天地</li>
-<li><strong>存在主义的"孤独个体"</strong> - 克尔凯郭尔的哲学呼应</li>
-</ul>
-<div style="color: #9b59b6; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
-"宇宙虽大，唯我独存"——禅宗的当下体验
-</div>
-</div>
+&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #9b59b6; position: relative; overflow: hidden; min-height: 320px;&#34;&gt;
+&lt;div style=&#34;position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(155, 89, 182, 0.1); border-radius: 0 0 0 70px;&#34;&gt;&lt;/div&gt;
+&lt;div style=&#34;color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;👤 第二境·个体存在&lt;/div&gt;
+&lt;ul style=&#34;color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;&#34;&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;孤舟蓑笠翁&lt;/strong&gt; - 在空无中凸显存在&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;从&#34;无&#34;到&#34;有&#34;&lt;/strong&gt; - 绝对空寂中的唯一存在&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;存在的勇气&lt;/strong&gt; - 在荒芜宇宙中坚持存在&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;渺小与伟大&lt;/strong&gt; - 个体虽微，却充满天地&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;存在主义的&#34;孤独个体&#34;&lt;/strong&gt; - 克尔凯郭尔的哲学呼应&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&#34;color: #9b59b6; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
+&#34;宇宙虽大，唯我独存&#34;——禅宗的当下体验
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #e74c3c; position: relative; overflow: hidden; min-height: 320px;">
-<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(231, 76, 60, 0.1); border-radius: 0 0 0 70px;"></div>
-<div style="color: #c0392b; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🎣 第三境·精神超越</div>
-<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
-<li style="margin-bottom: 0.8rem;"><strong>独钓寒江雪</strong> - 钓的不是鱼，是雪，是境界</li>
-<li style="margin-bottom: 0.8rem;"><strong>无功利的审美</strong> - 超越实用目的的纯粹行为</li>
-<li style="margin-bottom: 0.8rem;"><strong>与天地精神相往来</strong> - 庄子式的天人合一</li>
-<li style="margin-bottom: 0.8rem;"><strong>苦难中的超越</strong> - 贬谪困境中的精神升华</li>
-<li><strong>禅宗的"平常心是道"</strong> - 在平凡中见道</li>
-</ul>
-<div style="color: #e74c3c; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
-"钓雪"——中国文学中最具哲学意味的动作之一
-</div>
-</div>
-</div>
-</div>
+&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #e74c3c; position: relative; overflow: hidden; min-height: 320px;&#34;&gt;
+&lt;div style=&#34;position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(231, 76, 60, 0.1); border-radius: 0 0 0 70px;&#34;&gt;&lt;/div&gt;
+&lt;div style=&#34;color: #c0392b; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;🎣 第三境·精神超越&lt;/div&gt;
+&lt;ul style=&#34;color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;&#34;&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;独钓寒江雪&lt;/strong&gt; - 钓的不是鱼，是雪，是境界&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;无功利的审美&lt;/strong&gt; - 超越实用目的的纯粹行为&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;与天地精神相往来&lt;/strong&gt; - 庄子式的天人合一&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;苦难中的超越&lt;/strong&gt; - 贬谪困境中的精神升华&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;禅宗的&#34;平常心是道&#34;&lt;/strong&gt; - 在平凡中见道&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&#34;color: #e74c3c; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
+&#34;钓雪&#34;——中国文学中最具哲学意味的动作之一
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<h2 id="贬谪心境·诗如其人"><a href="#贬谪心境·诗如其人" class="headerlink" title="贬谪心境·诗如其人"></a>贬谪心境·诗如其人</h2><div style="background: linear-gradient(145deg, #fef5e7 0%, #fdebd0 100%); border: 2px solid #e67e22; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(230, 126, 34, 0.1); min-height: 400px;">
-<div style="text-align: center; margin-bottom: 2.5rem;">
-<div style="color: #d35400; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">📜 柳宗元的贬谪心境</div>
-<div style="color: #a68a64; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">"孤舟蓑笠翁"是诗人的自画像，也是中国士人的精神象征</div>
-</div>
+&lt;h2 id=&#34;贬谪心境·诗如其人&#34;&gt;&lt;a href=&#34;#贬谪心境·诗如其人&#34; class=&#34;headerlink&#34; title=&#34;贬谪心境·诗如其人&#34;&gt;&lt;/a&gt;贬谪心境·诗如其人&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #fef5e7 0%, #fdebd0 100%); border: 2px solid #e67e22; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(230, 126, 34, 0.1); min-height: 400px;&#34;&gt;
+&lt;div style=&#34;text-align: center; margin-bottom: 2.5rem;&#34;&gt;
+&lt;div style=&#34;color: #d35400; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;&#34;&gt;📜 柳宗元的贬谪心境&lt;/div&gt;
+&lt;div style=&#34;color: #a68a64; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;&#34;&gt;&#34;孤舟蓑笠翁&#34;是诗人的自画像，也是中国士人的精神象征&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 2rem 0;">
-<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-left: 4px solid #3498db;">
-<div style="color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; border-bottom: 2px solid #f0e6d2; padding-bottom: 1rem; font-size: 1.2rem;">🏛️ 永贞革新与贬谪</div>
-<div style="margin-top: 1.2rem;">
-<div style="color: #4a5568; font-size: 1.05rem; line-height: 1.8;">
-<strong>永贞元年（805年）</strong>，柳宗元参与王叔文领导的"永贞革新"，旨在打击宦官、藩镇势力，改革弊政。<br><br>
-<strong>改革失败</strong>：革新仅持续146天，唐宪宗即位后，王叔文被杀，柳宗元等八人被贬为远州司马，史称"二王八司马事件"。<br><br>
-<strong>永州十年</strong>：柳宗元被贬永州司马，无权无势，生活困苦，精神压抑。《江雪》正作于此期间。<br><br>
-<strong>从政治家到文学家</strong>：贬谪生涯使柳宗元从政治舞台转向文学创作，成就了"唐宋八大家"的文学地位。
-</div>
-</div>
-</div>
+&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 2rem 0;&#34;&gt;
+&lt;div style=&#34;background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-left: 4px solid #3498db;&#34;&gt;
+&lt;div style=&#34;color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; border-bottom: 2px solid #f0e6d2; padding-bottom: 1rem; font-size: 1.2rem;&#34;&gt;🏛️ 永贞革新与贬谪&lt;/div&gt;
+&lt;div style=&#34;margin-top: 1.2rem;&#34;&gt;
+&lt;div style=&#34;color: #4a5568; font-size: 1.05rem; line-height: 1.8;&#34;&gt;
+&lt;strong&gt;永贞元年（805年）&lt;/strong&gt;，柳宗元参与王叔文领导的&#34;永贞革新&#34;，旨在打击宦官、藩镇势力，改革弊政。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;改革失败&lt;/strong&gt;：革新仅持续146天，唐宪宗即位后，王叔文被杀，柳宗元等八人被贬为远州司马，史称&#34;二王八司马事件&#34;。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;永州十年&lt;/strong&gt;：柳宗元被贬永州司马，无权无势，生活困苦，精神压抑。《江雪》正作于此期间。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;从政治家到文学家&lt;/strong&gt;：贬谪生涯使柳宗元从政治舞台转向文学创作，成就了&#34;唐宋八大家&#34;的文学地位。
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-left: 4px solid #9b59b6;">
-<div style="color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; border-bottom: 2px solid #f0e6d2; padding-bottom: 1rem; font-size: 1.2rem;">🎭 诗中的自我投射</div>
-<div style="margin-top: 1.2rem;">
-<div style="color: #4a5568; font-size: 1.05rem; line-height: 1.8;">
-<strong>孤舟</strong>：象征政治上的孤立无援。革新派失势，同道零落，自己如江上一叶孤舟。<br><br>
-<strong>蓑笠翁</strong>：渔夫形象，象征与自然亲近，与官场疏离。蓑笠是劳动者的装束，也是隐士的象征。<br><br>
-<strong>独钓</strong>：在严酷环境中坚持自己的行为。虽"钓"无所得（雪非鱼），仍要坚持"钓"这个动作，象征虽知改革无望，仍坚守理想。<br><br>
-<strong>寒江雪</strong>：既是实景，也是政治环境的隐喻——冰冷、严酷、洁净（不同流合污）。
-</div>
-</div>
-</div>
-</div>
+&lt;div style=&#34;background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-left: 4px solid #9b59b6;&#34;&gt;
+&lt;div style=&#34;color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; border-bottom: 2px solid #f0e6d2; padding-bottom: 1rem; font-size: 1.2rem;&#34;&gt;🎭 诗中的自我投射&lt;/div&gt;
+&lt;div style=&#34;margin-top: 1.2rem;&#34;&gt;
+&lt;div style=&#34;color: #4a5568; font-size: 1.05rem; line-height: 1.8;&#34;&gt;
+&lt;strong&gt;孤舟&lt;/strong&gt;：象征政治上的孤立无援。革新派失势，同道零落，自己如江上一叶孤舟。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;蓑笠翁&lt;/strong&gt;：渔夫形象，象征与自然亲近，与官场疏离。蓑笠是劳动者的装束，也是隐士的象征。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;独钓&lt;/strong&gt;：在严酷环境中坚持自己的行为。虽&#34;钓&#34;无所得（雪非鱼），仍要坚持&#34;钓&#34;这个动作，象征虽知改革无望，仍坚守理想。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;寒江雪&lt;/strong&gt;：既是实景，也是政治环境的隐喻——冰冷、严酷、洁净（不同流合污）。
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: rgba(230, 126, 34, 0.1); padding: 2rem; border-radius: 14px; margin-top: 2.5rem; border: 1px dashed #e67e22;">
-<div style="color: #d35400; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">📖 永州其他作品</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.2rem;">
-<div>
-<div style="color: #e67e22; font-weight: bold; margin-bottom: 0.5rem; font-size: 1.05rem;">《永州八记》</div>
-<div style="color: #4a5568; font-size: 1rem; line-height: 1.7;">
+&lt;div style=&#34;background: rgba(230, 126, 34, 0.1); padding: 2rem; border-radius: 14px; margin-top: 2.5rem; border: 1px dashed #e67e22;&#34;&gt;
+&lt;div style=&#34;color: #d35400; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;📖 永州其他作品&lt;/div&gt;
+&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.2rem;&#34;&gt;
+&lt;div&gt;
+&lt;div style=&#34;color: #e67e22; font-weight: bold; margin-bottom: 0.5rem; font-size: 1.05rem;&#34;&gt;《永州八记》&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; font-size: 1rem; line-height: 1.7;&#34;&gt;
 山水游记的开山之作，包括《始得西山宴游记》《钴鉧潭记》《小石潭记》等。在自然山水中寻找精神寄托。
-</div>
-</div>
-<div>
-<div style="color: #e67e22; font-weight: bold; margin-bottom: 0.5rem; font-size: 1.05rem;">《渔翁》</div>
-<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
-渔翁夜傍西岩宿，晓汲清湘燃楚竹。<br>
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div style=&#34;color: #e67e22; font-weight: bold; margin-bottom: 0.5rem; font-size: 1.05rem;&#34;&gt;《渔翁》&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;
+渔翁夜傍西岩宿，晓汲清湘燃楚竹。&lt;br&gt;
 烟销日出不见人，欸乃一声山水绿。
-</div>
-<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 0.5rem;">同样塑造渔翁形象，与《江雪》可对照阅读。</div>
-</div>
-</div>
-<div style="color: #7f8c8d; font-size: 0.95rem; margin-top: 1.5rem; font-style: italic;">
+&lt;/div&gt;
+&lt;div style=&#34;color: #7f8c8d; font-size: 0.9rem; margin-top: 0.5rem;&#34;&gt;同样塑造渔翁形象，与《江雪》可对照阅读。&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&#34;color: #7f8c8d; font-size: 0.95rem; margin-top: 1.5rem; font-style: italic;&#34;&gt;
 永州十年，是柳宗元人生的低谷，却是他文学创作的高峰。《江雪》正是这段时期的精神结晶。
-</div>
-</div>
-</div>
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<h2 id="后世影响·寒江独钓图"><a href="#后世影响·寒江独钓图" class="headerlink" title="后世影响·寒江独钓图"></a>后世影响·寒江独钓图</h2><div style="background: linear-gradient(145deg, #f3e8ff 0%, #e9d8fd 100%); border: 2px solid #9f7aea; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(159, 122, 234, 0.12); min-height: 400px;">
-<div style="text-align: center; margin-bottom: 2.8rem;">
-<div style="color: #553c9a; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🎨 艺术史上的《江雪》</div>
-<div style="color: #718096; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">从诗到画，从文学到艺术，寒江独钓成为中国文化的重要母题</div>
-</div>
+&lt;h2 id=&#34;后世影响·寒江独钓图&#34;&gt;&lt;a href=&#34;#后世影响·寒江独钓图&#34; class=&#34;headerlink&#34; title=&#34;后世影响·寒江独钓图&#34;&gt;&lt;/a&gt;后世影响·寒江独钓图&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #f3e8ff 0%, #e9d8fd 100%); border: 2px solid #9f7aea; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(159, 122, 234, 0.12); min-height: 400px;&#34;&gt;
+&lt;div style=&#34;text-align: center; margin-bottom: 2.8rem;&#34;&gt;
+&lt;div style=&#34;color: #553c9a; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;&#34;&gt;🎨 艺术史上的《江雪》&lt;/div&gt;
+&lt;div style=&#34;color: #718096; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;&#34;&gt;从诗到画，从文学到艺术，寒江独钓成为中国文化的重要母题&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
-<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #3498db;">
-<div style="color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🖼️ 绘画传统</div>
-<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
-<strong>宋代马远《寒江独钓图》</strong>：现存最早的《江雪》诗意画，现藏日本东京国立博物馆。画面大量留白，一叶扁舟，老翁独钓，极简中见深意。<br><br>
-<strong>明代朱端《寒江独钓图》</strong>：绢本设色，现藏北京故宫博物院。构图更为复杂，但意境相通。<br><br>
-<strong>清代石涛《江雪诗意》</strong>：将诗境与禅意结合，笔墨简淡，意境空灵。<br><br>
-<strong>现代傅抱石《江雪》</strong>：以泼墨写意手法，再现诗境，气势磅礴。
-</div>
-</div>
+&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;&#34;&gt;
+&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #3498db;&#34;&gt;
+&lt;div style=&#34;color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🖼️ 绘画传统&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem;&#34;&gt;
+&lt;strong&gt;宋代马远《寒江独钓图》&lt;/strong&gt;：现存最早的《江雪》诗意画，现藏日本东京国立博物馆。画面大量留白，一叶扁舟，老翁独钓，极简中见深意。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;明代朱端《寒江独钓图》&lt;/strong&gt;：绢本设色，现藏北京故宫博物院。构图更为复杂，但意境相通。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;清代石涛《江雪诗意》&lt;/strong&gt;：将诗境与禅意结合，笔墨简淡，意境空灵。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;现代傅抱石《江雪》&lt;/strong&gt;：以泼墨写意手法，再现诗境，气势磅礴。
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #9b59b6;">
-<div style="color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🎭 文化影响</div>
-<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
-<strong>渔父意象的升华</strong>：从《楚辞·渔父》到《江雪》，渔父从劝世者变为独钓者，从配角变为主角。<br><br>
-<strong>隐逸文化的象征</strong>：寒江独钓成为士人隐逸精神的经典意象，与陶渊明"采菊东篱下"异曲同工。<br><br>
-<strong>禅意境界的代表</strong>：日本禅宗尤其推崇《江雪》，将其视为"空寂""幽玄"美学的最佳注脚。<br><br>
-<strong>现代再创造</strong>：歌曲、舞蹈、影视、动漫中常有《江雪》元素，如日本动漫《浪客剑心》中的剑术"独钓寒江"。
-</div>
-</div>
-</div>
+&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #9b59b6;&#34;&gt;
+&lt;div style=&#34;color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🎭 文化影响&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem;&#34;&gt;
+&lt;strong&gt;渔父意象的升华&lt;/strong&gt;：从《楚辞·渔父》到《江雪》，渔父从劝世者变为独钓者，从配角变为主角。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;隐逸文化的象征&lt;/strong&gt;：寒江独钓成为士人隐逸精神的经典意象，与陶渊明&#34;采菊东篱下&#34;异曲同工。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;禅意境界的代表&lt;/strong&gt;：日本禅宗尤其推崇《江雪》，将其视为&#34;空寂&#34;&#34;幽玄&#34;美学的最佳注脚。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;现代再创造&lt;/strong&gt;：歌曲、舞蹈、影视、动漫中常有《江雪》元素，如日本动漫《浪客剑心》中的剑术&#34;独钓寒江&#34;。
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: rgba(159, 122, 234, 0.1); padding: 2rem; border-radius: 14px; margin-top: 2.5rem; border: 1px dashed #9f7aea;">
-<div style="color: #553c9a; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🌏 日本的影响与接受</div>
-<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
-<strong>禅僧的推崇</strong>：室町时代五山禅僧将《江雪》与禅宗思想结合，视为悟道诗。<br><br>
-<strong>俳句的影响</strong>：松尾芭蕉俳句"古池や蛙飛び込む水の音"（古池塘，青蛙跃入水声响）的"寂"之美，与《江雪》的"空寂"相通。<br><br>
-<strong>绘画的传播</strong>：马远《寒江独钓图》传入日本，深刻影响日本水墨画（特に"潇湘八景"题材）。<br><br>
-<strong>现代教育</strong>：《江雪》被收入日本中学汉语教材，成为日本学生最熟悉的唐诗之一。
-</div>
-</div>
-</div>
+&lt;div style=&#34;background: rgba(159, 122, 234, 0.1); padding: 2rem; border-radius: 14px; margin-top: 2.5rem; border: 1px dashed #9f7aea;&#34;&gt;
+&lt;div style=&#34;color: #553c9a; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🌏 日本的影响与接受&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem;&#34;&gt;
+&lt;strong&gt;禅僧的推崇&lt;/strong&gt;：室町时代五山禅僧将《江雪》与禅宗思想结合，视为悟道诗。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;俳句的影响&lt;/strong&gt;：松尾芭蕉俳句&#34;古池や蛙飛び込む水の音&#34;（古池塘，青蛙跃入水声响）的&#34;寂&#34;之美，与《江雪》的&#34;空寂&#34;相通。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;绘画的传播&lt;/strong&gt;：马远《寒江独钓图》传入日本，深刻影响日本水墨画（特に&#34;潇湘八景&#34;题材）。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;现代教育&lt;/strong&gt;：《江雪》被收入日本中学汉语教材，成为日本学生最熟悉的唐诗之一。
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<h2 id="延伸阅读·山水诗选"><a href="#延伸阅读·山水诗选" class="headerlink" title="延伸阅读·山水诗选"></a>延伸阅读·山水诗选</h2><div style="background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #6c757d; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(108, 117, 125, 0.1); min-height: 350px;">
-<div style="text-align: center; margin-bottom: 2rem;">
-<div style="color: #495057; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">📖 山水诗选读</div>
-<div style="color: #6c757d; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">"山水有清音"——中国山水诗的传统与《江雪》的地位</div>
-</div>
+&lt;h2 id=&#34;延伸阅读·山水诗选&#34;&gt;&lt;a href=&#34;#延伸阅读·山水诗选&#34; class=&#34;headerlink&#34; title=&#34;延伸阅读·山水诗选&#34;&gt;&lt;/a&gt;延伸阅读·山水诗选&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #6c757d; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(108, 117, 125, 0.1); min-height: 350px;&#34;&gt;
+&lt;div style=&#34;text-align: center; margin-bottom: 2rem;&#34;&gt;
+&lt;div style=&#34;color: #495057; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;&#34;&gt;📖 山水诗选读&lt;/div&gt;
+&lt;div style=&#34;color: #6c757d; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;&#34;&gt;&#34;山水有清音&#34;——中国山水诗的传统与《江雪》的地位&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-<div style="background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #3498db;">
-<div style="color: #1a5276; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">王维《鹿柴》</div>
-<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
-空山不见人，但闻人语响。<br>
+&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;&#34;&gt;
+&lt;div style=&#34;background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #3498db;&#34;&gt;
+&lt;div style=&#34;color: #1a5276; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;&#34;&gt;王维《鹿柴》&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;
+空山不见人，但闻人语响。&lt;br&gt;
 返景入深林，复照青苔上。
-</div>
-<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
+&lt;/div&gt;
+&lt;div style=&#34;color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;&#34;&gt;
 评：同样写空寂，但王维的空寂中有人语、有光影，是温暖的；柳宗元的空寂是绝对的。
-</div>
-</div>
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #9b59b6;">
-<div style="color: #6c3483; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">韦应物《滁州西涧》</div>
-<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
-独怜幽草涧边生，上有黄鹂深树鸣。<br>
+&lt;div style=&#34;background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #9b59b6;&#34;&gt;
+&lt;div style=&#34;color: #6c3483; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;&#34;&gt;韦应物《滁州西涧》&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;
+独怜幽草涧边生，上有黄鹂深树鸣。&lt;br&gt;
 春潮带雨晚来急，野渡无人舟自横。
-</div>
-<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
-评："野渡无人舟自横"与"孤舟蓑笠翁"形成有趣对照：一为无人之舟，一为有人之舟。
-</div>
-</div>
+&lt;/div&gt;
+&lt;div style=&#34;color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;&#34;&gt;
+评：&#34;野渡无人舟自横&#34;与&#34;孤舟蓑笠翁&#34;形成有趣对照：一为无人之舟，一为有人之舟。
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #2ecc71;">
-<div style="color: #27ae60; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">张志和《渔歌子》</div>
-<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
-西塞山前白鹭飞，桃花流水鳜鱼肥。<br>
+&lt;div style=&#34;background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #2ecc71;&#34;&gt;
+&lt;div style=&#34;color: #27ae60; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;&#34;&gt;张志和《渔歌子》&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;
+西塞山前白鹭飞，桃花流水鳜鱼肥。&lt;br&gt;
 青箬笠，绿蓑衣，斜风细雨不须归。
-</div>
-<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
+&lt;/div&gt;
+&lt;div style=&#34;color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;&#34;&gt;
 评：同样是渔父，张词的渔父是快乐的、丰足的；柳诗的渔父是孤独的、坚忍的。
-</div>
-</div>
-</div>
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="text-align: center; margin-top: 2rem; color: #6c757d; font-size: 1rem; font-style: italic;">
+&lt;div style=&#34;text-align: center; margin-top: 2rem; color: #6c757d; font-size: 1rem; font-style: italic;&#34;&gt;
 《江雪》以极简的语言、极寒的意境、极孤的形象，在中国山水诗中独树一帜，成为永恒的文学经典。
-</div>
-</div>
+&lt;/div&gt;
+&lt;/div&gt;
 
-</div>
-</div>
-</div></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://lyluchao.github.io/2026/06/05/江雪-柳宗元/%20踏月诗阁%20江雪-柳宗元"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/poetry-garden/2026/07/15/%E9%B9%BF%E6%9F%B4-%E7%8E%8B%E7%BB%B4/" title="鹿柴-王维"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 鹿柴-王维</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/poetry-garden/2026/06/01/%E6%98%9F%E6%B2%B3%E5%89%91%E8%B5%8B/" title="星河剑赋">Next post: 星河剑赋&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/poetry-garden/js/jquery-3.1.0.min.js"></script><script src="/poetry-garden/js/bootstrap.min.js"></script><script src="/poetry-garden/js/jquery-migrate-1.2.1.min.js"></script><script src="/poetry-garden/js/jquery.appear.js"></script><script src="/poetry-garden/js/google-analytics.js"></script><script src="/poetry-garden/js/typography.js"></script><!-- hexo injector body_end start -->
+&lt;/div&gt;
+&lt;/div&gt;
+
+        </article>
+        
+        <!-- ��ǩ -->
+        
+        <div class="article-tags">
+            <i class="fas fa-tags" style="color: var(--classical-brown); margin-right: 10px;"></i>
+            
+                <a href="/poetry-garden/tags/%E5%94%90%E8%AF%97/" class="tag-link">
+                    唐诗
+                </a>
+            
+                <a href="/poetry-garden/tags/%E5%AD%A4%E5%AF%82/" class="tag-link">
+                    孤寂
+                </a>
+            
+                <a href="/poetry-garden/tags/%E7%A6%85%E6%84%8F/" class="tag-link">
+                    禅意
+                </a>
+            
+                <a href="/poetry-garden/tags/%E6%9F%B3%E5%AE%97%E5%85%83/" class="tag-link">
+                    柳宗元
+                </a>
+            
+                <a href="/poetry-garden/tags/%E6%B1%9F%E9%9B%AA/" class="tag-link">
+                    江雪
+                </a>
+            
+                <a href="/poetry-garden/tags/%E5%B1%B1%E6%B0%B4%E8%AF%97/" class="tag-link">
+                    山水诗
+                </a>
+            
+        </div>
+        
+        
+        <!-- ���µ��� -->
+        <div class="article-navigation">
+            
+            <a href="/poetry-garden/2026/07/15/%E9%B9%BF%E6%9F%B4-%E7%8E%8B%E7%BB%B4/" class="nav-button nav-prev">
+                <div class="nav-icon">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="nav-content">
+                    <h4>��һƪ</h4>
+                    <span>鹿柴-王维</span>
+                </div>
+            </a>
+            
+            
+            
+            <a href="/poetry-garden/2026/06/01/%E6%98%9F%E6%B2%B3%E5%89%91%E8%B5%8B/" class="nav-button nav-next">
+                <div class="nav-content">
+                    <h4>��һƪ</h4>
+                    <span>星河剑赋</span>
+                </div>
+                <div class="nav-icon">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </a>
+            
+        </div>
+        
+        <!-- �������� -->
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="/poetry-garden/" class="back-link">
+                <i class="fas fa-home"></i> ������ҳ
+            </a>
+        </div>
+    </main>
+    
+    <!-- ҳ�� -->
+    <footer class="classical-footer">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <a href="/poetry-garden/" class="footer-link">��ҳ</a>
+                <a href="/poetry-garden/archives" class="footer-link">���¹鵵</a>
+                <a href="/poetry-garden/categories" class="footer-link">����Ŀ¼</a>
+                <a href="/poetry-garden/tags" class="footer-link">��ǩ��</a>
+                <a href="/poetry-garden/about" class="footer-link">��������</a>
+            </nav>
+            
+            <div class="footer-info">
+                <p>
+                    <span class="footer-seal">Ԋ</span>
+                    ��Ȩ���� ? 2026 踏月诗阁
+                    <span class="footer-seal">�w</span>
+                </p>
+                <p style="margin-top: 10px;">���йŵ��Ļ���Ʒζʫ������</p>
+                <p style="margin-top: 5px; font-size: 0.8rem; color: var(--classical-gold);">
+                    ���� 踏月诗客 �� ���ĳ���
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // ҳ�����Ч��
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('.classical-header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 5px 20px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                } else {
+                    header.style.boxShadow = '0 2px 10px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                }
+            });
+            
+            // �������ݿ齥��Ч��
+            const contentBlocks = document.querySelectorAll('.article-content h1, .article-content h2, .article-content h3, .article-content p, .article-content blockquote');
+            contentBlocks.forEach((block, index) => {
+                block.style.opacity = '0';
+                block.style.transform = 'translateY(20px)';
+                block.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(() => {
+                    block.style.opacity = '1';
+                    block.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+            
+            // Ϊ��������Ԥ��Ч��
+            document.querySelectorAll('.article-content a').forEach(link => {
+                link.addEventListener('mouseenter', function(e) {
+                    const ripple = document.createElement('span');
+                    ripple.style.cssText = `
+                        position: absolute;
+                        background: rgba(195, 51, 51, 0.1);
+                        border-radius: 50%;
+                        transform: scale(0);
+                        animation: ripple 0.6s linear;
+                        pointer-events: none;
+                    `;
+                    
+                    const size = Math.max(this.offsetWidth, this.offsetHeight);
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = e.offsetX - size/2 + 'px';
+                    ripple.style.top = e.offsetY - size/2 + 'px';
+                    
+                    this.style.position = 'relative';
+                    this.style.overflow = 'hidden';
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+            
+            // �滻ҳ���е�Ӣ���ı�
+            replaceEnglishText();
+        });
+        
+        // ��ʾԤ��Ч��
+        function showPreview() {
+            const preview = document.getElementById('articlePreview');
+            const previewContent = document.getElementById('previewContent');
+            
+            // ��ȡ���µ�ʵ�����ݣ����ı���
+            let content = '';
+            const articleContent = document.querySelector('.article-content');
+            if (articleContent) {
+                content = articleContent.innerText;
+            }
+            
+            // ��ȡǰ300����ΪԤ��
+            let excerpt = content.substring(0, 300);
+            if (content.length > 300) {
+                excerpt += '...';
+            }
+            
+            previewContent.innerHTML = `
+                <div class="preview-excerpt">
+                    <p>${excerpt}</p>
+                </div>
+                <p>�������¡�江雪-柳宗元����Ԥ��Ч�����������ڴ˴���ǰ�鿴���µĲ������ݡ�</p>
+                <p>�ŵ����ҳ����ƽ���ͳ��ѧ���ִ���ҳ���������ںϣ�Ϊ����������ʽ���Ķ����顣</p>
+                <p style="color: var(--classical-red); margin-top: 20px;">
+                    <i class="fas fa-heart"></i> ����رհ�ť��ESC�������˳�Ԥ��ģʽ
+                </p>
+                <p style="margin-top: 20px; padding: 15px; background: rgba(193, 154, 107, 0.1); border-radius: 10px;">
+                    <i class="fas fa-info-circle"></i> Ԥ�����ܽ���ʾ�������ݣ��Ķ�ȫ���뷵������ҳ��
+                </p>
+            `;
+            
+            preview.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // �ر�Ԥ��Ч��
+        function closePreview() {
+            const preview = document.getElementById('articlePreview');
+            preview.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // ��ESC���ر�Ԥ��
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePreview();
+            }
+        });
+        
+        // ���Ԥ�������ⲿ�ر�
+        document.getElementById('articlePreview').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePreview();
+            }
+        });
+        
+        // �滻Ӣ���ı�Ϊ����
+        function replaceEnglishText() {
+            // �滻�����еĿ��ܴ��ڵ�Ӣ��
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.textContent.includes('Home')) {
+                    link.innerHTML = '<i class="fas fa-home"></i> ��ҳ';
+                }
+                if (link.textContent.includes('Archive')) {
+                    link.innerHTML = '<i class="fas fa-archive"></i> �鵵';
+                }
+                if (link.textContent.includes('Categories')) {
+                    link.innerHTML = '<i class="fas fa-layer-group"></i> ����';
+                }
+                if (link.textContent.includes('Tags')) {
+                    link.innerHTML = '<i class="fas fa-tags"></i> ��ǩ';
+                }
+                if (link.textContent.includes('About')) {
+                    link.innerHTML = '<i class="fas fa-book"></i> ����';
+                }
+            });
+            
+            // �滻ҳ���еĿ��ܴ��ڵ�Ӣ��
+            const footerLinks = document.querySelectorAll('.footer-link');
+            footerLinks.forEach(link => {
+                if (link.textContent.includes('Home')) {
+                    link.textContent = '��ҳ';
+                }
+                if (link.textContent.includes('Archive')) {
+                    link.textContent = '���¹鵵';
+                }
+                if (link.textContent.includes('Categories')) {
+                    link.textContent = '����Ŀ¼';
+                }
+                if (link.textContent.includes('Tags')) {
+                    link.textContent = '��ǩ��';
+                }
+                if (link.textContent.includes('About')) {
+                    link.textContent = '��������';
+                }
+            });
+            
+            // ��鲢�滻ҳ����Ϣ
+            const footerInfo = document.querySelector('.footer-info');
+            if (footerInfo) {
+                footerInfo.innerHTML = footerInfo.innerHTML
+                    .replace(/? \d{4}.*?Theme.*?by.*?/g, '')
+                    .replace(/Proudly published with Hexo/g, '����Hexo �� ���ĳ���');
+            }
+            
+            // ��鲢�滻�������ܵ�Ӣ���ı�
+            document.body.innerHTML = document.body.innerHTML
+                .replace(/Read More/g, '�Ķ�ȫ��')
+                .replace(/Comments/g, '����')
+                .replace(/Posted on/g, '������')
+                .replace(/Share/g, '����')
+                .replace(/Category/g, '����')
+                .replace(/Tag/g, '��ǩ')
+                .replace(/Posted in/g, '����')
+                .replace(/Author/g, '����');
+        }
+        
+        // ����CSS����
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+            
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .article-content {
+                animation: fadeInUp 0.8s ease-out;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+<!-- hexo injector body_end start -->
 <script>
 // 检测是否需要加载 Mermaid
 if (document.querySelector('.mermaid')) {
@@ -732,7 +1526,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-<!-- hexo injector body_end end --></body></html>
+<!-- hexo injector body_end end --></body>
+</html>
     </main>
     
     <!-- 古典页脚 -->

@@ -206,7 +206,8 @@
             }
         }
     </style>
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/poetry-garden/atom.xml" title="踏月诗阁" type="application/atom+xml">
+</head>
 <body>
     <!-- 古典页眉 -->
     <header class="classical-header">
@@ -238,371 +239,1164 @@
     
     <!-- 主内容 -->
     <main class="classical-container">
-        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>静夜思-李白 · 踏月诗阁</title><meta name="description" content="静夜思
+        <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>静夜思-李白 - 踏月诗阁</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --classical-paper: #f8f5e6;
+            --classical-ink: #3a2615;
+            --classical-red: #c33;
+            --classical-gold: #c19a6b;
+            --classical-brown: #8b4513;
+            --classical-blue: #5d8aa8;
+            --classical-border: #d4b483;
+            --classical-shadow: rgba(58, 38, 21, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: var(--classical-paper);
+            color: var(--classical-ink);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(193, 154, 107, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 30%),
+                linear-gradient(135deg, #f8f5e6 0%, #f0e6d6 100%);
+            padding-top: 80px;
+        }
+        
+        .classical-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(248, 245, 230, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--classical-border);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px var(--classical-shadow);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .site-logo {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 1.8rem;
+            color: var(--classical-brown);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .site-logo i {
+            color: var(--classical-red);
+            font-size: 1.5rem;
+        }
+        
+        .classical-nav {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .nav-link:hover {
+            color: var(--classical-red);
+            border-color: var(--classical-red);
+            background: rgba(195, 51, 51, 0.05);
+        }
+        
+        .nav-link.active {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            color: white;
+            border: none;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+        
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 50px 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--classical-border);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--classical-red), var(--classical-gold), var(--classical-blue));
+        }
+        
+        .article-title {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 2.8rem;
+            color: var(--classical-red);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            color: var(--classical-blue);
+            font-size: 1rem;
+            margin-top: 25px;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(139, 69, 19, 0.05);
+            border-radius: 20px;
+            border: 1px solid var(--classical-border);
+        }
+        
+        .article-content {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--classical-border);
+            border-radius: 15px;
+            padding: 60px 50px;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            position: relative;
+        }
+        
+        .article-content::before {
+            content: '?';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 3rem;
+            color: var(--classical-gold);
+            font-family: 'Ma Shan Zheng', cursive;
+            opacity: 0.3;
+        }
+        
+        .article-content h1,
+        .article-content h2,
+        .article-content h3 {
+            font-family: 'Ma Shan Zheng', cursive;
+            color: var(--classical-brown);
+            margin: 30px 0 15px;
+            border-bottom: 2px solid var(--classical-gold);
+            padding-bottom: 5px;
+        }
+        
+        .article-content p {
+            margin-bottom: 25px;
+            text-indent: 2em;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid var(--classical-red);
+            padding: 20px 30px;
+            margin: 30px 0;
+            background: rgba(195, 51, 51, 0.03);
+            font-style: italic;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px dashed var(--classical-border);
+        }
+        
+        .tag-link {
+            padding: 8px 16px;
+            background: linear-gradient(135deg, rgba(193, 154, 107, 0.1), rgba(139, 69, 19, 0.1));
+            border: 1px solid var(--classical-gold);
+            border-radius: 20px;
+            color: var(--classical-brown);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .tag-link:hover {
+            background: linear-gradient(135deg, var(--classical-gold), var(--classical-brown));
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .article-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            padding: 0 20px;
+        }
+        
+        .nav-button {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--classical-border);
+            border-radius: 15px;
+            text-decoration: none;
+            color: var(--classical-ink);
+            transition: all 0.3s;
+            max-width: 45%;
+            width: 100%;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-5px);
+            border-color: var(--classical-red);
+            box-shadow: 0 10px 25px var(--classical-shadow);
+        }
+        
+        .nav-prev .nav-icon {
+            background: linear-gradient(135deg, var(--classical-blue), var(--classical-gold));
+        }
+        
+        .nav-next .nav-icon {
+            background: linear-gradient(135deg, var(--classical-gold), var(--classical-red));
+        }
+        
+        .nav-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .nav-content h4 {
+            color: var(--classical-brown);
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .nav-content span {
+            color: var(--classical-ink);
+            font-size: 1rem;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 40px;
+            padding: 12px 25px;
+            background: var(--classical-gold);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        .back-link:hover {
+            background: var(--classical-brown);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
+        }
+        
+        .classical-footer {
+            background: rgba(248, 245, 230, 0.95);
+            border-top: 2px solid var(--classical-border);
+            padding: 50px 0 40px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid var(--classical-border);
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .footer-link:hover {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            border-color: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .footer-info {
+            text-align: center;
+            color: var(--classical-blue);
+            padding-top: 30px;
+            border-top: 1px solid var(--classical-border);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .footer-seal {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--classical-red);
+            color: white;
+            border-radius: 50%;
+            line-height: 40px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        
+        /* Ԥ��Ч����ʽ */
+        .article-preview {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(58, 38, 21, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .article-preview.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .preview-container {
+            max-width: 800px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            background: var(--classical-paper);
+            border-radius: 20px;
+            padding: 40px;
+            border: 3px solid var(--classical-gold);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.5s ease;
+        }
+        
+        .article-preview.active .preview-container {
+            transform: scale(1);
+        }
+        
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--classical-border);
+        }
+        
+        .preview-title {
+            font-family: 'Ma Shan Zheng', cursive;
+            color: var(--classical-red);
+            font-size: 1.8rem;
+        }
+        
+        .close-preview {
+            background: var(--classical-red);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .close-preview:hover {
+            background: var(--classical-brown);
+            transform: rotate(90deg);
+        }
+        
+        .preview-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .preview-excerpt {
+            font-style: italic;
+            color: var(--classical-brown);
+            border-left: 3px solid var(--classical-gold);
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .article-content {
+                padding: 40px 20px;
+            }
+            
+            .article-navigation {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-button {
+                max-width: 100%;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- �ŵ�ҳü -->
+    <header class="classical-header">
+        <div class="header-container">
+            <a href="/poetry-garden/" class="site-logo">
+                <i class="fas fa-feather-alt"></i>
+                ̤��ʫ��
+            </a>
+            
+            <nav class="classical-nav">
+                <a href="/poetry-garden/" class="nav-link">
+                    <i class="fas fa-home"></i> ��ҳ
+                </a>
+                <a href="/poetry-garden/archives" class="nav-link">
+                    <i class="fas fa-archive"></i> �鵵
+                </a>
+                <a href="/poetry-garden/categories" class="nav-link">
+                    <i class="fas fa-layer-group"></i> ����
+                </a>
+                <a href="/poetry-garden/tags" class="nav-link">
+                    <i class="fas fa-tags"></i> ��ǩ
+                </a>
+                <a href="/poetry-garden/about" class="nav-link active">
+                    <i class="fas fa-book"></i> ����
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- ����Ԥ��ģ̬�� -->
+    <div class="article-preview" id="articlePreview">
+        <div class="preview-container">
+            <div class="preview-header">
+                <h2 class="preview-title">����Ԥ��</h2>
+                <button class="close-preview" onclick="closePreview()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="preview-content" id="previewContent">
+                <!-- Ԥ�����ݽ�ͨ��JavaScript��̬��� -->
+            </div>
+        </div>
+    </div>
+    
+    <main class="article-container">
+        <!-- ����ͷ�� -->
+        <header class="article-header">
+            <h1 class="article-title">��静夜思-李白��</h1>
+            
+            <div class="article-meta">
+                
+                <div class="meta-item">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>2026��04��20��</span>
+                </div>
+                
+                
+                
+                
+                
+                <div class="meta-item">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>�����ڣ�2026-01-19</span>
+                </div>
+                
+                
+                <!-- ����Ԥ����ť -->
+                <div class="meta-item" onclick="showPreview()" style="cursor: pointer; background: linear-gradient(135deg, var(--classical-gold), var(--classical-red)); color: white;">
+                    <i class="fas fa-eye"></i>
+                    <span>Ԥ��Ч��</span>
+                </div>
+            </div>
+        </header>
+        
+        <!-- �������� -->
+        <article class="article-content">
+            &lt;div style=&#34;font-family: &#39;STKaiti&#39;, &#39;SimSun&#39;, &#39;Source Han Serif SC&#39;, serif; line-height: 1.8; color: #2c3e50; max-width: 800px; margin: 0 auto; padding: 0 1rem;&#34;&gt;
 
-
-
-床前明月光，疑是地上霜举头望明月，低头思故乡
-
-
-
-唐诗绝句 · 千古乡愁
-
-
-
-
-
-
-唐·开元年间
-
-|
-
-
-李白·诗仙
-
-|
-
-
-五言绝句
-
-
-
-
-
-
-
-
-📜 诗体简介 · 五言绝句
-
-五言绝句是唐代诗歌的重要形式，四句二十字，格律严谨，言简意赅。李白此诗虽用乐府古题，但已具备完"><meta name="og:description" content="静夜思
-
-
-
-床前明月光，疑是地上霜举头望明月，低头思故乡
-
-
-
-唐诗绝句 · 千古乡愁
-
-
-
-
-
-
-唐·开元年间
-
-|
-
-
-李白·诗仙
-
-|
-
-
-五言绝句
-
-
-
-
-
-
-
-
-📜 诗体简介 · 五言绝句
-
-五言绝句是唐代诗歌的重要形式，四句二十字，格律严谨，言简意赅。李白此诗虽用乐府古题，但已具备完"><meta name="twitter:site" content="踏月诗阁"><meta name="twitter:title" content="静夜思-李白"><meta name="twitter:card" content="summary"><meta name="keywords" content="诗词,宋词,古典诗词,文学,诗歌"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/poetry-garden/css/bootstrap.min.css"><link rel="stylesheet" href="/poetry-garden/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/poetry-garden/">Home</a></li><li><a href="/poetry-garden/archives">Archive</a></li><li><a href="/poetry-garden/categories">Categories</a></li><li><a href="/poetry-garden/tags">Tags</a></li><!-- +make_page_links() // 暂时禁用--><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post"><h1 class="post-title">静夜思-李白</h1><div class="post-meta"><span class="post-time">post.posted 2026-04-20</span> | <span class="post-category"><a href="/poetry-garden/categories/%E8%AF%97%E4%BD%9C/">诗作</a></span> | <span class="post-tags"><a href="/poetry-garden/tags/%E5%94%90%E8%AF%97/">唐诗</a>, <a href="/poetry-garden/tags/%E6%9D%8E%E7%99%BD/">李白</a>, <a href="/poetry-garden/tags/%E9%9D%99%E5%A4%9C%E6%80%9D/">静夜思</a>, <a href="/poetry-garden/tags/%E6%80%9D%E4%B9%A1/">思乡</a>, <a href="/poetry-garden/tags/%E6%98%8E%E6%9C%88/">明月</a>, <a href="/poetry-garden/tags/%E7%BB%9D%E5%8F%A5/">绝句</a></span></div><div class="post-content"><div style="font-family: 'STKaiti', 'SimSun', 'Source Han Serif SC', serif; line-height: 1.8; color: #2c3e50; max-width: 800px; margin: 0 auto; padding: 0 1rem;">
-
-<!-- 标题区域 -->
-<div style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #1a5276 100%); color: white; padding: 3.5rem 2rem 3rem 2rem; margin: 2rem 0 4rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25); min-height: 280px; display: flex; flex-direction: column; justify-content: center; border-radius: 18px; width: 100%;">
-<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
+&lt;!-- 标题区域 --&gt;
+&lt;div style=&#34;background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #1a5276 100%); color: white; padding: 3.5rem 2rem 3rem 2rem; margin: 2rem 0 4rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25); min-height: 280px; display: flex; flex-direction: column; justify-content: center; border-radius: 18px; width: 100%;&#34;&gt;
+&lt;div style=&#34;position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
     radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
     radial-gradient(circle at 80% 60%, rgba(52, 152, 219, 0.4) 0%, transparent 50%),
-    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.08) 2px, rgba(255,255,255,0.08) 4px);"></div>
-<div style="position: relative; z-index: 2;">
-<div style="font-size: 2.8rem; font-weight: bold; margin: 0; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9); letter-spacing: 3px; font-family: 'STKaiti', serif; line-height: 1.2; padding-bottom: 0.5rem;">
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.08) 2px, rgba(255,255,255,0.08) 4px);&#34;&gt;&lt;/div&gt;
+&lt;div style=&#34;position: relative; z-index: 2;&#34;&gt;
+&lt;div style=&#34;font-size: 2.8rem; font-weight: bold; margin: 0; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9); letter-spacing: 3px; font-family: &#39;STKaiti&#39;, serif; line-height: 1.2; padding-bottom: 0.5rem;&#34;&gt;
 静夜思
-</div>
-<div style="width: 120px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent); margin: 1.5rem auto; opacity: 0.7;"></div>
-<div style="font-size: 1.3rem; opacity: 0.95; margin: 0; font-weight: 300; letter-spacing: 1px; line-height: 1.5; padding: 0 1rem;">
-床前明月光，疑是地上霜<br>举头望明月，低头思故乡
-</div>
-<div style="margin-top: 2rem;">
-<div style="display: inline-block; background: rgba(255, 255, 255, 0.15); padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2);">
+&lt;/div&gt;
+&lt;div style=&#34;width: 120px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent); margin: 1.5rem auto; opacity: 0.7;&#34;&gt;&lt;/div&gt;
+&lt;div style=&#34;font-size: 1.3rem; opacity: 0.95; margin: 0; font-weight: 300; letter-spacing: 1px; line-height: 1.5; padding: 0 1rem;&#34;&gt;
+床前明月光，疑是地上霜&lt;br&gt;举头望明月，低头思故乡
+&lt;/div&gt;
+&lt;div style=&#34;margin-top: 2rem;&#34;&gt;
+&lt;div style=&#34;display: inline-block; background: rgba(255, 255, 255, 0.15); padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2);&#34;&gt;
 唐诗绝句 · 千古乡愁
-</div>
-</div>
-<div style="margin-top: 2.5rem;">
-<div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.85);">
-<span style="font-weight: 300; display: flex; align-items: center;">
-<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 6v2h14V6H5z"/></svg>
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&#34;margin-top: 2.5rem;&#34;&gt;
+&lt;div style=&#34;display: flex; justify-content: center; align-items: center; gap: 1.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.85);&#34;&gt;
+&lt;span style=&#34;font-weight: 300; display: flex; align-items: center;&#34;&gt;
+&lt;svg style=&#34;width: 16px; height: 16px; margin-right: 0.4rem;&#34; fill=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path d=&#34;M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 6v2h14V6H5z&#34;/&gt;&lt;/svg&gt;
 唐·开元年间
-</span>
-<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;">|</span>
-<span style="font-weight: 300; display: flex; align-items: center;">
-<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+&lt;/span&gt;
+&lt;span style=&#34;color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;&#34;&gt;|&lt;/span&gt;
+&lt;span style=&#34;font-weight: 300; display: flex; align-items: center;&#34;&gt;
+&lt;svg style=&#34;width: 16px; height: 16px; margin-right: 0.4rem;&#34; fill=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path d=&#34;M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z&#34;/&gt;&lt;/svg&gt;
 李白·诗仙
-</span>
-<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;">|</span>
-<span style="font-weight: 300; display: flex; align-items: center;">
-<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+&lt;/span&gt;
+&lt;span style=&#34;color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;&#34;&gt;|&lt;/span&gt;
+&lt;span style=&#34;font-weight: 300; display: flex; align-items: center;&#34;&gt;
+&lt;svg style=&#34;width: 16px; height: 16px; margin-right: 0.4rem;&#34; fill=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path d=&#34;M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z&#34;/&gt;&lt;/svg&gt;
 五言绝句
-</span>
-</div>
-</div>
-</div>
-</div>
+&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="position: relative; z-index: 1; margin-top: 0;">
-<div style="background: rgba(52, 152, 219, 0.08); padding: 2.2rem; border-radius: 12px; margin: 0 0 3rem 0; border-left: 4px solid #3498db; min-height: 180px;">
-<div style="color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">📜 诗体简介 · 五言绝句</div>
-<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem; padding: 0.5rem 0;">
-五言绝句是唐代诗歌的重要形式，四句二十字，格律严谨，言简意赅。李白此诗虽用乐府古题，但已具备完整的绝句形式。全诗语言朴素自然，意境深远，于平淡中见神奇，被誉为"千古思乡第一诗"。胡应麟《诗薮》评："太白诸绝句，信口而成，所谓无意于工而无不工者。"此诗正是典范。
-</div>
-</div>
+&lt;div style=&#34;position: relative; z-index: 1; margin-top: 0;&#34;&gt;
+&lt;div style=&#34;background: rgba(52, 152, 219, 0.08); padding: 2.2rem; border-radius: 12px; margin: 0 0 3rem 0; border-left: 4px solid #3498db; min-height: 180px;&#34;&gt;
+&lt;div style=&#34;color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;&#34;&gt;📜 诗体简介 · 五言绝句&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem; padding: 0.5rem 0;&#34;&gt;
+五言绝句是唐代诗歌的重要形式，四句二十字，格律严谨，言简意赅。李白此诗虽用乐府古题，但已具备完整的绝句形式。全诗语言朴素自然，意境深远，于平淡中见神奇，被誉为&#34;千古思乡第一诗&#34;。胡应麟《诗薮》评：&#34;太白诸绝句，信口而成，所谓无意于工而无不工者。&#34;此诗正是典范。
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: linear-gradient(145deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.05)); padding: 2.5rem; border-radius: 14px; border: 1px solid rgba(52, 152, 219, 0.2); margin: 2.5rem 0; font-style: italic; color: #4a5568; position: relative; min-height: 200px;">
-<div style="position: absolute; top: -14px; left: 25px; background: white; color: #3498db; padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: bold; border: 1px solid rgba(52, 152, 219, 0.3); box-shadow: 0 3px 8px rgba(0,0,0,0.08);">诗前小序</div>
-<div style="padding-top: 1.2rem; font-size: 1.08rem; line-height: 1.9;">
-开元年间，李白客居扬州，秋夜难眠。床前月色清冷如霜，恍然间疑是秋霜铺地。抬头望月，月是故乡月；低头沉思，心念故乡人。二十字中，有错觉，有动作，有心理，有景物，有情思。语言至简，意境至深，遂成千古绝唱。明代胡应麟叹曰："妙绝古今。"清代沈德潜赞云："旅中情思，虽说明却不说尽。"此诗之美，正在不说尽处。
-</div>
-</div>
+&lt;div style=&#34;background: linear-gradient(145deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.05)); padding: 2.5rem; border-radius: 14px; border: 1px solid rgba(52, 152, 219, 0.2); margin: 2.5rem 0; font-style: italic; color: #4a5568; position: relative; min-height: 200px;&#34;&gt;
+&lt;div style=&#34;position: absolute; top: -14px; left: 25px; background: white; color: #3498db; padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: bold; border: 1px solid rgba(52, 152, 219, 0.3); box-shadow: 0 3px 8px rgba(0,0,0,0.08);&#34;&gt;诗前小序&lt;/div&gt;
+&lt;div style=&#34;padding-top: 1.2rem; font-size: 1.08rem; line-height: 1.9;&#34;&gt;
+开元年间，李白客居扬州，秋夜难眠。床前月色清冷如霜，恍然间疑是秋霜铺地。抬头望月，月是故乡月；低头沉思，心念故乡人。二十字中，有错觉，有动作，有心理，有景物，有情思。语言至简，意境至深，遂成千古绝唱。明代胡应麟叹曰：&#34;妙绝古今。&#34;清代沈德潜赞云：&#34;旅中情思，虽说明却不说尽。&#34;此诗之美，正在不说尽处。
+&lt;/div&gt;
+&lt;/div&gt;
 
-<h2 id="诗文详析·四句三层"><a href="#诗文详析·四句三层" class="headerlink" title="诗文详析·四句三层"></a>诗文详析·四句三层</h2><div style="background: linear-gradient(145deg, #e8f4fc 0%, #d6eaf8 100%); border: 2px solid #3498db; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 420px;">
-<div style="position: absolute; top: -16px; left: 25px; background: #3498db; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">全诗四句</div>
+&lt;h2 id=&#34;诗文详析·四句三层&#34;&gt;&lt;a href=&#34;#诗文详析·四句三层&#34; class=&#34;headerlink&#34; title=&#34;诗文详析·四句三层&#34;&gt;&lt;/a&gt;诗文详析·四句三层&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #e8f4fc 0%, #d6eaf8 100%); border: 2px solid #3498db; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 420px;&#34;&gt;
+&lt;div style=&#34;position: absolute; top: -16px; left: 25px; background: #3498db; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);&#34;&gt;全诗四句&lt;/div&gt;
 
-<div style="text-align: center; margin-bottom: 2.5rem;">
-<div style="color: #1a5276; font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; font-family: 'STKaiti', serif; letter-spacing: 1px; line-height: 1.8;">
-床前明月光，疑是地上霜。<br>
+&lt;div style=&#34;text-align: center; margin-bottom: 2.5rem;&#34;&gt;
+&lt;div style=&#34;color: #1a5276; font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; font-family: &#39;STKaiti&#39;, serif; letter-spacing: 1px; line-height: 1.8;&#34;&gt;
+床前明月光，疑是地上霜。&lt;br&gt;
 举头望明月，低头思故乡。
-</div>
-<div style="color: #4a5568; font-size: 1.1rem; font-style: italic; max-width: 500px; margin: 0 auto;">
+&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; font-size: 1.1rem; font-style: italic; max-width: 500px; margin: 0 auto;&#34;&gt;
 ——李白《静夜思》· 千古思乡绝唱
-</div>
-</div>
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: rgba(52, 152, 219, 0.1); padding: 2.2rem; border-radius: 12px; margin-top: 2.2rem; border-left: 3px solid #3498db; min-height: 280px;">
-<div style="color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🌙 四句三层解析</div>
-<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
-<strong>第一层·错觉生情（前两句）</strong><br>
-"床前明月光，疑是地上霜。" 短短十字，蕴含丰富心理活动。"床前"点明场景是卧室，是私密空间；"明月光"写出月色的明亮皎洁。关键在"疑是"二字：诗人深夜醒来，恍惚中将月光误认为秋霜。这一错觉有深意：一是写夜深人静，神思恍惚；二是以霜喻月光，既写月色之白之冷，又暗含季节（秋）与心境（寒）。霜是寒冷的，暗示游子心境的凄清。<br><br>
+&lt;div style=&#34;background: rgba(52, 152, 219, 0.1); padding: 2.2rem; border-radius: 12px; margin-top: 2.2rem; border-left: 3px solid #3498db; min-height: 280px;&#34;&gt;
+&lt;div style=&#34;color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🌙 四句三层解析&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; line-height: 1.85; font-size: 1.05rem;&#34;&gt;
+&lt;strong&gt;第一层·错觉生情（前两句）&lt;/strong&gt;&lt;br&gt;
+&#34;床前明月光，疑是地上霜。&#34; 短短十字，蕴含丰富心理活动。&#34;床前&#34;点明场景是卧室，是私密空间；&#34;明月光&#34;写出月色的明亮皎洁。关键在&#34;疑是&#34;二字：诗人深夜醒来，恍惚中将月光误认为秋霜。这一错觉有深意：一是写夜深人静，神思恍惚；二是以霜喻月光，既写月色之白之冷，又暗含季节（秋）与心境（寒）。霜是寒冷的，暗示游子心境的凄清。&lt;br&gt;&lt;br&gt;
 
-<p><strong>第二层·动作传情（第三句）</strong><br><br>“举头望明月”是动态转折。从”疑”到”举头”，是从错觉到清醒，从室内到室外（或窗外）的空间转换。”举头”这一仰视动作，充满力度，是对月光的追寻，也是对疑惑的解答。望月是中国诗歌的经典意象，但在此处格外自然真挚。<br><br></p>
-<p><strong>第三层·心理抒情（第四句）</strong><br><br>“低头思故乡”完成情感升华。”低头”与”举头”形成动作对比，一仰一俯，富有节奏感。”思故乡”三字点明主题，但”思”什么？诗人不写。思亲人？思故园？思往事？全留给读者想象。这种”不说破”正是唐诗的含蓄之美。从望月到思乡，情感自然流淌，毫无雕琢痕迹。</p>
-</div>
-</div>
-</div>
+&lt;p&gt;&lt;strong&gt;第二层·动作传情（第三句）&lt;/strong&gt;&lt;br&gt;&lt;br&gt;“举头望明月”是动态转折。从”疑”到”举头”，是从错觉到清醒，从室内到室外（或窗外）的空间转换。”举头”这一仰视动作，充满力度，是对月光的追寻，也是对疑惑的解答。望月是中国诗歌的经典意象，但在此处格外自然真挚。&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第三层·心理抒情（第四句）&lt;/strong&gt;&lt;br&gt;&lt;br&gt;“低头思故乡”完成情感升华。”低头”与”举头”形成动作对比，一仰一俯，富有节奏感。”思故乡”三字点明主题，但”思”什么？诗人不写。思亲人？思故园？思往事？全留给读者想象。这种”不说破”正是唐诗的含蓄之美。从望月到思乡，情感自然流淌，毫无雕琢痕迹。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<h2 id="艺术特色·朴素至美"><a href="#艺术特色·朴素至美" class="headerlink" title="艺术特色·朴素至美"></a>艺术特色·朴素至美</h2><div style="background: linear-gradient(145deg, #fff8e1 0%, #fff3cd 100%); border: 2px solid #d4a017; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(212, 160, 23, 0.1); min-height: 450px;">
-<div style="text-align: center; margin-bottom: 2.8rem;">
-<div style="color: #8b4513; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🎭 艺术特色分析</div>
-<div style="color: #a68a64; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">语言朴素自然·意境深远含蓄·情感真挚动人</div>
-</div>
+&lt;h2 id=&#34;艺术特色·朴素至美&#34;&gt;&lt;a href=&#34;#艺术特色·朴素至美&#34; class=&#34;headerlink&#34; title=&#34;艺术特色·朴素至美&#34;&gt;&lt;/a&gt;艺术特色·朴素至美&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #fff8e1 0%, #fff3cd 100%); border: 2px solid #d4a017; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(212, 160, 23, 0.1); min-height: 450px;&#34;&gt;
+&lt;div style=&#34;text-align: center; margin-bottom: 2.8rem;&#34;&gt;
+&lt;div style=&#34;color: #8b4513; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;&#34;&gt;🎭 艺术特色分析&lt;/div&gt;
+&lt;div style=&#34;color: #a68a64; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;&#34;&gt;语言朴素自然·意境深远含蓄·情感真挚动人&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
-<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #3498db; position: relative; overflow: hidden; min-height: 320px;">
-<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(52, 152, 219, 0.1); border-radius: 0 0 0 70px;"></div>
-<div style="color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">💎 语言朴素自然</div>
-<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
-<li style="margin-bottom: 0.8rem;"><strong>无一生僻字</strong> - 二十字皆常用字，童子可诵</li>
-<li style="margin-bottom: 0.8rem;"><strong>无一典故</strong> - 不用故实，直抒胸臆</li>
-<li style="margin-bottom: 0.8rem;"><strong>无一华丽辞藻</strong> - 白描手法，自然天成</li>
-<li style="margin-bottom: 0.8rem;"><strong>节奏明快</strong> - 二三节奏，朗朗上口</li>
-<li><strong>胡应麟评</strong>："信口而成，所谓无意于工而无不工者"</li>
-</ul>
-<div style="color: #3498db; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
-"清水出芙蓉，天然去雕饰"——李白自己的诗论，正是此诗写照
-</div>
-</div>
+&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;&#34;&gt;
+&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #3498db; position: relative; overflow: hidden; min-height: 320px;&#34;&gt;
+&lt;div style=&#34;position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(52, 152, 219, 0.1); border-radius: 0 0 0 70px;&#34;&gt;&lt;/div&gt;
+&lt;div style=&#34;color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;💎 语言朴素自然&lt;/div&gt;
+&lt;ul style=&#34;color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;&#34;&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;无一生僻字&lt;/strong&gt; - 二十字皆常用字，童子可诵&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;无一典故&lt;/strong&gt; - 不用故实，直抒胸臆&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;无一华丽辞藻&lt;/strong&gt; - 白描手法，自然天成&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;节奏明快&lt;/strong&gt; - 二三节奏，朗朗上口&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;胡应麟评&lt;/strong&gt;：&#34;信口而成，所谓无意于工而无不工者&#34;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&#34;color: #3498db; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
+&#34;清水出芙蓉，天然去雕饰&#34;——李白自己的诗论，正是此诗写照
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #2c3e50; position: relative; overflow: hidden; min-height: 320px;">
-<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(44, 62, 80, 0.1); border-radius: 0 0 0 70px;"></div>
-<div style="color: #1c2833; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🎨 意境深远含蓄</div>
-<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
-<li style="margin-bottom: 0.8rem;"><strong>月光如霜的错觉</strong> - 视觉与心理的双重表达</li>
-<li style="margin-bottom: 0.8rem;"><strong>举头低头的动作</strong> - 富有韵律的身体语言</li>
-<li style="margin-bottom: 0.8rem;"><strong>望月思乡的联结</strong> - 中国文化的集体无意识</li>
-<li style="margin-bottom: 0.8rem;"><strong>不说破的乡思</strong> - "思故乡"三字，余味无穷</li>
-<li><strong>沈德潜评</strong>："旅中情思，虽说明却不说尽"</li>
-</ul>
-<div style="color: #2c3e50; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
-"状难写之景如在目前，含不尽之意见于言外"——梅尧臣语
-</div>
-</div>
+&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #2c3e50; position: relative; overflow: hidden; min-height: 320px;&#34;&gt;
+&lt;div style=&#34;position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(44, 62, 80, 0.1); border-radius: 0 0 0 70px;&#34;&gt;&lt;/div&gt;
+&lt;div style=&#34;color: #1c2833; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;🎨 意境深远含蓄&lt;/div&gt;
+&lt;ul style=&#34;color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;&#34;&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;月光如霜的错觉&lt;/strong&gt; - 视觉与心理的双重表达&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;举头低头的动作&lt;/strong&gt; - 富有韵律的身体语言&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;望月思乡的联结&lt;/strong&gt; - 中国文化的集体无意识&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;不说破的乡思&lt;/strong&gt; - &#34;思故乡&#34;三字，余味无穷&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;沈德潜评&lt;/strong&gt;：&#34;旅中情思，虽说明却不说尽&#34;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&#34;color: #2c3e50; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
+&#34;状难写之景如在目前，含不尽之意见于言外&#34;——梅尧臣语
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #e74c3c; position: relative; overflow: hidden; min-height: 320px;">
-<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(231, 76, 60, 0.1); border-radius: 0 0 0 70px;"></div>
-<div style="color: #c0392b; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">❤️ 情感真挚动人</div>
-<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
-<li style="margin-bottom: 0.8rem;"><strong>人人皆有之乡愁</strong> - 触动人类普遍情感</li>
-<li style="margin-bottom: 0.8rem;"><strong>深夜独处的真实</strong> - 最易思乡的时刻</li>
-<li style="margin-bottom: 0.8rem;"><strong>无技巧的技巧</strong> - 真情流露，胜过一切修辞</li>
-<li style="margin-bottom: 0.8rem;"><strong>时空的超越</strong> - 唐代的月，照见今人的乡愁</li>
-<li><strong>刘熙载评</strong>："太白诗虽若升天乘云，无所不之，然自不离本位"</li>
-</ul>
-<div style="color: #e74c3c; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
-"此诗妙绝古今"——明代胡应麟《诗薮》
-</div>
-</div>
-</div>
-</div>
+&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #e74c3c; position: relative; overflow: hidden; min-height: 320px;&#34;&gt;
+&lt;div style=&#34;position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(231, 76, 60, 0.1); border-radius: 0 0 0 70px;&#34;&gt;&lt;/div&gt;
+&lt;div style=&#34;color: #c0392b; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;❤️ 情感真挚动人&lt;/div&gt;
+&lt;ul style=&#34;color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;&#34;&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;人人皆有之乡愁&lt;/strong&gt; - 触动人类普遍情感&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;深夜独处的真实&lt;/strong&gt; - 最易思乡的时刻&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;无技巧的技巧&lt;/strong&gt; - 真情流露，胜过一切修辞&lt;/li&gt;
+&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;时空的超越&lt;/strong&gt; - 唐代的月，照见今人的乡愁&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;刘熙载评&lt;/strong&gt;：&#34;太白诗虽若升天乘云，无所不之，然自不离本位&#34;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div style=&#34;color: #e74c3c; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
+&#34;此诗妙绝古今&#34;——明代胡应麟《诗薮》
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<h2 id="意象分析·月与乡愁"><a href="#意象分析·月与乡愁" class="headerlink" title="意象分析·月与乡愁"></a>意象分析·月与乡愁</h2><div style="background: linear-gradient(145deg, #e8f6f3 0%, #d1f2eb 100%); border: 2px solid #1abc9c; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(26, 188, 156, 0.1); min-height: 500px;">
-<div style="text-align: center; margin-bottom: 2.8rem;">
-<div style="color: #148f77; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🌕 月意象的千年乡愁</div>
-<div style="color: #5d6d7e; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">从《诗经》到李白，明月如何成为中国思乡文化的核心意象</div>
-</div>
+&lt;h2 id=&#34;意象分析·月与乡愁&#34;&gt;&lt;a href=&#34;#意象分析·月与乡愁&#34; class=&#34;headerlink&#34; title=&#34;意象分析·月与乡愁&#34;&gt;&lt;/a&gt;意象分析·月与乡愁&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #e8f6f3 0%, #d1f2eb 100%); border: 2px solid #1abc9c; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(26, 188, 156, 0.1); min-height: 500px;&#34;&gt;
+&lt;div style=&#34;text-align: center; margin-bottom: 2.8rem;&#34;&gt;
+&lt;div style=&#34;color: #148f77; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;&#34;&gt;🌕 月意象的千年乡愁&lt;/div&gt;
+&lt;div style=&#34;color: #5d6d7e; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;&#34;&gt;从《诗经》到李白，明月如何成为中国思乡文化的核心意象&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
-<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-left: 4px solid #3498db;">
-<div style="color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">📜 月的文化原型</div>
-<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
-<strong>《诗经》源头</strong>："月出皎兮，佼人僚兮"（《陈风·月出》）——月与美人，月与相思。<br><br>
-<strong>汉魏古诗</strong>："明月何皎皎，照我罗床帏"（《古诗十九首》）——月照床帏，游子夜愁。<br><br>
-<strong>张若虚发展</strong>："春江潮水连海平，海上明月共潮生"（《春江花月夜》）——月与时空永恒。<br><br>
-<strong>李白集大成</strong>：将月的意象与思乡情感完美结合，朴素自然，深入人心。
-</div>
-</div>
+&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;&#34;&gt;
+&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-left: 4px solid #3498db;&#34;&gt;
+&lt;div style=&#34;color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;📜 月的文化原型&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem;&#34;&gt;
+&lt;strong&gt;《诗经》源头&lt;/strong&gt;：&#34;月出皎兮，佼人僚兮&#34;（《陈风·月出》）——月与美人，月与相思。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;汉魏古诗&lt;/strong&gt;：&#34;明月何皎皎，照我罗床帏&#34;（《古诗十九首》）——月照床帏，游子夜愁。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;张若虚发展&lt;/strong&gt;：&#34;春江潮水连海平，海上明月共潮生&#34;（《春江花月夜》）——月与时空永恒。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;李白集大成&lt;/strong&gt;：将月的意象与思乡情感完美结合，朴素自然，深入人心。
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-left: 4px solid #9b59b6;">
-<div style="color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🔄 动作的心理意义</div>
-<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
-<strong>"举头"的追寻</strong>：从床前到明月，从狭小空间到广阔天空，是视野的打开，也是心灵的追寻。仰视动作带有敬意、向往、询问的意味。<br><br>
-<strong>"低头"的内省</strong>：从外物回归内心，从仰望转为沉思。低头是谦逊，是收敛，是情感的沉淀。<br><br>
-<strong>一仰一俯的节奏</strong>：不仅是身体动作，更是心理节奏。仰是开，俯是合；仰是问，俯是答；仰是望，俯是思。两个动作完成一个完整的情感循环。
-</div>
-</div>
+&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-left: 4px solid #9b59b6;&#34;&gt;
+&lt;div style=&#34;color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🔄 动作的心理意义&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem;&#34;&gt;
+&lt;strong&gt;&#34;举头&#34;的追寻&lt;/strong&gt;：从床前到明月，从狭小空间到广阔天空，是视野的打开，也是心灵的追寻。仰视动作带有敬意、向往、询问的意味。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;&#34;低头&#34;的内省&lt;/strong&gt;：从外物回归内心，从仰望转为沉思。低头是谦逊，是收敛，是情感的沉淀。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;一仰一俯的节奏&lt;/strong&gt;：不仅是身体动作，更是心理节奏。仰是开，俯是合；仰是问，俯是答；仰是望，俯是思。两个动作完成一个完整的情感循环。
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-left: 4px solid #e74c3c;">
-<div style="color: #c0392b; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🎭 错觉的艺术功能</div>
-<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
-<strong>月光如霜的错觉</strong>不是闲笔，而是：<br><br>
-1. <strong>时间暗示</strong>：霜多见于秋，暗示季节，秋更易引乡愁。<br><br>
-2. <strong>心境写照</strong>：霜是寒冷的，喻游子心境的孤寒。<br><br>
-3. <strong>视觉新鲜</strong>：将常见月光写出新意，避免平淡。<br><br>
-4. <strong>心理真实</strong>：深夜初醒的恍惚状态，非常真实。<br><br>
-5. <strong>诗意转换</strong>：从物理现象（光）到心理感受（霜冷）。
-</div>
-</div>
-</div>
+&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-left: 4px solid #e74c3c;&#34;&gt;
+&lt;div style=&#34;color: #c0392b; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🎭 错觉的艺术功能&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem;&#34;&gt;
+&lt;strong&gt;月光如霜的错觉&lt;/strong&gt;不是闲笔，而是：&lt;br&gt;&lt;br&gt;
+1. &lt;strong&gt;时间暗示&lt;/strong&gt;：霜多见于秋，暗示季节，秋更易引乡愁。&lt;br&gt;&lt;br&gt;
+2. &lt;strong&gt;心境写照&lt;/strong&gt;：霜是寒冷的，喻游子心境的孤寒。&lt;br&gt;&lt;br&gt;
+3. &lt;strong&gt;视觉新鲜&lt;/strong&gt;：将常见月光写出新意，避免平淡。&lt;br&gt;&lt;br&gt;
+4. &lt;strong&gt;心理真实&lt;/strong&gt;：深夜初醒的恍惚状态，非常真实。&lt;br&gt;&lt;br&gt;
+5. &lt;strong&gt;诗意转换&lt;/strong&gt;：从物理现象（光）到心理感受（霜冷）。
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: rgba(26, 188, 156, 0.1); padding: 2.2rem; border-radius: 14px; margin-top: 2.5rem; border: 1px dashed #1abc9c;">
-<div style="color: #148f77; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🌍 跨文化的月与乡愁</div>
-<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
-<strong>中国的月</strong>：乡愁、团圆、相思、永恒。"月是故乡明"（杜甫）、"千里共婵娟"（苏轼）。<br><br>
-<strong>日本的月</strong>：物哀、幽玄、短暂之美。"月やあらぬ春や昔の春ならぬ"（《古今和歌集》）。<br><br>
-<strong>西方的月</strong>：浪漫、神秘、爱情、疯狂。"O, swear not by the moon, the inconstant moon"（莎士比亚）。<br><br>
-<strong>李白的意义</strong>：将月的意象推向极致朴素又极致深刻的境界，成为人类共同的情感符号。
-</div>
-</div>
-</div>
+&lt;div style=&#34;background: rgba(26, 188, 156, 0.1); padding: 2.2rem; border-radius: 14px; margin-top: 2.5rem; border: 1px dashed #1abc9c;&#34;&gt;
+&lt;div style=&#34;color: #148f77; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🌍 跨文化的月与乡愁&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem;&#34;&gt;
+&lt;strong&gt;中国的月&lt;/strong&gt;：乡愁、团圆、相思、永恒。&#34;月是故乡明&#34;（杜甫）、&#34;千里共婵娟&#34;（苏轼）。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;日本的月&lt;/strong&gt;：物哀、幽玄、短暂之美。&#34;月やあらぬ春や昔の春ならぬ&#34;（《古今和歌集》）。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;西方的月&lt;/strong&gt;：浪漫、神秘、爱情、疯狂。&#34;O, swear not by the moon, the inconstant moon&#34;（莎士比亚）。&lt;br&gt;&lt;br&gt;
+&lt;strong&gt;李白的意义&lt;/strong&gt;：将月的意象推向极致朴素又极致深刻的境界，成为人类共同的情感符号。
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<h2 id="版本流变与影响"><a href="#版本流变与影响" class="headerlink" title="版本流变与影响"></a>版本流变与影响</h2><div style="background: linear-gradient(145deg, #f3e8ff 0%, #e9d8fd 100%); border: 2px solid #9f7aea; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(159, 122, 234, 0.12); min-height: 400px;">
-<div style="text-align: center; margin-bottom: 2.5rem;">
-<div style="color: #553c9a; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">📚 版本流变与后世影响</div>
-<div style="color: #718096; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">从宋本到明本，从中国到世界，一首诗的传播史</div>
-</div>
+&lt;h2 id=&#34;版本流变与影响&#34;&gt;&lt;a href=&#34;#版本流变与影响&#34; class=&#34;headerlink&#34; title=&#34;版本流变与影响&#34;&gt;&lt;/a&gt;版本流变与影响&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #f3e8ff 0%, #e9d8fd 100%); border: 2px solid #9f7aea; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(159, 122, 234, 0.12); min-height: 400px;&#34;&gt;
+&lt;div style=&#34;text-align: center; margin-bottom: 2.5rem;&#34;&gt;
+&lt;div style=&#34;color: #553c9a; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;&#34;&gt;📚 版本流变与后世影响&lt;/div&gt;
+&lt;div style=&#34;color: #718096; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;&#34;&gt;从宋本到明本，从中国到世界，一首诗的传播史&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 2rem 0;">
-<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
-<div style="color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; border-bottom: 2px solid #f0e6d2; padding-bottom: 1rem; font-size: 1.2rem;">🔄 两个主要版本</div>
-<div style="margin-top: 1.2rem;">
-<div style="margin-bottom: 1.5rem;">
-<div style="color: #9b59b6; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">宋本《李太白文集》</div>
-<div style="color: #718096; font-size: 1rem; line-height: 1.7;">"床前看月光，疑是地上霜。举头望山月，低头思故乡。" 此版本更古朴，两个"月"字重复，可能更接近原作。</div>
-</div>
-<div style="margin-bottom: 1.5rem;">
-<div style="color: #9b59b6; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">明本《唐诗三百首》</div>
-<div style="color: #718096; font-size: 1rem; line-height: 1.7;">"床前明月光，疑是地上霜。举头望明月，低头思故乡。" 此版本更流畅，两个"明月"呼应，音韵更美，流传最广。</div>
-</div>
-<div style="color: #7f8c8d; font-size: 0.95rem; font-style: italic; padding-top: 1rem; border-top: 1px dashed #e2e8f0;">
+&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 2rem 0;&#34;&gt;
+&lt;div style=&#34;background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);&#34;&gt;
+&lt;div style=&#34;color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; border-bottom: 2px solid #f0e6d2; padding-bottom: 1rem; font-size: 1.2rem;&#34;&gt;🔄 两个主要版本&lt;/div&gt;
+&lt;div style=&#34;margin-top: 1.2rem;&#34;&gt;
+&lt;div style=&#34;margin-bottom: 1.5rem;&#34;&gt;
+&lt;div style=&#34;color: #9b59b6; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;&#34;&gt;宋本《李太白文集》&lt;/div&gt;
+&lt;div style=&#34;color: #718096; font-size: 1rem; line-height: 1.7;&#34;&gt;&#34;床前看月光，疑是地上霜。举头望山月，低头思故乡。&#34; 此版本更古朴，两个&#34;月&#34;字重复，可能更接近原作。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&#34;margin-bottom: 1.5rem;&#34;&gt;
+&lt;div style=&#34;color: #9b59b6; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;&#34;&gt;明本《唐诗三百首》&lt;/div&gt;
+&lt;div style=&#34;color: #718096; font-size: 1rem; line-height: 1.7;&#34;&gt;&#34;床前明月光，疑是地上霜。举头望明月，低头思故乡。&#34; 此版本更流畅，两个&#34;明月&#34;呼应，音韵更美，流传最广。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&#34;color: #7f8c8d; font-size: 0.95rem; font-style: italic; padding-top: 1rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
 现代通行本多为明本，因其艺术性更高，传播更广。
-</div>
-</div>
-</div>
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
-<div style="color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; border-bottom: 2px solid #f0e6d2; padding-bottom: 1rem; font-size: 1.2rem;">🌍 世界性影响</div>
-<div style="margin-top: 1.2rem;">
-<div style="margin-bottom: 1.5rem;">
-<div style="color: #9b59b6; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">日本的影响</div>
-<div style="color: #718096; font-size: 1rem; line-height: 1.7;">平安时代传入日本，收入《和汉朗咏集》。日本小学教材多收录此诗，影响深远。日本汉学家吉川幸次郎评："二十字中，有无限乡愁。"</div>
-</div>
-<div style="margin-bottom: 1.5rem;">
-<div style="color: #9b59b6; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">西方的翻译</div>
-<div style="color: #718096; font-size: 1rem; line-height: 1.7;">庞德(Ezra Pound)英译："The moon light is in front of my bed / I took it for frost on the ground..." 虽不严格对应，但传达了诗意。众多译本，各显其妙。</div>
-</div>
-<div style="margin-bottom: 1.5rem;">
-<div style="color: #9b59b6; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">现代传播</div>
-<div style="color: #718096; font-size: 1rem; line-height: 1.7;">入选全球各国汉语教材，成为中华文化的标志性符号。2015年，NASA将《静夜思》刻入"金色唱片"，随探测器飞向星际，成为人类文明的代表。</div>
-</div>
-</div>
-</div>
-</div>
+&lt;div style=&#34;background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);&#34;&gt;
+&lt;div style=&#34;color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; border-bottom: 2px solid #f0e6d2; padding-bottom: 1rem; font-size: 1.2rem;&#34;&gt;🌍 世界性影响&lt;/div&gt;
+&lt;div style=&#34;margin-top: 1.2rem;&#34;&gt;
+&lt;div style=&#34;margin-bottom: 1.5rem;&#34;&gt;
+&lt;div style=&#34;color: #9b59b6; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;&#34;&gt;日本的影响&lt;/div&gt;
+&lt;div style=&#34;color: #718096; font-size: 1rem; line-height: 1.7;&#34;&gt;平安时代传入日本，收入《和汉朗咏集》。日本小学教材多收录此诗，影响深远。日本汉学家吉川幸次郎评：&#34;二十字中，有无限乡愁。&#34;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&#34;margin-bottom: 1.5rem;&#34;&gt;
+&lt;div style=&#34;color: #9b59b6; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;&#34;&gt;西方的翻译&lt;/div&gt;
+&lt;div style=&#34;color: #718096; font-size: 1rem; line-height: 1.7;&#34;&gt;庞德(Ezra Pound)英译：&#34;The moon light is in front of my bed / I took it for frost on the ground...&#34; 虽不严格对应，但传达了诗意。众多译本，各显其妙。&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&#34;margin-bottom: 1.5rem;&#34;&gt;
+&lt;div style=&#34;color: #9b59b6; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;&#34;&gt;现代传播&lt;/div&gt;
+&lt;div style=&#34;color: #718096; font-size: 1rem; line-height: 1.7;&#34;&gt;入选全球各国汉语教材，成为中华文化的标志性符号。2015年，NASA将《静夜思》刻入&#34;金色唱片&#34;，随探测器飞向星际，成为人类文明的代表。&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="text-align: center; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px dashed #e2e8f0;">
-<div style="color: #6c3483; font-size: 1.1rem; font-weight: bold; line-height: 1.7;">
-"床前明月光，疑是地上霜"——最简单的语言<br>
-"举头望明月，低头思故乡"——最深沉的情感<br>
+&lt;div style=&#34;text-align: center; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
+&lt;div style=&#34;color: #6c3483; font-size: 1.1rem; font-weight: bold; line-height: 1.7;&#34;&gt;
+&#34;床前明月光，疑是地上霜&#34;——最简单的语言&lt;br&gt;
+&#34;举头望明月，低头思故乡&#34;——最深沉的情感&lt;br&gt;
 二十字，穿越千年，跨越国界，触动亿万人心
-</div>
-</div>
-</div>
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<h2 id="延伸阅读·李白其他月诗"><a href="#延伸阅读·李白其他月诗" class="headerlink" title="延伸阅读·李白其他月诗"></a>延伸阅读·李白其他月诗</h2><div style="background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #6c757d; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(108, 117, 125, 0.1); min-height: 300px;">
-<div style="text-align: center; margin-bottom: 2rem;">
-<div style="color: #495057; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">📖 李白月诗选读</div>
-<div style="color: #6c757d; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">"青天有月来几时？我今停杯一问之"——李白与月的不解之缘</div>
-</div>
+&lt;h2 id=&#34;延伸阅读·李白其他月诗&#34;&gt;&lt;a href=&#34;#延伸阅读·李白其他月诗&#34; class=&#34;headerlink&#34; title=&#34;延伸阅读·李白其他月诗&#34;&gt;&lt;/a&gt;延伸阅读·李白其他月诗&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #6c757d; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(108, 117, 125, 0.1); min-height: 300px;&#34;&gt;
+&lt;div style=&#34;text-align: center; margin-bottom: 2rem;&#34;&gt;
+&lt;div style=&#34;color: #495057; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;&#34;&gt;📖 李白月诗选读&lt;/div&gt;
+&lt;div style=&#34;color: #6c757d; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;&#34;&gt;&#34;青天有月来几时？我今停杯一问之&#34;——李白与月的不解之缘&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-<div style="background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #3498db;">
-<div style="color: #1a5276; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">《月下独酌》其一</div>
-<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
-花间一壶酒，独酌无相亲。<br>
-举杯邀明月，对影成三人。<br>
-月既不解饮，影徒随我身。<br>
+&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;&#34;&gt;
+&lt;div style=&#34;background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #3498db;&#34;&gt;
+&lt;div style=&#34;color: #1a5276; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;&#34;&gt;《月下独酌》其一&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;
+花间一壶酒，独酌无相亲。&lt;br&gt;
+举杯邀明月，对影成三人。&lt;br&gt;
+月既不解饮，影徒随我身。&lt;br&gt;
 暂伴月将影，行乐须及春。
-</div>
-<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
+&lt;/div&gt;
+&lt;div style=&#34;color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;&#34;&gt;
 评：月成为孤独者的伴侣，想象奇崛，浪漫至极。
-</div>
-</div>
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #9b59b6;">
-<div style="color: #6c3483; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">《关山月》节选</div>
-<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
-明月出天山，苍茫云海间。<br>
-长风几万里，吹度玉门关。<br>
-汉下白登道，胡窥青海湾。<br>
+&lt;div style=&#34;background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #9b59b6;&#34;&gt;
+&lt;div style=&#34;color: #6c3483; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;&#34;&gt;《关山月》节选&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;
+明月出天山，苍茫云海间。&lt;br&gt;
+长风几万里，吹度玉门关。&lt;br&gt;
+汉下白登道，胡窥青海湾。&lt;br&gt;
 由来征战地，不见有人还。
-</div>
-<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
+&lt;/div&gt;
+&lt;div style=&#34;color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;&#34;&gt;
 评：月与边塞、战争、乡思结合，境界雄浑阔大。
-</div>
-</div>
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #e74c3c;">
-<div style="color: #c0392b; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">《把酒问月》节选</div>
-<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
-青天有月来几时？我今停杯一问之。<br>
-人攀明月不可得，月行却与人相随。<br>
-皎如飞镜临丹阙，绿烟灭尽清辉发。<br>
+&lt;div style=&#34;background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #e74c3c;&#34;&gt;
+&lt;div style=&#34;color: #c0392b; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;&#34;&gt;《把酒问月》节选&lt;/div&gt;
+&lt;div style=&#34;color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;
+青天有月来几时？我今停杯一问之。&lt;br&gt;
+人攀明月不可得，月行却与人相随。&lt;br&gt;
+皎如飞镜临丹阙，绿烟灭尽清辉发。&lt;br&gt;
 但见宵从海上来，宁知晓向云间没？
-</div>
-<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
+&lt;/div&gt;
+&lt;div style=&#34;color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;&#34;&gt;
 评：对月的哲学追问，展现李白的思想深度。
-</div>
-</div>
-</div>
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-<div style="text-align: center; margin-top: 2rem; color: #6c757d; font-size: 1rem; font-style: italic;">
+&lt;div style=&#34;text-align: center; margin-top: 2rem; color: #6c757d; font-size: 1rem; font-style: italic;&#34;&gt;
 李白写月诗百余首，月是其诗歌的核心意象之一。《静夜思》虽最短，却最深入人心。
-</div>
-</div>
+&lt;/div&gt;
+&lt;/div&gt;
 
-</div>
-</div>
-</div></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://lyluchao.github.io/2026/04/20/静夜思-李白/%20踏月诗阁%20静夜思-李白"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/poetry-garden/2026/05/10/%E9%BB%84%E9%B9%A4%E6%A5%BC-%E5%B4%94%E9%A2%A2/" title="黄鹤楼·崔颢"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 黄鹤楼·崔颢</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/poetry-garden/2026/04/08/%E6%98%A5%E6%99%93-%E5%AD%9F%E6%B5%A9%E7%84%B6/" title="春晓 - 孟浩然">Next post: 春晓 - 孟浩然&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/poetry-garden/js/jquery-3.1.0.min.js"></script><script src="/poetry-garden/js/bootstrap.min.js"></script><script src="/poetry-garden/js/jquery-migrate-1.2.1.min.js"></script><script src="/poetry-garden/js/jquery.appear.js"></script><script src="/poetry-garden/js/google-analytics.js"></script><script src="/poetry-garden/js/typography.js"></script><!-- hexo injector body_end start -->
+&lt;/div&gt;
+&lt;/div&gt;
+
+        </article>
+        
+        <!-- ��ǩ -->
+        
+        <div class="article-tags">
+            <i class="fas fa-tags" style="color: var(--classical-brown); margin-right: 10px;"></i>
+            
+                <a href="/poetry-garden/tags/%E5%94%90%E8%AF%97/" class="tag-link">
+                    唐诗
+                </a>
+            
+                <a href="/poetry-garden/tags/%E6%9D%8E%E7%99%BD/" class="tag-link">
+                    李白
+                </a>
+            
+                <a href="/poetry-garden/tags/%E9%9D%99%E5%A4%9C%E6%80%9D/" class="tag-link">
+                    静夜思
+                </a>
+            
+                <a href="/poetry-garden/tags/%E6%80%9D%E4%B9%A1/" class="tag-link">
+                    思乡
+                </a>
+            
+                <a href="/poetry-garden/tags/%E6%98%8E%E6%9C%88/" class="tag-link">
+                    明月
+                </a>
+            
+                <a href="/poetry-garden/tags/%E7%BB%9D%E5%8F%A5/" class="tag-link">
+                    绝句
+                </a>
+            
+        </div>
+        
+        
+        <!-- ���µ��� -->
+        <div class="article-navigation">
+            
+            <a href="/poetry-garden/2026/05/10/%E9%BB%84%E9%B9%A4%E6%A5%BC-%E5%B4%94%E9%A2%A2/" class="nav-button nav-prev">
+                <div class="nav-icon">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="nav-content">
+                    <h4>��һƪ</h4>
+                    <span>黄鹤楼·崔颢</span>
+                </div>
+            </a>
+            
+            
+            
+            <a href="/poetry-garden/2026/04/08/%E6%98%A5%E6%99%93-%E5%AD%9F%E6%B5%A9%E7%84%B6/" class="nav-button nav-next">
+                <div class="nav-content">
+                    <h4>��һƪ</h4>
+                    <span>春晓 - 孟浩然</span>
+                </div>
+                <div class="nav-icon">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </a>
+            
+        </div>
+        
+        <!-- �������� -->
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="/poetry-garden/" class="back-link">
+                <i class="fas fa-home"></i> ������ҳ
+            </a>
+        </div>
+    </main>
+    
+    <!-- ҳ�� -->
+    <footer class="classical-footer">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <a href="/poetry-garden/" class="footer-link">��ҳ</a>
+                <a href="/poetry-garden/archives" class="footer-link">���¹鵵</a>
+                <a href="/poetry-garden/categories" class="footer-link">����Ŀ¼</a>
+                <a href="/poetry-garden/tags" class="footer-link">��ǩ��</a>
+                <a href="/poetry-garden/about" class="footer-link">��������</a>
+            </nav>
+            
+            <div class="footer-info">
+                <p>
+                    <span class="footer-seal">Ԋ</span>
+                    ��Ȩ���� ? 2026 踏月诗阁
+                    <span class="footer-seal">�w</span>
+                </p>
+                <p style="margin-top: 10px;">���йŵ��Ļ���Ʒζʫ������</p>
+                <p style="margin-top: 5px; font-size: 0.8rem; color: var(--classical-gold);">
+                    ���� 踏月诗客 �� ���ĳ���
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // ҳ�����Ч��
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('.classical-header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 5px 20px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                } else {
+                    header.style.boxShadow = '0 2px 10px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                }
+            });
+            
+            // �������ݿ齥��Ч��
+            const contentBlocks = document.querySelectorAll('.article-content h1, .article-content h2, .article-content h3, .article-content p, .article-content blockquote');
+            contentBlocks.forEach((block, index) => {
+                block.style.opacity = '0';
+                block.style.transform = 'translateY(20px)';
+                block.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(() => {
+                    block.style.opacity = '1';
+                    block.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+            
+            // Ϊ��������Ԥ��Ч��
+            document.querySelectorAll('.article-content a').forEach(link => {
+                link.addEventListener('mouseenter', function(e) {
+                    const ripple = document.createElement('span');
+                    ripple.style.cssText = `
+                        position: absolute;
+                        background: rgba(195, 51, 51, 0.1);
+                        border-radius: 50%;
+                        transform: scale(0);
+                        animation: ripple 0.6s linear;
+                        pointer-events: none;
+                    `;
+                    
+                    const size = Math.max(this.offsetWidth, this.offsetHeight);
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = e.offsetX - size/2 + 'px';
+                    ripple.style.top = e.offsetY - size/2 + 'px';
+                    
+                    this.style.position = 'relative';
+                    this.style.overflow = 'hidden';
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+            
+            // �滻ҳ���е�Ӣ���ı�
+            replaceEnglishText();
+        });
+        
+        // ��ʾԤ��Ч��
+        function showPreview() {
+            const preview = document.getElementById('articlePreview');
+            const previewContent = document.getElementById('previewContent');
+            
+            // ��ȡ���µ�ʵ�����ݣ����ı���
+            let content = '';
+            const articleContent = document.querySelector('.article-content');
+            if (articleContent) {
+                content = articleContent.innerText;
+            }
+            
+            // ��ȡǰ300����ΪԤ��
+            let excerpt = content.substring(0, 300);
+            if (content.length > 300) {
+                excerpt += '...';
+            }
+            
+            previewContent.innerHTML = `
+                <div class="preview-excerpt">
+                    <p>${excerpt}</p>
+                </div>
+                <p>�������¡�静夜思-李白����Ԥ��Ч�����������ڴ˴���ǰ�鿴���µĲ������ݡ�</p>
+                <p>�ŵ����ҳ����ƽ���ͳ��ѧ���ִ���ҳ���������ںϣ�Ϊ����������ʽ���Ķ����顣</p>
+                <p style="color: var(--classical-red); margin-top: 20px;">
+                    <i class="fas fa-heart"></i> ����رհ�ť��ESC�������˳�Ԥ��ģʽ
+                </p>
+                <p style="margin-top: 20px; padding: 15px; background: rgba(193, 154, 107, 0.1); border-radius: 10px;">
+                    <i class="fas fa-info-circle"></i> Ԥ�����ܽ���ʾ�������ݣ��Ķ�ȫ���뷵������ҳ��
+                </p>
+            `;
+            
+            preview.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // �ر�Ԥ��Ч��
+        function closePreview() {
+            const preview = document.getElementById('articlePreview');
+            preview.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // ��ESC���ر�Ԥ��
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePreview();
+            }
+        });
+        
+        // ���Ԥ�������ⲿ�ر�
+        document.getElementById('articlePreview').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePreview();
+            }
+        });
+        
+        // �滻Ӣ���ı�Ϊ����
+        function replaceEnglishText() {
+            // �滻�����еĿ��ܴ��ڵ�Ӣ��
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.textContent.includes('Home')) {
+                    link.innerHTML = '<i class="fas fa-home"></i> ��ҳ';
+                }
+                if (link.textContent.includes('Archive')) {
+                    link.innerHTML = '<i class="fas fa-archive"></i> �鵵';
+                }
+                if (link.textContent.includes('Categories')) {
+                    link.innerHTML = '<i class="fas fa-layer-group"></i> ����';
+                }
+                if (link.textContent.includes('Tags')) {
+                    link.innerHTML = '<i class="fas fa-tags"></i> ��ǩ';
+                }
+                if (link.textContent.includes('About')) {
+                    link.innerHTML = '<i class="fas fa-book"></i> ����';
+                }
+            });
+            
+            // �滻ҳ���еĿ��ܴ��ڵ�Ӣ��
+            const footerLinks = document.querySelectorAll('.footer-link');
+            footerLinks.forEach(link => {
+                if (link.textContent.includes('Home')) {
+                    link.textContent = '��ҳ';
+                }
+                if (link.textContent.includes('Archive')) {
+                    link.textContent = '���¹鵵';
+                }
+                if (link.textContent.includes('Categories')) {
+                    link.textContent = '����Ŀ¼';
+                }
+                if (link.textContent.includes('Tags')) {
+                    link.textContent = '��ǩ��';
+                }
+                if (link.textContent.includes('About')) {
+                    link.textContent = '��������';
+                }
+            });
+            
+            // ��鲢�滻ҳ����Ϣ
+            const footerInfo = document.querySelector('.footer-info');
+            if (footerInfo) {
+                footerInfo.innerHTML = footerInfo.innerHTML
+                    .replace(/? \d{4}.*?Theme.*?by.*?/g, '')
+                    .replace(/Proudly published with Hexo/g, '����Hexo �� ���ĳ���');
+            }
+            
+            // ��鲢�滻�������ܵ�Ӣ���ı�
+            document.body.innerHTML = document.body.innerHTML
+                .replace(/Read More/g, '�Ķ�ȫ��')
+                .replace(/Comments/g, '����')
+                .replace(/Posted on/g, '������')
+                .replace(/Share/g, '����')
+                .replace(/Category/g, '����')
+                .replace(/Tag/g, '��ǩ')
+                .replace(/Posted in/g, '����')
+                .replace(/Author/g, '����');
+        }
+        
+        // ����CSS����
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+            
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .article-content {
+                animation: fadeInUp 0.8s ease-out;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+<!-- hexo injector body_end start -->
 <script>
 // 检测是否需要加载 Mermaid
 if (document.querySelector('.mermaid')) {
@@ -661,7 +1455,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-<!-- hexo injector body_end end --></body></html>
+<!-- hexo injector body_end end --></body>
+</html>
     </main>
     
     <!-- 古典页脚 -->
