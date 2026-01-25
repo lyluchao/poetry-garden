@@ -244,12 +244,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>诗阁分类 | 踏月诗阁</title>
+    <title>宋词鉴赏 - 踏月诗阁</title>
     
-    <!-- 引入Google字体 -->
     <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
-    
-    <!-- 引入Font Awesome图标 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -280,9 +277,9 @@
                 radial-gradient(circle at 10% 20%, rgba(193, 154, 107, 0.05) 0%, transparent 30%),
                 radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 30%),
                 linear-gradient(135deg, #f8f5e6 0%, #f0e6d6 100%);
+            padding-top: 80px;
         }
         
-        /* 页眉 */
         .classical-header {
             position: fixed;
             top: 0;
@@ -350,140 +347,103 @@
             box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
         }
         
-        /* 主内容 */
-        .classical-container {
+        .category-page-container {
             max-width: 1200px;
-            margin: 80px auto 0;
-            padding: 30px 20px;
-            min-height: calc(100vh - 150px);
+            margin: 0 auto;
+            padding: 40px 20px;
         }
         
-        /* 分类页面特有样式 */
-        .categories-header {
+        .category-header {
             text-align: center;
             margin-bottom: 50px;
-            padding: 30px;
-            border-bottom: 2px solid var(--classical-border);
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--classical-border);
+            border-radius: 20px;
         }
         
-        .categories-title {
+        .category-title {
             font-family: 'Ma Shan Zheng', cursive;
             font-size: 2.5rem;
             color: var(--classical-red);
-            margin-bottom: 15px;
-        }
-        
-        .categories-subtitle {
-            color: var(--classical-gold);
-            font-size: 1.2rem;
-            font-style: italic;
-        }
-        
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px auto;
-        }
-        
-        .category-item {
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid var(--classical-border);
-            border-radius: 15px;
-            padding: 25px;
-            transition: all 0.3s;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 5px 15px var(--classical-shadow);
-        }
-        
-        .category-item:hover {
-            transform: translateY(-8px);
-            border-color: var(--classical-red);
-            box-shadow: 0 15px 30px rgba(58, 38, 21, 0.15);
-        }
-        
-        .category-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, 
-                var(--classical-red),
-                var(--classical-gold),
-                var(--classical-brown));
-        }
-        
-        .category-link {
-            text-decoration: none;
-            color: var(--classical-ink);
-            display: block;
-        }
-        
-        .category-icon {
-            font-size: 2.5rem;
-            color: var(--classical-gold);
-            margin-bottom: 15px;
-        }
-        
-        .category-name {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 1.5rem;
-            color: var(--classical-brown);
             margin-bottom: 10px;
         }
         
         .category-count {
-            background: var(--classical-gold);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 15px;
-            font-size: 0.9rem;
-            display: inline-block;
+            color: var(--classical-gold);
+            font-size: 1.3rem;
+            font-style: italic;
         }
         
-        .category-description {
-            color: var(--classical-blue);
-            margin-top: 10px;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        /* 无分类提示 */
-        .empty-categories {
-            text-align: center;
-            padding: 60px 40px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            border: 2px dashed var(--classical-border);
+        .post-list {
             max-width: 800px;
             margin: 0 auto;
         }
         
-        .empty-icon {
-            font-size: 4rem;
-            color: var(--classical-gold);
-            margin-bottom: 20px;
+        .post-item {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--classical-border);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: all 0.3s;
         }
         
-        .empty-categories h3 {
+        .post-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--classical-red);
+            box-shadow: 0 10px 25px var(--classical-shadow);
+        }
+        
+        .post-link {
+            text-decoration: none;
             color: var(--classical-brown);
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 1.3rem;
             font-family: 'Ma Shan Zheng', cursive;
+            display: block;
+            margin-bottom: 10px;
         }
         
-        .empty-categories p {
+        .post-link:hover {
+            color: var(--classical-red);
+        }
+        
+        .post-date {
             color: var(--classical-blue);
-            font-size: 1.1rem;
-            max-width: 500px;
-            margin: 0 auto;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
-        /* 页脚 */
+        .post-excerpt {
+            color: var(--classical-ink);
+            line-height: 1.7;
+            border-left: 3px solid var(--classical-gold);
+            padding-left: 15px;
+            font-style: italic;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 40px;
+            padding: 12px 25px;
+            background: var(--classical-gold);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        .back-link:hover {
+            background: var(--classical-brown);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
+        }
+        
         .classical-footer {
             background: rgba(248, 245, 230, 0.95);
             border-top: 2px solid var(--classical-border);
@@ -543,39 +503,6 @@
             margin: 0 10px;
             font-weight: bold;
         }
-        
-        /* 响应式设计 */
-        @media (max-width: 900px) {
-            .header-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .classical-nav {
-                gap: 10px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .categories-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-nav {
-                gap: 15px;
-            }
-            
-            .nav-link {
-                padding: 6px 15px;
-                font-size: 0.9rem;
-            }
-            
-            .categories-title {
-                font-size: 2rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -607,146 +534,114 @@
         </div>
     </header>
     
-    <!-- 主内容容器 -->
-    <main class="classical-container">
-        <!-- 分类页面内容 -->
-        <div class="categories-header">
-            <h1 class="categories-title">诗阁分类</h1>
-            <p class="categories-subtitle">按主题朝代分类的诗篇</p>
+    <main class="category-page-container">
+        <div class="category-header">
+            <h1 class="category-title">
+                <i class="fas fa-folder-open"></i> 分类：宋词鉴赏
+            </h1>
+            <p class="category-count">
+                共收录 1 篇诗章
+            </p>
         </div>
         
         
-            <div class="categories-grid">
+            <div class="post-list">
                 
-                    <div class="category-item">
-                        <a href="/poetry-garden/categories/%E6%96%87%E5%AD%A6%E5%88%9B%E4%BD%9C/" class="category-link">
-                            <div class="category-icon">
-                                <i class="fas fa-folder-open"></i>
-                            </div>
-                            <h2 class="category-name">文学创作</h2>
-                            <span class="category-count">1 篇</span>
-                            <div class="category-description">
-                                
-                                收录关于文学创作的诗篇
-                            </div>
+                    <article class="post-item">
+                        <a href="/poetry-garden/2026/04/09/%E5%BF%B5%E5%A5%B4%E5%A8%87%C2%B7%E6%96%87%E5%BF%83%E9%80%90%E6%B8%85/" class="post-link">
+                            《念奴娇·文心逐清》
                         </a>
-                    </div>
-                
-                    <div class="category-item">
-                        <a href="/poetry-garden/categories/%E8%AF%8D%E4%BD%9C/" class="category-link">
-                            <div class="category-icon">
-                                <i class="fas fa-folder-open"></i>
-                            </div>
-                            <h2 class="category-name">词作</h2>
-                            <span class="category-count">15 篇</span>
-                            <div class="category-description">
+                        
+                        <div class="post-date">
+                            <i class="far fa-calendar"></i>
+                            2026年04月09日
+                            
+                                <span style="margin-left: 20px;">
+                                    <i class="fas fa-tags"></i>
+                                    
+                                        
+                                            <span style="margin: 0 5px; color: var(--classical-brown);">宋词</span>
+                                        
+                                    
+                                        
+                                            <span style="margin: 0 5px; color: var(--classical-brown);">拟古</span>
+                                        
+                                    
+                                        
+                                            <span style="margin: 0 5px; color: var(--classical-brown);">文心雕龙</span>
+                                        
+                                    
+                                        
+                                    
+                                        
+                                    
+                                        
+                                    
+                                </span>
+                            
+                        </div>
+                        
+                        
+                            <div class="post-excerpt">
                                 
-                                收录关于词作的诗篇
-                            </div>
-                        </a>
-                    </div>
-                
-                    <div class="category-item">
-                        <a href="/poetry-garden/categories/%E5%94%90%E8%AF%97/" class="category-link">
-                            <div class="category-icon">
-                                <i class="fas fa-folder-open"></i>
-                            </div>
-                            <h2 class="category-name">唐诗</h2>
-                            <span class="category-count">1 篇</span>
-                            <div class="category-description">
                                 
-                                唐代诗歌，包括李白、杜甫等大家之作
+
+
+
+
+
+
+念奴娇·文心逐清
+
+
+
+屏间烟叠，探星芒千点，明灭清寥
+
+
+
+文心玄思 · 澄明之境
+
+
+
+
+
+
+癸卯年冬
+
+|
+
+
+拟古
+
+|
+
+
+长调词牌
+
+
+
+
+
+
+
+
+📜 作品简介 · 现代拟古
+
+《念奴娇·文心逐清》是一首现代创作的拟古词作，以宋代长调词牌&#34;念奴娇&#34;为载体，融入《文心雕龙》...
                             </div>
-                        </a>
-                    </div>
-                
-                    <div class="category-item">
-                        <a href="/poetry-garden/categories/%E9%81%93%E5%A2%83%E8%AF%8D%E7%AB%A0/" class="category-link">
-                            <div class="category-icon">
-                                <i class="fas fa-folder-open"></i>
-                            </div>
-                            <h2 class="category-name">道境词章</h2>
-                            <span class="category-count">2 篇</span>
-                            <div class="category-description">
-                                
-                                收录关于道境词章的诗篇
-                            </div>
-                        </a>
-                    </div>
-                
-                    <div class="category-item">
-                        <a href="/poetry-garden/categories/%E5%89%91%E7%A2%91%E9%93%AD%E5%88%BB/" class="category-link">
-                            <div class="category-icon">
-                                <i class="fas fa-folder-open"></i>
-                            </div>
-                            <h2 class="category-name">剑碑铭刻</h2>
-                            <span class="category-count">1 篇</span>
-                            <div class="category-description">
-                                
-                                收录关于剑碑铭刻的诗篇
-                            </div>
-                        </a>
-                    </div>
-                
-                    <div class="category-item">
-                        <a href="/poetry-garden/categories/%E5%AE%8B%E8%AF%8D%E9%89%B4%E8%B5%8F/" class="category-link">
-                            <div class="category-icon">
-                                <i class="fas fa-folder-open"></i>
-                            </div>
-                            <h2 class="category-name">宋词鉴赏</h2>
-                            <span class="category-count">1 篇</span>
-                            <div class="category-description">
-                                
-                                收录关于宋词鉴赏的诗篇
-                            </div>
-                        </a>
-                    </div>
-                
-                    <div class="category-item">
-                        <a href="/poetry-garden/categories/%E5%89%91%E9%98%B5%E5%85%B8%E8%97%8F/" class="category-link">
-                            <div class="category-icon">
-                                <i class="fas fa-folder-open"></i>
-                            </div>
-                            <h2 class="category-name">剑阵典藏</h2>
-                            <span class="category-count">1 篇</span>
-                            <div class="category-description">
-                                
-                                收录关于剑阵典藏的诗篇
-                            </div>
-                        </a>
-                    </div>
-                
-                    <div class="category-item">
-                        <a href="/poetry-garden/categories/%E5%94%90%E8%AF%97%E9%89%B4%E8%B5%8F/" class="category-link">
-                            <div class="category-icon">
-                                <i class="fas fa-folder-open"></i>
-                            </div>
-                            <h2 class="category-name">唐诗鉴赏</h2>
-                            <span class="category-count">2 篇</span>
-                            <div class="category-description">
-                                
-                                收录关于唐诗鉴赏的诗篇
-                            </div>
-                        </a>
-                    </div>
-                
-                    <div class="category-item">
-                        <a href="/poetry-garden/categories/%E8%AF%97%E4%BD%9C/" class="category-link">
-                            <div class="category-icon">
-                                <i class="fas fa-folder-open"></i>
-                            </div>
-                            <h2 class="category-name">诗作</h2>
-                            <span class="category-count">5 篇</span>
-                            <div class="category-description">
-                                
-                                收录关于诗作的诗篇
-                            </div>
-                        </a>
-                    </div>
+                        
+                    </article>
                 
             </div>
         
-    </main>    
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="/poetry-garden/categories/" class="back-link">
+                <i class="fas fa-arrow-left"></i> 返回所有分类
+            </a>
+        </div>
+    </main>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const header = document.querySelector('.classical-header');
@@ -760,9 +655,9 @@
                 }
             });
             
-            // 分类卡片悬停效果
-            const categoryItems = document.querySelectorAll('.category-item');
-            categoryItems.forEach(item => {
+            // 文章卡片效果
+            const postItems = document.querySelectorAll('.post-item');
+            postItems.forEach(item => {
                 item.addEventListener('mouseenter', function() {
                     this.style.zIndex = '100';
                 });
