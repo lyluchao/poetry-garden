@@ -206,8 +206,7 @@
             }
         }
     </style>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/poetry-garden/atom.xml" title="踏月诗阁" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 <body>
     <!-- 古典页眉 -->
     <header class="classical-header">
@@ -239,1249 +238,456 @@
     
     <!-- 主内容 -->
     <main class="classical-container">
-        <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鹿柴-王维 - 踏月诗阁</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --classical-paper: #f8f5e6;
-            --classical-ink: #3a2615;
-            --classical-red: #c33;
-            --classical-gold: #c19a6b;
-            --classical-brown: #8b4513;
-            --classical-blue: #5d8aa8;
-            --classical-border: #d4b483;
-            --classical-shadow: rgba(58, 38, 21, 0.1);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Noto Serif SC', serif;
-            background: var(--classical-paper);
-            color: var(--classical-ink);
-            line-height: 1.6;
-            min-height: 100vh;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(193, 154, 107, 0.05) 0%, transparent 30%),
-                radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 30%),
-                linear-gradient(135deg, #f8f5e6 0%, #f0e6d6 100%);
-            padding-top: 80px;
-        }
-        
-        .classical-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(248, 245, 230, 0.98);
-            backdrop-filter: blur(8px);
-            border-bottom: 2px solid var(--classical-border);
-            z-index: 1000;
-            padding: 15px 0;
-            box-shadow: 0 2px 10px var(--classical-shadow);
-        }
-        
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-        
-        .site-logo {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 1.8rem;
-            color: var(--classical-brown);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .site-logo i {
-            color: var(--classical-red);
-            font-size: 1.5rem;
-        }
-        
-        .classical-nav {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        
-        .nav-link {
-            font-family: 'Noto Serif SC', serif;
-            color: var(--classical-ink);
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            border: 1px solid transparent;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-        
-        .nav-link:hover {
-            color: var(--classical-red);
-            border-color: var(--classical-red);
-            background: rgba(195, 51, 51, 0.05);
-        }
-        
-        .nav-link.active {
-            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
-            color: white;
-            border: none;
-            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
-        }
-        
-        .article-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        .article-header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding: 50px 40px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid var(--classical-border);
-            border-radius: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .article-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--classical-red), var(--classical-gold), var(--classical-blue));
-        }
-        
-        .article-title {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 2.8rem;
-            color: var(--classical-red);
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-        
-        .article-meta {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
-            color: var(--classical-blue);
-            font-size: 1rem;
-            margin-top: 25px;
-        }
-        
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: rgba(139, 69, 19, 0.05);
-            border-radius: 20px;
-            border: 1px solid var(--classical-border);
-        }
-        
-        .article-content {
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid var(--classical-border);
-            border-radius: 15px;
-            padding: 60px 50px;
-            margin-bottom: 40px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            position: relative;
-        }
-        
-        .article-content::before {
-            content: '❝';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 3rem;
-            color: var(--classical-gold);
-            font-family: 'Ma Shan Zheng', cursive;
-            opacity: 0.3;
-        }
-        
-        .article-content h1,
-        .article-content h2,
-        .article-content h3 {
-            font-family: 'Ma Shan Zheng', cursive;
-            color: var(--classical-brown);
-            margin: 30px 0 15px;
-            border-bottom: 2px solid var(--classical-gold);
-            padding-bottom: 5px;
-        }
-        
-        .article-content p {
-            margin-bottom: 25px;
-            text-indent: 2em;
-        }
-        
-        .article-content blockquote {
-            border-left: 4px solid var(--classical-red);
-            padding: 20px 30px;
-            margin: 30px 0;
-            background: rgba(195, 51, 51, 0.03);
-            font-style: italic;
-            border-radius: 0 10px 10px 0;
-        }
-        
-        .article-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px dashed var(--classical-border);
-        }
-        
-        .tag-link {
-            padding: 8px 16px;
-            background: linear-gradient(135deg, rgba(193, 154, 107, 0.1), rgba(139, 69, 19, 0.1));
-            border: 1px solid var(--classical-gold);
-            border-radius: 20px;
-            color: var(--classical-brown);
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-        }
-        
-        .tag-link:hover {
-            background: linear-gradient(135deg, var(--classical-gold), var(--classical-brown));
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .article-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 50px;
-            padding: 0 20px;
-        }
-        
-        .nav-button {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 20px 30px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid var(--classical-border);
-            border-radius: 15px;
-            text-decoration: none;
-            color: var(--classical-ink);
-            transition: all 0.3s;
-            max-width: 45%;
-            width: 100%;
-        }
-        
-        .nav-button:hover {
-            transform: translateY(-5px);
-            border-color: var(--classical-red);
-            box-shadow: 0 10px 25px var(--classical-shadow);
-        }
-        
-        .nav-prev .nav-icon {
-            background: linear-gradient(135deg, var(--classical-blue), var(--classical-gold));
-        }
-        
-        .nav-next .nav-icon {
-            background: linear-gradient(135deg, var(--classical-gold), var(--classical-red));
-        }
-        
-        .nav-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-        
-        .nav-content h4 {
-            color: var(--classical-brown);
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-        }
-        
-        .nav-content span {
-            color: var(--classical-ink);
-            font-size: 1rem;
-            display: block;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-        }
-        
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 40px;
-            padding: 12px 25px;
-            background: var(--classical-gold);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s;
-        }
-        
-        .back-link:hover {
-            background: var(--classical-brown);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
-        }
-        
-        .classical-footer {
-            background: rgba(248, 245, 230, 0.95);
-            border-top: 2px solid var(--classical-border);
-            padding: 50px 0 40px;
-            margin-top: 80px;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .footer-nav {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .footer-link {
-            font-family: 'Noto Serif SC', serif;
-            color: var(--classical-ink);
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            border: 1px solid var(--classical-border);
-            transition: all 0.3s;
-            font-size: 0.95rem;
-        }
-        
-        .footer-link:hover {
-            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
-            border-color: transparent;
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .footer-info {
-            text-align: center;
-            color: var(--classical-blue);
-            padding-top: 30px;
-            border-top: 1px solid var(--classical-border);
-            font-size: 0.9rem;
-            line-height: 1.8;
-        }
-        
-        .footer-seal {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: var(--classical-red);
-            color: white;
-            border-radius: 50%;
-            line-height: 40px;
-            margin: 0 10px;
-            font-weight: bold;
-        }
-        
-        /* 预览效果样式 */
-        .article-preview {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(58, 38, 21, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.5s ease;
-        }
-        
-        .article-preview.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .preview-container {
-            max-width: 800px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-            background: var(--classical-paper);
-            border-radius: 20px;
-            padding: 40px;
-            border: 3px solid var(--classical-gold);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            transform: scale(0.9);
-            transition: transform 0.5s ease;
-        }
-        
-        .article-preview.active .preview-container {
-            transform: scale(1);
-        }
-        
-        .preview-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--classical-border);
-        }
-        
-        .preview-title {
-            font-family: 'Ma Shan Zheng', cursive;
-            color: var(--classical-red);
-            font-size: 1.8rem;
-        }
-        
-        .close-preview {
-            background: var(--classical-red);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-        }
-        
-        .close-preview:hover {
-            background: var(--classical-brown);
-            transform: rotate(90deg);
-        }
-        
-        .preview-content {
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-        
-        .preview-excerpt {
-            font-style: italic;
-            color: var(--classical-brown);
-            border-left: 3px solid var(--classical-gold);
-            padding-left: 20px;
-            margin: 20px 0;
-        }
-        
-        @media (max-width: 768px) {
-            .article-title {
-                font-size: 2rem;
-            }
-            
-            .article-content {
-                padding: 40px 20px;
-            }
-            
-            .article-navigation {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .nav-button {
-                max-width: 100%;
-            }
-            
-            .article-meta {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- 古典页眉 -->
-    <header class="classical-header">
-        <div class="header-container">
-            <a href="/poetry-garden/" class="site-logo">
-                <i class="fas fa-feather-alt"></i>
-                踏月诗阁
-            </a>
-            
-            <nav class="classical-nav">
-                <a href="/poetry-garden/" class="nav-link">
-                    <i class="fas fa-home"></i> 首页
-                </a>
-                <a href="/poetry-garden/archives" class="nav-link">
-                    <i class="fas fa-archive"></i> 归档
-                </a>
-                <a href="/poetry-garden/categories" class="nav-link">
-                    <i class="fas fa-layer-group"></i> 分类
-                </a>
-                <a href="/poetry-garden/tags" class="nav-link">
-                    <i class="fas fa-tags"></i> 标签
-                </a>
-                <a href="/poetry-garden/about" class="nav-link active">
-                    <i class="fas fa-book"></i> 文章
-                </a>
-            </nav>
-        </div>
-    </header>
-    
-    <!-- 文章预览模态框 -->
-    <div class="article-preview" id="articlePreview">
-        <div class="preview-container">
-            <div class="preview-header">
-                <h2 class="preview-title">文章预览</h2>
-                <button class="close-preview" onclick="closePreview()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="preview-content" id="previewContent">
-                <!-- 预览内容将通过JavaScript动态填充 -->
-            </div>
-        </div>
-    </div>
-    
-    <main class="article-container">
-        <!-- 文章头部 -->
-        <header class="article-header">
-            <h1 class="article-title">《鹿柴-王维》</h1>
-            
-            <div class="article-meta">
-                
-                <div class="meta-item">
-                    <i class="far fa-calendar-alt"></i>
-                    <span>2026年07月15日</span>
-                </div>
-                
-                
-                
-                
-                
-                <div class="meta-item">
-                    <i class="fas fa-sync-alt"></i>
-                    <span>更新于：2026-01-19</span>
-                </div>
-                
-                
-                <!-- 添加预览按钮 -->
-                <div class="meta-item" onclick="showPreview()" style="cursor: pointer; background: linear-gradient(135deg, var(--classical-gold), var(--classical-red)); color: white;">
-                    <i class="fas fa-eye"></i>
-                    <span>预览效果</span>
-                </div>
-            </div>
-        </header>
-        
-        <!-- 文章内容 -->
-        <article class="article-content">
-            &lt;div style=&#34;font-family: &#39;STKaiti&#39;, &#39;SimSun&#39;, &#39;Source Han Serif SC&#39;, serif; line-height: 1.8; color: #2c3e50; max-width: 800px; margin: 0 auto; padding: 0 1rem;&#34;&gt;
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>鹿柴-王维 · 踏月诗阁</title><meta name="description" content="鹿柴
 
-&lt;!-- 标题区域 --&gt;
-&lt;div style=&#34;background: linear-gradient(135deg, #27ae60 0%, #2ecc71 50%, #27ae60 100%); color: white; padding: 3.5rem 2rem 3rem 2rem; margin: 2rem 0 4rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25); min-height: 280px; display: flex; flex-direction: column; justify-content: center; border-radius: 18px; width: 100%;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
+
+
+空山不见人，但闻人语响返景入深林，复照青苔上
+
+
+
+唐诗绝句 · 空山禅意
+
+
+
+
+
+
+唐·天宝年间
+
+|
+
+
+王维·诗佛
+
+|
+
+
+五言绝句
+
+
+
+
+
+
+
+
+📜 诗体与创作背景
+
+《鹿柴》是王维《辋川集》二十首中的第五首，写于天宝年间王维隐居辋川别业时期。&quot;柴&quot;读作&quot;zhài&quot;，同&quot;"><meta name="og:description" content="鹿柴
+
+
+
+空山不见人，但闻人语响返景入深林，复照青苔上
+
+
+
+唐诗绝句 · 空山禅意
+
+
+
+
+
+
+唐·天宝年间
+
+|
+
+
+王维·诗佛
+
+|
+
+
+五言绝句
+
+
+
+
+
+
+
+
+📜 诗体与创作背景
+
+《鹿柴》是王维《辋川集》二十首中的第五首，写于天宝年间王维隐居辋川别业时期。&quot;柴&quot;读作&quot;zhài&quot;，同&quot;"><meta name="twitter:site" content="踏月诗阁"><meta name="twitter:title" content="鹿柴-王维"><meta name="twitter:card" content="summary"><meta name="keywords" content="诗词,宋词,古典诗词,文学,诗歌"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/poetry-garden/css/bootstrap.min.css"><link rel="stylesheet" href="/poetry-garden/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/poetry-garden/">대문</a></li><li><a href="/poetry-garden/archives">아카이브</a></li><li><a href="/poetry-garden/categories">카테고리</a></li><li><a href="/poetry-garden/tags">태그</a></li><!-- +make_page_links() // 暂时禁用--><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post"><h1 class="post-title">鹿柴-王维</h1><div class="post-meta"><span class="post-time">post.posted 2026-07-15</span> | <span class="post-category"><a href="/poetry-garden/categories/%E8%AF%97%E4%BD%9C/">诗作</a></span> | <span class="post-tags"><a href="/poetry-garden/tags/%E5%94%90%E8%AF%97/">唐诗</a>, <a href="/poetry-garden/tags/%E7%8E%8B%E7%BB%B4/">王维</a>, <a href="/poetry-garden/tags/%E7%A6%85%E6%84%8F/">禅意</a>, <a href="/poetry-garden/tags/%E5%B1%B1%E6%B0%B4%E8%AF%97/">山水诗</a>, <a href="/poetry-garden/tags/%E9%B9%BF%E6%9F%B4/">鹿柴</a>, <a href="/poetry-garden/tags/%E7%A9%BA%E5%B1%B1/">空山</a></span></div><div class="post-content"><div style="font-family: 'STKaiti', 'SimSun', 'Source Han Serif SC', serif; line-height: 1.8; color: #2c3e50; max-width: 800px; margin: 0 auto; padding: 0 1rem;">
+
+<!-- 标题区域 -->
+<div style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 50%, #27ae60 100%); color: white; padding: 3.5rem 2rem 3rem 2rem; margin: 2rem 0 4rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25); min-height: 280px; display: flex; flex-direction: column; justify-content: center; border-radius: 18px; width: 100%;">
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
     radial-gradient(circle at 20% 40%, rgba(46, 204, 113, 0.4) 0%, transparent 50%),
     radial-gradient(circle at 80% 60%, rgba(39, 174, 96, 0.3) 0%, transparent 50%),
     radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
-    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.08) 2px, rgba(255,255,255,0.08) 4px);&#34;&gt;&lt;/div&gt;
-&lt;div style=&#34;position: relative; z-index: 2;&#34;&gt;
-&lt;div style=&#34;font-size: 2.8rem; font-weight: bold; margin: 0; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9); letter-spacing: 3px; font-family: &#39;STKaiti&#39;, serif; line-height: 1.2; padding-bottom: 0.5rem;&#34;&gt;
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.08) 2px, rgba(255,255,255,0.08) 4px);"></div>
+<div style="position: relative; z-index: 2;">
+<div style="font-size: 2.8rem; font-weight: bold; margin: 0; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9); letter-spacing: 3px; font-family: 'STKaiti', serif; line-height: 1.2; padding-bottom: 0.5rem;">
 鹿柴
-&lt;/div&gt;
-&lt;div style=&#34;width: 120px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent); margin: 1.5rem auto; opacity: 0.7;&#34;&gt;&lt;/div&gt;
-&lt;div style=&#34;font-size: 1.3rem; opacity: 0.95; margin: 0; font-weight: 300; letter-spacing: 1px; line-height: 1.5; padding: 0 1rem;&#34;&gt;
-空山不见人，但闻人语响&lt;br&gt;返景入深林，复照青苔上
-&lt;/div&gt;
-&lt;div style=&#34;margin-top: 2rem;&#34;&gt;
-&lt;div style=&#34;display: inline-block; background: rgba(255, 255, 255, 0.15); padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2);&#34;&gt;
+</div>
+<div style="width: 120px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent); margin: 1.5rem auto; opacity: 0.7;"></div>
+<div style="font-size: 1.3rem; opacity: 0.95; margin: 0; font-weight: 300; letter-spacing: 1px; line-height: 1.5; padding: 0 1rem;">
+空山不见人，但闻人语响<br>返景入深林，复照青苔上
+</div>
+<div style="margin-top: 2rem;">
+<div style="display: inline-block; background: rgba(255, 255, 255, 0.15); padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2);">
 唐诗绝句 · 空山禅意
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;margin-top: 2.5rem;&#34;&gt;
-&lt;div style=&#34;display: flex; justify-content: center; align-items: center; gap: 1.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.85);&#34;&gt;
-&lt;span style=&#34;font-weight: 300; display: flex; align-items: center;&#34;&gt;
-&lt;svg style=&#34;width: 16px; height: 16px; margin-right: 0.4rem;&#34; fill=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path d=&#34;M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 6v2h14V6H5z&#34;/&gt;&lt;/svg&gt;
+</div>
+</div>
+<div style="margin-top: 2.5rem;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.85);">
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 6v2h14V6H5z"/></svg>
 唐·天宝年间
-&lt;/span&gt;
-&lt;span style=&#34;color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;&#34;&gt;|&lt;/span&gt;
-&lt;span style=&#34;font-weight: 300; display: flex; align-items: center;&#34;&gt;
-&lt;svg style=&#34;width: 16px; height: 16px; margin-right: 0.4rem;&#34; fill=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path d=&#34;M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z&#34;/&gt;&lt;/svg&gt;
+</span>
+<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;">|</span>
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
 王维·诗佛
-&lt;/span&gt;
-&lt;span style=&#34;color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;&#34;&gt;|&lt;/span&gt;
-&lt;span style=&#34;font-weight: 300; display: flex; align-items: center;&#34;&gt;
-&lt;svg style=&#34;width: 16px; height: 16px; margin-right: 0.4rem;&#34; fill=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path d=&#34;M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z&#34;/&gt;&lt;/svg&gt;
+</span>
+<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;">|</span>
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
 五言绝句
-&lt;/span&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+</span>
+</div>
+</div>
+</div>
+</div>
 
-&lt;div style=&#34;position: relative; z-index: 1; margin-top: 0;&#34;&gt;
-&lt;div style=&#34;background: rgba(46, 204, 113, 0.08); padding: 2.2rem; border-radius: 12px; margin: 0 0 3rem 0; border-left: 4px solid #2ecc71; min-height: 180px;&#34;&gt;
-&lt;div style=&#34;color: #27ae60; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;&#34;&gt;📜 诗体与创作背景&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem; padding: 0.5rem 0;&#34;&gt;
-《鹿柴》是王维《辋川集》二十首中的第五首，写于天宝年间王维隐居辋川别业时期。&#34;柴&#34;读作&#34;zhài&#34;，同&#34;寨&#34;，是篱落、栅栏之意。鹿柴是辋川的一个地名，王维在此建有别墅。《辋川集》是王维与好友裴迪的唱和诗集，每首诗描绘辋川一处景点。此诗以二十字勾勒出空山深林的幽静禅意，运用&#34;以动衬静&#34;&#34;以光写幽&#34;的艺术手法，创造出&#34;空而不虚，寂而不灭&#34;的独特意境。苏轼评王维：&#34;味摩诘之诗，诗中有画；观摩诘之画，画中有诗。&#34;《鹿柴》正是这一评价的完美体现。
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="position: relative; z-index: 1; margin-top: 0;">
+<div style="background: rgba(46, 204, 113, 0.08); padding: 2.2rem; border-radius: 12px; margin: 0 0 3rem 0; border-left: 4px solid #2ecc71; min-height: 180px;">
+<div style="color: #27ae60; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">📜 诗体与创作背景</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem; padding: 0.5rem 0;">
+《鹿柴》是王维《辋川集》二十首中的第五首，写于天宝年间王维隐居辋川别业时期。"柴"读作"zhài"，同"寨"，是篱落、栅栏之意。鹿柴是辋川的一个地名，王维在此建有别墅。《辋川集》是王维与好友裴迪的唱和诗集，每首诗描绘辋川一处景点。此诗以二十字勾勒出空山深林的幽静禅意，运用"以动衬静""以光写幽"的艺术手法，创造出"空而不虚，寂而不灭"的独特意境。苏轼评王维："味摩诘之诗，诗中有画；观摩诘之画，画中有诗。"《鹿柴》正是这一评价的完美体现。
+</div>
+</div>
 
-&lt;div style=&#34;background: linear-gradient(145deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.05)); padding: 2.5rem; border-radius: 14px; border: 1px solid rgba(46, 204, 113, 0.2); margin: 2.5rem 0; font-style: italic; color: #4a5568; position: relative; min-height: 200px;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: -14px; left: 25px; background: white; color: #2ecc71; padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: bold; border: 1px solid rgba(46, 204, 113, 0.3); box-shadow: 0 3px 8px rgba(0,0,0,0.08);&#34;&gt;诗前小序&lt;/div&gt;
-&lt;div style=&#34;padding-top: 1.2rem; font-size: 1.08rem; line-height: 1.9;&#34;&gt;
-天宝年间，王维购得初唐诗人宋之问的蓝田辋川别墅，与好友裴迪游历其中，各赋绝句二十首，结为《辋川集》。鹿柴是辋川二十景之一，以栅栏围养鹿群而得名。暮色时分，诗人漫步至此，见空山寂寂，不见人影，却闻人语隐约传来；夕阳余晖斜照入深林，又反射在青苔之上。这瞬间的视听感受，触动了诗人的禅心——空山不空，因有人语；深林不暗，因有返照。静中有动，幽中有明，虚实相生，色空不二。遂提笔写下这二十字，以诗为画，以画入禅。清人沈德潜评：&#34;佳处不在语言，与陶公&#39;采菊东篱下，悠然见南山&#39;同。&#34;王士禛赞：&#34;字字入禅。&#34;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="background: linear-gradient(145deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.05)); padding: 2.5rem; border-radius: 14px; border: 1px solid rgba(46, 204, 113, 0.2); margin: 2.5rem 0; font-style: italic; color: #4a5568; position: relative; min-height: 200px;">
+<div style="position: absolute; top: -14px; left: 25px; background: white; color: #2ecc71; padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: bold; border: 1px solid rgba(46, 204, 113, 0.3); box-shadow: 0 3px 8px rgba(0,0,0,0.08);">诗前小序</div>
+<div style="padding-top: 1.2rem; font-size: 1.08rem; line-height: 1.9;">
+天宝年间，王维购得初唐诗人宋之问的蓝田辋川别墅，与好友裴迪游历其中，各赋绝句二十首，结为《辋川集》。鹿柴是辋川二十景之一，以栅栏围养鹿群而得名。暮色时分，诗人漫步至此，见空山寂寂，不见人影，却闻人语隐约传来；夕阳余晖斜照入深林，又反射在青苔之上。这瞬间的视听感受，触动了诗人的禅心——空山不空，因有人语；深林不暗，因有返照。静中有动，幽中有明，虚实相生，色空不二。遂提笔写下这二十字，以诗为画，以画入禅。清人沈德潜评："佳处不在语言，与陶公'采菊东篱下，悠然见南山'同。"王士禛赞："字字入禅。"
+</div>
+</div>
 
-&lt;h2 id=&#34;诗文详析·二十字禅境&#34;&gt;&lt;a href=&#34;#诗文详析·二十字禅境&#34; class=&#34;headerlink&#34; title=&#34;诗文详析·二十字禅境&#34;&gt;&lt;/a&gt;诗文详析·二十字禅境&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #e8f6f3 0%, #d1f2eb 100%); border: 2px solid #2ecc71; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 500px;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: -16px; left: 25px; background: #2ecc71; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);&#34;&gt;全诗四句&lt;/div&gt;
+<h2 id="诗文详析·二十字禅境"><a href="#诗文详析·二十字禅境" class="headerlink" title="诗文详析·二十字禅境"></a>诗文详析·二十字禅境</h2><div style="background: linear-gradient(145deg, #e8f6f3 0%, #d1f2eb 100%); border: 2px solid #2ecc71; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 500px;">
+<div style="position: absolute; top: -16px; left: 25px; background: #2ecc71; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">全诗四句</div>
 
-&lt;div style=&#34;text-align: center; margin-bottom: 2.5rem;&#34;&gt;
-&lt;div style=&#34;color: #27ae60; font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; font-family: &#39;STKaiti&#39;, serif; letter-spacing: 1px; line-height: 1.8;&#34;&gt;
-空山不见人，但闻人语响。&lt;br&gt;
+<div style="text-align: center; margin-bottom: 2.5rem;">
+<div style="color: #27ae60; font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; font-family: 'STKaiti', serif; letter-spacing: 1px; line-height: 1.8;">
+空山不见人，但闻人语响。<br>
 返景入深林，复照青苔上。
-&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; font-size: 1.1rem; font-style: italic; max-width: 500px; margin: 0 auto;&#34;&gt;
+</div>
+<div style="color: #4a5568; font-size: 1.1rem; font-style: italic; max-width: 500px; margin: 0 auto;">
 ——王维《鹿柴》· 诗中有画，画中有禅
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.2rem; margin-top: 2.2rem;&#34;&gt;
-&lt;div style=&#34;background: rgba(46, 204, 113, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #2ecc71;&#34;&gt;
-&lt;div style=&#34;color: #27ae60; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🏔️ 首句·空山不见人&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.85; font-size: 1.05rem;&#34;&gt;
-&lt;strong&gt;字面解析&lt;/strong&gt;：&#34;空山&#34;空旷的山林，&#34;不见人&#34;看不见人的身影。五字点明环境特征——空寂无人。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;深层意蕴&lt;/strong&gt;：王维诗中的&#34;空&#34;，既是物理空间上的空旷，也是禅宗哲学上的&#34;空性&#34;。&#34;空山&#34;不是荒山，而是去除杂念、澄明心境的山。佛教讲&#34;色即是空&#34;，此处的&#34;空&#34;非虚无，而是去除表象后的真实。&#34;不见人&#34;三字，既写实景，也暗示诗人已融入自然，物我两忘。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;艺术手法&lt;/strong&gt;：大笔勾勒。如中国山水画的泼墨写意，先铺陈出&#34;空山&#34;的宏大背景。一个&#34;空&#34;字统领全诗，为后文的所有细节定下基调。
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.2rem; margin-top: 2.2rem;">
+<div style="background: rgba(46, 204, 113, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #2ecc71;">
+<div style="color: #27ae60; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🏔️ 首句·空山不见人</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+<strong>字面解析</strong>："空山"空旷的山林，"不见人"看不见人的身影。五字点明环境特征——空寂无人。<br><br>
+<strong>深层意蕴</strong>：王维诗中的"空"，既是物理空间上的空旷，也是禅宗哲学上的"空性"。"空山"不是荒山，而是去除杂念、澄明心境的山。佛教讲"色即是空"，此处的"空"非虚无，而是去除表象后的真实。"不见人"三字，既写实景，也暗示诗人已融入自然，物我两忘。<br><br>
+<strong>艺术手法</strong>：大笔勾勒。如中国山水画的泼墨写意，先铺陈出"空山"的宏大背景。一个"空"字统领全诗，为后文的所有细节定下基调。
+</div>
+</div>
 
-&lt;div style=&#34;background: rgba(155, 89, 182, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #9b59b6;&#34;&gt;
-&lt;div style=&#34;color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;👂 次句·但闻人语响&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.85; font-size: 1.05rem;&#34;&gt;
-&lt;strong&gt;字面解析&lt;/strong&gt;：&#34;但闻&#34;只听到，&#34;人语响&#34;人的说话声在回响。从视觉转向听觉，从&#34;不见&#34;到&#34;闻&#34;。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;深层意蕴&lt;/strong&gt;：这是全诗最妙的一转。&#34;空山不见人&#34;本是绝对寂静，却&#34;但闻人语响&#34;——这声音不是喧闹，而是隐隐约约、若有若无的。它不但没有打破寂静，反而衬托出更深层的寂静。这体现了王维的禅宗思维：空不是死寂，空中有声；静不是无声，静中有响。这是&#34;以动衬静&#34;手法的极致运用。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;艺术手法&lt;/strong&gt;：以声写静。如同&#34;蝉噪林逾静，鸟鸣山更幽&#34;，人语声使空山更显空寂。这声音的来源、内容都不重要，重要的是它作为一种&#34;存在&#34;的证明——山不空，只是&#34;不见&#34;而已。
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="background: rgba(155, 89, 182, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #9b59b6;">
+<div style="color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">👂 次句·但闻人语响</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+<strong>字面解析</strong>："但闻"只听到，"人语响"人的说话声在回响。从视觉转向听觉，从"不见"到"闻"。<br><br>
+<strong>深层意蕴</strong>：这是全诗最妙的一转。"空山不见人"本是绝对寂静，却"但闻人语响"——这声音不是喧闹，而是隐隐约约、若有若无的。它不但没有打破寂静，反而衬托出更深层的寂静。这体现了王维的禅宗思维：空不是死寂，空中有声；静不是无声，静中有响。这是"以动衬静"手法的极致运用。<br><br>
+<strong>艺术手法</strong>：以声写静。如同"蝉噪林逾静，鸟鸣山更幽"，人语声使空山更显空寂。这声音的来源、内容都不重要，重要的是它作为一种"存在"的证明——山不空，只是"不见"而已。
+</div>
+</div>
+</div>
 
-&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.2rem; margin-top: 2.2rem;&#34;&gt;
-&lt;div style=&#34;background: rgba(52, 152, 219, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #3498db;&#34;&gt;
-&lt;div style=&#34;color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🌅 三句·返景入深林&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.85; font-size: 1.05rem;&#34;&gt;
-&lt;strong&gt;字面解析&lt;/strong&gt;：&#34;返景&#34;夕阳返照的光影，&#34;入深林&#34;照进幽深的树林。从听觉又转回视觉，从声音转向光影。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;深层意蕴&lt;/strong&gt;：&#34;返景&#34;特指夕阳的余晖，这光是柔和的、短暂的、珍贵的。&#34;入深林&#34;三字充满动感，仿佛光是有生命的，主动进入森林深处。深林本应是幽暗的，但夕阳的光照了进来，这不仅是物理的光，也是心灵的光照——在幽暗的深处，依然有光明可寻。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;艺术手法&lt;/strong&gt;：光影对比。&#34;深林&#34;的幽暗与&#34;返景&#34;的光明形成对比。这光不是刺目的正午阳光，而是温柔的、即将消逝的夕阳余晖，更显珍贵，更具禅意——美在瞬间，道在平常。
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.2rem; margin-top: 2.2rem;">
+<div style="background: rgba(52, 152, 219, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #3498db;">
+<div style="color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🌅 三句·返景入深林</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+<strong>字面解析</strong>："返景"夕阳返照的光影，"入深林"照进幽深的树林。从听觉又转回视觉，从声音转向光影。<br><br>
+<strong>深层意蕴</strong>："返景"特指夕阳的余晖，这光是柔和的、短暂的、珍贵的。"入深林"三字充满动感，仿佛光是有生命的，主动进入森林深处。深林本应是幽暗的，但夕阳的光照了进来，这不仅是物理的光，也是心灵的光照——在幽暗的深处，依然有光明可寻。<br><br>
+<strong>艺术手法</strong>：光影对比。"深林"的幽暗与"返景"的光明形成对比。这光不是刺目的正午阳光，而是温柔的、即将消逝的夕阳余晖，更显珍贵，更具禅意——美在瞬间，道在平常。
+</div>
+</div>
 
-&lt;div style=&#34;background: rgba(231, 76, 60, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #e74c3c;&#34;&gt;
-&lt;div style=&#34;color: #c0392b; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🍃 末句·复照青苔上&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.85; font-size: 1.05rem;&#34;&gt;
-&lt;strong&gt;字面解析&lt;/strong&gt;：&#34;复照&#34;再次照射，&#34;青苔上&#34;长满青苔的地面。光线的终点是青苔，完成一个完整的光影旅程。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;深层意蕴&lt;/strong&gt;：这是全诗的画眼，也是最富禅意的细节。青苔是幽暗潮湿处生长的植物，象征着时间的沉淀、自然的寂静。夕阳的余晖&#34;复照&#34;其上，这&#34;复&#34;字值得玩味——可能是光线在树林中的多次反射，也可能是诗人多次观察到这一景象。光与苔的结合，短暂与永恒的交汇，明亮与幽暗的对话，构成了一个圆满的禅境。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;艺术手法&lt;/strong&gt;：微观聚焦。从&#34;空山&#34;的宏大，到&#34;人语&#34;的虚渺，到&#34;深林&#34;的幽深，最后聚焦于&#34;青苔&#34;这一微小细节。如同电影镜头从全景推到特写，极具画面感。
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="background: rgba(231, 76, 60, 0.1); padding: 2rem; border-radius: 12px; border-left: 3px solid #e74c3c;">
+<div style="color: #c0392b; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🍃 末句·复照青苔上</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+<strong>字面解析</strong>："复照"再次照射，"青苔上"长满青苔的地面。光线的终点是青苔，完成一个完整的光影旅程。<br><br>
+<strong>深层意蕴</strong>：这是全诗的画眼，也是最富禅意的细节。青苔是幽暗潮湿处生长的植物，象征着时间的沉淀、自然的寂静。夕阳的余晖"复照"其上，这"复"字值得玩味——可能是光线在树林中的多次反射，也可能是诗人多次观察到这一景象。光与苔的结合，短暂与永恒的交汇，明亮与幽暗的对话，构成了一个圆满的禅境。<br><br>
+<strong>艺术手法</strong>：微观聚焦。从"空山"的宏大，到"人语"的虚渺，到"深林"的幽深，最后聚焦于"青苔"这一微小细节。如同电影镜头从全景推到特写，极具画面感。
+</div>
+</div>
+</div>
+</div>
 
-&lt;h2 id=&#34;艺术特色·诗画禅三绝&#34;&gt;&lt;a href=&#34;#艺术特色·诗画禅三绝&#34; class=&#34;headerlink&#34; title=&#34;艺术特色·诗画禅三绝&#34;&gt;&lt;/a&gt;艺术特色·诗画禅三绝&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #fff8e1 0%, #fff3cd 100%); border: 2px solid #d4a017; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(212, 160, 23, 0.1); min-height: 500px;&#34;&gt;
-&lt;div style=&#34;text-align: center; margin-bottom: 2.8rem;&#34;&gt;
-&lt;div style=&#34;color: #8b4513; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;&#34;&gt;🎭 艺术特色分析&lt;/div&gt;
-&lt;div style=&#34;color: #a68a64; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;&#34;&gt;诗中有画·画中有禅·动静相宜·虚实相生&lt;/div&gt;
-&lt;/div&gt;
+<h2 id="艺术特色·诗画禅三绝"><a href="#艺术特色·诗画禅三绝" class="headerlink" title="艺术特色·诗画禅三绝"></a>艺术特色·诗画禅三绝</h2><div style="background: linear-gradient(145deg, #fff8e1 0%, #fff3cd 100%); border: 2px solid #d4a017; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(212, 160, 23, 0.1); min-height: 500px;">
+<div style="text-align: center; margin-bottom: 2.8rem;">
+<div style="color: #8b4513; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🎭 艺术特色分析</div>
+<div style="color: #a68a64; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">诗中有画·画中有禅·动静相宜·虚实相生</div>
+</div>
 
-&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;&#34;&gt;
-&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #2ecc71; position: relative; overflow: hidden; min-height: 320px;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(46, 204, 113, 0.1); border-radius: 0 0 0 70px;&#34;&gt;&lt;/div&gt;
-&lt;div style=&#34;color: #27ae60; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;🎨 诗中有画&lt;/div&gt;
-&lt;ul style=&#34;color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;&#34;&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;构图精妙&lt;/strong&gt; - 空山为背景，深林为中景，青苔为特写&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;光影处理&lt;/strong&gt; - 返景斜照，明暗对比，层次丰富&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;色彩搭配&lt;/strong&gt; - 青苔的绿、夕阳的金、深林的暗&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;透视关系&lt;/strong&gt; - 从宏观到微观，从整体到局部&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;苏轼评&lt;/strong&gt;：&#34;味摩诘之诗，诗中有画；观摩诘之画，画中有诗。&#34;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div style=&#34;color: #2ecc71; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
-&#34;诗是无形画，画是有形诗&#34;——宋代郭熙《林泉高致》
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #2ecc71; position: relative; overflow: hidden; min-height: 320px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(46, 204, 113, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #27ae60; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🎨 诗中有画</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>构图精妙</strong> - 空山为背景，深林为中景，青苔为特写</li>
+<li style="margin-bottom: 0.8rem;"><strong>光影处理</strong> - 返景斜照，明暗对比，层次丰富</li>
+<li style="margin-bottom: 0.8rem;"><strong>色彩搭配</strong> - 青苔的绿、夕阳的金、深林的暗</li>
+<li style="margin-bottom: 0.8rem;"><strong>透视关系</strong> - 从宏观到微观，从整体到局部</li>
+<li><strong>苏轼评</strong>："味摩诘之诗，诗中有画；观摩诘之画，画中有诗。"</li>
+</ul>
+<div style="color: #2ecc71; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
+"诗是无形画，画是有形诗"——宋代郭熙《林泉高致》
+</div>
+</div>
 
-&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #9b59b6; position: relative; overflow: hidden; min-height: 320px;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(155, 89, 182, 0.1); border-radius: 0 0 0 70px;&#34;&gt;&lt;/div&gt;
-&lt;div style=&#34;color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;🕉️ 画中有禅&lt;/div&gt;
-&lt;ul style=&#34;color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;&#34;&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;空山不空&lt;/strong&gt; - 不见人而闻人语，空中有声&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;深林不暗&lt;/strong&gt; - 幽暗处有返照，暗中有光&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;色空不二&lt;/strong&gt; - 景物皆幻象，唯禅心真实&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;瞬间永恒&lt;/strong&gt; - 返景的短暂与青苔的恒久&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;王士禛评&lt;/strong&gt;：&#34;字字入禅，妙谛微言，与世尊拈花，迦叶微笑，等无差别。&#34;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div style=&#34;color: #9b59b6; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
-&#34;青青翠竹，尽是法身；郁郁黄花，无非般若&#34;——禅宗公案
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #9b59b6; position: relative; overflow: hidden; min-height: 320px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(155, 89, 182, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🕉️ 画中有禅</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>空山不空</strong> - 不见人而闻人语，空中有声</li>
+<li style="margin-bottom: 0.8rem;"><strong>深林不暗</strong> - 幽暗处有返照，暗中有光</li>
+<li style="margin-bottom: 0.8rem;"><strong>色空不二</strong> - 景物皆幻象，唯禅心真实</li>
+<li style="margin-bottom: 0.8rem;"><strong>瞬间永恒</strong> - 返景的短暂与青苔的恒久</li>
+<li><strong>王士禛评</strong>："字字入禅，妙谛微言，与世尊拈花，迦叶微笑，等无差别。"</li>
+</ul>
+<div style="color: #9b59b6; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
+"青青翠竹，尽是法身；郁郁黄花，无非般若"——禅宗公案
+</div>
+</div>
 
-&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #3498db; position: relative; overflow: hidden; min-height: 320px;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(52, 152, 219, 0.1); border-radius: 0 0 0 70px;&#34;&gt;&lt;/div&gt;
-&lt;div style=&#34;color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;🎭 动静虚实&lt;/div&gt;
-&lt;ul style=&#34;color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;&#34;&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;以动衬静&lt;/strong&gt; - 人语响更显空山静&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;以明写幽&lt;/strong&gt; - 返景照更显深林幽&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;虚实相生&lt;/strong&gt; - 不见人为虚，人语响为实&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;大小相形&lt;/strong&gt; - 空山为大，青苔为小&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;沈德潜评&lt;/strong&gt;：&#34;佳处不在语言，与陶公&#39;采菊东篱下，悠然见南山&#39;同。&#34;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div style=&#34;color: #3498db; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
-&#34;大音希声，大象无形&#34;——老子《道德经》
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #3498db; position: relative; overflow: hidden; min-height: 320px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(52, 152, 219, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🎭 动静虚实</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>以动衬静</strong> - 人语响更显空山静</li>
+<li style="margin-bottom: 0.8rem;"><strong>以明写幽</strong> - 返景照更显深林幽</li>
+<li style="margin-bottom: 0.8rem;"><strong>虚实相生</strong> - 不见人为虚，人语响为实</li>
+<li style="margin-bottom: 0.8rem;"><strong>大小相形</strong> - 空山为大，青苔为小</li>
+<li><strong>沈德潜评</strong>："佳处不在语言，与陶公'采菊东篱下，悠然见南山'同。"</li>
+</ul>
+<div style="color: #3498db; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
+"大音希声，大象无形"——老子《道德经》
+</div>
+</div>
+</div>
+</div>
 
-&lt;h2 id=&#34;禅意解读·空山三昧&#34;&gt;&lt;a href=&#34;#禅意解读·空山三昧&#34; class=&#34;headerlink&#34; title=&#34;禅意解读·空山三昧&#34;&gt;&lt;/a&gt;禅意解读·空山三昧&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #e8f6f3 0%, #d1f2eb 100%); border: 2px solid #1abc9c; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(26, 188, 156, 0.1); min-height: 450px;&#34;&gt;
-&lt;div style=&#34;text-align: center; margin-bottom: 2.8rem;&#34;&gt;
-&lt;div style=&#34;color: #148f77; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;&#34;&gt;🕉️ 禅意三重境&lt;/div&gt;
-&lt;div style=&#34;color: #5d6d7e; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;&#34;&gt;从空山寂寂到人语隐隐，从深林幽幽到青苔青青&lt;/div&gt;
-&lt;/div&gt;
+<h2 id="禅意解读·空山三昧"><a href="#禅意解读·空山三昧" class="headerlink" title="禅意解读·空山三昧"></a>禅意解读·空山三昧</h2><div style="background: linear-gradient(145deg, #e8f6f3 0%, #d1f2eb 100%); border: 2px solid #1abc9c; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(26, 188, 156, 0.1); min-height: 450px;">
+<div style="text-align: center; margin-bottom: 2.8rem;">
+<div style="color: #148f77; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🕉️ 禅意三重境</div>
+<div style="color: #5d6d7e; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">从空山寂寂到人语隐隐，从深林幽幽到青苔青青</div>
+</div>
 
-&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;&#34;&gt;
-&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #2ecc71; position: relative; overflow: hidden; min-height: 320px;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(46, 204, 113, 0.1); border-radius: 0 0 0 70px;&#34;&gt;&lt;/div&gt;
-&lt;div style=&#34;color: #27ae60; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;🌌 第一境·空山寂寂&lt;/div&gt;
-&lt;ul style=&#34;color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;&#34;&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;物理之空&lt;/strong&gt; - 山野空旷，人迹罕至&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;视觉之空&lt;/strong&gt; - 不见人影，唯见自然&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;心理之空&lt;/strong&gt; - 去除杂念，心境澄明&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;禅宗之空&lt;/strong&gt; - &#34;色即是空&#34;，去除表象&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;《心经》云&lt;/strong&gt;：&#34;色不异空，空不异色；色即是空，空即是色。&#34;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div style=&#34;color: #2ecc71; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
-&#34;空山新雨后，天气晚来秋&#34;——王维《山居秋暝》
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #2ecc71; position: relative; overflow: hidden; min-height: 320px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(46, 204, 113, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #27ae60; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🌌 第一境·空山寂寂</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>物理之空</strong> - 山野空旷，人迹罕至</li>
+<li style="margin-bottom: 0.8rem;"><strong>视觉之空</strong> - 不见人影，唯见自然</li>
+<li style="margin-bottom: 0.8rem;"><strong>心理之空</strong> - 去除杂念，心境澄明</li>
+<li style="margin-bottom: 0.8rem;"><strong>禅宗之空</strong> - "色即是空"，去除表象</li>
+<li><strong>《心经》云</strong>："色不异空，空不异色；色即是空，空即是色。"</li>
+</ul>
+<div style="color: #2ecc71; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
+"空山新雨后，天气晚来秋"——王维《山居秋暝》
+</div>
+</div>
 
-&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #9b59b6; position: relative; overflow: hidden; min-height: 320px;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(155, 89, 182, 0.1); border-radius: 0 0 0 70px;&#34;&gt;&lt;/div&gt;
-&lt;div style=&#34;color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;👂 第二境·空中有声&lt;/div&gt;
-&lt;ul style=&#34;color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;&#34;&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;听觉的惊喜&lt;/strong&gt; - 在寂静中捕捉微弱声音&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;以动写静&lt;/strong&gt; - 人语响反衬空山静&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;存在与虚无&lt;/strong&gt; - 不见其人，但闻其声&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;禅宗的&#34;不立文字&#34;&lt;/strong&gt; - 声音比语言更接近本质&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;《坛经》云&lt;/strong&gt;：&#34;诸佛妙理，非关文字。&#34;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div style=&#34;color: #9b59b6; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
-&#34;蝉噪林逾静，鸟鸣山更幽&#34;——王籍《入若耶溪》
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #9b59b6; position: relative; overflow: hidden; min-height: 320px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(155, 89, 182, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">👂 第二境·空中有声</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>听觉的惊喜</strong> - 在寂静中捕捉微弱声音</li>
+<li style="margin-bottom: 0.8rem;"><strong>以动写静</strong> - 人语响反衬空山静</li>
+<li style="margin-bottom: 0.8rem;"><strong>存在与虚无</strong> - 不见其人，但闻其声</li>
+<li style="margin-bottom: 0.8rem;"><strong>禅宗的"不立文字"</strong> - 声音比语言更接近本质</li>
+<li><strong>《坛经》云</strong>："诸佛妙理，非关文字。"</li>
+</ul>
+<div style="color: #9b59b6; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
+"蝉噪林逾静，鸟鸣山更幽"——王籍《入若耶溪》
+</div>
+</div>
 
-&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #3498db; position: relative; overflow: hidden; min-height: 320px;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(52, 152, 219, 0.1); border-radius: 0 0 0 70px;&#34;&gt;&lt;/div&gt;
-&lt;div style=&#34;color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;🌅 第三境·光苔相照&lt;/div&gt;
-&lt;ul style=&#34;color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;&#34;&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;光的旅程&lt;/strong&gt; - 返景入深林，复照青苔上&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;瞬间与永恒&lt;/strong&gt; - 夕阳的短暂与青苔的恒久&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;幽暗与光明&lt;/strong&gt; - 深林的幽与返景的明&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;微观见大道&lt;/strong&gt; - 青苔上的光斑蕴含宇宙真理&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;禅宗公案&lt;/strong&gt;：&#34;一花一世界，一叶一菩提。&#34;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div style=&#34;color: #3498db; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
-&#34;苔痕上阶绿，草色入帘青&#34;——刘禹锡《陋室铭》
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #3498db; position: relative; overflow: hidden; min-height: 320px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(52, 152, 219, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🌅 第三境·光苔相照</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>光的旅程</strong> - 返景入深林，复照青苔上</li>
+<li style="margin-bottom: 0.8rem;"><strong>瞬间与永恒</strong> - 夕阳的短暂与青苔的恒久</li>
+<li style="margin-bottom: 0.8rem;"><strong>幽暗与光明</strong> - 深林的幽与返景的明</li>
+<li style="margin-bottom: 0.8rem;"><strong>微观见大道</strong> - 青苔上的光斑蕴含宇宙真理</li>
+<li><strong>禅宗公案</strong>："一花一世界，一叶一菩提。"</li>
+</ul>
+<div style="color: #3498db; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
+"苔痕上阶绿，草色入帘青"——刘禹锡《陋室铭》
+</div>
+</div>
+</div>
+</div>
 
-&lt;h2 id=&#34;辋川别业·王维的诗画人生&#34;&gt;&lt;a href=&#34;#辋川别业·王维的诗画人生&#34; class=&#34;headerlink&#34; title=&#34;辋川别业·王维的诗画人生&#34;&gt;&lt;/a&gt;辋川别业·王维的诗画人生&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #fef5e7 0%, #fdebd0 100%); border: 2px solid #e67e22; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(230, 126, 34, 0.1); min-height: 400px;&#34;&gt;
-&lt;div style=&#34;text-align: center; margin-bottom: 2.5rem;&#34;&gt;
-&lt;div style=&#34;color: #d35400; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;&#34;&gt;🏡 辋川别业与王维的诗画人生&lt;/div&gt;
-&lt;div style=&#34;color: #a68a64; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;&#34;&gt;&#34;晚年惟好静，万事不关心&#34;——王维的隐居生活与艺术创造&lt;/div&gt;
-&lt;/div&gt;
+<h2 id="辋川别业·王维的诗画人生"><a href="#辋川别业·王维的诗画人生" class="headerlink" title="辋川别业·王维的诗画人生"></a>辋川别业·王维的诗画人生</h2><div style="background: linear-gradient(145deg, #fef5e7 0%, #fdebd0 100%); border: 2px solid #e67e22; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(230, 126, 34, 0.1); min-height: 400px;">
+<div style="text-align: center; margin-bottom: 2.5rem;">
+<div style="color: #d35400; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🏡 辋川别业与王维的诗画人生</div>
+<div style="color: #a68a64; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">"晚年惟好静，万事不关心"——王维的隐居生活与艺术创造</div>
+</div>
 
-&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 2rem 0;&#34;&gt;
-&lt;div style=&#34;background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-left: 4px solid #2ecc71;&#34;&gt;
-&lt;div style=&#34;color: #27ae60; font-weight: bold; margin-bottom: 1.2rem; border-bottom: 2px solid #f0e6d2; padding-bottom: 1rem; font-size: 1.2rem;&#34;&gt;🌿 辋川别业&lt;/div&gt;
-&lt;div style=&#34;margin-top: 1.2rem;&#34;&gt;
-&lt;div style=&#34;color: #4a5568; font-size: 1.05rem; line-height: 1.8;&#34;&gt;
-&lt;strong&gt;地理位置&lt;/strong&gt;：位于陕西蓝田县南峣山之口，距长安约60里，是秦岭北麓的一条风光秀丽的川道。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;历史沿革&lt;/strong&gt;：初唐诗人宋之问在此建别墅，称&#34;蓝田山庄&#34;。王维购得后，精心修葺，改名&#34;辋川别业&#34;。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;园林设计&lt;/strong&gt;：王维依据自然地形，建有孟城坳、华子冈、文杏馆、斤竹岭、鹿柴、木兰柴等二十处景点，与自然山水融为一体。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;艺术创作&lt;/strong&gt;：王维与好友裴迪游历各景，各赋五言绝句二十首，结为《辋川集》。《鹿柴》是其中第五首。
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 2rem 0;">
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-left: 4px solid #2ecc71;">
+<div style="color: #27ae60; font-weight: bold; margin-bottom: 1.2rem; border-bottom: 2px solid #f0e6d2; padding-bottom: 1rem; font-size: 1.2rem;">🌿 辋川别业</div>
+<div style="margin-top: 1.2rem;">
+<div style="color: #4a5568; font-size: 1.05rem; line-height: 1.8;">
+<strong>地理位置</strong>：位于陕西蓝田县南峣山之口，距长安约60里，是秦岭北麓的一条风光秀丽的川道。<br><br>
+<strong>历史沿革</strong>：初唐诗人宋之问在此建别墅，称"蓝田山庄"。王维购得后，精心修葺，改名"辋川别业"。<br><br>
+<strong>园林设计</strong>：王维依据自然地形，建有孟城坳、华子冈、文杏馆、斤竹岭、鹿柴、木兰柴等二十处景点，与自然山水融为一体。<br><br>
+<strong>艺术创作</strong>：王维与好友裴迪游历各景，各赋五言绝句二十首，结为《辋川集》。《鹿柴》是其中第五首。
+</div>
+</div>
+</div>
 
-&lt;div style=&#34;background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-left: 4px solid #9b59b6;&#34;&gt;
-&lt;div style=&#34;color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; border-bottom: 2px solid #f0e6d2; padding-bottom: 1rem; font-size: 1.2rem;&#34;&gt;🎭 王维的三重身份&lt;/div&gt;
-&lt;div style=&#34;margin-top: 1.2rem;&#34;&gt;
-&lt;div style=&#34;color: #4a5568; font-size: 1.05rem; line-height: 1.8;&#34;&gt;
-&lt;strong&gt;官员王维&lt;/strong&gt;：21岁中进士，官至尚书右丞。经历安史之乱，被迫接受伪职，乱平后因诗获免，但政治热情已冷却。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;诗人王维&lt;/strong&gt;：与李白、杜甫并称盛唐三大诗人。诗风清新淡雅，尤工五言，被称为&#34;五言之宗匠&#34;。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;画家王维&lt;/strong&gt;：中国文人画的开创者，首创&#34;破墨&#34;技法。苏轼评：&#34;观摩诘之画，画中有诗。&#34;&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;居士王维&lt;/strong&gt;：字摩诘，名与字均取自佛教《维摩诘经》。晚年笃信佛教，半官半隐，被称为&#34;诗佛&#34;。
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-left: 4px solid #9b59b6;">
+<div style="color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; border-bottom: 2px solid #f0e6d2; padding-bottom: 1rem; font-size: 1.2rem;">🎭 王维的三重身份</div>
+<div style="margin-top: 1.2rem;">
+<div style="color: #4a5568; font-size: 1.05rem; line-height: 1.8;">
+<strong>官员王维</strong>：21岁中进士，官至尚书右丞。经历安史之乱，被迫接受伪职，乱平后因诗获免，但政治热情已冷却。<br><br>
+<strong>诗人王维</strong>：与李白、杜甫并称盛唐三大诗人。诗风清新淡雅，尤工五言，被称为"五言之宗匠"。<br><br>
+<strong>画家王维</strong>：中国文人画的开创者，首创"破墨"技法。苏轼评："观摩诘之画，画中有诗。"<br><br>
+<strong>居士王维</strong>：字摩诘，名与字均取自佛教《维摩诘经》。晚年笃信佛教，半官半隐，被称为"诗佛"。
+</div>
+</div>
+</div>
+</div>
 
-&lt;div style=&#34;background: rgba(230, 126, 34, 0.1); padding: 2rem; border-radius: 14px; margin-top: 2.5rem; border: 1px dashed #e67e22;&#34;&gt;
-&lt;div style=&#34;color: #d35400; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;📖 《辋川集》其他诗选&lt;/div&gt;
-&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.2rem;&#34;&gt;
-&lt;div&gt;
-&lt;div style=&#34;color: #e67e22; font-weight: bold; margin-bottom: 0.5rem; font-size: 1.05rem;&#34;&gt;《竹里馆》&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;
-独坐幽篁里，弹琴复长啸。&lt;br&gt;
+<div style="background: rgba(230, 126, 34, 0.1); padding: 2rem; border-radius: 14px; margin-top: 2.5rem; border: 1px dashed #e67e22;">
+<div style="color: #d35400; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">📖 《辋川集》其他诗选</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.2rem;">
+<div>
+<div style="color: #e67e22; font-weight: bold; margin-bottom: 0.5rem; font-size: 1.05rem;">《竹里馆》</div>
+<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
+独坐幽篁里，弹琴复长啸。<br>
 深林人不知，明月来相照。
-&lt;/div&gt;
-&lt;div style=&#34;color: #7f8c8d; font-size: 0.9rem; margin-top: 0.5rem;&#34;&gt;同样写幽静，但有人（诗人自己）在其中活动。&lt;/div&gt;
-&lt;/div&gt;
-&lt;div&gt;
-&lt;div style=&#34;color: #e67e22; font-weight: bold; margin-bottom: 0.5rem; font-size: 1.05rem;&#34;&gt;《辛夷坞》&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;
-木末芙蓉花，山中发红萼。&lt;br&gt;
+</div>
+<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 0.5rem;">同样写幽静，但有人（诗人自己）在其中活动。</div>
+</div>
+<div>
+<div style="color: #e67e22; font-weight: bold; margin-bottom: 0.5rem; font-size: 1.05rem;">《辛夷坞》</div>
+<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
+木末芙蓉花，山中发红萼。<br>
 涧户寂无人，纷纷开且落。
-&lt;/div&gt;
-&lt;div style=&#34;color: #7f8c8d; font-size: 0.9rem; margin-top: 0.5rem;&#34;&gt;写花开花落，无人欣赏，纯任自然，禅意更浓。&lt;/div&gt;
-&lt;/div&gt;
-&lt;div&gt;
-&lt;div style=&#34;color: #e67e22; font-weight: bold; margin-bottom: 0.5rem; font-size: 1.05rem;&#34;&gt;《栾家濑》&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;
-飒飒秋雨中，浅浅石溜泻。&lt;br&gt;
+</div>
+<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 0.5rem;">写花开花落，无人欣赏，纯任自然，禅意更浓。</div>
+</div>
+<div>
+<div style="color: #e67e22; font-weight: bold; margin-bottom: 0.5rem; font-size: 1.05rem;">《栾家濑》</div>
+<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
+飒飒秋雨中，浅浅石溜泻。<br>
 跳波自相溅，白鹭惊复下。
-&lt;/div&gt;
-&lt;div style=&#34;color: #7f8c8d; font-size: 0.9rem; margin-top: 0.5rem;&#34;&gt;写动态景物，白鹭受惊又落下，充满生机与趣味。&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;color: #7f8c8d; font-size: 0.95rem; margin-top: 1.5rem; font-style: italic;&#34;&gt;
+</div>
+<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 0.5rem;">写动态景物，白鹭受惊又落下，充满生机与趣味。</div>
+</div>
+</div>
+<div style="color: #7f8c8d; font-size: 0.95rem; margin-top: 1.5rem; font-style: italic;">
 《辋川集》二十首，每首都是一幅画，每幅画都蕴含禅意，共同构成王维的山水禅境世界。
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
+</div>
 
-&lt;h2 id=&#34;后世影响·诗画禅的融合&#34;&gt;&lt;a href=&#34;#后世影响·诗画禅的融合&#34; class=&#34;headerlink&#34; title=&#34;后世影响·诗画禅的融合&#34;&gt;&lt;/a&gt;后世影响·诗画禅的融合&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #f3e8ff 0%, #e9d8fd 100%); border: 2px solid #9f7aea; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(159, 122, 234, 0.12); min-height: 400px;&#34;&gt;
-&lt;div style=&#34;text-align: center; margin-bottom: 2.8rem;&#34;&gt;
-&lt;div style=&#34;color: #553c9a; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;&#34;&gt;🎨 王维诗画对后世的影响&lt;/div&gt;
-&lt;div style=&#34;color: #718096; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;&#34;&gt;从唐代到现代，从中国到世界，王维开创的诗画禅传统&lt;/div&gt;
-&lt;/div&gt;
+<h2 id="后世影响·诗画禅的融合"><a href="#后世影响·诗画禅的融合" class="headerlink" title="后世影响·诗画禅的融合"></a>后世影响·诗画禅的融合</h2><div style="background: linear-gradient(145deg, #f3e8ff 0%, #e9d8fd 100%); border: 2px solid #9f7aea; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(159, 122, 234, 0.12); min-height: 400px;">
+<div style="text-align: center; margin-bottom: 2.8rem;">
+<div style="color: #553c9a; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🎨 王维诗画对后世的影响</div>
+<div style="color: #718096; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">从唐代到现代，从中国到世界，王维开创的诗画禅传统</div>
+</div>
 
-&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;&#34;&gt;
-&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #2ecc71;&#34;&gt;
-&lt;div style=&#34;color: #27ae60; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🖼️ 绘画影响&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem;&#34;&gt;
-&lt;strong&gt;文人画的开创&lt;/strong&gt;：王维被尊为&#34;南宗画派&#34;之祖，董其昌《画禅室随笔》将王维列为文人画鼻祖。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;《辋川图》&lt;/strong&gt;：王维绘《辋川图》，开创了诗画结合的先河。原画已失，但有众多摹本传世。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;后世画家&lt;/strong&gt;：宋代郭熙、明代董其昌、清代石涛等均受王维影响，追求&#34;诗画一律&#34;&#34;画中有诗&#34;。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;日本的影响&lt;/strong&gt;：王维诗画随佛教传入日本，深刻影响日本水墨画（特に&#34;诗画轴&#34;形式）。
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #2ecc71;">
+<div style="color: #27ae60; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🖼️ 绘画影响</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
+<strong>文人画的开创</strong>：王维被尊为"南宗画派"之祖，董其昌《画禅室随笔》将王维列为文人画鼻祖。<br><br>
+<strong>《辋川图》</strong>：王维绘《辋川图》，开创了诗画结合的先河。原画已失，但有众多摹本传世。<br><br>
+<strong>后世画家</strong>：宋代郭熙、明代董其昌、清代石涛等均受王维影响，追求"诗画一律""画中有诗"。<br><br>
+<strong>日本的影响</strong>：王维诗画随佛教传入日本，深刻影响日本水墨画（特に"诗画轴"形式）。
+</div>
+</div>
 
-&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #9b59b6;&#34;&gt;
-&lt;div style=&#34;color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;📚 诗歌影响&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem;&#34;&gt;
-&lt;strong&gt;山水田园诗派&lt;/strong&gt;：王维与孟浩然并称&#34;王孟&#34;，开创唐代山水田园诗派。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;禅诗传统&lt;/strong&gt;：王维将禅意融入诗歌，开创了中国禅诗传统，影响柳宗元、苏轼等后世诗人。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;日本汉诗&lt;/strong&gt;：平安时代嵯峨天皇酷爱王维诗，敕编《凌云集》《文华秀丽集》多收王维诗。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;现代诗歌&lt;/strong&gt;：二十世纪美国&#34;垮掉的一代&#34;诗人如加里·斯奈德，翻译并学习王维诗，追求自然与禅意。
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #9b59b6;">
+<div style="color: #6c3483; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">📚 诗歌影响</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
+<strong>山水田园诗派</strong>：王维与孟浩然并称"王孟"，开创唐代山水田园诗派。<br><br>
+<strong>禅诗传统</strong>：王维将禅意融入诗歌，开创了中国禅诗传统，影响柳宗元、苏轼等后世诗人。<br><br>
+<strong>日本汉诗</strong>：平安时代嵯峨天皇酷爱王维诗，敕编《凌云集》《文华秀丽集》多收王维诗。<br><br>
+<strong>现代诗歌</strong>：二十世纪美国"垮掉的一代"诗人如加里·斯奈德，翻译并学习王维诗，追求自然与禅意。
+</div>
+</div>
+</div>
 
-&lt;div style=&#34;background: rgba(159, 122, 234, 0.1); padding: 2rem; border-radius: 14px; margin-top: 2.5rem; border: 1px dashed #9f7aea;&#34;&gt;
-&lt;div style=&#34;color: #553c9a; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🌏 跨文化传播与接受&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem;&#34;&gt;
-&lt;strong&gt;英语世界的翻译&lt;/strong&gt;：美国诗人王红公（Kenneth Rexroth）译《鹿柴》为&#34;Deer Park&#34;，传达原诗的空寂禅意。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;日本的接受&lt;/strong&gt;：室町时代五山禅僧将王维诗与禅宗结合，视为&#34;文字禅&#34;典范。松尾芭蕉俳句受王维影响。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;法国的传播&lt;/strong&gt;：汉学家沙畹（Édouard Chavannes）法译王维诗，影响法国象征主义诗歌。&lt;br&gt;&lt;br&gt;
-&lt;strong&gt;现代艺术&lt;/strong&gt;：当代艺术家徐冰、谷文达等从王维诗画中汲取灵感，创作现代装置艺术。
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="background: rgba(159, 122, 234, 0.1); padding: 2rem; border-radius: 14px; margin-top: 2.5rem; border: 1px dashed #9f7aea;">
+<div style="color: #553c9a; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🌏 跨文化传播与接受</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
+<strong>英语世界的翻译</strong>：美国诗人王红公（Kenneth Rexroth）译《鹿柴》为"Deer Park"，传达原诗的空寂禅意。<br><br>
+<strong>日本的接受</strong>：室町时代五山禅僧将王维诗与禅宗结合，视为"文字禅"典范。松尾芭蕉俳句受王维影响。<br><br>
+<strong>法国的传播</strong>：汉学家沙畹（Édouard Chavannes）法译王维诗，影响法国象征主义诗歌。<br><br>
+<strong>现代艺术</strong>：当代艺术家徐冰、谷文达等从王维诗画中汲取灵感，创作现代装置艺术。
+</div>
+</div>
+</div>
 
-&lt;h2 id=&#34;延伸阅读·王维诗选&#34;&gt;&lt;a href=&#34;#延伸阅读·王维诗选&#34; class=&#34;headerlink&#34; title=&#34;延伸阅读·王维诗选&#34;&gt;&lt;/a&gt;延伸阅读·王维诗选&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #6c757d; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(108, 117, 125, 0.1); min-height: 350px;&#34;&gt;
-&lt;div style=&#34;text-align: center; margin-bottom: 2rem;&#34;&gt;
-&lt;div style=&#34;color: #495057; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;&#34;&gt;📖 王维诗选读&lt;/div&gt;
-&lt;div style=&#34;color: #6c757d; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;&#34;&gt;&#34;行到水穷处，坐看云起时&#34;——王维诗中的禅意与画境&lt;/div&gt;
-&lt;/div&gt;
+<h2 id="延伸阅读·王维诗选"><a href="#延伸阅读·王维诗选" class="headerlink" title="延伸阅读·王维诗选"></a>延伸阅读·王维诗选</h2><div style="background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%); border: 2px solid #6c757d; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(108, 117, 125, 0.1); min-height: 350px;">
+<div style="text-align: center; margin-bottom: 2rem;">
+<div style="color: #495057; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">📖 王维诗选读</div>
+<div style="color: #6c757d; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">"行到水穷处，坐看云起时"——王维诗中的禅意与画境</div>
+</div>
 
-&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;&#34;&gt;
-&lt;div style=&#34;background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #2ecc71;&#34;&gt;
-&lt;div style=&#34;color: #27ae60; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;&#34;&gt;《山居秋暝》&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;
-空山新雨后，天气晚来秋。&lt;br&gt;
-明月松间照，清泉石上流。&lt;br&gt;
-竹喧归浣女，莲动下渔舟。&lt;br&gt;
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+<div style="background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #2ecc71;">
+<div style="color: #27ae60; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">《山居秋暝》</div>
+<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
+空山新雨后，天气晚来秋。<br>
+明月松间照，清泉石上流。<br>
+竹喧归浣女，莲动下渔舟。<br>
 随意春芳歇，王孙自可留。
-&lt;/div&gt;
-&lt;div style=&#34;color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;&#34;&gt;
+</div>
+<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
 评：空山不空，充满生机。动静结合，诗画交融。
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;div style=&#34;background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #9b59b6;&#34;&gt;
-&lt;div style=&#34;color: #6c3483; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;&#34;&gt;《终南别业》&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;
-中岁颇好道，晚家南山陲。&lt;br&gt;
-兴来每独往，胜事空自知。&lt;br&gt;
-行到水穷处，坐看云起时。&lt;br&gt;
+<div style="background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #9b59b6;">
+<div style="color: #6c3483; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">《终南别业》</div>
+<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
+中岁颇好道，晚家南山陲。<br>
+兴来每独往，胜事空自知。<br>
+行到水穷处，坐看云起时。<br>
 偶然值林叟，谈笑无还期。
-&lt;/div&gt;
-&lt;div style=&#34;color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;&#34;&gt;
-评：&#34;行到水穷处，坐看云起时&#34;是禅宗名句，随缘任运，自在洒脱。
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
+评："行到水穷处，坐看云起时"是禅宗名句，随缘任运，自在洒脱。
+</div>
+</div>
 
-&lt;div style=&#34;background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #3498db;&#34;&gt;
-&lt;div style=&#34;color: #1a5276; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;&#34;&gt;《鸟鸣涧》&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;
-人闲桂花落，夜静春山空。&lt;br&gt;
+<div style="background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #3498db;">
+<div style="color: #1a5276; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">《鸟鸣涧》</div>
+<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
+人闲桂花落，夜静春山空。<br>
 月出惊山鸟，时鸣春涧中。
-&lt;/div&gt;
-&lt;div style=&#34;color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;&#34;&gt;
+</div>
+<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
 评：与《鹿柴》异曲同工，以动衬静，空山中有鸟鸣，幽静中有生机。
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
+</div>
 
-&lt;div style=&#34;text-align: center; margin-top: 2rem; color: #6c757d; font-size: 1rem; font-style: italic;&#34;&gt;
+<div style="text-align: center; margin-top: 2rem; color: #6c757d; font-size: 1rem; font-style: italic;">
 王维以诗为画，以画入禅，开创了中国诗歌的独特境界。《鹿柴》虽只有二十字，却包含了诗、画、禅的无穷意蕴。
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;/div&gt;
-&lt;/div&gt;
-
-        </article>
-        
-        <!-- 标签 -->
-        
-        <div class="article-tags">
-            <i class="fas fa-tags" style="color: var(--classical-brown); margin-right: 10px;"></i>
-            
-                <a href="/poetry-garden/tags/%E5%94%90%E8%AF%97/" class="tag-link">
-                    唐诗
-                </a>
-            
-                <a href="/poetry-garden/tags/%E7%8E%8B%E7%BB%B4/" class="tag-link">
-                    王维
-                </a>
-            
-                <a href="/poetry-garden/tags/%E7%A6%85%E6%84%8F/" class="tag-link">
-                    禅意
-                </a>
-            
-                <a href="/poetry-garden/tags/%E5%B1%B1%E6%B0%B4%E8%AF%97/" class="tag-link">
-                    山水诗
-                </a>
-            
-                <a href="/poetry-garden/tags/%E9%B9%BF%E6%9F%B4/" class="tag-link">
-                    鹿柴
-                </a>
-            
-                <a href="/poetry-garden/tags/%E7%A9%BA%E5%B1%B1/" class="tag-link">
-                    空山
-                </a>
-            
-        </div>
-        
-        
-        <!-- 文章导航 -->
-        <div class="article-navigation">
-            
-            <a href="/poetry-garden/2026/08/20/%E7%9B%B8%E6%80%9D-%E7%8E%8B%E7%BB%B4/" class="nav-button nav-prev">
-                <div class="nav-icon">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-                <div class="nav-content">
-                    <h4>上一篇</h4>
-                    <span>相思-王维</span>
-                </div>
-            </a>
-            
-            
-            
-            <a href="/poetry-garden/2026/06/05/%E6%B1%9F%E9%9B%AA-%E6%9F%B3%E5%AE%97%E5%85%83/" class="nav-button nav-next">
-                <div class="nav-content">
-                    <h4>下一篇</h4>
-                    <span>江雪-柳宗元</span>
-                </div>
-                <div class="nav-icon">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </a>
-            
-        </div>
-        
-        <!-- 返回链接 -->
-        <div style="text-align: center; margin-top: 50px;">
-            <a href="/poetry-garden/" class="back-link">
-                <i class="fas fa-home"></i> 返回首页
-            </a>
-        </div>
-    </main>
-    
-    <!-- 页脚 -->
-    <footer class="classical-footer">
-        <div class="footer-container">
-            <nav class="footer-nav">
-                <a href="/poetry-garden/" class="footer-link">首页</a>
-                <a href="/poetry-garden/archives" class="footer-link">文章归档</a>
-                <a href="/poetry-garden/categories" class="footer-link">分类目录</a>
-                <a href="/poetry-garden/tags" class="footer-link">标签云</a>
-                <a href="/poetry-garden/about" class="footer-link">关于我们</a>
-            </nav>
-            
-            <div class="footer-info">
-                <p>
-                    <span class="footer-seal">詩</span>
-                    版权所有 © 2026 踏月诗阁
-                    <span class="footer-seal">閣</span>
-                </p>
-                <p style="margin-top: 10px;">传承古典文化，品味诗意人生</p>
-                <p style="margin-top: 5px; font-size: 0.8rem; color: var(--classical-gold);">
-                    基于 踏月诗客 · 倾心呈现
-                </p>
-            </div>
-        </div>
-    </footer>
-    
-    <script>
-        // 页面滚动效果
-        document.addEventListener('DOMContentLoaded', function() {
-            const header = document.querySelector('.classical-header');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    header.style.boxShadow = '0 5px 20px rgba(58, 38, 21, 0.1)';
-                    header.style.background = 'rgba(248, 245, 230, 0.98)';
-                } else {
-                    header.style.boxShadow = '0 2px 10px rgba(58, 38, 21, 0.1)';
-                    header.style.background = 'rgba(248, 245, 230, 0.98)';
-                }
-            });
-            
-            // 文章内容块渐入效果
-            const contentBlocks = document.querySelectorAll('.article-content h1, .article-content h2, .article-content h3, .article-content p, .article-content blockquote');
-            contentBlocks.forEach((block, index) => {
-                block.style.opacity = '0';
-                block.style.transform = 'translateY(20px)';
-                block.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                
-                setTimeout(() => {
-                    block.style.opacity = '1';
-                    block.style.transform = 'translateY(0)';
-                }, index * 100);
-            });
-            
-            // 为链接添加预览效果
-            document.querySelectorAll('.article-content a').forEach(link => {
-                link.addEventListener('mouseenter', function(e) {
-                    const ripple = document.createElement('span');
-                    ripple.style.cssText = `
-                        position: absolute;
-                        background: rgba(195, 51, 51, 0.1);
-                        border-radius: 50%;
-                        transform: scale(0);
-                        animation: ripple 0.6s linear;
-                        pointer-events: none;
-                    `;
-                    
-                    const size = Math.max(this.offsetWidth, this.offsetHeight);
-                    ripple.style.width = ripple.style.height = size + 'px';
-                    ripple.style.left = e.offsetX - size/2 + 'px';
-                    ripple.style.top = e.offsetY - size/2 + 'px';
-                    
-                    this.style.position = 'relative';
-                    this.style.overflow = 'hidden';
-                    this.appendChild(ripple);
-                    
-                    setTimeout(() => ripple.remove(), 600);
-                });
-            });
-            
-            // 替换页面中的英文文本
-            replaceEnglishText();
-        });
-        
-        // 显示预览效果
-        function showPreview() {
-            const preview = document.getElementById('articlePreview');
-            const previewContent = document.getElementById('previewContent');
-            
-            // 获取文章的实际内容（纯文本）
-            let content = '';
-            const articleContent = document.querySelector('.article-content');
-            if (articleContent) {
-                content = articleContent.innerText;
-            }
-            
-            // 截取前300字作为预览
-            let excerpt = content.substring(0, 300);
-            if (content.length > 300) {
-                excerpt += '...';
-            }
-            
-            previewContent.innerHTML = `
-                <div class="preview-excerpt">
-                    <p>${excerpt}</p>
-                </div>
-                <p>这是文章《鹿柴-王维》的预览效果。您可以在此处提前查看文章的部分内容。</p>
-                <p>古典风格的页面设计将传统美学与现代网页技术完美融合，为您带来沉浸式的阅读体验。</p>
-                <p style="color: var(--classical-red); margin-top: 20px;">
-                    <i class="fas fa-heart"></i> 点击关闭按钮或ESC键可以退出预览模式
-                </p>
-                <p style="margin-top: 20px; padding: 15px; background: rgba(193, 154, 107, 0.1); border-radius: 10px;">
-                    <i class="fas fa-info-circle"></i> 预览功能仅显示部分内容，阅读全文请返回文章页面
-                </p>
-            `;
-            
-            preview.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        // 关闭预览效果
-        function closePreview() {
-            const preview = document.getElementById('articlePreview');
-            preview.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-        
-        // 按ESC键关闭预览
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closePreview();
-            }
-        });
-        
-        // 点击预览区域外部关闭
-        document.getElementById('articlePreview').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closePreview();
-            }
-        });
-        
-        // 替换英文文本为中文
-        function replaceEnglishText() {
-            // 替换导航中的可能存在的英文
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                if (link.textContent.includes('Home')) {
-                    link.innerHTML = '<i class="fas fa-home"></i> 首页';
-                }
-                if (link.textContent.includes('Archive')) {
-                    link.innerHTML = '<i class="fas fa-archive"></i> 归档';
-                }
-                if (link.textContent.includes('Categories')) {
-                    link.innerHTML = '<i class="fas fa-layer-group"></i> 分类';
-                }
-                if (link.textContent.includes('Tags')) {
-                    link.innerHTML = '<i class="fas fa-tags"></i> 标签';
-                }
-                if (link.textContent.includes('About')) {
-                    link.innerHTML = '<i class="fas fa-book"></i> 关于';
-                }
-            });
-            
-            // 替换页脚中的可能存在的英文
-            const footerLinks = document.querySelectorAll('.footer-link');
-            footerLinks.forEach(link => {
-                if (link.textContent.includes('Home')) {
-                    link.textContent = '首页';
-                }
-                if (link.textContent.includes('Archive')) {
-                    link.textContent = '文章归档';
-                }
-                if (link.textContent.includes('Categories')) {
-                    link.textContent = '分类目录';
-                }
-                if (link.textContent.includes('Tags')) {
-                    link.textContent = '标签云';
-                }
-                if (link.textContent.includes('About')) {
-                    link.textContent = '关于我们';
-                }
-            });
-            
-            // 检查并替换页脚信息
-            const footerInfo = document.querySelector('.footer-info');
-            if (footerInfo) {
-                footerInfo.innerHTML = footerInfo.innerHTML
-                    .replace(/© \d{4}.*?Theme.*?by.*?/g, '')
-                    .replace(/Proudly published with Hexo/g, '基于Hexo · 倾心呈现');
-            }
-            
-            // 检查并替换其他可能的英文文本
-            document.body.innerHTML = document.body.innerHTML
-                .replace(/Read More/g, '阅读全文')
-                .replace(/Comments/g, '评论')
-                .replace(/Posted on/g, '发布于')
-                .replace(/Share/g, '分享')
-                .replace(/Category/g, '分类')
-                .replace(/Tag/g, '标签')
-                .replace(/Posted in/g, '分类')
-                .replace(/Author/g, '作者');
-        }
-        
-        // 添加CSS动画
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-            
-            @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(30px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            
-            .article-content {
-                animation: fadeInUp 0.8s ease-out;
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
-<!-- hexo injector body_end start -->
+</div>
+</div>
+</div></div><div class="share"><span>공유하기</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://lyluchao.github.io/2026/07/15/鹿柴-王维/%20踏月诗阁%20鹿柴-王维"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/poetry-garden/2026/08/20/%E7%9B%B8%E6%80%9D-%E7%8E%8B%E7%BB%B4/" title="相思-王维"><i class="fa fa-angle-double-left"></i>&nbsp;이전 포스트: 相思-王维</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/poetry-garden/2026/06/05/%E6%B1%9F%E9%9B%AA-%E6%9F%B3%E5%AE%97%E5%85%83/" title="江雪-柳宗元">다음 포스트: 江雪-柳宗元&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/poetry-garden/js/jquery-3.1.0.min.js"></script><script src="/poetry-garden/js/bootstrap.min.js"></script><script src="/poetry-garden/js/jquery-migrate-1.2.1.min.js"></script><script src="/poetry-garden/js/jquery.appear.js"></script><script src="/poetry-garden/js/google-analytics.js"></script><script src="/poetry-garden/js/typography.js"></script><!-- hexo injector body_end start -->
 <script>
 // 检测是否需要加载 Mermaid
 if (document.querySelector('.mermaid')) {
@@ -1540,8 +746,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-<!-- hexo injector body_end end --></body>
-</html>
+<!-- hexo injector body_end end --></body></html>
     </main>
     
     <!-- 古典页脚 -->

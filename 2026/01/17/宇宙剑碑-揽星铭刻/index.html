@@ -206,8 +206,7 @@
             }
         }
     </style>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/poetry-garden/atom.xml" title="踏月诗阁" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 <body>
     <!-- 古典页眉 -->
     <header class="classical-header">
@@ -239,1189 +238,398 @@
     
     <!-- 主内容 -->
     <main class="classical-container">
-        <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>宇宙剑碑·揽星卷宗铭刻记录 - 踏月诗阁</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --classical-paper: #f8f5e6;
-            --classical-ink: #3a2615;
-            --classical-red: #c33;
-            --classical-gold: #c19a6b;
-            --classical-brown: #8b4513;
-            --classical-blue: #5d8aa8;
-            --classical-border: #d4b483;
-            --classical-shadow: rgba(58, 38, 21, 0.1);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Noto Serif SC', serif;
-            background: var(--classical-paper);
-            color: var(--classical-ink);
-            line-height: 1.6;
-            min-height: 100vh;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(193, 154, 107, 0.05) 0%, transparent 30%),
-                radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 30%),
-                linear-gradient(135deg, #f8f5e6 0%, #f0e6d6 100%);
-            padding-top: 80px;
-        }
-        
-        .classical-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(248, 245, 230, 0.98);
-            backdrop-filter: blur(8px);
-            border-bottom: 2px solid var(--classical-border);
-            z-index: 1000;
-            padding: 15px 0;
-            box-shadow: 0 2px 10px var(--classical-shadow);
-        }
-        
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-        
-        .site-logo {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 1.8rem;
-            color: var(--classical-brown);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .site-logo i {
-            color: var(--classical-red);
-            font-size: 1.5rem;
-        }
-        
-        .classical-nav {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        
-        .nav-link {
-            font-family: 'Noto Serif SC', serif;
-            color: var(--classical-ink);
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            border: 1px solid transparent;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-        
-        .nav-link:hover {
-            color: var(--classical-red);
-            border-color: var(--classical-red);
-            background: rgba(195, 51, 51, 0.05);
-        }
-        
-        .nav-link.active {
-            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
-            color: white;
-            border: none;
-            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
-        }
-        
-        .article-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        .article-header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding: 50px 40px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid var(--classical-border);
-            border-radius: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .article-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--classical-red), var(--classical-gold), var(--classical-blue));
-        }
-        
-        .article-title {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 2.8rem;
-            color: var(--classical-red);
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-        
-        .article-meta {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
-            color: var(--classical-blue);
-            font-size: 1rem;
-            margin-top: 25px;
-        }
-        
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: rgba(139, 69, 19, 0.05);
-            border-radius: 20px;
-            border: 1px solid var(--classical-border);
-        }
-        
-        .article-content {
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid var(--classical-border);
-            border-radius: 15px;
-            padding: 60px 50px;
-            margin-bottom: 40px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            position: relative;
-        }
-        
-        .article-content::before {
-            content: '❝';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 3rem;
-            color: var(--classical-gold);
-            font-family: 'Ma Shan Zheng', cursive;
-            opacity: 0.3;
-        }
-        
-        .article-content h1,
-        .article-content h2,
-        .article-content h3 {
-            font-family: 'Ma Shan Zheng', cursive;
-            color: var(--classical-brown);
-            margin: 30px 0 15px;
-            border-bottom: 2px solid var(--classical-gold);
-            padding-bottom: 5px;
-        }
-        
-        .article-content p {
-            margin-bottom: 25px;
-            text-indent: 2em;
-        }
-        
-        .article-content blockquote {
-            border-left: 4px solid var(--classical-red);
-            padding: 20px 30px;
-            margin: 30px 0;
-            background: rgba(195, 51, 51, 0.03);
-            font-style: italic;
-            border-radius: 0 10px 10px 0;
-        }
-        
-        .article-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px dashed var(--classical-border);
-        }
-        
-        .tag-link {
-            padding: 8px 16px;
-            background: linear-gradient(135deg, rgba(193, 154, 107, 0.1), rgba(139, 69, 19, 0.1));
-            border: 1px solid var(--classical-gold);
-            border-radius: 20px;
-            color: var(--classical-brown);
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-        }
-        
-        .tag-link:hover {
-            background: linear-gradient(135deg, var(--classical-gold), var(--classical-brown));
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .article-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 50px;
-            padding: 0 20px;
-        }
-        
-        .nav-button {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 20px 30px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid var(--classical-border);
-            border-radius: 15px;
-            text-decoration: none;
-            color: var(--classical-ink);
-            transition: all 0.3s;
-            max-width: 45%;
-            width: 100%;
-        }
-        
-        .nav-button:hover {
-            transform: translateY(-5px);
-            border-color: var(--classical-red);
-            box-shadow: 0 10px 25px var(--classical-shadow);
-        }
-        
-        .nav-prev .nav-icon {
-            background: linear-gradient(135deg, var(--classical-blue), var(--classical-gold));
-        }
-        
-        .nav-next .nav-icon {
-            background: linear-gradient(135deg, var(--classical-gold), var(--classical-red));
-        }
-        
-        .nav-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-        
-        .nav-content h4 {
-            color: var(--classical-brown);
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-        }
-        
-        .nav-content span {
-            color: var(--classical-ink);
-            font-size: 1rem;
-            display: block;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-        }
-        
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 40px;
-            padding: 12px 25px;
-            background: var(--classical-gold);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s;
-        }
-        
-        .back-link:hover {
-            background: var(--classical-brown);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
-        }
-        
-        .classical-footer {
-            background: rgba(248, 245, 230, 0.95);
-            border-top: 2px solid var(--classical-border);
-            padding: 50px 0 40px;
-            margin-top: 80px;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .footer-nav {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .footer-link {
-            font-family: 'Noto Serif SC', serif;
-            color: var(--classical-ink);
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            border: 1px solid var(--classical-border);
-            transition: all 0.3s;
-            font-size: 0.95rem;
-        }
-        
-        .footer-link:hover {
-            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
-            border-color: transparent;
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .footer-info {
-            text-align: center;
-            color: var(--classical-blue);
-            padding-top: 30px;
-            border-top: 1px solid var(--classical-border);
-            font-size: 0.9rem;
-            line-height: 1.8;
-        }
-        
-        .footer-seal {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: var(--classical-red);
-            color: white;
-            border-radius: 50%;
-            line-height: 40px;
-            margin: 0 10px;
-            font-weight: bold;
-        }
-        
-        /* 预览效果样式 */
-        .article-preview {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(58, 38, 21, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.5s ease;
-        }
-        
-        .article-preview.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .preview-container {
-            max-width: 800px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-            background: var(--classical-paper);
-            border-radius: 20px;
-            padding: 40px;
-            border: 3px solid var(--classical-gold);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            transform: scale(0.9);
-            transition: transform 0.5s ease;
-        }
-        
-        .article-preview.active .preview-container {
-            transform: scale(1);
-        }
-        
-        .preview-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--classical-border);
-        }
-        
-        .preview-title {
-            font-family: 'Ma Shan Zheng', cursive;
-            color: var(--classical-red);
-            font-size: 1.8rem;
-        }
-        
-        .close-preview {
-            background: var(--classical-red);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-        }
-        
-        .close-preview:hover {
-            background: var(--classical-brown);
-            transform: rotate(90deg);
-        }
-        
-        .preview-content {
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-        
-        .preview-excerpt {
-            font-style: italic;
-            color: var(--classical-brown);
-            border-left: 3px solid var(--classical-gold);
-            padding-left: 20px;
-            margin: 20px 0;
-        }
-        
-        @media (max-width: 768px) {
-            .article-title {
-                font-size: 2rem;
-            }
-            
-            .article-content {
-                padding: 40px 20px;
-            }
-            
-            .article-navigation {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .nav-button {
-                max-width: 100%;
-            }
-            
-            .article-meta {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- 古典页眉 -->
-    <header class="classical-header">
-        <div class="header-container">
-            <a href="/poetry-garden/" class="site-logo">
-                <i class="fas fa-feather-alt"></i>
-                踏月诗阁
-            </a>
-            
-            <nav class="classical-nav">
-                <a href="/poetry-garden/" class="nav-link">
-                    <i class="fas fa-home"></i> 首页
-                </a>
-                <a href="/poetry-garden/archives" class="nav-link">
-                    <i class="fas fa-archive"></i> 归档
-                </a>
-                <a href="/poetry-garden/categories" class="nav-link">
-                    <i class="fas fa-layer-group"></i> 分类
-                </a>
-                <a href="/poetry-garden/tags" class="nav-link">
-                    <i class="fas fa-tags"></i> 标签
-                </a>
-                <a href="/poetry-garden/about" class="nav-link active">
-                    <i class="fas fa-book"></i> 文章
-                </a>
-            </nav>
-        </div>
-    </header>
-    
-    <!-- 文章预览模态框 -->
-    <div class="article-preview" id="articlePreview">
-        <div class="preview-container">
-            <div class="preview-header">
-                <h2 class="preview-title">文章预览</h2>
-                <button class="close-preview" onclick="closePreview()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="preview-content" id="previewContent">
-                <!-- 预览内容将通过JavaScript动态填充 -->
-            </div>
-        </div>
-    </div>
-    
-    <main class="article-container">
-        <!-- 文章头部 -->
-        <header class="article-header">
-            <h1 class="article-title">《宇宙剑碑·揽星卷宗铭刻记录》</h1>
-            
-            <div class="article-meta">
-                
-                <div class="meta-item">
-                    <i class="far fa-calendar-alt"></i>
-                    <span>2026年01月17日</span>
-                </div>
-                
-                
-                
-                
-                
-                <div class="meta-item">
-                    <i class="fas fa-sync-alt"></i>
-                    <span>更新于：2026-01-17</span>
-                </div>
-                
-                
-                <!-- 添加预览按钮 -->
-                <div class="meta-item" onclick="showPreview()" style="cursor: pointer; background: linear-gradient(135deg, var(--classical-gold), var(--classical-red)); color: white;">
-                    <i class="fas fa-eye"></i>
-                    <span>预览效果</span>
-                </div>
-            </div>
-        </header>
-        
-        <!-- 文章内容 -->
-        <article class="article-content">
-            &lt;div style=&#34;font-family: &#39;STKaiti&#39;, &#39;SimSun&#39;, &#39;Source Han Serif SC&#39;, serif; line-height: 1.8; color: #1a1a2e; max-width: 900px; margin: 0 auto; padding: 0 1rem;&#34;&gt;
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>宇宙剑碑·揽星卷宗铭刻记录 · 踏月诗阁</title><meta name="description" content="宇宙剑碑·星河永铭
 
-&lt;!-- 剑碑全景 --&gt;
-&lt;div style=&#34;background: linear-gradient(145deg, #000000 0%, #1a1a1a 30%, #2d2d2d 70%, #000000 100%); color: white; padding: 3rem 2rem; margin: 2rem 0 5rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.6), inset 0 0 100px rgba(64, 224, 208, 0.1); border-radius: 20px; border: 3px solid rgba(64, 224, 208, 0.2);&#34;&gt;
-&lt;div style=&#34;position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
+
+揽星卷宗·正典首章铭刻处
+
+
+
+
+
+
+碑体材质
+星核玄铁·天河真金
+
+
+
+铭刻技法
+长风刻刀·星魄为墨
+
+
+
+
+立于宇宙中心·铭于星河纹中央·永恒不灭
+
+
+
+
+第一区·碑体结构与铭刻法理一、碑体宇宙结构
+
+
+
+🗿 碑体构成
+
+基座：八荒玄石，象征宇宙八极
+碑身：星核玄铁，取"><meta name="og:description" content="宇宙剑碑·星河永铭
+
+
+揽星卷宗·正典首章铭刻处
+
+
+
+
+
+
+碑体材质
+星核玄铁·天河真金
+
+
+
+铭刻技法
+长风刻刀·星魄为墨
+
+
+
+
+立于宇宙中心·铭于星河纹中央·永恒不灭
+
+
+
+
+第一区·碑体结构与铭刻法理一、碑体宇宙结构
+
+
+
+🗿 碑体构成
+
+基座：八荒玄石，象征宇宙八极
+碑身：星核玄铁，取"><meta name="twitter:site" content="踏月诗阁"><meta name="twitter:title" content="宇宙剑碑·揽星卷宗铭刻记录"><meta name="twitter:card" content="summary"><meta name="keywords" content="诗词,宋词,古典诗词,文学,诗歌"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/poetry-garden/css/bootstrap.min.css"><link rel="stylesheet" href="/poetry-garden/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/poetry-garden/">대문</a></li><li><a href="/poetry-garden/archives">아카이브</a></li><li><a href="/poetry-garden/categories">카테고리</a></li><li><a href="/poetry-garden/tags">태그</a></li><!-- +make_page_links() // 暂时禁用--><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post"><h1 class="post-title">宇宙剑碑·揽星卷宗铭刻记录</h1><div class="post-meta"><span class="post-time">post.posted 2026-01-17</span> | <span class="post-category"><a href="/poetry-garden/categories/%E5%89%91%E7%A2%91%E9%93%AD%E5%88%BB/">剑碑铭刻</a></span> | <span class="post-tags"><a href="/poetry-garden/tags/%E6%98%9F%E6%B2%B3%E5%89%91%E9%98%B5/">星河剑阵</a>, <a href="/poetry-garden/tags/%E5%AE%87%E5%AE%99%E5%89%91%E7%A2%91/">宇宙剑碑</a>, <a href="/poetry-garden/tags/%E7%A2%91%E5%88%BB/">碑刻</a>, <a href="/poetry-garden/tags/%E6%8F%BD%E6%98%9F%E9%93%AD%E6%96%87/">揽星铭文</a></span></div><div class="post-content"><div style="font-family: 'STKaiti', 'SimSun', 'Source Han Serif SC', serif; line-height: 1.8; color: #1a1a2e; max-width: 900px; margin: 0 auto; padding: 0 1rem;">
+
+<!-- 剑碑全景 -->
+<div style="background: linear-gradient(145deg, #000000 0%, #1a1a1a 30%, #2d2d2d 70%, #000000 100%); color: white; padding: 3rem 2rem; margin: 2rem 0 5rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.6), inset 0 0 100px rgba(64, 224, 208, 0.1); border-radius: 20px; border: 3px solid rgba(64, 224, 208, 0.2);">
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
     radial-gradient(circle at 20% 30%, rgba(64, 224, 208, 0.05) 0%, transparent 70%),
     radial-gradient(circle at 80% 70%, rgba(147, 112, 219, 0.05) 0%, transparent 70%),
-    repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(255,255,255,0.02) 1px, rgba(255,255,255,0.02) 2px);&#34;&gt;&lt;/div&gt;
+    repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(255,255,255,0.02) 1px, rgba(255,255,255,0.02) 2px);"></div>
 
-&lt;!-- 碑顶星河纹 --&gt;
-&lt;div style=&#34;position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 200px; height: 100px; background: conic-gradient(from 0deg, transparent, rgba(64,224,208,0.2), rgba(147,112,219,0.2), transparent); opacity: 0.3; border-radius: 50%;&#34;&gt;&lt;/div&gt;
+<!-- 碑顶星河纹 -->
+<div style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 200px; height: 100px; background: conic-gradient(from 0deg, transparent, rgba(64,224,208,0.2), rgba(147,112,219,0.2), transparent); opacity: 0.3; border-radius: 50%;"></div>
 
-&lt;div style=&#34;position: relative; z-index: 2;&#34;&gt;
-&lt;div style=&#34;font-size: 2.8rem; font-weight: bold; margin: 0; text-shadow: 0 2px 20px rgba(0,0,0,0.9), 0 0 40px rgba(64, 224, 208, 0.5); letter-spacing: 4px; font-family: &#39;STKaiti&#39;, serif; line-height: 1.2; padding-bottom: 1rem;&#34;&gt;
+<div style="position: relative; z-index: 2;">
+<div style="font-size: 2.8rem; font-weight: bold; margin: 0; text-shadow: 0 2px 20px rgba(0,0,0,0.9), 0 0 40px rgba(64, 224, 208, 0.5); letter-spacing: 4px; font-family: 'STKaiti', serif; line-height: 1.2; padding-bottom: 1rem;">
 宇宙剑碑·星河永铭
-&lt;/div&gt;
-&lt;div style=&#34;font-size: 1.3rem; opacity: 0.9; margin: 1rem 0; font-weight: 300; letter-spacing: 2px; color: #b0e0e6;&#34;&gt;
+</div>
+<div style="font-size: 1.3rem; opacity: 0.9; margin: 1rem 0; font-weight: 300; letter-spacing: 2px; color: #b0e0e6;">
 揽星卷宗·正典首章铭刻处
-&lt;/div&gt;
+</div>
 
-&lt;div style=&#34;width: 250px; height: 2px; background: linear-gradient(90deg, transparent, rgba(64, 224, 208, 0.7), rgba(147, 112, 219, 0.7), transparent); margin: 2rem auto; opacity: 0.8;&#34;&gt;&lt;/div&gt;
+<div style="width: 250px; height: 2px; background: linear-gradient(90deg, transparent, rgba(64, 224, 208, 0.7), rgba(147, 112, 219, 0.7), transparent); margin: 2rem auto; opacity: 0.8;"></div>
 
-&lt;div style=&#34;display: flex; justify-content: center; gap: 3rem; margin-top: 2.5rem;&#34;&gt;
-&lt;div style=&#34;text-align: center;&#34;&gt;
-&lt;div style=&#34;font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem;&#34;&gt;碑体材质&lt;/div&gt;
-&lt;div style=&#34;font-size: 1.1rem; font-weight: bold; color: #40e0d0;&#34;&gt;星核玄铁·天河真金&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;width: 1px; background: rgba(255,255,255,0.2); height: 40px;&#34;&gt;&lt;/div&gt;
-&lt;div style=&#34;text-align: center;&#34;&gt;
-&lt;div style=&#34;font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem;&#34;&gt;铭刻技法&lt;/div&gt;
-&lt;div style=&#34;font-size: 1.1rem; font-weight: bold; color: #9370db;&#34;&gt;长风刻刀·星魄为墨&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="display: flex; justify-content: center; gap: 3rem; margin-top: 2.5rem;">
+<div style="text-align: center;">
+<div style="font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem;">碑体材质</div>
+<div style="font-size: 1.1rem; font-weight: bold; color: #40e0d0;">星核玄铁·天河真金</div>
+</div>
+<div style="width: 1px; background: rgba(255,255,255,0.2); height: 40px;"></div>
+<div style="text-align: center;">
+<div style="font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-bottom: 0.5rem;">铭刻技法</div>
+<div style="font-size: 1.1rem; font-weight: bold; color: #9370db;">长风刻刀·星魄为墨</div>
+</div>
+</div>
 
-&lt;div style=&#34;margin-top: 3rem; font-size: 0.9rem; color: rgba(255,255,255,0.7); font-style: italic;&#34;&gt;
+<div style="margin-top: 3rem; font-size: 0.9rem; color: rgba(255,255,255,0.7); font-style: italic;">
 立于宇宙中心·铭于星河纹中央·永恒不灭
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
+</div>
 
-&lt;h2 id=&#34;第一区·碑体结构与铭刻法理&#34;&gt;&lt;a href=&#34;#第一区·碑体结构与铭刻法理&#34; class=&#34;headerlink&#34; title=&#34;第一区·碑体结构与铭刻法理&#34;&gt;&lt;/a&gt;第一区·碑体结构与铭刻法理&lt;/h2&gt;&lt;h3 id=&#34;一、碑体宇宙结构&#34;&gt;&lt;a href=&#34;#一、碑体宇宙结构&#34; class=&#34;headerlink&#34; title=&#34;一、碑体宇宙结构&#34;&gt;&lt;/a&gt;一、碑体宇宙结构&lt;/h3&gt;&lt;div style=&#34;background: linear-gradient(145deg, #0a1929 0%, #1a2b3a 100%); padding: 2.5rem; border-radius: 15px; border: 2px solid #40e0d0; margin: 2.5rem 0; color: rgba(255, 255, 255, 0.9);&#34;&gt;
+<h2 id="第一区·碑体结构与铭刻法理"><a href="#第一区·碑体结构与铭刻法理" class="headerlink" title="第一区·碑体结构与铭刻法理"></a>第一区·碑体结构与铭刻法理</h2><h3 id="一、碑体宇宙结构"><a href="#一、碑体宇宙结构" class="headerlink" title="一、碑体宇宙结构"></a>一、碑体宇宙结构</h3><div style="background: linear-gradient(145deg, #0a1929 0%, #1a2b3a 100%); padding: 2.5rem; border-radius: 15px; border: 2px solid #40e0d0; margin: 2.5rem 0; color: rgba(255, 255, 255, 0.9);">
 
-&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;&#34;&gt;
-&lt;div style=&#34;background: rgba(64, 224, 208, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(127, 255, 212, 0.3);&#34;&gt;
-&lt;div style=&#34;color: #7fffd4; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.2rem;&#34;&gt;🗿 碑体构成&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;&#34;&gt;
-&lt;strong&gt;基座：&lt;/strong&gt;八荒玄石，象征宇宙八极&lt;br&gt;
-&lt;strong&gt;碑身：&lt;/strong&gt;星核玄铁，取自星辰核心&lt;br&gt;
-&lt;strong&gt;碑面：&lt;/strong&gt;天河真金，熔炼银河精华&lt;br&gt;
-&lt;strong&gt;纹饰：&lt;/strong&gt;星河流动纹，动态铭刻宇宙运行
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: rgba(64, 224, 208, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(127, 255, 212, 0.3);&#34;&gt;
-&lt;div style=&#34;color: #7fffd4; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.2rem;&#34;&gt;📐 碑体尺寸&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;&#34;&gt;
-&lt;strong&gt;高度：&lt;/strong&gt;三万六千尺，合周天之数&lt;br&gt;
-&lt;strong&gt;宽度：&lt;/strong&gt;八千一百尺，合九九之极&lt;br&gt;
-&lt;strong&gt;厚度：&lt;/strong&gt;三百六十尺，合一年之日&lt;br&gt;
-&lt;strong&gt;重量：&lt;/strong&gt;不可计量，随宇宙膨胀而变化
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
+<div style="background: rgba(64, 224, 208, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(127, 255, 212, 0.3);">
+<div style="color: #7fffd4; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.2rem;">🗿 碑体构成</div>
+<div style="color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;">
+<strong>基座：</strong>八荒玄石，象征宇宙八极<br>
+<strong>碑身：</strong>星核玄铁，取自星辰核心<br>
+<strong>碑面：</strong>天河真金，熔炼银河精华<br>
+<strong>纹饰：</strong>星河流动纹，动态铭刻宇宙运行
+</div>
+</div>
+<div style="background: rgba(64, 224, 208, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(127, 255, 212, 0.3);">
+<div style="color: #7fffd4; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.2rem;">📐 碑体尺寸</div>
+<div style="color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;">
+<strong>高度：</strong>三万六千尺，合周天之数<br>
+<strong>宽度：</strong>八千一百尺，合九九之极<br>
+<strong>厚度：</strong>三百六十尺，合一年之日<br>
+<strong>重量：</strong>不可计量，随宇宙膨胀而变化
+</div>
+</div>
+</div>
 
-&lt;div style=&#34;background: rgba(26, 42, 46, 0.8); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 1px solid rgba(127, 255, 212, 0.3);&#34;&gt;
-&lt;div style=&#34;color: #40e0d0; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.2rem;&#34;&gt;🌀 碑体特性&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;&#34;&gt;
-&lt;strong&gt;永恒性：&lt;/strong&gt;碑体材质与宇宙同寿，不随时间流逝而变化&lt;br&gt;
-&lt;strong&gt;共鸣性：&lt;/strong&gt;可与星魄共鸣，在星空下发出宇宙之音&lt;br&gt;
-&lt;strong&gt;承载性：&lt;/strong&gt;可承载无限铭文，每一字皆具宇宙重量&lt;br&gt;
-&lt;strong&gt;显现性：&lt;/strong&gt;在不同宇宙尺度下呈现不同铭文内容
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="background: rgba(26, 42, 46, 0.8); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 1px solid rgba(127, 255, 212, 0.3);">
+<div style="color: #40e0d0; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.2rem;">🌀 碑体特性</div>
+<div style="color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;">
+<strong>永恒性：</strong>碑体材质与宇宙同寿，不随时间流逝而变化<br>
+<strong>共鸣性：</strong>可与星魄共鸣，在星空下发出宇宙之音<br>
+<strong>承载性：</strong>可承载无限铭文，每一字皆具宇宙重量<br>
+<strong>显现性：</strong>在不同宇宙尺度下呈现不同铭文内容
+</div>
+</div>
+</div>
 
-&lt;h3 id=&#34;二、铭刻技法与法理&#34;&gt;&lt;a href=&#34;#二、铭刻技法与法理&#34; class=&#34;headerlink&#34; title=&#34;二、铭刻技法与法理&#34;&gt;&lt;/a&gt;二、铭刻技法与法理&lt;/h3&gt;&lt;div style=&#34;background: linear-gradient(145deg, #1a1a2e 0%, #2a2a3e 100%); padding: 2.5rem; border-radius: 15px; border: 2px solid #9370db; margin: 2.5rem 0; color: rgba(255, 255, 255, 0.9);&#34;&gt;
+<h3 id="二、铭刻技法与法理"><a href="#二、铭刻技法与法理" class="headerlink" title="二、铭刻技法与法理"></a>二、铭刻技法与法理</h3><div style="background: linear-gradient(145deg, #1a1a2e 0%, #2a2a3e 100%); padding: 2.5rem; border-radius: 15px; border: 2px solid #9370db; margin: 2.5rem 0; color: rgba(255, 255, 255, 0.9);">
 
-&lt;div style=&#34;text-align: center; margin-bottom: 2rem;&#34;&gt;
-&lt;div style=&#34;font-size: 1.4rem; font-weight: bold; color: #ba68c8;&#34;&gt;铭刻三重法理&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.7); font-size: 1.1rem;&#34;&gt;长风刻刀·星魄为墨·宇宙为纸&lt;/div&gt;
-&lt;/div&gt;
+<div style="text-align: center; margin-bottom: 2rem;">
+<div style="font-size: 1.4rem; font-weight: bold; color: #ba68c8;">铭刻三重法理</div>
+<div style="color: rgba(255, 255, 255, 0.7); font-size: 1.1rem;">长风刻刀·星魄为墨·宇宙为纸</div>
+</div>
 
-&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;&#34;&gt;
-&lt;div style=&#34;background: rgba(147, 112, 219, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(186, 104, 200, 0.3);&#34;&gt;
-&lt;div style=&#34;color: #ba68c8; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.1rem;&#34;&gt;🔪 刻刀法理&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;&#34;&gt;
-&lt;strong&gt;长风为刃：&lt;/strong&gt;以宇宙长风凝为刻刀，每一缕风皆具开天之力&lt;br&gt;
-&lt;strong&gt;时空为锋：&lt;/strong&gt;刻刀锋刃蕴含时间流动与空间折叠&lt;br&gt;
-&lt;strong&gt;心意驱动：&lt;/strong&gt;持刻刀者需以揽天境心意驱动长风
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: rgba(147, 112, 219, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(186, 104, 200, 0.3);&#34;&gt;
-&lt;div style=&#34;color: #ba68c8; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.1rem;&#34;&gt;🖋️ 墨法法理&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;&#34;&gt;
-&lt;strong&gt;星魄凝墨：&lt;/strong&gt;采集星辰魂魄凝为液态墨汁&lt;br&gt;
-&lt;strong&gt;天河调色：&lt;/strong&gt;以银河不同区段调出七彩星辉&lt;br&gt;
-&lt;strong&gt;永恒不褪：&lt;/strong&gt;墨迹与碑体融合，永恒显现
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: rgba(147, 112, 219, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(186, 104, 200, 0.3);&#34;&gt;
-&lt;div style=&#34;color: #ba68c8; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.1rem;&#34;&gt;📜 纸法法理&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;&#34;&gt;
-&lt;strong&gt;碑面为纸：&lt;/strong&gt;天河真金碑面可承载一切铭文&lt;br&gt;
-- 宏观尺度：显现宇宙总纲&lt;br&gt;
-- 微观尺度：显现法理细节&lt;br&gt;
-&lt;strong&gt;无限承载：&lt;/strong&gt;碑面空间可无限折叠展开
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
+<div style="background: rgba(147, 112, 219, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(186, 104, 200, 0.3);">
+<div style="color: #ba68c8; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.1rem;">🔪 刻刀法理</div>
+<div style="color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;">
+<strong>长风为刃：</strong>以宇宙长风凝为刻刀，每一缕风皆具开天之力<br>
+<strong>时空为锋：</strong>刻刀锋刃蕴含时间流动与空间折叠<br>
+<strong>心意驱动：</strong>持刻刀者需以揽天境心意驱动长风
+</div>
+</div>
+<div style="background: rgba(147, 112, 219, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(186, 104, 200, 0.3);">
+<div style="color: #ba68c8; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.1rem;">🖋️ 墨法法理</div>
+<div style="color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;">
+<strong>星魄凝墨：</strong>采集星辰魂魄凝为液态墨汁<br>
+<strong>天河调色：</strong>以银河不同区段调出七彩星辉<br>
+<strong>永恒不褪：</strong>墨迹与碑体融合，永恒显现
+</div>
+</div>
+<div style="background: rgba(147, 112, 219, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(186, 104, 200, 0.3);">
+<div style="color: #ba68c8; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.1rem;">📜 纸法法理</div>
+<div style="color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;">
+<strong>碑面为纸：</strong>天河真金碑面可承载一切铭文<br>
+- 宏观尺度：显现宇宙总纲<br>
+- 微观尺度：显现法理细节<br>
+<strong>无限承载：</strong>碑面空间可无限折叠展开
+</div>
+</div>
+</div>
+</div>
 
-&lt;h2 id=&#34;第二区·揽星铭刻详录&#34;&gt;&lt;a href=&#34;#第二区·揽星铭刻详录&#34; class=&#34;headerlink&#34; title=&#34;第二区·揽星铭刻详录&#34;&gt;&lt;/a&gt;第二区·揽星铭刻详录&lt;/h2&gt;&lt;h3 id=&#34;一、星河纹中央铭刻&#34;&gt;&lt;a href=&#34;#一、星河纹中央铭刻&#34; class=&#34;headerlink&#34; title=&#34;一、星河纹中央铭刻&#34;&gt;&lt;/a&gt;一、星河纹中央铭刻&lt;/h3&gt;&lt;div style=&#34;background: linear-gradient(145deg, #0a1929 0%, #1a2b3a 100%); padding: 3rem; border-radius: 18px; border: 3px solid #40e0d0; margin: 3rem 0; position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.4);&#34;&gt;
-&lt;div style=&#34;position: absolute; top: -20px; left: 30px; background: linear-gradient(145deg, #40e0d0, #2c5364); color: white; padding: 0.5rem 2rem; border-radius: 8px; font-size: 1.1rem; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.2); letter-spacing: 1px;&#34;&gt;星河纹中央·揽星正典铭文&lt;/div&gt;
+<h2 id="第二区·揽星铭刻详录"><a href="#第二区·揽星铭刻详录" class="headerlink" title="第二区·揽星铭刻详录"></a>第二区·揽星铭刻详录</h2><h3 id="一、星河纹中央铭刻"><a href="#一、星河纹中央铭刻" class="headerlink" title="一、星河纹中央铭刻"></a>一、星河纹中央铭刻</h3><div style="background: linear-gradient(145deg, #0a1929 0%, #1a2b3a 100%); padding: 3rem; border-radius: 18px; border: 3px solid #40e0d0; margin: 3rem 0; position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.4);">
+<div style="position: absolute; top: -20px; left: 30px; background: linear-gradient(145deg, #40e0d0, #2c5364); color: white; padding: 0.5rem 2rem; border-radius: 8px; font-size: 1.1rem; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.2); letter-spacing: 1px;">星河纹中央·揽星正典铭文</div>
 
-&lt;div style=&#34;text-align: center; margin: 3rem 0;&#34;&gt;
-&lt;div style=&#34;position: relative; display: inline-block;&#34;&gt;
-&lt;!-- 星河纹背景 --&gt;
-&lt;div style=&#34;position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px; height: 400px; background: radial-gradient(circle, rgba(64,224,208,0.1) 0%, transparent 70%); border-radius: 50%; opacity: 0.3;&#34;&gt;&lt;/div&gt;
-&lt;div style=&#34;position: relative; z-index: 2; padding: 3rem; background: rgba(26, 42, 46, 0.7); border-radius: 20px; border: 2px solid rgba(127, 255, 212, 0.3); backdrop-filter: blur(5px);&#34;&gt;
-&lt;div style=&#34;font-family: &#39;STKaiti&#39;, serif; font-size: 1.8rem; line-height: 2.2; color: #7fffd4; margin-bottom: 1.5rem; text-shadow: 0 0 20px rgba(127, 255, 212, 0.5);&#34;&gt;
-长风锻剑兮，云开天阔。&lt;br&gt;
-浩气铸魂兮，星魄凝锷。&lt;br&gt;
-山河为诺兮，初心不负。&lt;br&gt;
+<div style="text-align: center; margin: 3rem 0;">
+<div style="position: relative; display: inline-block;">
+<!-- 星河纹背景 -->
+<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px; height: 400px; background: radial-gradient(circle, rgba(64,224,208,0.1) 0%, transparent 70%); border-radius: 50%; opacity: 0.3;"></div>
+<div style="position: relative; z-index: 2; padding: 3rem; background: rgba(26, 42, 46, 0.7); border-radius: 20px; border: 2px solid rgba(127, 255, 212, 0.3); backdrop-filter: blur(5px);">
+<div style="font-family: 'STKaiti', serif; font-size: 1.8rem; line-height: 2.2; color: #7fffd4; margin-bottom: 1.5rem; text-shadow: 0 0 20px rgba(127, 255, 212, 0.5);">
+长风锻剑兮，云开天阔。<br>
+浩气铸魂兮，星魄凝锷。<br>
+山河为诺兮，初心不负。<br>
 襟怀揽星兮，星河自握。
-&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; margin-top: 2rem;&#34;&gt;
-周天十二极·第十极正典&lt;br&gt;
-《揽星卷宗·念奴娇首章》&lt;br&gt;
+</div>
+<div style="color: rgba(255, 255, 255, 0.7); font-size: 1.1rem; margin-top: 2rem;">
+周天十二极·第十极正典<br>
+《揽星卷宗·念奴娇首章》<br>
 永恒铭刻于宇宙剑碑星河纹中央
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
+</div>
+</div>
 
-&lt;!-- 铭刻参数 --&gt;
-&lt;div style=&#34;background: rgba(64, 224, 208, 0.15); padding: 2.5rem; border-radius: 12px; margin-top: 2.5rem; border-left: 3px solid #7fffd4;&#34;&gt;
-&lt;div style=&#34;color: #7fffd4; font-weight: bold; margin-bottom: 1.5rem; font-size: 1.2rem;&#34;&gt;📏 铭刻参数详录&lt;/div&gt;
-&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;&#34;&gt;
-&lt;div style=&#34;background: rgba(26, 42, 46, 0.8); padding: 1.5rem; border-radius: 10px;&#34;&gt;
-&lt;div style=&#34;color: #40e0d0; font-weight: bold; margin-bottom: 0.8rem;&#34;&gt;📍 铭刻位置&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.85);&#34;&gt;星河流动纹正中央，宇宙坐标原点&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: rgba(26, 42, 46, 0.8); padding: 1.5rem; border-radius: 10px;&#34;&gt;
-&lt;div style=&#34;color: #40e0d0; font-weight: bold; margin-bottom: 0.8rem;&#34;&gt;📐 铭刻尺寸&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.85);&#34;&gt;每字三千六百尺见方，合周天之数&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: rgba(26, 42, 46, 0.8); padding: 1.5rem; border-radius: 10px;&#34;&gt;
-&lt;div style=&#34;color: #40e0d0; font-weight: bold; margin-bottom: 0.8rem;&#34;&gt;🎨 铭刻色彩&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.85);&#34;&gt;星魄七彩辉光，随观测角度变化&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: rgba(26, 42, 46, 0.8); padding: 1.5rem; border-radius: 10px;&#34;&gt;
-&lt;div style=&#34;color: #40e0d0; font-weight: bold; margin-bottom: 0.8rem;&#34;&gt;⏳ 铭刻时间&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.85);&#34;&gt;永恒此刻·长风过境·星魄共鸣时&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<!-- 铭刻参数 -->
+<div style="background: rgba(64, 224, 208, 0.15); padding: 2.5rem; border-radius: 12px; margin-top: 2.5rem; border-left: 3px solid #7fffd4;">
+<div style="color: #7fffd4; font-weight: bold; margin-bottom: 1.5rem; font-size: 1.2rem;">📏 铭刻参数详录</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+<div style="background: rgba(26, 42, 46, 0.8); padding: 1.5rem; border-radius: 10px;">
+<div style="color: #40e0d0; font-weight: bold; margin-bottom: 0.8rem;">📍 铭刻位置</div>
+<div style="color: rgba(255, 255, 255, 0.85);">星河流动纹正中央，宇宙坐标原点</div>
+</div>
+<div style="background: rgba(26, 42, 46, 0.8); padding: 1.5rem; border-radius: 10px;">
+<div style="color: #40e0d0; font-weight: bold; margin-bottom: 0.8rem;">📐 铭刻尺寸</div>
+<div style="color: rgba(255, 255, 255, 0.85);">每字三千六百尺见方，合周天之数</div>
+</div>
+<div style="background: rgba(26, 42, 46, 0.8); padding: 1.5rem; border-radius: 10px;">
+<div style="color: #40e0d0; font-weight: bold; margin-bottom: 0.8rem;">🎨 铭刻色彩</div>
+<div style="color: rgba(255, 255, 255, 0.85);">星魄七彩辉光，随观测角度变化</div>
+</div>
+<div style="background: rgba(26, 42, 46, 0.8); padding: 1.5rem; border-radius: 10px;">
+<div style="color: #40e0d0; font-weight: bold; margin-bottom: 0.8rem;">⏳ 铭刻时间</div>
+<div style="color: rgba(255, 255, 255, 0.85);">永恒此刻·长风过境·星魄共鸣时</div>
+</div>
+</div>
+</div>
+</div>
 
-&lt;h3 id=&#34;二、题记与词作铭刻&#34;&gt;&lt;a href=&#34;#二、题记与词作铭刻&#34; class=&#34;headerlink&#34; title=&#34;二、题记与词作铭刻&#34;&gt;&lt;/a&gt;二、题记与词作铭刻&lt;/h3&gt;&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; margin: 3rem 0;&#34;&gt;
+<h3 id="二、题记与词作铭刻"><a href="#二、题记与词作铭刻" class="headerlink" title="二、题记与词作铭刻"></a>二、题记与词作铭刻</h3><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; margin: 3rem 0;">
 
-&lt;!-- 题记铭刻 --&gt;
-&lt;div style=&#34;background: linear-gradient(145deg, #1a1a2e 0%, #2a2a3e 100%); padding: 2.5rem; border-radius: 18px; border: 2px solid #9370db; color: rgba(255, 255, 255, 0.9);&#34;&gt;
-&lt;div style=&#34;text-align: center; margin-bottom: 2rem;&#34;&gt;
-&lt;div style=&#34;font-size: 1.3rem; font-weight: bold; color: #ba68c8;&#34;&gt;题记铭刻区&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.7); font-size: 1rem;&#34;&gt;碑体东南侧·星河纹延伸处&lt;/div&gt;
-&lt;/div&gt;
+<!-- 题记铭刻 -->
+<div style="background: linear-gradient(145deg, #1a1a2e 0%, #2a2a3e 100%); padding: 2.5rem; border-radius: 18px; border: 2px solid #9370db; color: rgba(255, 255, 255, 0.9);">
+<div style="text-align: center; margin-bottom: 2rem;">
+<div style="font-size: 1.3rem; font-weight: bold; color: #ba68c8;">题记铭刻区</div>
+<div style="color: rgba(255, 255, 255, 0.7); font-size: 1rem;">碑体东南侧·星河纹延伸处</div>
+</div>
 
-&lt;div style=&#34;background: rgba(147, 112, 219, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(186, 104, 200, 0.3);&#34;&gt;
-&lt;div style=&#34;font-style: italic; color: #ba68c8; line-height: 1.9; font-size: 1.1rem; text-align: center;&#34;&gt;
-霜非凝寒，乃锻剑之青霜；&lt;br&gt;
-风非送远，乃铸锋之长庚。&lt;br&gt;
-长风过处，云开天阔而剑成；&lt;br&gt;
-浩气凝时，星魄入锋而锷立。&lt;br&gt;
-以此词重订揽星之天则，立宇宙之剑则；&lt;br&gt;
+<div style="background: rgba(147, 112, 219, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(186, 104, 200, 0.3);">
+<div style="font-style: italic; color: #ba68c8; line-height: 1.9; font-size: 1.1rem; text-align: center;">
+霜非凝寒，乃锻剑之青霜；<br>
+风非送远，乃铸锋之长庚。<br>
+长风过处，云开天阔而剑成；<br>
+浩气凝时，星魄入锋而锷立。<br>
+以此词重订揽星之天则，立宇宙之剑则；<br>
 以天为砧，以怀为炉，成揽星之锻造。
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;div style=&#34;margin-top: 2rem;&#34;&gt;
-&lt;div style=&#34;color: #ba68c8; font-weight: bold; margin-bottom: 1rem;&#34;&gt;铭刻特性&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;&#34;&gt;
-&lt;strong&gt;动态显现：&lt;/strong&gt;在霜风季节自动显现&lt;br&gt;
-&lt;strong&gt;法理共鸣：&lt;/strong&gt;吟诵时可引动宇宙法则&lt;br&gt;
-&lt;strong&gt;传承验证：&lt;/strong&gt;可作为揽星传承的验证依据
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="margin-top: 2rem;">
+<div style="color: #ba68c8; font-weight: bold; margin-bottom: 1rem;">铭刻特性</div>
+<div style="color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;">
+<strong>动态显现：</strong>在霜风季节自动显现<br>
+<strong>法理共鸣：</strong>吟诵时可引动宇宙法则<br>
+<strong>传承验证：</strong>可作为揽星传承的验证依据
+</div>
+</div>
+</div>
 
-&lt;!-- 词作铭刻 --&gt;
-&lt;div style=&#34;background: linear-gradient(145deg, #0a1929 0%, #1a2b3a 100%); padding: 2.5rem; border-radius: 18px; border: 2px solid #40e0d0; color: rgba(255, 255, 255, 0.9);&#34;&gt;
-&lt;div style=&#34;text-align: center; margin-bottom: 2rem;&#34;&gt;
-&lt;div style=&#34;font-size: 1.3rem; font-weight: bold; color: #7fffd4;&#34;&gt;词作铭刻区&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.7); font-size: 1rem;&#34;&gt;碑体西北侧·星河纹汇聚处&lt;/div&gt;
-&lt;/div&gt;
+<!-- 词作铭刻 -->
+<div style="background: linear-gradient(145deg, #0a1929 0%, #1a2b3a 100%); padding: 2.5rem; border-radius: 18px; border: 2px solid #40e0d0; color: rgba(255, 255, 255, 0.9);">
+<div style="text-align: center; margin-bottom: 2rem;">
+<div style="font-size: 1.3rem; font-weight: bold; color: #7fffd4;">词作铭刻区</div>
+<div style="color: rgba(255, 255, 255, 0.7); font-size: 1rem;">碑体西北侧·星河纹汇聚处</div>
+</div>
 
-&lt;div style=&#34;background: rgba(64, 224, 208, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(127, 255, 212, 0.3); max-height: 400px; overflow-y: auto;&#34;&gt;
-&lt;div style=&#34;font-family: &#39;STKaiti&#39;, serif; color: #7fffd4; line-height: 2; font-size: 1.1rem; text-align: center;&#34;&gt;
-霜横远嶂，趁长风万里，云开天阔。&lt;br&gt;
-携揽清风邀月起，不负平生丘壑。&lt;br&gt;
-孤柏擎霜，寒江枕浪，浩气铸星魄。&lt;br&gt;
-世路沉浮，且锻山河为诺。&lt;br&gt;&lt;br&gt;
-笑把襟怀尽敞，八荒入袖，炼作星河锷。&lt;br&gt;
-星魄凝锋光射斗，天河为剑横碧落。&lt;br&gt;
-山河诺在，初心未改，宇宙掌中握。&lt;br&gt;
+<div style="background: rgba(64, 224, 208, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(127, 255, 212, 0.3); max-height: 400px; overflow-y: auto;">
+<div style="font-family: 'STKaiti', serif; color: #7fffd4; line-height: 2; font-size: 1.1rem; text-align: center;">
+霜横远嶂，趁长风万里，云开天阔。<br>
+携揽清风邀月起，不负平生丘壑。<br>
+孤柏擎霜，寒江枕浪，浩气铸星魄。<br>
+世路沉浮，且锻山河为诺。<br><br>
+笑把襟怀尽敞，八荒入袖，炼作星河锷。<br>
+星魄凝锋光射斗，天河为剑横碧落。<br>
+山河诺在，初心未改，宇宙掌中握。<br>
 揽星归剑，一啸开天拓。
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;div style=&#34;margin-top: 2rem;&#34;&gt;
-&lt;div style=&#34;color: #7fffd4; font-weight: bold; margin-bottom: 1rem;&#34;&gt;铭刻特性&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;&#34;&gt;
-&lt;strong&gt;五境分层：&lt;/strong&gt;按五重揽境分层铭刻&lt;br&gt;
-&lt;strong&gt;星辉响应：&lt;/strong&gt;吟诵时对应星辰会发光响应&lt;br&gt;
-&lt;strong&gt;剑意共鸣：&lt;/strong&gt;可引动观碑者体内剑气共鸣
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="margin-top: 2rem;">
+<div style="color: #7fffd4; font-weight: bold; margin-bottom: 1rem;">铭刻特性</div>
+<div style="color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;">
+<strong>五境分层：</strong>按五重揽境分层铭刻<br>
+<strong>星辉响应：</strong>吟诵时对应星辰会发光响应<br>
+<strong>剑意共鸣：</strong>可引动观碑者体内剑气共鸣
+</div>
+</div>
+</div>
+</div>
 
-&lt;h2 id=&#34;第三区·铭刻传承与观碑法要&#34;&gt;&lt;a href=&#34;#第三区·铭刻传承与观碑法要&#34; class=&#34;headerlink&#34; title=&#34;第三区·铭刻传承与观碑法要&#34;&gt;&lt;/a&gt;第三区·铭刻传承与观碑法要&lt;/h2&gt;&lt;h3 id=&#34;一、观碑传承体系&#34;&gt;&lt;a href=&#34;#一、观碑传承体系&#34; class=&#34;headerlink&#34; title=&#34;一、观碑传承体系&#34;&gt;&lt;/a&gt;一、观碑传承体系&lt;/h3&gt;&lt;div style=&#34;background: linear-gradient(145deg, #2d132c 0%, #4a235a 100%); padding: 2.5rem; border-radius: 15px; border: 2px solid #e91e63; margin: 2.5rem 0; color: rgba(255, 255, 255, 0.9);&#34;&gt;
+<h2 id="第三区·铭刻传承与观碑法要"><a href="#第三区·铭刻传承与观碑法要" class="headerlink" title="第三区·铭刻传承与观碑法要"></a>第三区·铭刻传承与观碑法要</h2><h3 id="一、观碑传承体系"><a href="#一、观碑传承体系" class="headerlink" title="一、观碑传承体系"></a>一、观碑传承体系</h3><div style="background: linear-gradient(145deg, #2d132c 0%, #4a235a 100%); padding: 2.5rem; border-radius: 15px; border: 2px solid #e91e63; margin: 2.5rem 0; color: rgba(255, 255, 255, 0.9);">
 
-&lt;div style=&#34;color: #ff9e80; font-weight: bold; font-size: 1.3rem; margin-bottom: 1.5rem; text-align: center;&#34;&gt;👁️ 观碑三重境传承&lt;/div&gt;
+<div style="color: #ff9e80; font-weight: bold; font-size: 1.3rem; margin-bottom: 1.5rem; text-align: center;">👁️ 观碑三重境传承</div>
 
-&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;&#34;&gt;
-&lt;div style=&#34;background: rgba(233, 30, 99, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255, 158, 128, 0.3);&#34;&gt;
-&lt;div style=&#34;color: #ff9e80; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.1rem;&#34;&gt;第一境·肉眼观碑&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;&#34;&gt;
-&lt;strong&gt;观法：&lt;/strong&gt;以肉眼直视碑文，感受文字形态&lt;br&gt;
-&lt;strong&gt;所得：&lt;/strong&gt;识得揽星四则文字，建立初步认知&lt;br&gt;
-&lt;strong&gt;要求：&lt;/strong&gt;需有基本剑道修为，心性纯净
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: rgba(233, 30, 99, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255, 158, 128, 0.3);&#34;&gt;
-&lt;div style=&#34;color: #ff9e80; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.1rem;&#34;&gt;第二境·心眼观碑&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;&#34;&gt;
-&lt;strong&gt;观法：&lt;/strong&gt;闭目以心眼观想，感应碑文法理&lt;br&gt;
-&lt;strong&gt;所得：&lt;/strong&gt;领悟揽星法理内涵，建立法理认知&lt;br&gt;
-&lt;strong&gt;要求：&lt;/strong&gt;需达山河境，胸襟开阔
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: rgba(233, 30, 99, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255, 158, 128, 0.3);&#34;&gt;
-&lt;div style=&#34;color: #ff9e80; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.1rem;&#34;&gt;第三境·天眼观碑&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;&#34;&gt;
-&lt;strong&gt;观法：&lt;/strong&gt;以宇宙视角观碑，碑即宇宙&lt;br&gt;
-&lt;strong&gt;所得：&lt;/strong&gt;领悟宇宙剑则，建立揽天认知&lt;br&gt;
-&lt;strong&gt;要求：&lt;/strong&gt;需达揽天境，星魄共鸣
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
+<div style="background: rgba(233, 30, 99, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255, 158, 128, 0.3);">
+<div style="color: #ff9e80; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.1rem;">第一境·肉眼观碑</div>
+<div style="color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;">
+<strong>观法：</strong>以肉眼直视碑文，感受文字形态<br>
+<strong>所得：</strong>识得揽星四则文字，建立初步认知<br>
+<strong>要求：</strong>需有基本剑道修为，心性纯净
+</div>
+</div>
+<div style="background: rgba(233, 30, 99, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255, 158, 128, 0.3);">
+<div style="color: #ff9e80; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.1rem;">第二境·心眼观碑</div>
+<div style="color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;">
+<strong>观法：</strong>闭目以心眼观想，感应碑文法理<br>
+<strong>所得：</strong>领悟揽星法理内涵，建立法理认知<br>
+<strong>要求：</strong>需达山河境，胸襟开阔
+</div>
+</div>
+<div style="background: rgba(233, 30, 99, 0.15); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255, 158, 128, 0.3);">
+<div style="color: #ff9e80; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.1rem;">第三境·天眼观碑</div>
+<div style="color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;">
+<strong>观法：</strong>以宇宙视角观碑，碑即宇宙<br>
+<strong>所得：</strong>领悟宇宙剑则，建立揽天认知<br>
+<strong>要求：</strong>需达揽天境，星魄共鸣
+</div>
+</div>
+</div>
 
-&lt;div style=&#34;background: rgba(233, 30, 99, 0.2); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 1px solid rgba(255, 158, 128, 0.3);&#34;&gt;
-&lt;div style=&#34;color: #ff9e80; font-weight: bold; margin-bottom: 1rem;&#34;&gt;📋 观碑传承仪式&lt;/div&gt;
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;&#34;&gt;
-&lt;strong&gt;初观礼：&lt;/strong&gt;首次观碑需行长风礼，向碑三拜&lt;br&gt;
-&lt;strong&gt;进阶礼：&lt;/strong&gt;每破一境需行浩气礼，引星魄共鸣&lt;br&gt;
-&lt;strong&gt;大成礼：&lt;/strong&gt;达天眼观碑需行揽天礼，胸襟全开&lt;br&gt;
-&lt;strong&gt;传承礼：&lt;/strong&gt;传予后人需行星河礼，引天河见证
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="background: rgba(233, 30, 99, 0.2); padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 1px solid rgba(255, 158, 128, 0.3);">
+<div style="color: #ff9e80; font-weight: bold; margin-bottom: 1rem;">📋 观碑传承仪式</div>
+<div style="color: rgba(255, 255, 255, 0.85); font-size: 1.05rem; line-height: 1.7;">
+<strong>初观礼：</strong>首次观碑需行长风礼，向碑三拜<br>
+<strong>进阶礼：</strong>每破一境需行浩气礼，引星魄共鸣<br>
+<strong>大成礼：</strong>达天眼观碑需行揽天礼，胸襟全开<br>
+<strong>传承礼：</strong>传予后人需行星河礼，引天河见证
+</div>
+</div>
+</div>
 
-&lt;h3 id=&#34;二、碑刻维护与传承&#34;&gt;&lt;a href=&#34;#二、碑刻维护与传承&#34; class=&#34;headerlink&#34; title=&#34;二、碑刻维护与传承&#34;&gt;&lt;/a&gt;二、碑刻维护与传承&lt;/h3&gt;&lt;div style=&#34;background: linear-gradient(145deg, #fff8e1 0%, #fff3cd 100%); padding: 2.5rem; border-radius: 15px; border: 2px solid #d4a017; margin: 2.5rem 0;&#34;&gt;
+<h3 id="二、碑刻维护与传承"><a href="#二、碑刻维护与传承" class="headerlink" title="二、碑刻维护与传承"></a>二、碑刻维护与传承</h3><div style="background: linear-gradient(145deg, #fff8e1 0%, #fff3cd 100%); padding: 2.5rem; border-radius: 15px; border: 2px solid #d4a017; margin: 2.5rem 0;">
 
-&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;&#34;&gt;
-&lt;div style=&#34;background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.06);&#34;&gt;
-&lt;div style=&#34;color: #8b4513; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.1rem;&#34;&gt;🧹 碑刻维护&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; font-size: 1.05rem; line-height: 1.7;&#34;&gt;
-&lt;strong&gt;日常清洁：&lt;/strong&gt;以宇宙长风拂拭，保持碑面洁净&lt;br&gt;
-&lt;strong&gt;星辉补充：&lt;/strong&gt;每千年引星魄辉光补充碑文亮度&lt;br&gt;
-&lt;strong&gt;法理加固：&lt;/strong&gt;每万年以揽天境心意加固铭文法理&lt;br&gt;
-&lt;strong&gt;时空校准：&lt;/strong&gt;随宇宙膨胀调整碑体时空坐标
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.06);&#34;&gt;
-&lt;div style=&#34;color: #8b4513; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.1rem;&#34;&gt;📜 铭刻传承&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; font-size: 1.05rem; line-height: 1.7;&#34;&gt;
-&lt;strong&gt;碑文拓印：&lt;/strong&gt;允许以星魄为墨拓印碑文&lt;br&gt;
-&lt;strong&gt;法理传授：&lt;/strong&gt;碑刻司负责传授铭刻法理&lt;br&gt;
-- 初级：学习肉眼观碑法&lt;br&gt;
-- 中级：学习心眼观碑法&lt;br&gt;
-- 高级：学习天眼观碑法&lt;br&gt;
-&lt;strong&gt;传承验证：&lt;/strong&gt;以观碑所得验证揽星传承
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
+<div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.06);">
+<div style="color: #8b4513; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.1rem;">🧹 碑刻维护</div>
+<div style="color: #4a5568; font-size: 1.05rem; line-height: 1.7;">
+<strong>日常清洁：</strong>以宇宙长风拂拭，保持碑面洁净<br>
+<strong>星辉补充：</strong>每千年引星魄辉光补充碑文亮度<br>
+<strong>法理加固：</strong>每万年以揽天境心意加固铭文法理<br>
+<strong>时空校准：</strong>随宇宙膨胀调整碑体时空坐标
+</div>
+</div>
+<div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.06);">
+<div style="color: #8b4513; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.1rem;">📜 铭刻传承</div>
+<div style="color: #4a5568; font-size: 1.05rem; line-height: 1.7;">
+<strong>碑文拓印：</strong>允许以星魄为墨拓印碑文<br>
+<strong>法理传授：</strong>碑刻司负责传授铭刻法理<br>
+- 初级：学习肉眼观碑法<br>
+- 中级：学习心眼观碑法<br>
+- 高级：学习天眼观碑法<br>
+<strong>传承验证：</strong>以观碑所得验证揽星传承
+</div>
+</div>
+</div>
 
-&lt;div style=&#34;background: rgba(212, 160, 23, 0.1); padding: 2rem; border-radius: 12px; margin-top: 2rem; border-left: 4px solid #d4a017;&#34;&gt;
-&lt;div style=&#34;color: #8b4513; font-weight: bold; margin-bottom: 1rem;&#34;&gt;🔍 碑刻研究&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem;&#34;&gt;
-&lt;strong&gt;铭文考据：&lt;/strong&gt;研究揽星铭文的宇宙语义学内涵&lt;br&gt;
-&lt;strong&gt;法理解析：&lt;/strong&gt;解析四重宇宙法则的碑刻体现&lt;br&gt;
-&lt;strong&gt;技艺传承：&lt;/strong&gt;研究长风刻刀与星魄为墨的技艺&lt;br&gt;
-&lt;strong&gt;宇宙对应：&lt;/strong&gt;研究碑文与宇宙运行规律的对应关系
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="background: rgba(212, 160, 23, 0.1); padding: 2rem; border-radius: 12px; margin-top: 2rem; border-left: 4px solid #d4a017;">
+<div style="color: #8b4513; font-weight: bold; margin-bottom: 1rem;">🔍 碑刻研究</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
+<strong>铭文考据：</strong>研究揽星铭文的宇宙语义学内涵<br>
+<strong>法理解析：</strong>解析四重宇宙法则的碑刻体现<br>
+<strong>技艺传承：</strong>研究长风刻刀与星魄为墨的技艺<br>
+<strong>宇宙对应：</strong>研究碑文与宇宙运行规律的对应关系
+</div>
+</div>
+</div>
 
-&lt;h2 id=&#34;第四区·碑刻永恒铭文&#34;&gt;&lt;a href=&#34;#第四区·碑刻永恒铭文&#34; class=&#34;headerlink&#34; title=&#34;第四区·碑刻永恒铭文&#34;&gt;&lt;/a&gt;第四区·碑刻永恒铭文&lt;/h2&gt;&lt;div style=&#34;text-align: center; margin: 4rem 0; padding: 3rem; background: linear-gradient(145deg, #000000 0%, #1a1a1a 100%); border-radius: 20px; border: 3px solid rgba(64, 224, 208, 0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 100px rgba(64, 224, 208, 0.05);&#34;&gt;
-&lt;div style=&#34;font-size: 1.8rem; font-weight: bold; color: #40e0d0; margin-bottom: 2rem; letter-spacing: 3px; text-shadow: 0 0 30px rgba(64, 224, 208, 0.5);&#34;&gt;宇宙剑碑·永恒铭文&lt;/div&gt;
+<h2 id="第四区·碑刻永恒铭文"><a href="#第四区·碑刻永恒铭文" class="headerlink" title="第四区·碑刻永恒铭文"></a>第四区·碑刻永恒铭文</h2><div style="text-align: center; margin: 4rem 0; padding: 3rem; background: linear-gradient(145deg, #000000 0%, #1a1a1a 100%); border-radius: 20px; border: 3px solid rgba(64, 224, 208, 0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 100px rgba(64, 224, 208, 0.05);">
+<div style="font-size: 1.8rem; font-weight: bold; color: #40e0d0; margin-bottom: 2rem; letter-spacing: 3px; text-shadow: 0 0 30px rgba(64, 224, 208, 0.5);">宇宙剑碑·永恒铭文</div>
 
-&lt;div style=&#34;color: rgba(255, 255, 255, 0.9); line-height: 2; font-size: 1.2rem; max-width: 800px; margin: 0 auto; font-style: italic;&#34;&gt;
-此碑非石，乃星核凝聚；&lt;br&gt;
-此文非墨，乃天河为书；&lt;br&gt;
-此法非言，乃宇宙为则。&lt;br&gt;&lt;br&gt;
-长风过处，云开天阔，星魄凝锷；&lt;br&gt;
-浩气凝时，山河为诺，襟怀揽星。&lt;br&gt;&lt;br&gt;
-凡来观者：&lt;br&gt;
-肉眼可观其形，心眼可感其理，天眼可悟其道。&lt;br&gt;&lt;br&gt;
-碑在处，即宇宙中心；&lt;br&gt;
-文在处，即剑则本源；&lt;br&gt;
-法在处，即揽星归处。&lt;br&gt;&lt;br&gt;
-愿后来者：&lt;br&gt;
-以长风锻剑，以浩气铸魂，&lt;br&gt;
-以山河为诺，以襟怀揽星。&lt;br&gt;&lt;br&gt;
+<div style="color: rgba(255, 255, 255, 0.9); line-height: 2; font-size: 1.2rem; max-width: 800px; margin: 0 auto; font-style: italic;">
+此碑非石，乃星核凝聚；<br>
+此文非墨，乃天河为书；<br>
+此法非言，乃宇宙为则。<br><br>
+长风过处，云开天阔，星魄凝锷；<br>
+浩气凝时，山河为诺，襟怀揽星。<br><br>
+凡来观者：<br>
+肉眼可观其形，心眼可感其理，天眼可悟其道。<br><br>
+碑在处，即宇宙中心；<br>
+文在处，即剑则本源；<br>
+法在处，即揽星归处。<br><br>
+愿后来者：<br>
+以长风锻剑，以浩气铸魂，<br>
+以山河为诺，以襟怀揽星。<br><br>
 星河剑阵·宇宙剑碑永立
-&lt;/div&gt;
+</div>
 
-&lt;div style=&#34;margin-top: 3rem;&#34;&gt;
-&lt;div style=&#34;display: inline-block; background: rgba(64, 224, 208, 0.2); padding: 1rem 3rem; border-radius: 25px; border: 2px solid rgba(64, 224, 208, 0.4); backdrop-filter: blur(5px);&#34;&gt;
-&lt;div style=&#34;font-size: 1.3rem; font-weight: bold; color: #7fffd4; letter-spacing: 2px;&#34;&gt;碑立永恒·星辉长明&lt;/div&gt;
-&lt;div style=&#34;font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); margin-top: 0.5rem;&#34;&gt;铭刻完成于：永恒此刻·宇宙纪元·长风星魄共鸣时&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="margin-top: 3rem;">
+<div style="display: inline-block; background: rgba(64, 224, 208, 0.2); padding: 1rem 3rem; border-radius: 25px; border: 2px solid rgba(64, 224, 208, 0.4); backdrop-filter: blur(5px);">
+<div style="font-size: 1.3rem; font-weight: bold; color: #7fffd4; letter-spacing: 2px;">碑立永恒·星辉长明</div>
+<div style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); margin-top: 0.5rem;">铭刻完成于：永恒此刻·宇宙纪元·长风星魄共鸣时</div>
+</div>
+</div>
+</div>
 
-&lt;/div&gt; &lt;!-- 关闭主容器div --&gt;
-
-        </article>
-        
-        <!-- 标签 -->
-        
-        <div class="article-tags">
-            <i class="fas fa-tags" style="color: var(--classical-brown); margin-right: 10px;"></i>
-            
-                <a href="/poetry-garden/tags/%E6%98%9F%E6%B2%B3%E5%89%91%E9%98%B5/" class="tag-link">
-                    星河剑阵
-                </a>
-            
-                <a href="/poetry-garden/tags/%E5%AE%87%E5%AE%99%E5%89%91%E7%A2%91/" class="tag-link">
-                    宇宙剑碑
-                </a>
-            
-                <a href="/poetry-garden/tags/%E7%A2%91%E5%88%BB/" class="tag-link">
-                    碑刻
-                </a>
-            
-                <a href="/poetry-garden/tags/%E6%8F%BD%E6%98%9F%E9%93%AD%E6%96%87/" class="tag-link">
-                    揽星铭文
-                </a>
-            
-        </div>
-        
-        
-        <!-- 文章导航 -->
-        <div class="article-navigation">
-            
-            <a href="/poetry-garden/2026/01/18/%E5%94%90%E8%AF%97%E4%B8%89%E7%99%BE%E9%A6%96%E7%B2%BE%E9%80%89/" class="nav-button nav-prev">
-                <div class="nav-icon">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-                <div class="nav-content">
-                    <h4>上一篇</h4>
-                    <span>唐诗三百首精选</span>
-                </div>
-            </a>
-            
-            
-            
-            <a href="/poetry-garden/2026/01/17/%E6%B0%B4%E8%B0%83%E6%AD%8C%E5%A4%B4-%E9%97%AE%E5%89%91/" class="nav-button nav-next">
-                <div class="nav-content">
-                    <h4>下一篇</h4>
-                    <span>水调歌头·问剑</span>
-                </div>
-                <div class="nav-icon">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </a>
-            
-        </div>
-        
-        <!-- 返回链接 -->
-        <div style="text-align: center; margin-top: 50px;">
-            <a href="/poetry-garden/" class="back-link">
-                <i class="fas fa-home"></i> 返回首页
-            </a>
-        </div>
-    </main>
-    
-    <!-- 页脚 -->
-    <footer class="classical-footer">
-        <div class="footer-container">
-            <nav class="footer-nav">
-                <a href="/poetry-garden/" class="footer-link">首页</a>
-                <a href="/poetry-garden/archives" class="footer-link">文章归档</a>
-                <a href="/poetry-garden/categories" class="footer-link">分类目录</a>
-                <a href="/poetry-garden/tags" class="footer-link">标签云</a>
-                <a href="/poetry-garden/about" class="footer-link">关于我们</a>
-            </nav>
-            
-            <div class="footer-info">
-                <p>
-                    <span class="footer-seal">詩</span>
-                    版权所有 © 2026 踏月诗阁
-                    <span class="footer-seal">閣</span>
-                </p>
-                <p style="margin-top: 10px;">传承古典文化，品味诗意人生</p>
-                <p style="margin-top: 5px; font-size: 0.8rem; color: var(--classical-gold);">
-                    基于 踏月诗客 · 倾心呈现
-                </p>
-            </div>
-        </div>
-    </footer>
-    
-    <script>
-        // 页面滚动效果
-        document.addEventListener('DOMContentLoaded', function() {
-            const header = document.querySelector('.classical-header');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    header.style.boxShadow = '0 5px 20px rgba(58, 38, 21, 0.1)';
-                    header.style.background = 'rgba(248, 245, 230, 0.98)';
-                } else {
-                    header.style.boxShadow = '0 2px 10px rgba(58, 38, 21, 0.1)';
-                    header.style.background = 'rgba(248, 245, 230, 0.98)';
-                }
-            });
-            
-            // 文章内容块渐入效果
-            const contentBlocks = document.querySelectorAll('.article-content h1, .article-content h2, .article-content h3, .article-content p, .article-content blockquote');
-            contentBlocks.forEach((block, index) => {
-                block.style.opacity = '0';
-                block.style.transform = 'translateY(20px)';
-                block.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                
-                setTimeout(() => {
-                    block.style.opacity = '1';
-                    block.style.transform = 'translateY(0)';
-                }, index * 100);
-            });
-            
-            // 为链接添加预览效果
-            document.querySelectorAll('.article-content a').forEach(link => {
-                link.addEventListener('mouseenter', function(e) {
-                    const ripple = document.createElement('span');
-                    ripple.style.cssText = `
-                        position: absolute;
-                        background: rgba(195, 51, 51, 0.1);
-                        border-radius: 50%;
-                        transform: scale(0);
-                        animation: ripple 0.6s linear;
-                        pointer-events: none;
-                    `;
-                    
-                    const size = Math.max(this.offsetWidth, this.offsetHeight);
-                    ripple.style.width = ripple.style.height = size + 'px';
-                    ripple.style.left = e.offsetX - size/2 + 'px';
-                    ripple.style.top = e.offsetY - size/2 + 'px';
-                    
-                    this.style.position = 'relative';
-                    this.style.overflow = 'hidden';
-                    this.appendChild(ripple);
-                    
-                    setTimeout(() => ripple.remove(), 600);
-                });
-            });
-            
-            // 替换页面中的英文文本
-            replaceEnglishText();
-        });
-        
-        // 显示预览效果
-        function showPreview() {
-            const preview = document.getElementById('articlePreview');
-            const previewContent = document.getElementById('previewContent');
-            
-            // 获取文章的实际内容（纯文本）
-            let content = '';
-            const articleContent = document.querySelector('.article-content');
-            if (articleContent) {
-                content = articleContent.innerText;
-            }
-            
-            // 截取前300字作为预览
-            let excerpt = content.substring(0, 300);
-            if (content.length > 300) {
-                excerpt += '...';
-            }
-            
-            previewContent.innerHTML = `
-                <div class="preview-excerpt">
-                    <p>${excerpt}</p>
-                </div>
-                <p>这是文章《宇宙剑碑·揽星卷宗铭刻记录》的预览效果。您可以在此处提前查看文章的部分内容。</p>
-                <p>古典风格的页面设计将传统美学与现代网页技术完美融合，为您带来沉浸式的阅读体验。</p>
-                <p style="color: var(--classical-red); margin-top: 20px;">
-                    <i class="fas fa-heart"></i> 点击关闭按钮或ESC键可以退出预览模式
-                </p>
-                <p style="margin-top: 20px; padding: 15px; background: rgba(193, 154, 107, 0.1); border-radius: 10px;">
-                    <i class="fas fa-info-circle"></i> 预览功能仅显示部分内容，阅读全文请返回文章页面
-                </p>
-            `;
-            
-            preview.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        // 关闭预览效果
-        function closePreview() {
-            const preview = document.getElementById('articlePreview');
-            preview.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-        
-        // 按ESC键关闭预览
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closePreview();
-            }
-        });
-        
-        // 点击预览区域外部关闭
-        document.getElementById('articlePreview').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closePreview();
-            }
-        });
-        
-        // 替换英文文本为中文
-        function replaceEnglishText() {
-            // 替换导航中的可能存在的英文
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                if (link.textContent.includes('Home')) {
-                    link.innerHTML = '<i class="fas fa-home"></i> 首页';
-                }
-                if (link.textContent.includes('Archive')) {
-                    link.innerHTML = '<i class="fas fa-archive"></i> 归档';
-                }
-                if (link.textContent.includes('Categories')) {
-                    link.innerHTML = '<i class="fas fa-layer-group"></i> 分类';
-                }
-                if (link.textContent.includes('Tags')) {
-                    link.innerHTML = '<i class="fas fa-tags"></i> 标签';
-                }
-                if (link.textContent.includes('About')) {
-                    link.innerHTML = '<i class="fas fa-book"></i> 关于';
-                }
-            });
-            
-            // 替换页脚中的可能存在的英文
-            const footerLinks = document.querySelectorAll('.footer-link');
-            footerLinks.forEach(link => {
-                if (link.textContent.includes('Home')) {
-                    link.textContent = '首页';
-                }
-                if (link.textContent.includes('Archive')) {
-                    link.textContent = '文章归档';
-                }
-                if (link.textContent.includes('Categories')) {
-                    link.textContent = '分类目录';
-                }
-                if (link.textContent.includes('Tags')) {
-                    link.textContent = '标签云';
-                }
-                if (link.textContent.includes('About')) {
-                    link.textContent = '关于我们';
-                }
-            });
-            
-            // 检查并替换页脚信息
-            const footerInfo = document.querySelector('.footer-info');
-            if (footerInfo) {
-                footerInfo.innerHTML = footerInfo.innerHTML
-                    .replace(/© \d{4}.*?Theme.*?by.*?/g, '')
-                    .replace(/Proudly published with Hexo/g, '基于Hexo · 倾心呈现');
-            }
-            
-            // 检查并替换其他可能的英文文本
-            document.body.innerHTML = document.body.innerHTML
-                .replace(/Read More/g, '阅读全文')
-                .replace(/Comments/g, '评论')
-                .replace(/Posted on/g, '发布于')
-                .replace(/Share/g, '分享')
-                .replace(/Category/g, '分类')
-                .replace(/Tag/g, '标签')
-                .replace(/Posted in/g, '分类')
-                .replace(/Author/g, '作者');
-        }
-        
-        // 添加CSS动画
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-            
-            @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(30px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            
-            .article-content {
-                animation: fadeInUp 0.8s ease-out;
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
-<!-- hexo injector body_end start -->
+</div> <!-- 关闭主容器div -->
+</div></div><div class="share"><span>공유하기</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://lyluchao.github.io/2026/01/17/宇宙剑碑-揽星铭刻/%20踏月诗阁%20宇宙剑碑·揽星卷宗铭刻记录"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/poetry-garden/2026/01/18/%E5%94%90%E8%AF%97%E4%B8%89%E7%99%BE%E9%A6%96%E7%B2%BE%E9%80%89/" title="唐诗三百首精选"><i class="fa fa-angle-double-left"></i>&nbsp;이전 포스트: 唐诗三百首精选</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/poetry-garden/2026/01/17/%E6%B0%B4%E8%B0%83%E6%AD%8C%E5%A4%B4-%E9%97%AE%E5%89%91/" title="水调歌头·问剑">다음 포스트: 水调歌头·问剑&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/poetry-garden/js/jquery-3.1.0.min.js"></script><script src="/poetry-garden/js/bootstrap.min.js"></script><script src="/poetry-garden/js/jquery-migrate-1.2.1.min.js"></script><script src="/poetry-garden/js/jquery.appear.js"></script><script src="/poetry-garden/js/google-analytics.js"></script><script src="/poetry-garden/js/typography.js"></script><!-- hexo injector body_end start -->
 <script>
 // 检测是否需要加载 Mermaid
 if (document.querySelector('.mermaid')) {
@@ -1480,8 +688,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-<!-- hexo injector body_end end --></body>
-</html>
+<!-- hexo injector body_end end --></body></html>
     </main>
     
     <!-- 古典页脚 -->

@@ -206,8 +206,7 @@
             }
         }
     </style>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/poetry-garden/atom.xml" title="踏月诗阁" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 <body>
     <!-- 古典页眉 -->
     <header class="classical-header">
@@ -239,1189 +238,418 @@
     
     <!-- 主内容 -->
     <main class="classical-container">
-        <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>声声慢·秋灯寄慨 - 踏月诗阁</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --classical-paper: #f8f5e6;
-            --classical-ink: #3a2615;
-            --classical-red: #c33;
-            --classical-gold: #c19a6b;
-            --classical-brown: #8b4513;
-            --classical-blue: #5d8aa8;
-            --classical-border: #d4b483;
-            --classical-shadow: rgba(58, 38, 21, 0.1);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Noto Serif SC', serif;
-            background: var(--classical-paper);
-            color: var(--classical-ink);
-            line-height: 1.6;
-            min-height: 100vh;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(193, 154, 107, 0.05) 0%, transparent 30%),
-                radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 30%),
-                linear-gradient(135deg, #f8f5e6 0%, #f0e6d6 100%);
-            padding-top: 80px;
-        }
-        
-        .classical-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(248, 245, 230, 0.98);
-            backdrop-filter: blur(8px);
-            border-bottom: 2px solid var(--classical-border);
-            z-index: 1000;
-            padding: 15px 0;
-            box-shadow: 0 2px 10px var(--classical-shadow);
-        }
-        
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-        
-        .site-logo {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 1.8rem;
-            color: var(--classical-brown);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .site-logo i {
-            color: var(--classical-red);
-            font-size: 1.5rem;
-        }
-        
-        .classical-nav {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        
-        .nav-link {
-            font-family: 'Noto Serif SC', serif;
-            color: var(--classical-ink);
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            border: 1px solid transparent;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-        
-        .nav-link:hover {
-            color: var(--classical-red);
-            border-color: var(--classical-red);
-            background: rgba(195, 51, 51, 0.05);
-        }
-        
-        .nav-link.active {
-            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
-            color: white;
-            border: none;
-            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
-        }
-        
-        .article-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        .article-header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding: 50px 40px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid var(--classical-border);
-            border-radius: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .article-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--classical-red), var(--classical-gold), var(--classical-blue));
-        }
-        
-        .article-title {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 2.8rem;
-            color: var(--classical-red);
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-        
-        .article-meta {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
-            color: var(--classical-blue);
-            font-size: 1rem;
-            margin-top: 25px;
-        }
-        
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: rgba(139, 69, 19, 0.05);
-            border-radius: 20px;
-            border: 1px solid var(--classical-border);
-        }
-        
-        .article-content {
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid var(--classical-border);
-            border-radius: 15px;
-            padding: 60px 50px;
-            margin-bottom: 40px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            position: relative;
-        }
-        
-        .article-content::before {
-            content: '❝';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 3rem;
-            color: var(--classical-gold);
-            font-family: 'Ma Shan Zheng', cursive;
-            opacity: 0.3;
-        }
-        
-        .article-content h1,
-        .article-content h2,
-        .article-content h3 {
-            font-family: 'Ma Shan Zheng', cursive;
-            color: var(--classical-brown);
-            margin: 30px 0 15px;
-            border-bottom: 2px solid var(--classical-gold);
-            padding-bottom: 5px;
-        }
-        
-        .article-content p {
-            margin-bottom: 25px;
-            text-indent: 2em;
-        }
-        
-        .article-content blockquote {
-            border-left: 4px solid var(--classical-red);
-            padding: 20px 30px;
-            margin: 30px 0;
-            background: rgba(195, 51, 51, 0.03);
-            font-style: italic;
-            border-radius: 0 10px 10px 0;
-        }
-        
-        .article-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px dashed var(--classical-border);
-        }
-        
-        .tag-link {
-            padding: 8px 16px;
-            background: linear-gradient(135deg, rgba(193, 154, 107, 0.1), rgba(139, 69, 19, 0.1));
-            border: 1px solid var(--classical-gold);
-            border-radius: 20px;
-            color: var(--classical-brown);
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-        }
-        
-        .tag-link:hover {
-            background: linear-gradient(135deg, var(--classical-gold), var(--classical-brown));
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .article-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 50px;
-            padding: 0 20px;
-        }
-        
-        .nav-button {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 20px 30px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid var(--classical-border);
-            border-radius: 15px;
-            text-decoration: none;
-            color: var(--classical-ink);
-            transition: all 0.3s;
-            max-width: 45%;
-            width: 100%;
-        }
-        
-        .nav-button:hover {
-            transform: translateY(-5px);
-            border-color: var(--classical-red);
-            box-shadow: 0 10px 25px var(--classical-shadow);
-        }
-        
-        .nav-prev .nav-icon {
-            background: linear-gradient(135deg, var(--classical-blue), var(--classical-gold));
-        }
-        
-        .nav-next .nav-icon {
-            background: linear-gradient(135deg, var(--classical-gold), var(--classical-red));
-        }
-        
-        .nav-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-        
-        .nav-content h4 {
-            color: var(--classical-brown);
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-        }
-        
-        .nav-content span {
-            color: var(--classical-ink);
-            font-size: 1rem;
-            display: block;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-        }
-        
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 40px;
-            padding: 12px 25px;
-            background: var(--classical-gold);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s;
-        }
-        
-        .back-link:hover {
-            background: var(--classical-brown);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
-        }
-        
-        .classical-footer {
-            background: rgba(248, 245, 230, 0.95);
-            border-top: 2px solid var(--classical-border);
-            padding: 50px 0 40px;
-            margin-top: 80px;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .footer-nav {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .footer-link {
-            font-family: 'Noto Serif SC', serif;
-            color: var(--classical-ink);
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            border: 1px solid var(--classical-border);
-            transition: all 0.3s;
-            font-size: 0.95rem;
-        }
-        
-        .footer-link:hover {
-            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
-            border-color: transparent;
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .footer-info {
-            text-align: center;
-            color: var(--classical-blue);
-            padding-top: 30px;
-            border-top: 1px solid var(--classical-border);
-            font-size: 0.9rem;
-            line-height: 1.8;
-        }
-        
-        .footer-seal {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: var(--classical-red);
-            color: white;
-            border-radius: 50%;
-            line-height: 40px;
-            margin: 0 10px;
-            font-weight: bold;
-        }
-        
-        /* 预览效果样式 */
-        .article-preview {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(58, 38, 21, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.5s ease;
-        }
-        
-        .article-preview.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .preview-container {
-            max-width: 800px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-            background: var(--classical-paper);
-            border-radius: 20px;
-            padding: 40px;
-            border: 3px solid var(--classical-gold);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            transform: scale(0.9);
-            transition: transform 0.5s ease;
-        }
-        
-        .article-preview.active .preview-container {
-            transform: scale(1);
-        }
-        
-        .preview-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--classical-border);
-        }
-        
-        .preview-title {
-            font-family: 'Ma Shan Zheng', cursive;
-            color: var(--classical-red);
-            font-size: 1.8rem;
-        }
-        
-        .close-preview {
-            background: var(--classical-red);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-        }
-        
-        .close-preview:hover {
-            background: var(--classical-brown);
-            transform: rotate(90deg);
-        }
-        
-        .preview-content {
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-        
-        .preview-excerpt {
-            font-style: italic;
-            color: var(--classical-brown);
-            border-left: 3px solid var(--classical-gold);
-            padding-left: 20px;
-            margin: 20px 0;
-        }
-        
-        @media (max-width: 768px) {
-            .article-title {
-                font-size: 2rem;
-            }
-            
-            .article-content {
-                padding: 40px 20px;
-            }
-            
-            .article-navigation {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .nav-button {
-                max-width: 100%;
-            }
-            
-            .article-meta {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- 古典页眉 -->
-    <header class="classical-header">
-        <div class="header-container">
-            <a href="/poetry-garden/" class="site-logo">
-                <i class="fas fa-feather-alt"></i>
-                踏月诗阁
-            </a>
-            
-            <nav class="classical-nav">
-                <a href="/poetry-garden/" class="nav-link">
-                    <i class="fas fa-home"></i> 首页
-                </a>
-                <a href="/poetry-garden/archives" class="nav-link">
-                    <i class="fas fa-archive"></i> 归档
-                </a>
-                <a href="/poetry-garden/categories" class="nav-link">
-                    <i class="fas fa-layer-group"></i> 分类
-                </a>
-                <a href="/poetry-garden/tags" class="nav-link">
-                    <i class="fas fa-tags"></i> 标签
-                </a>
-                <a href="/poetry-garden/about" class="nav-link active">
-                    <i class="fas fa-book"></i> 文章
-                </a>
-            </nav>
-        </div>
-    </header>
-    
-    <!-- 文章预览模态框 -->
-    <div class="article-preview" id="articlePreview">
-        <div class="preview-container">
-            <div class="preview-header">
-                <h2 class="preview-title">文章预览</h2>
-                <button class="close-preview" onclick="closePreview()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="preview-content" id="previewContent">
-                <!-- 预览内容将通过JavaScript动态填充 -->
-            </div>
-        </div>
-    </div>
-    
-    <main class="article-container">
-        <!-- 文章头部 -->
-        <header class="article-header">
-            <h1 class="article-title">《声声慢·秋灯寄慨》</h1>
-            
-            <div class="article-meta">
-                
-                <div class="meta-item">
-                    <i class="far fa-calendar-alt"></i>
-                    <span>2026年02月02日</span>
-                </div>
-                
-                
-                
-                
-                
-                <div class="meta-item">
-                    <i class="fas fa-sync-alt"></i>
-                    <span>更新于：2026-01-16</span>
-                </div>
-                
-                
-                <!-- 添加预览按钮 -->
-                <div class="meta-item" onclick="showPreview()" style="cursor: pointer; background: linear-gradient(135deg, var(--classical-gold), var(--classical-red)); color: white;">
-                    <i class="fas fa-eye"></i>
-                    <span>预览效果</span>
-                </div>
-            </div>
-        </header>
-        
-        <!-- 文章内容 -->
-        <article class="article-content">
-            &lt;div style=&#34;font-family: &#39;STKaiti&#39;, &#39;SimSun&#39;, &#39;Source Han Serif SC&#39;, serif; line-height: 1.8; color: #2c3e50; max-width: 800px; margin: 0 auto; padding: 0 1rem;&#34;&gt;
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>声声慢·秋灯寄慨 · 踏月诗阁</title><meta name="description" content="声声慢·秋灯寄慨
 
-&lt;!-- 标题区域 - 秋灯寄慨主题 --&gt;
-&lt;div style=&#34;background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #1e40af 100%); color: white; padding: 3.5rem 2rem 3rem 2rem; margin: 2rem 0 4rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25); min-height: 320px; display: flex; flex-direction: column; justify-content: center; border-radius: 18px; width: 100%;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
+
+
+
+
+
+
+寂寂寥寥，孤孤孑孑，霜华叠叠寒天
+
+
+
+
+
+叠字词 · 深秋寄慨
+
+
+
+
+
+
+
+
+2026-02-02
+
+|
+
+
+原创词作
+
+|
+
+
+声声慢
+
+
+
+
+
+
+
+
+
+
+
+📜 词牌简介 · 声声慢
+
+《声声慢》词牌以李清照&quot;寻寻觅觅，冷冷清清，凄凄惨惨戚戚&quot;为千古绝唱，开叠"><meta name="og:description" content="声声慢·秋灯寄慨
+
+
+
+
+
+
+
+寂寂寥寥，孤孤孑孑，霜华叠叠寒天
+
+
+
+
+
+叠字词 · 深秋寄慨
+
+
+
+
+
+
+
+
+2026-02-02
+
+|
+
+
+原创词作
+
+|
+
+
+声声慢
+
+
+
+
+
+
+
+
+
+
+
+📜 词牌简介 · 声声慢
+
+《声声慢》词牌以李清照&quot;寻寻觅觅，冷冷清清，凄凄惨惨戚戚&quot;为千古绝唱，开叠"><meta name="twitter:site" content="踏月诗阁"><meta name="twitter:title" content="声声慢·秋灯寄慨"><meta name="twitter:card" content="summary"><meta name="keywords" content="诗词,宋词,古典诗词,文学,诗歌"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/poetry-garden/css/bootstrap.min.css"><link rel="stylesheet" href="/poetry-garden/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/poetry-garden/">대문</a></li><li><a href="/poetry-garden/archives">아카이브</a></li><li><a href="/poetry-garden/categories">카테고리</a></li><li><a href="/poetry-garden/tags">태그</a></li><!-- +make_page_links() // 暂时禁用--><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post"><h1 class="post-title">声声慢·秋灯寄慨</h1><div class="post-meta"><span class="post-time">post.posted 2026-02-02</span> | <span class="post-category"><a href="/poetry-garden/categories/%E8%AF%8D%E4%BD%9C/">词作</a></span> | <span class="post-tags"><a href="/poetry-garden/tags/%E5%AE%8B%E8%AF%8D/">宋词</a>, <a href="/poetry-garden/tags/%E5%A3%B0%E5%A3%B0%E6%85%A2/">声声慢</a>, <a href="/poetry-garden/tags/%E5%AD%A4%E5%AF%82/">孤寂</a>, <a href="/poetry-garden/tags/%E7%A7%8B%E6%80%9D/">秋思</a>, <a href="/poetry-garden/tags/%E5%8F%A0%E5%AD%97/">叠字</a>, <a href="/poetry-garden/tags/%E5%AF%84%E6%85%A8/">寄慨</a></span></div><div class="post-content"><div style="font-family: 'STKaiti', 'SimSun', 'Source Han Serif SC', serif; line-height: 1.8; color: #2c3e50; max-width: 800px; margin: 0 auto; padding: 0 1rem;">
+
+<!-- 标题区域 - 秋灯寄慨主题 -->
+<div style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #1e40af 100%); color: white; padding: 3.5rem 2rem 3rem 2rem; margin: 2rem 0 4rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25); min-height: 320px; display: flex; flex-direction: column; justify-content: center; border-radius: 18px; width: 100%;">
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
     radial-gradient(circle at 20% 40%, rgba(59, 130, 246, 0.4) 0%, transparent 50%),
     radial-gradient(circle at 80% 60%, rgba(96, 165, 250, 0.3) 0%, transparent 50%),
-    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.08) 2px, rgba(255,255,255,0.08) 4px);&#34;&gt;&lt;/div&gt;
-&lt;div style=&#34;position: relative; z-index: 2;&#34;&gt;
-&lt;!-- 主要标题 --&gt;
-&lt;div style=&#34;font-size: 2.8rem; font-weight: bold; margin: 0; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9); letter-spacing: 3px; font-family: &#39;STKaiti&#39;, serif; line-height: 1.2; padding-bottom: 0.5rem;&#34;&gt;
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.08) 2px, rgba(255,255,255,0.08) 4px);"></div>
+<div style="position: relative; z-index: 2;">
+<!-- 主要标题 -->
+<div style="font-size: 2.8rem; font-weight: bold; margin: 0; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9); letter-spacing: 3px; font-family: 'STKaiti', serif; line-height: 1.2; padding-bottom: 0.5rem;">
 声声慢·秋灯寄慨
-&lt;/div&gt;
+</div>
 
-&lt;!-- 分隔线 --&gt;
-&lt;div style=&#34;width: 120px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent); margin: 1.5rem auto; opacity: 0.7;&#34;&gt;&lt;/div&gt;
+<!-- 分隔线 -->
+<div style="width: 120px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent); margin: 1.5rem auto; opacity: 0.7;"></div>
 
-&lt;!-- 核心句 --&gt;
-&lt;div style=&#34;font-size: 1.3rem; opacity: 0.95; margin: 0; font-weight: 300; letter-spacing: 1px; line-height: 1.5; padding: 0 1rem;&#34;&gt;
-寂寂寥寥，孤孤孑孑，&lt;br&gt;霜华叠叠寒天
-&lt;/div&gt;
+<!-- 核心句 -->
+<div style="font-size: 1.3rem; opacity: 0.95; margin: 0; font-weight: 300; letter-spacing: 1px; line-height: 1.5; padding: 0 1rem;">
+寂寂寥寥，孤孤孑孑，<br>霜华叠叠寒天
+</div>
 
-&lt;!-- 装饰性点缀 --&gt;
-&lt;div style=&#34;margin-top: 2rem;&#34;&gt;
-&lt;div style=&#34;display: inline-block; background: rgba(255, 255, 255, 0.15); padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2);&#34;&gt;
+<!-- 装饰性点缀 -->
+<div style="margin-top: 2rem;">
+<div style="display: inline-block; background: rgba(255, 255, 255, 0.15); padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2);">
 叠字词 · 深秋寄慨
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;!-- 日期信息 --&gt;
-&lt;div style=&#34;margin-top: 2.5rem;&#34;&gt;
-&lt;div style=&#34;display: flex; justify-content: center; align-items: center; gap: 1.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.85);&#34;&gt;
-&lt;span style=&#34;font-weight: 300; display: flex; align-items: center;&#34;&gt;
-&lt;svg style=&#34;width: 16px; height: 16px; margin-right: 0.4rem;&#34; fill=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path d=&#34;M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 6v2h14V6H5z&#34;/&gt;&lt;/svg&gt;
+<!-- 日期信息 -->
+<div style="margin-top: 2.5rem;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.85);">
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 6v2h14V6H5z"/></svg>
 2026-02-02
-&lt;/span&gt;
-&lt;span style=&#34;color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;&#34;&gt;|&lt;/span&gt;
-&lt;span style=&#34;font-weight: 300; display: flex; align-items: center;&#34;&gt;
-&lt;svg style=&#34;width: 16px; height: 16px; margin-right: 0.4rem;&#34; fill=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path d=&#34;M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z&#34;/&gt;&lt;/svg&gt;
+</span>
+<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;">|</span>
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
 原创词作
-&lt;/span&gt;
-&lt;span style=&#34;color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;&#34;&gt;|&lt;/span&gt;
-&lt;span style=&#34;font-weight: 300; display: flex; align-items: center;&#34;&gt;
-&lt;svg style=&#34;width: 16px; height: 16px; margin-right: 0.4rem;&#34; fill=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path d=&#34;M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z&#34;/&gt;&lt;/svg&gt;
+</span>
+<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;">|</span>
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
 声声慢
-&lt;/span&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+</span>
+</div>
+</div>
 
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;div style=&#34;position: relative; z-index: 1; margin-top: 0;&#34;&gt;
+<div style="position: relative; z-index: 1; margin-top: 0;">
 
-&lt;!-- 词牌简介 --&gt;
-&lt;div style=&#34;background: rgba(59, 130, 246, 0.08); padding: 2.2rem; border-radius: 12px; margin: 0 0 3rem 0; border-left: 4px solid #3b82f6; min-height: 180px;&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;&#34;&gt;📜 词牌简介 · 声声慢&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem; padding: 0.5rem 0;&#34;&gt;
-《声声慢》词牌以李清照&#34;寻寻觅觅，冷冷清清，凄凄惨惨戚戚&#34;为千古绝唱，开叠字运用之先河。此调双调九十七字，前后片各五仄韵，宜于抒发深沉哀婉之情。本词继承易安遗风，连用十六叠字起笔，于秋灯孤寂中寄寓人生感慨。
-&lt;/div&gt;
-&lt;/div&gt;
+<!-- 词牌简介 -->
+<div style="background: rgba(59, 130, 246, 0.08); padding: 2.2rem; border-radius: 12px; margin: 0 0 3rem 0; border-left: 4px solid #3b82f6; min-height: 180px;">
+<div style="color: #1e40af; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">📜 词牌简介 · 声声慢</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem; padding: 0.5rem 0;">
+《声声慢》词牌以李清照"寻寻觅觅，冷冷清清，凄凄惨惨戚戚"为千古绝唱，开叠字运用之先河。此调双调九十七字，前后片各五仄韵，宜于抒发深沉哀婉之情。本词继承易安遗风，连用十六叠字起笔，于秋灯孤寂中寄寓人生感慨。
+</div>
+</div>
 
-&lt;!-- 词前小序 --&gt;
-&lt;div style=&#34;background: linear-gradient(145deg, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.05)); padding: 2.5rem; border-radius: 14px; border: 1px solid rgba(59, 130, 246, 0.2); margin: 2.5rem 0; font-style: italic; color: #4a5568; position: relative; min-height: 200px;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: -14px; left: 25px; background: white; color: #3b82f6; padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: bold; border: 1px solid rgba(59, 130, 246, 0.3); box-shadow: 0 3px 8px rgba(0,0,0,0.08);&#34;&gt;词前小序&lt;/div&gt;
-&lt;div style=&#34;padding-top: 1.2rem; font-size: 1.08rem; line-height: 1.9;&#34;&gt;
+<!-- 词前小序 -->
+<div style="background: linear-gradient(145deg, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.05)); padding: 2.5rem; border-radius: 14px; border: 1px solid rgba(59, 130, 246, 0.2); margin: 2.5rem 0; font-style: italic; color: #4a5568; position: relative; min-height: 200px;">
+<div style="position: absolute; top: -14px; left: 25px; background: white; color: #3b82f6; padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: bold; border: 1px solid rgba(59, 130, 246, 0.3); box-shadow: 0 3px 8px rgba(0,0,0,0.08);">词前小序</div>
+<div style="padding-top: 1.2rem; font-size: 1.08rem; line-height: 1.9;">
 乙卯年深秋，独对孤灯。窗外霜华叠叠，寒气侵衣。忆昔雁字来时，曾期秋杪相会，今却零落云边，音信杳然。蛩声切切，冷月孤悬，此情此景，何以堪之？遂掩疏窗，将满怀幽绪，脉脉寄与秋烟。从此萍踪聚散，唯与冷月同天而已。
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;h2 id=&#34;词文详析&#34;&gt;&lt;a href=&#34;#词文详析&#34; class=&#34;headerlink&#34; title=&#34;词文详析&#34;&gt;&lt;/a&gt;词文详析&lt;/h2&gt;&lt;!-- 上阕 --&gt;
-&lt;div style=&#34;background: linear-gradient(145deg, #f0f9ff 0%, #e0f2fe 100%); border: 2px solid #3b82f6; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 380px;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: -16px; left: 25px; background: #3b82f6; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);&#34;&gt;上阕&lt;/div&gt;
+<h2 id="词文详析"><a href="#词文详析" class="headerlink" title="词文详析"></a>词文详析</h2><!-- 上阕 -->
+<div style="background: linear-gradient(145deg, #f0f9ff 0%, #e0f2fe 100%); border: 2px solid #3b82f6; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 380px;">
+<div style="position: absolute; top: -16px; left: 25px; background: #3b82f6; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">上阕</div>
 
-&lt;div style=&#34;text-align: center; margin-bottom: 2rem;&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; font-family: &#39;STKaiti&#39;, serif; letter-spacing: 0.5px;&#34;&gt;寂寂寥寥，孤孤孑孑，霜华叠叠寒天。&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 2; font-size: 1.15rem; letter-spacing: 0.5px;&#34;&gt;
-萧萧寒裘难暖，寸寸清寒。&lt;br&gt;
-雁字曾期秋杪，却无端、零落云边。&lt;br&gt;
+<div style="text-align: center; margin-bottom: 2rem;">
+<div style="color: #1e40af; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; font-family: 'STKaiti', serif; letter-spacing: 0.5px;">寂寂寥寥，孤孤孑孑，霜华叠叠寒天。</div>
+<div style="color: #4a5568; line-height: 2; font-size: 1.15rem; letter-spacing: 0.5px;">
+萧萧寒裘难暖，寸寸清寒。<br>
+雁字曾期秋杪，却无端、零落云边。<br>
 空怅望，剩寒蛩切切，冷月孤悬。
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;!-- 上阕解析 --&gt;
-&lt;div style=&#34;background: rgba(59, 130, 246, 0.1); padding: 2.2rem; border-radius: 12px; margin-top: 2.2rem; border-left: 3px solid #3b82f6; min-height: 260px;&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🌌 上阕解析 · 叠字寒天&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.85; font-size: 1.05rem;&#34;&gt;
-&lt;strong&gt;&#34;寂寂寥寥，孤孤孑孑，霜华叠叠寒天。&#34;&lt;/strong&gt; 开篇十六叠字，如四重叹息。&#34;寂寂&#34;状环境之静，&#34;寥寥&#34;写空间之空，&#34;孤孤&#34;显形单影只，&#34;孑孑&#34;更进一层，强调孤独无依。&#34;霜华叠叠&#34;将视觉上的霜花层层堆积，转为心理上的寒意层层加深。&#34;寒天&#34;既指气候之寒，更指心境之寒。&lt;br&gt;&lt;br&gt;
+<!-- 上阕解析 -->
+<div style="background: rgba(59, 130, 246, 0.1); padding: 2.2rem; border-radius: 12px; margin-top: 2.2rem; border-left: 3px solid #3b82f6; min-height: 260px;">
+<div style="color: #1e40af; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🌌 上阕解析 · 叠字寒天</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+<strong>"寂寂寥寥，孤孤孑孑，霜华叠叠寒天。"</strong> 开篇十六叠字，如四重叹息。"寂寂"状环境之静，"寥寥"写空间之空，"孤孤"显形单影只，"孑孑"更进一层，强调孤独无依。"霜华叠叠"将视觉上的霜花层层堆积，转为心理上的寒意层层加深。"寒天"既指气候之寒，更指心境之寒。<br><br>
 
-&lt;p&gt;&lt;strong&gt;“萧萧寒裘难暖，寸寸清寒。”&lt;/strong&gt; 继续叠字推进。”萧萧”拟风声，亦拟裘衣摩擦声；”寒裘难暖”反衬内心孤寂之深。”寸寸清寒”意象精妙：”寸寸”既写寒气侵袭之细密，又暗喻时间流逝之缓慢；”清寒”区别于”严寒”，更显孤高清冷之气质。&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;“空怅望，剩寒蛩切切，冷月孤悬。”&lt;/strong&gt; 收束上阕。”空怅望”三字如一声叹息，”空”字尤显无奈。”寒蛩切切”以虫鸣反衬寂静，”冷月孤悬”以月之孤映人之独。”切切”与”孤悬”，声与形，动与静，构成完整孤寂意境。&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<p><strong>“萧萧寒裘难暖，寸寸清寒。”</strong> 继续叠字推进。”萧萧”拟风声，亦拟裘衣摩擦声；”寒裘难暖”反衬内心孤寂之深。”寸寸清寒”意象精妙：”寸寸”既写寒气侵袭之细密，又暗喻时间流逝之缓慢；”清寒”区别于”严寒”，更显孤高清冷之气质。<br><br></p>
+<p><strong>“空怅望，剩寒蛩切切，冷月孤悬。”</strong> 收束上阕。”空怅望”三字如一声叹息，”空”字尤显无奈。”寒蛩切切”以虫鸣反衬寂静，”冷月孤悬”以月之孤映人之独。”切切”与”孤悬”，声与形，动与静，构成完整孤寂意境。</p>
+</div>
+</div>
+</div>
 
-&lt;!-- 下阕 --&gt;
-&lt;div style=&#34;background: linear-gradient(145deg, #f3f4f6 0%, #e5e7eb 100%); border: 2px solid #6b7280; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 400px;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: -16px; left: 25px; background: #6b7280; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);&#34;&gt;下阕&lt;/div&gt;
+<!-- 下阕 -->
+<div style="background: linear-gradient(145deg, #f3f4f6 0%, #e5e7eb 100%); border: 2px solid #6b7280; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 400px;">
+<div style="position: absolute; top: -16px; left: 25px; background: #6b7280; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">下阕</div>
 
-&lt;div style=&#34;text-align: center; margin-bottom: 2rem;&#34;&gt;
-&lt;div style=&#34;color: #374151; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; font-family: &#39;STKaiti&#39;, serif; letter-spacing: 0.5px;&#34;&gt;枉说眉间意浅，谁解得、心尖一点萦牵。&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 2; font-size: 1.15rem; letter-spacing: 0.5px;&#34;&gt;
-片影沧桑轻掷，懒顾人言。&lt;br&gt;
-从此疏窗自掩，把余怀、脉脉寄与秋烟。&lt;br&gt;
+<div style="text-align: center; margin-bottom: 2rem;">
+<div style="color: #374151; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; font-family: 'STKaiti', serif; letter-spacing: 0.5px;">枉说眉间意浅，谁解得、心尖一点萦牵。</div>
+<div style="color: #4a5568; line-height: 2; font-size: 1.15rem; letter-spacing: 0.5px;">
+片影沧桑轻掷，懒顾人言。<br>
+从此疏窗自掩，把余怀、脉脉寄与秋烟。<br>
 君莫问，任萍踪聚散，冷月同天。
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;!-- 下阕解析 --&gt;
-&lt;div style=&#34;background: rgba(107, 114, 128, 0.1); padding: 2.2rem; border-radius: 12px; margin-top: 2.2rem; border-left: 3px solid #6b7280; min-height: 280px;&#34;&gt;
-&lt;div style=&#34;color: #374151; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🍂 下阕解析 · 秋烟寄怀&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.85; font-size: 1.05rem;&#34;&gt;
-&lt;strong&gt;&#34;枉说眉间意浅，谁解得、心尖一点萦牵。&#34;&lt;/strong&gt; 转折深入。&#34;枉说&#34;含无奈与自嘲，&#34;眉间意浅&#34;是外在表现，&#34;心尖萦牵&#34;是内在真实。一个&#34;尖&#34;字精妙——心尖最柔软处，那一点牵念最为深刻。&#34;谁解得&#34;三字如问天问地，实是孤独无解之叹。&lt;br&gt;&lt;br&gt;
+<!-- 下阕解析 -->
+<div style="background: rgba(107, 114, 128, 0.1); padding: 2.2rem; border-radius: 12px; margin-top: 2.2rem; border-left: 3px solid #6b7280; min-height: 280px;">
+<div style="color: #374151; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🍂 下阕解析 · 秋烟寄怀</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+<strong>"枉说眉间意浅，谁解得、心尖一点萦牵。"</strong> 转折深入。"枉说"含无奈与自嘲，"眉间意浅"是外在表现，"心尖萦牵"是内在真实。一个"尖"字精妙——心尖最柔软处，那一点牵念最为深刻。"谁解得"三字如问天问地，实是孤独无解之叹。<br><br>
 
-&lt;p&gt;&lt;strong&gt;“片影沧桑轻掷，懒顾人言。”&lt;/strong&gt; 境界升华。”片影”喻自身如孤影，”沧桑”含岁月变迁，”轻掷”显洒脱姿态。”懒顾人言”四字斩钉截铁，从在意他人评价到超然物外，完成了精神上的解脱。&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;“从此疏窗自掩，把余怀、脉脉寄与秋烟。”&lt;/strong&gt; 行动选择。”疏窗自掩”是主动的隔离，”脉脉寄与秋烟”是被动的寄托。”脉脉”叠字，既含情意绵绵，又显欲说还休。”秋烟”意象绝妙——如烟般飘渺，如秋般萧瑟，正好寄托那说不清道不明的余怀。&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;“君莫问，任萍踪聚散，冷月同天。”&lt;/strong&gt; 终极超脱。”君莫问”是最后的决绝，也是最大的释然。”萍踪聚散”喻人生无常，”冷月同天”显境界永恒。从”孤悬”到”同天”，完成了从个体的孤寂到与宇宙同在的升华。&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<p><strong>“片影沧桑轻掷，懒顾人言。”</strong> 境界升华。”片影”喻自身如孤影，”沧桑”含岁月变迁，”轻掷”显洒脱姿态。”懒顾人言”四字斩钉截铁，从在意他人评价到超然物外，完成了精神上的解脱。<br><br></p>
+<p><strong>“从此疏窗自掩，把余怀、脉脉寄与秋烟。”</strong> 行动选择。”疏窗自掩”是主动的隔离，”脉脉寄与秋烟”是被动的寄托。”脉脉”叠字，既含情意绵绵，又显欲说还休。”秋烟”意象绝妙——如烟般飘渺，如秋般萧瑟，正好寄托那说不清道不明的余怀。<br><br></p>
+<p><strong>“君莫问，任萍踪聚散，冷月同天。”</strong> 终极超脱。”君莫问”是最后的决绝，也是最大的释然。”萍踪聚散”喻人生无常，”冷月同天”显境界永恒。从”孤悬”到”同天”，完成了从个体的孤寂到与宇宙同在的升华。</p>
+</div>
+</div>
+</div>
 
-&lt;h2 id=&#34;叠字艺术解析&#34;&gt;&lt;a href=&#34;#叠字艺术解析&#34; class=&#34;headerlink&#34; title=&#34;叠字艺术解析&#34;&gt;&lt;/a&gt;叠字艺术解析&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #fef3c7 0%, #fde68a 100%); border: 2px solid #d97706; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(217, 119, 6, 0.12); min-height: 500px;&#34;&gt;
+<h2 id="叠字艺术解析"><a href="#叠字艺术解析" class="headerlink" title="叠字艺术解析"></a>叠字艺术解析</h2><div style="background: linear-gradient(145deg, #fef3c7 0%, #fde68a 100%); border: 2px solid #d97706; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(217, 119, 6, 0.12); min-height: 500px;">
 
-&lt;div style=&#34;text-align: center; margin-bottom: 2.8rem;&#34;&gt;
-&lt;div style=&#34;color: #92400e; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;&#34;&gt;🔤 叠字十六重奏&lt;/div&gt;
-&lt;div style=&#34;color: #b45309; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;&#34;&gt;继承易安遗风，创新叠字艺术，层层递进抒写孤寂&lt;/div&gt;
-&lt;/div&gt;
+<div style="text-align: center; margin-bottom: 2.8rem;">
+<div style="color: #92400e; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🔤 叠字十六重奏</div>
+<div style="color: #b45309; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">继承易安遗风，创新叠字艺术，层层递进抒写孤寂</div>
+</div>
 
-&lt;!-- 叠字网格 --&gt;
-&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.8rem; margin: 2.5rem 0;&#34;&gt;
-&lt;div style=&#34;background: white; padding: 1.8rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-size: 1.8rem; font-weight: bold; margin-bottom: 0.8rem; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;寂寂&lt;/div&gt;
-&lt;div style=&#34;color: #6b7280; font-size: 1rem; line-height: 1.6;&#34;&gt;环境之静&lt;br&gt;万籁俱寂&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: white; padding: 1.8rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-size: 1.8rem; font-weight: bold; margin-bottom: 0.8rem; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;寥寥&lt;/div&gt;
-&lt;div style=&#34;color: #6b7280; font-size: 1rem; line-height: 1.6;&#34;&gt;空间之空&lt;br&gt;天地空旷&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: white; padding: 1.8rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-size: 1.8rem; font-weight: bold; margin-bottom: 0.8rem; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;孤孤&lt;/div&gt;
-&lt;div style=&#34;color: #6b7280; font-size: 1rem; line-height: 1.6;&#34;&gt;形单影只&lt;br&gt;孑然一身&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: white; padding: 1.8rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-size: 1.8rem; font-weight: bold; margin-bottom: 0.8rem; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;孑孑&lt;/div&gt;
-&lt;div style=&#34;color: #6b7280; font-size: 1rem; line-height: 1.6;&#34;&gt;孤独无依&lt;br&gt;茕茕独立&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: white; padding: 1.8rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-size: 1.8rem; font-weight: bold; margin-bottom: 0.8rem; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;叠叠&lt;/div&gt;
-&lt;div style=&#34;color: #6b7280; font-size: 1rem; line-height: 1.6;&#34;&gt;霜华层层&lt;br&gt;寒意重重&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: white; padding: 1.8rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-size: 1.8rem; font-weight: bold; margin-bottom: 0.8rem; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;萧萧&lt;/div&gt;
-&lt;div style=&#34;color: #6b7280; font-size: 1rem; line-height: 1.6;&#34;&gt;风声裘声&lt;br&gt;萧瑟凄凉&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: white; padding: 1.8rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-size: 1.8rem; font-weight: bold; margin-bottom: 0.8rem; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;寸寸&lt;/div&gt;
-&lt;div style=&#34;color: #6b7280; font-size: 1rem; line-height: 1.6;&#34;&gt;寒气细密&lt;br&gt;时间缓慢&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: white; padding: 1.8rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-size: 1.8rem; font-weight: bold; margin-bottom: 0.8rem; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;切切&lt;/div&gt;
-&lt;div style=&#34;color: #6b7280; font-size: 1rem; line-height: 1.6;&#34;&gt;蛩声细碎&lt;br&gt;情意深切&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<!-- 叠字网格 -->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.8rem; margin: 2.5rem 0;">
+<div style="background: white; padding: 1.8rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #1e40af; font-size: 1.8rem; font-weight: bold; margin-bottom: 0.8rem; font-family: 'STKaiti', serif;">寂寂</div>
+<div style="color: #6b7280; font-size: 1rem; line-height: 1.6;">环境之静<br>万籁俱寂</div>
+</div>
+<div style="background: white; padding: 1.8rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #1e40af; font-size: 1.8rem; font-weight: bold; margin-bottom: 0.8rem; font-family: 'STKaiti', serif;">寥寥</div>
+<div style="color: #6b7280; font-size: 1rem; line-height: 1.6;">空间之空<br>天地空旷</div>
+</div>
+<div style="background: white; padding: 1.8rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #1e40af; font-size: 1.8rem; font-weight: bold; margin-bottom: 0.8rem; font-family: 'STKaiti', serif;">孤孤</div>
+<div style="color: #6b7280; font-size: 1rem; line-height: 1.6;">形单影只<br>孑然一身</div>
+</div>
+<div style="background: white; padding: 1.8rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #1e40af; font-size: 1.8rem; font-weight: bold; margin-bottom: 0.8rem; font-family: 'STKaiti', serif;">孑孑</div>
+<div style="color: #6b7280; font-size: 1rem; line-height: 1.6;">孤独无依<br>茕茕独立</div>
+</div>
+<div style="background: white; padding: 1.8rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #1e40af; font-size: 1.8rem; font-weight: bold; margin-bottom: 0.8rem; font-family: 'STKaiti', serif;">叠叠</div>
+<div style="color: #6b7280; font-size: 1rem; line-height: 1.6;">霜华层层<br>寒意重重</div>
+</div>
+<div style="background: white; padding: 1.8rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #1e40af; font-size: 1.8rem; font-weight: bold; margin-bottom: 0.8rem; font-family: 'STKaiti', serif;">萧萧</div>
+<div style="color: #6b7280; font-size: 1rem; line-height: 1.6;">风声裘声<br>萧瑟凄凉</div>
+</div>
+<div style="background: white; padding: 1.8rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #1e40af; font-size: 1.8rem; font-weight: bold; margin-bottom: 0.8rem; font-family: 'STKaiti', serif;">寸寸</div>
+<div style="color: #6b7280; font-size: 1rem; line-height: 1.6;">寒气细密<br>时间缓慢</div>
+</div>
+<div style="background: white; padding: 1.8rem; border-radius: 12px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #1e40af; font-size: 1.8rem; font-weight: bold; margin-bottom: 0.8rem; font-family: 'STKaiti', serif;">切切</div>
+<div style="color: #6b7280; font-size: 1rem; line-height: 1.6;">蛩声细碎<br>情意深切</div>
+</div>
+</div>
 
-&lt;!-- 叠字艺术分析 --&gt;
-&lt;div style=&#34;background: rgba(217, 119, 6, 0.1); padding: 2.5rem; border-radius: 14px; margin-top: 2.5rem; border: 1px solid rgba(217, 119, 6, 0.2);&#34;&gt;
-&lt;div style=&#34;color: #92400e; font-weight: bold; margin-bottom: 1.5rem; text-align: center; font-size: 1.2rem;&#34;&gt;🎭 叠字艺术三重境界&lt;/div&gt;
-&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0;&#34;&gt;
-&lt;div style=&#34;background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-weight: bold; margin-bottom: 1rem; font-size: 1.1rem;&#34;&gt;第一境 · 环境铺陈&lt;/div&gt;
-&lt;ul style=&#34;color: #6b7280; font-size: 1rem; padding-left: 1.2rem; line-height: 1.7;&#34;&gt;
-&lt;li&gt;&lt;strong&gt;寂寂寥寥&lt;/strong&gt; - 空间寂静&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;霜华叠叠&lt;/strong&gt; - 视觉堆积&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;萧萧寒裘&lt;/strong&gt; - 触觉寒冷&lt;/li&gt;
-&lt;li&gt;营造整体孤寂氛围&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-weight: bold; margin-bottom: 1rem; font-size: 1.1rem;&#34;&gt;第二境 · 心理深入&lt;/div&gt;
-&lt;ul style=&#34;color: #6b7280; font-size: 1rem; padding-left: 1.2rem; line-height: 1.7;&#34;&gt;
-&lt;li&gt;&lt;strong&gt;孤孤孑孑&lt;/strong&gt; - 内心孤独&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;寸寸清寒&lt;/strong&gt; - 寒意渗透&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;寒蛩切切&lt;/strong&gt; - 情绪绵长&lt;/li&gt;
-&lt;li&gt;深化情感体验层次&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-weight: bold; margin-bottom: 1rem; font-size: 1.1rem;&#34;&gt;第三境 · 意境升华&lt;/div&gt;
-&lt;ul style=&#34;color: #6b7280; font-size: 1rem; padding-left: 1.2rem; line-height: 1.7;&#34;&gt;
-&lt;li&gt;&lt;strong&gt;脉脉寄与&lt;/strong&gt; - 情意寄托&lt;/li&gt;
-&lt;li&gt;从具象到抽象&lt;/li&gt;
-&lt;li&gt;从个体到宇宙&lt;/li&gt;
-&lt;li&gt;完成艺术升华&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<!-- 叠字艺术分析 -->
+<div style="background: rgba(217, 119, 6, 0.1); padding: 2.5rem; border-radius: 14px; margin-top: 2.5rem; border: 1px solid rgba(217, 119, 6, 0.2);">
+<div style="color: #92400e; font-weight: bold; margin-bottom: 1.5rem; text-align: center; font-size: 1.2rem;">🎭 叠字艺术三重境界</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0;">
+<div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #1e40af; font-weight: bold; margin-bottom: 1rem; font-size: 1.1rem;">第一境 · 环境铺陈</div>
+<ul style="color: #6b7280; font-size: 1rem; padding-left: 1.2rem; line-height: 1.7;">
+<li><strong>寂寂寥寥</strong> - 空间寂静</li>
+<li><strong>霜华叠叠</strong> - 视觉堆积</li>
+<li><strong>萧萧寒裘</strong> - 触觉寒冷</li>
+<li>营造整体孤寂氛围</li>
+</ul>
+</div>
+<div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #1e40af; font-weight: bold; margin-bottom: 1rem; font-size: 1.1rem;">第二境 · 心理深入</div>
+<ul style="color: #6b7280; font-size: 1rem; padding-left: 1.2rem; line-height: 1.7;">
+<li><strong>孤孤孑孑</strong> - 内心孤独</li>
+<li><strong>寸寸清寒</strong> - 寒意渗透</li>
+<li><strong>寒蛩切切</strong> - 情绪绵长</li>
+<li>深化情感体验层次</li>
+</ul>
+</div>
+<div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+<div style="color: #1e40af; font-weight: bold; margin-bottom: 1rem; font-size: 1.1rem;">第三境 · 意境升华</div>
+<ul style="color: #6b7280; font-size: 1rem; padding-left: 1.2rem; line-height: 1.7;">
+<li><strong>脉脉寄与</strong> - 情意寄托</li>
+<li>从具象到抽象</li>
+<li>从个体到宇宙</li>
+<li>完成艺术升华</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 
-&lt;h2 id=&#34;核心意象系统&#34;&gt;&lt;a href=&#34;#核心意象系统&#34; class=&#34;headerlink&#34; title=&#34;核心意象系统&#34;&gt;&lt;/a&gt;核心意象系统&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #f3f4f6 0%, #e5e7eb 100%); border: 2px solid #6b7280; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(107, 114, 128, 0.12); min-height: 400px;&#34;&gt;
+<h2 id="核心意象系统"><a href="#核心意象系统" class="headerlink" title="核心意象系统"></a>核心意象系统</h2><div style="background: linear-gradient(145deg, #f3f4f6 0%, #e5e7eb 100%); border: 2px solid #6b7280; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(107, 114, 128, 0.12); min-height: 400px;">
 
-&lt;div style=&#34;text-align: center; margin-bottom: 2.8rem;&#34;&gt;
-&lt;div style=&#34;color: #374151; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;&#34;&gt;🌙 秋夜意象五重奏&lt;/div&gt;
-&lt;div style=&#34;color: #6b7280; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;&#34;&gt;从寒天冷月到秋烟萍踪，构建完整的孤寂审美体系&lt;/div&gt;
-&lt;/div&gt;
+<div style="text-align: center; margin-bottom: 2.8rem;">
+<div style="color: #374151; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🌙 秋夜意象五重奏</div>
+<div style="color: #6b7280; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">从寒天冷月到秋烟萍踪，构建完整的孤寂审美体系</div>
+</div>
 
-&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2.5rem 0;&#34;&gt;
-&lt;div style=&#34;background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 220px;&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-weight: bold; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;❄️ 霜华寒天&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem;&#34;&gt;
-&lt;strong&gt;霜华叠叠&lt;/strong&gt; - 视觉的冷&lt;br&gt;
-&lt;strong&gt;寸寸清寒&lt;/strong&gt; - 触觉的寒&lt;br&gt;
-&lt;strong&gt;萧萧寒裘&lt;/strong&gt; - 听觉的寂&lt;br&gt;
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2.5rem 0;">
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 220px;">
+<div style="color: #1e40af; font-weight: bold; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">❄️ 霜华寒天</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
+<strong>霜华叠叠</strong> - 视觉的冷<br>
+<strong>寸寸清寒</strong> - 触觉的寒<br>
+<strong>萧萧寒裘</strong> - 听觉的寂<br>
 三重感官交织，构建全方位的寒冷孤寂体验。
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 220px;&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-weight: bold; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;🌌 冷月孤悬&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem;&#34;&gt;
-&lt;strong&gt;冷月&lt;/strong&gt; - 清冷的光源&lt;br&gt;
-&lt;strong&gt;孤悬&lt;/strong&gt; - 孤独的姿态&lt;br&gt;
-&lt;strong&gt;同天&lt;/strong&gt; - 永恒的伴侣&lt;br&gt;
-从个体的&#34;孤悬&#34;到宇宙的&#34;同天&#34;，完成孤独的升华。
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 220px;&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-weight: bold; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;🍃 秋烟寄怀&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem;&#34;&gt;
-&lt;strong&gt;秋烟&lt;/strong&gt; - 飘渺的载体&lt;br&gt;
-&lt;strong&gt;脉脉&lt;/strong&gt; - 含蓄的情感&lt;br&gt;
-&lt;strong&gt;寄与&lt;/strong&gt; - 主动的寄托&lt;br&gt;
+</div>
+</div>
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 220px;">
+<div style="color: #1e40af; font-weight: bold; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🌌 冷月孤悬</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
+<strong>冷月</strong> - 清冷的光源<br>
+<strong>孤悬</strong> - 孤独的姿态<br>
+<strong>同天</strong> - 永恒的伴侣<br>
+从个体的"孤悬"到宇宙的"同天"，完成孤独的升华。
+</div>
+</div>
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 220px;">
+<div style="color: #1e40af; font-weight: bold; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🍃 秋烟寄怀</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
+<strong>秋烟</strong> - 飘渺的载体<br>
+<strong>脉脉</strong> - 含蓄的情感<br>
+<strong>寄与</strong> - 主动的寄托<br>
 将无法言说的情怀，寄予飘渺的秋烟，意境深远。
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 220px;&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-weight: bold; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;🌊 萍踪聚散&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem;&#34;&gt;
-&lt;strong&gt;萍踪&lt;/strong&gt; - 漂泊的人生&lt;br&gt;
-&lt;strong&gt;聚散&lt;/strong&gt; - 无常的命运&lt;br&gt;
-&lt;strong&gt;任&lt;/strong&gt; - 超然的态度&lt;br&gt;
-从挣扎于聚散，到&#34;任&#34;其聚散，获得精神自由。
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 220px;">
+<div style="color: #1e40af; font-weight: bold; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🌊 萍踪聚散</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
+<strong>萍踪</strong> - 漂泊的人生<br>
+<strong>聚散</strong> - 无常的命运<br>
+<strong>任</strong> - 超然的态度<br>
+从挣扎于聚散，到"任"其聚散，获得精神自由。
+</div>
+</div>
+</div>
 
-&lt;/div&gt;
+</div>
 
-&lt;h2 id=&#34;创作后记：秋灯独对&#34;&gt;&lt;a href=&#34;#创作后记：秋灯独对&#34; class=&#34;headerlink&#34; title=&#34;创作后记：秋灯独对&#34;&gt;&lt;/a&gt;创作后记：秋灯独对&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, rgba(248, 250, 252, 0.9), rgba(240, 242, 245, 0.8)); border-radius: 18px; padding: 3rem; margin: 3.5rem 0; border: 1px solid #e2e8f0; box-shadow: 0 10px 35px rgba(0,0,0,0.05); position: relative; min-height: 350px;&#34;&gt;
+<h2 id="创作后记：秋灯独对"><a href="#创作后记：秋灯独对" class="headerlink" title="创作后记：秋灯独对"></a>创作后记：秋灯独对</h2><div style="background: linear-gradient(145deg, rgba(248, 250, 252, 0.9), rgba(240, 242, 245, 0.8)); border-radius: 18px; padding: 3rem; margin: 3.5rem 0; border: 1px solid #e2e8f0; box-shadow: 0 10px 35px rgba(0,0,0,0.05); position: relative; min-height: 350px;">
 
-&lt;div style=&#34;color: #1e40af; font-weight: bold; margin-bottom: 1.8rem; font-size: 1.3rem; text-align: center; position: relative; padding-bottom: 1.2rem;&#34;&gt;
-&lt;div style=&#34;position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100px; height: 3px; background: linear-gradient(to right, #3b82f6, #6b7280);&#34;&gt;&lt;/div&gt;
+<div style="color: #1e40af; font-weight: bold; margin-bottom: 1.8rem; font-size: 1.3rem; text-align: center; position: relative; padding-bottom: 1.2rem;">
+<div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100px; height: 3px; background: linear-gradient(to right, #3b82f6, #6b7280);"></div>
 创作心路：叠字中的孤寂美学
-&lt;/div&gt;
+</div>
 
-&lt;div style=&#34;color: #4a5568; line-height: 1.9; margin-bottom: 2rem; font-size: 1.08rem;&#34;&gt;
-《声声慢·秋灯寄慨》的创作，始于一个真实的秋夜。乙卯年深秋，霜降之夜，独坐书房。窗外确实&#34;霜华叠叠&#34;，窗内确实&#34;孤孤孑孑&#34;。那份孤寂，不是简单的寂寞，而是天地间唯我一人的空旷感。
-&lt;/div&gt;
+<div style="color: #4a5568; line-height: 1.9; margin-bottom: 2rem; font-size: 1.08rem;">
+《声声慢·秋灯寄慨》的创作，始于一个真实的秋夜。乙卯年深秋，霜降之夜，独坐书房。窗外确实"霜华叠叠"，窗内确实"孤孤孑孑"。那份孤寂，不是简单的寂寞，而是天地间唯我一人的空旷感。
+</div>
 
-&lt;div style=&#34;background: rgba(59, 130, 246, 0.08); padding: 1.8rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #3b82f6;&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-weight: bold; margin-bottom: 0.8rem;&#34;&gt;💡 叠字探索：十六重奏&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.8;&#34;&gt;
-创作最大的挑战是叠字的运用。李清照&#34;寻寻觅觅&#34;七组叠字已成绝唱，如何继承而不模仿？最终决定从&#34;寂寂寥寥&#34;起笔，用四组叠字层层推进：环境之寂（寂寂）→空间之空（寥寥）→形影之孤（孤孤）→心境之独（孑孑）。这是对易安遗风的致敬，也是新的探索。
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="background: rgba(59, 130, 246, 0.08); padding: 1.8rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #3b82f6;">
+<div style="color: #1e40af; font-weight: bold; margin-bottom: 0.8rem;">💡 叠字探索：十六重奏</div>
+<div style="color: #4a5568; line-height: 1.8;">
+创作最大的挑战是叠字的运用。李清照"寻寻觅觅"七组叠字已成绝唱，如何继承而不模仿？最终决定从"寂寂寥寥"起笔，用四组叠字层层推进：环境之寂（寂寂）→空间之空（寥寥）→形影之孤（孤孤）→心境之独（孑孑）。这是对易安遗风的致敬，也是新的探索。
+</div>
+</div>
 
-&lt;div style=&#34;color: #4a5568; line-height: 1.9; margin-bottom: 2rem; font-size: 1.08rem;&#34;&gt;
-&#34;寸寸清寒&#34;的创作是一次顿悟。那夜寒气确实是一寸一寸侵入的，从指尖到掌心，从体表到内心。这&#34;寸寸&#34;既是空间的，也是时间的——每一寸寒气的侵入，都伴随着一分一秒的时间流逝。最深的孤寂，往往就藏在这&#34;寸寸&#34;之间。
-&lt;/div&gt;
+<div style="color: #4a5568; line-height: 1.9; margin-bottom: 2rem; font-size: 1.08rem;">
+"寸寸清寒"的创作是一次顿悟。那夜寒气确实是一寸一寸侵入的，从指尖到掌心，从体表到内心。这"寸寸"既是空间的，也是时间的——每一寸寒气的侵入，都伴随着一分一秒的时间流逝。最深的孤寂，往往就藏在这"寸寸"之间。
+</div>
 
-&lt;div style=&#34;background: rgba(107, 114, 128, 0.08); padding: 1.8rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #6b7280;&#34;&gt;
-&lt;div style=&#34;color: #374151; font-weight: bold; margin-bottom: 0.8rem;&#34;&gt;🌙 意象突破：冷月同天&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.8;&#34;&gt;
-结尾&#34;冷月同天&#34;的确定最为艰难。最初写&#34;冷月孤悬&#34;，后觉境界不够；改为&#34;冷月长天&#34;，又觉太普通。最终&#34;同天&#34;二字跃然而出——月虽冷，却与我同在一片天空；我虽孤，却有月为伴。从&#34;孤悬&#34;到&#34;同天&#34;，完成了从孤独到共存的升华。
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="background: rgba(107, 114, 128, 0.08); padding: 1.8rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid #6b7280;">
+<div style="color: #374151; font-weight: bold; margin-bottom: 0.8rem;">🌙 意象突破：冷月同天</div>
+<div style="color: #4a5568; line-height: 1.8;">
+结尾"冷月同天"的确定最为艰难。最初写"冷月孤悬"，后觉境界不够；改为"冷月长天"，又觉太普通。最终"同天"二字跃然而出——月虽冷，却与我同在一片天空；我虽孤，却有月为伴。从"孤悬"到"同天"，完成了从孤独到共存的升华。
+</div>
+</div>
 
-&lt;div style=&#34;text-align: center; margin: 2.5rem 0; padding: 2.2rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(107, 114, 128, 0.1)); border-radius: 14px; border: 1px solid rgba(59, 130, 246, 0.15);&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-weight: bold; margin-bottom: 1rem; font-size: 1.2rem;&#34;&gt;孤寂真谛&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.08rem;&#34;&gt;
-最深的孤寂，不是无人相伴，&lt;br&gt;
-而是在霜华叠叠的寒天里，&lt;br&gt;
-将寸寸清寒，酿成脉脉秋烟。&lt;br&gt;
-最终明白：&lt;br&gt;
+<div style="text-align: center; margin: 2.5rem 0; padding: 2.2rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(107, 114, 128, 0.1)); border-radius: 14px; border: 1px solid rgba(59, 130, 246, 0.15);">
+<div style="color: #1e40af; font-weight: bold; margin-bottom: 1rem; font-size: 1.2rem;">孤寂真谛</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.08rem;">
+最深的孤寂，不是无人相伴，<br>
+而是在霜华叠叠的寒天里，<br>
+将寸寸清寒，酿成脉脉秋烟。<br>
+最终明白：<br>
 萍踪可以聚散，冷月永远同天。
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;div style=&#34;text-align: center; margin-top: 2.5rem; padding-top: 1.8rem; border-top: 1px solid #e2e8f0;&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-weight: bold; margin-bottom: 0.8rem;&#34;&gt;秋灯之悟&lt;/div&gt;
-&lt;div style=&#34;color: #718096; font-style: italic; font-size: 1.08rem;&#34;&gt;
-最好的寄慨，&lt;br&gt;
-是那些说不出口的，&lt;br&gt;
-都化作了秋烟；&lt;br&gt;
-最好的陪伴，&lt;br&gt;
-是那些得不到的，&lt;br&gt;
+<div style="text-align: center; margin-top: 2.5rem; padding-top: 1.8rem; border-top: 1px solid #e2e8f0;">
+<div style="color: #1e40af; font-weight: bold; margin-bottom: 0.8rem;">秋灯之悟</div>
+<div style="color: #718096; font-style: italic; font-size: 1.08rem;">
+最好的寄慨，<br>
+是那些说不出口的，<br>
+都化作了秋烟；<br>
+最好的陪伴，<br>
+是那些得不到的，<br>
 都变成了同天的冷月。
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;div style=&#34;text-align: right; color: #a0aec0; font-size: 0.95rem; margin-top: 2.5rem; font-family: &#39;STKaiti&#39;, serif;&#34;&gt;
+<div style="text-align: right; color: #a0aec0; font-size: 0.95rem; margin-top: 2.5rem; font-family: 'STKaiti', serif;">
 乙卯年霜降夜 记于秋灯下
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;!-- 词作定位 --&gt;
-&lt;hr style=&#34;border: 1px solid #e2e8f0; margin: 3rem 0;&#34;&gt;
+<!-- 词作定位 -->
+<hr style="border: 1px solid #e2e8f0; margin: 3rem 0;">
 
-&lt;div style=&#34;background: rgba(248, 250, 252, 0.9); border-radius: 14px; padding: 2rem; margin: 2.5rem 0; text-align: center; border: 1px solid #e2e8f0;&#34;&gt;
-&lt;div style=&#34;color: #1e40af; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.2rem;&#34;&gt;在叠字词中的定位&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.8; max-width: 700px; margin: 0 auto; font-size: 1.05rem;&#34;&gt;
-此词在叠字艺术上直承李清照《声声慢》，但又有创新发展：&lt;strong style=&#34;color: #3b82f6;&#34;&gt;从七组叠字扩展到十六叠字&lt;/strong&gt;，从单纯的环境描写发展为环境、心理、意境的三重交响。在孤寂主题上，与《鹧鸪天·夜思》形成姐妹篇，但更侧重于&lt;strong style=&#34;color: #6b7280;&#34;&gt;叠字音韵的审美探索&lt;/strong&gt;和&lt;strong style=&#34;color: #d97706;&#34;&gt;冷月同天的哲学升华&lt;/strong&gt;。
-&lt;/div&gt;
-&lt;/div&gt;
+<div style="background: rgba(248, 250, 252, 0.9); border-radius: 14px; padding: 2rem; margin: 2.5rem 0; text-align: center; border: 1px solid #e2e8f0;">
+<div style="color: #1e40af; font-weight: bold; margin-bottom: 1.2rem; font-size: 1.2rem;">在叠字词中的定位</div>
+<div style="color: #4a5568; line-height: 1.8; max-width: 700px; margin: 0 auto; font-size: 1.05rem;">
+此词在叠字艺术上直承李清照《声声慢》，但又有创新发展：<strong style="color: #3b82f6;">从七组叠字扩展到十六叠字</strong>，从单纯的环境描写发展为环境、心理、意境的三重交响。在孤寂主题上，与《鹧鸪天·夜思》形成姐妹篇，但更侧重于<strong style="color: #6b7280;">叠字音韵的审美探索</strong>和<strong style="color: #d97706;">冷月同天的哲学升华</strong>。
+</div>
+</div>
 
-&lt;/div&gt; &lt;!-- 关闭z-index包装div --&gt;
+</div> <!-- 关闭z-index包装div -->
 
-&lt;/div&gt; &lt;!-- 关闭主容器div --&gt;
-
-        </article>
-        
-        <!-- 标签 -->
-        
-        <div class="article-tags">
-            <i class="fas fa-tags" style="color: var(--classical-brown); margin-right: 10px;"></i>
-            
-                <a href="/poetry-garden/tags/%E5%AE%8B%E8%AF%8D/" class="tag-link">
-                    宋词
-                </a>
-            
-                <a href="/poetry-garden/tags/%E5%A3%B0%E5%A3%B0%E6%85%A2/" class="tag-link">
-                    声声慢
-                </a>
-            
-                <a href="/poetry-garden/tags/%E5%AD%A4%E5%AF%82/" class="tag-link">
-                    孤寂
-                </a>
-            
-                <a href="/poetry-garden/tags/%E7%A7%8B%E6%80%9D/" class="tag-link">
-                    秋思
-                </a>
-            
-                <a href="/poetry-garden/tags/%E5%8F%A0%E5%AD%97/" class="tag-link">
-                    叠字
-                </a>
-            
-                <a href="/poetry-garden/tags/%E5%AF%84%E6%85%A8/" class="tag-link">
-                    寄慨
-                </a>
-            
-        </div>
-        
-        
-        <!-- 文章导航 -->
-        <div class="article-navigation">
-            
-            <a href="/poetry-garden/2026/02/03/%E6%B0%B4%E8%B0%83%E6%AD%8C%E5%A4%B4-%E9%97%AE%E9%81%93/" class="nav-button nav-prev">
-                <div class="nav-icon">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-                <div class="nav-content">
-                    <h4>上一篇</h4>
-                    <span>水调歌头·问道</span>
-                </div>
-            </a>
-            
-            
-            
-            <a href="/poetry-garden/2026/02/01/%E4%B8%B4%E6%B1%9F%E4%BB%99-%E6%80%80%E8%90%8D%E9%93%B8%E5%89%91/" class="nav-button nav-next">
-                <div class="nav-content">
-                    <h4>下一篇</h4>
-                    <span>临江仙·怀萍铸剑</span>
-                </div>
-                <div class="nav-icon">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </a>
-            
-        </div>
-        
-        <!-- 返回链接 -->
-        <div style="text-align: center; margin-top: 50px;">
-            <a href="/poetry-garden/" class="back-link">
-                <i class="fas fa-home"></i> 返回首页
-            </a>
-        </div>
-    </main>
-    
-    <!-- 页脚 -->
-    <footer class="classical-footer">
-        <div class="footer-container">
-            <nav class="footer-nav">
-                <a href="/poetry-garden/" class="footer-link">首页</a>
-                <a href="/poetry-garden/archives" class="footer-link">文章归档</a>
-                <a href="/poetry-garden/categories" class="footer-link">分类目录</a>
-                <a href="/poetry-garden/tags" class="footer-link">标签云</a>
-                <a href="/poetry-garden/about" class="footer-link">关于我们</a>
-            </nav>
-            
-            <div class="footer-info">
-                <p>
-                    <span class="footer-seal">詩</span>
-                    版权所有 © 2026 踏月诗阁
-                    <span class="footer-seal">閣</span>
-                </p>
-                <p style="margin-top: 10px;">传承古典文化，品味诗意人生</p>
-                <p style="margin-top: 5px; font-size: 0.8rem; color: var(--classical-gold);">
-                    基于 踏月诗客 · 倾心呈现
-                </p>
-            </div>
-        </div>
-    </footer>
-    
-    <script>
-        // 页面滚动效果
-        document.addEventListener('DOMContentLoaded', function() {
-            const header = document.querySelector('.classical-header');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    header.style.boxShadow = '0 5px 20px rgba(58, 38, 21, 0.1)';
-                    header.style.background = 'rgba(248, 245, 230, 0.98)';
-                } else {
-                    header.style.boxShadow = '0 2px 10px rgba(58, 38, 21, 0.1)';
-                    header.style.background = 'rgba(248, 245, 230, 0.98)';
-                }
-            });
-            
-            // 文章内容块渐入效果
-            const contentBlocks = document.querySelectorAll('.article-content h1, .article-content h2, .article-content h3, .article-content p, .article-content blockquote');
-            contentBlocks.forEach((block, index) => {
-                block.style.opacity = '0';
-                block.style.transform = 'translateY(20px)';
-                block.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                
-                setTimeout(() => {
-                    block.style.opacity = '1';
-                    block.style.transform = 'translateY(0)';
-                }, index * 100);
-            });
-            
-            // 为链接添加预览效果
-            document.querySelectorAll('.article-content a').forEach(link => {
-                link.addEventListener('mouseenter', function(e) {
-                    const ripple = document.createElement('span');
-                    ripple.style.cssText = `
-                        position: absolute;
-                        background: rgba(195, 51, 51, 0.1);
-                        border-radius: 50%;
-                        transform: scale(0);
-                        animation: ripple 0.6s linear;
-                        pointer-events: none;
-                    `;
-                    
-                    const size = Math.max(this.offsetWidth, this.offsetHeight);
-                    ripple.style.width = ripple.style.height = size + 'px';
-                    ripple.style.left = e.offsetX - size/2 + 'px';
-                    ripple.style.top = e.offsetY - size/2 + 'px';
-                    
-                    this.style.position = 'relative';
-                    this.style.overflow = 'hidden';
-                    this.appendChild(ripple);
-                    
-                    setTimeout(() => ripple.remove(), 600);
-                });
-            });
-            
-            // 替换页面中的英文文本
-            replaceEnglishText();
-        });
-        
-        // 显示预览效果
-        function showPreview() {
-            const preview = document.getElementById('articlePreview');
-            const previewContent = document.getElementById('previewContent');
-            
-            // 获取文章的实际内容（纯文本）
-            let content = '';
-            const articleContent = document.querySelector('.article-content');
-            if (articleContent) {
-                content = articleContent.innerText;
-            }
-            
-            // 截取前300字作为预览
-            let excerpt = content.substring(0, 300);
-            if (content.length > 300) {
-                excerpt += '...';
-            }
-            
-            previewContent.innerHTML = `
-                <div class="preview-excerpt">
-                    <p>${excerpt}</p>
-                </div>
-                <p>这是文章《声声慢·秋灯寄慨》的预览效果。您可以在此处提前查看文章的部分内容。</p>
-                <p>古典风格的页面设计将传统美学与现代网页技术完美融合，为您带来沉浸式的阅读体验。</p>
-                <p style="color: var(--classical-red); margin-top: 20px;">
-                    <i class="fas fa-heart"></i> 点击关闭按钮或ESC键可以退出预览模式
-                </p>
-                <p style="margin-top: 20px; padding: 15px; background: rgba(193, 154, 107, 0.1); border-radius: 10px;">
-                    <i class="fas fa-info-circle"></i> 预览功能仅显示部分内容，阅读全文请返回文章页面
-                </p>
-            `;
-            
-            preview.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        // 关闭预览效果
-        function closePreview() {
-            const preview = document.getElementById('articlePreview');
-            preview.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-        
-        // 按ESC键关闭预览
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closePreview();
-            }
-        });
-        
-        // 点击预览区域外部关闭
-        document.getElementById('articlePreview').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closePreview();
-            }
-        });
-        
-        // 替换英文文本为中文
-        function replaceEnglishText() {
-            // 替换导航中的可能存在的英文
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                if (link.textContent.includes('Home')) {
-                    link.innerHTML = '<i class="fas fa-home"></i> 首页';
-                }
-                if (link.textContent.includes('Archive')) {
-                    link.innerHTML = '<i class="fas fa-archive"></i> 归档';
-                }
-                if (link.textContent.includes('Categories')) {
-                    link.innerHTML = '<i class="fas fa-layer-group"></i> 分类';
-                }
-                if (link.textContent.includes('Tags')) {
-                    link.innerHTML = '<i class="fas fa-tags"></i> 标签';
-                }
-                if (link.textContent.includes('About')) {
-                    link.innerHTML = '<i class="fas fa-book"></i> 关于';
-                }
-            });
-            
-            // 替换页脚中的可能存在的英文
-            const footerLinks = document.querySelectorAll('.footer-link');
-            footerLinks.forEach(link => {
-                if (link.textContent.includes('Home')) {
-                    link.textContent = '首页';
-                }
-                if (link.textContent.includes('Archive')) {
-                    link.textContent = '文章归档';
-                }
-                if (link.textContent.includes('Categories')) {
-                    link.textContent = '分类目录';
-                }
-                if (link.textContent.includes('Tags')) {
-                    link.textContent = '标签云';
-                }
-                if (link.textContent.includes('About')) {
-                    link.textContent = '关于我们';
-                }
-            });
-            
-            // 检查并替换页脚信息
-            const footerInfo = document.querySelector('.footer-info');
-            if (footerInfo) {
-                footerInfo.innerHTML = footerInfo.innerHTML
-                    .replace(/© \d{4}.*?Theme.*?by.*?/g, '')
-                    .replace(/Proudly published with Hexo/g, '基于Hexo · 倾心呈现');
-            }
-            
-            // 检查并替换其他可能的英文文本
-            document.body.innerHTML = document.body.innerHTML
-                .replace(/Read More/g, '阅读全文')
-                .replace(/Comments/g, '评论')
-                .replace(/Posted on/g, '发布于')
-                .replace(/Share/g, '分享')
-                .replace(/Category/g, '分类')
-                .replace(/Tag/g, '标签')
-                .replace(/Posted in/g, '分类')
-                .replace(/Author/g, '作者');
-        }
-        
-        // 添加CSS动画
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-            
-            @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(30px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            
-            .article-content {
-                animation: fadeInUp 0.8s ease-out;
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
-<!-- hexo injector body_end start -->
+</div> <!-- 关闭主容器div -->
+</div></div><div class="share"><span>공유하기</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://lyluchao.github.io/2026/02/02/声声慢-秋灯寄慨/%20踏月诗阁%20声声慢·秋灯寄慨"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/poetry-garden/2026/02/03/%E6%B0%B4%E8%B0%83%E6%AD%8C%E5%A4%B4-%E9%97%AE%E9%81%93/" title="水调歌头·问道"><i class="fa fa-angle-double-left"></i>&nbsp;이전 포스트: 水调歌头·问道</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/poetry-garden/2026/02/01/%E4%B8%B4%E6%B1%9F%E4%BB%99-%E6%80%80%E8%90%8D%E9%93%B8%E5%89%91/" title="临江仙·怀萍铸剑">다음 포스트: 临江仙·怀萍铸剑&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/poetry-garden/js/jquery-3.1.0.min.js"></script><script src="/poetry-garden/js/bootstrap.min.js"></script><script src="/poetry-garden/js/jquery-migrate-1.2.1.min.js"></script><script src="/poetry-garden/js/jquery.appear.js"></script><script src="/poetry-garden/js/google-analytics.js"></script><script src="/poetry-garden/js/typography.js"></script><!-- hexo injector body_end start -->
 <script>
 // 检测是否需要加载 Mermaid
 if (document.querySelector('.mermaid')) {
@@ -1480,8 +708,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-<!-- hexo injector body_end end --></body>
-</html>
+<!-- hexo injector body_end end --></body></html>
     </main>
     
     <!-- 古典页脚 -->

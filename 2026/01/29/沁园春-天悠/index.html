@@ -206,8 +206,7 @@
             }
         }
     </style>
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/poetry-garden/atom.xml" title="踏月诗阁" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 <body>
     <!-- 古典页眉 -->
     <header class="classical-header">
@@ -239,1103 +238,334 @@
     
     <!-- 主内容 -->
     <main class="classical-container">
-        <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>沁园春·天悠 - 踏月诗阁</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --classical-paper: #f8f5e6;
-            --classical-ink: #3a2615;
-            --classical-red: #c33;
-            --classical-gold: #c19a6b;
-            --classical-brown: #8b4513;
-            --classical-blue: #5d8aa8;
-            --classical-border: #d4b483;
-            --classical-shadow: rgba(58, 38, 21, 0.1);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Noto Serif SC', serif;
-            background: var(--classical-paper);
-            color: var(--classical-ink);
-            line-height: 1.6;
-            min-height: 100vh;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(193, 154, 107, 0.05) 0%, transparent 30%),
-                radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 30%),
-                linear-gradient(135deg, #f8f5e6 0%, #f0e6d6 100%);
-            padding-top: 80px;
-        }
-        
-        .classical-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(248, 245, 230, 0.98);
-            backdrop-filter: blur(8px);
-            border-bottom: 2px solid var(--classical-border);
-            z-index: 1000;
-            padding: 15px 0;
-            box-shadow: 0 2px 10px var(--classical-shadow);
-        }
-        
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-        
-        .site-logo {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 1.8rem;
-            color: var(--classical-brown);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .site-logo i {
-            color: var(--classical-red);
-            font-size: 1.5rem;
-        }
-        
-        .classical-nav {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        
-        .nav-link {
-            font-family: 'Noto Serif SC', serif;
-            color: var(--classical-ink);
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            border: 1px solid transparent;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-        }
-        
-        .nav-link:hover {
-            color: var(--classical-red);
-            border-color: var(--classical-red);
-            background: rgba(195, 51, 51, 0.05);
-        }
-        
-        .nav-link.active {
-            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
-            color: white;
-            border: none;
-            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
-        }
-        
-        .article-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        .article-header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding: 50px 40px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid var(--classical-border);
-            border-radius: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .article-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--classical-red), var(--classical-gold), var(--classical-blue));
-        }
-        
-        .article-title {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 2.8rem;
-            color: var(--classical-red);
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-        
-        .article-meta {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
-            color: var(--classical-blue);
-            font-size: 1rem;
-            margin-top: 25px;
-        }
-        
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: rgba(139, 69, 19, 0.05);
-            border-radius: 20px;
-            border: 1px solid var(--classical-border);
-        }
-        
-        .article-content {
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid var(--classical-border);
-            border-radius: 15px;
-            padding: 60px 50px;
-            margin-bottom: 40px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            position: relative;
-        }
-        
-        .article-content::before {
-            content: '❝';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 3rem;
-            color: var(--classical-gold);
-            font-family: 'Ma Shan Zheng', cursive;
-            opacity: 0.3;
-        }
-        
-        .article-content h1,
-        .article-content h2,
-        .article-content h3 {
-            font-family: 'Ma Shan Zheng', cursive;
-            color: var(--classical-brown);
-            margin: 30px 0 15px;
-            border-bottom: 2px solid var(--classical-gold);
-            padding-bottom: 5px;
-        }
-        
-        .article-content p {
-            margin-bottom: 25px;
-            text-indent: 2em;
-        }
-        
-        .article-content blockquote {
-            border-left: 4px solid var(--classical-red);
-            padding: 20px 30px;
-            margin: 30px 0;
-            background: rgba(195, 51, 51, 0.03);
-            font-style: italic;
-            border-radius: 0 10px 10px 0;
-        }
-        
-        .article-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px dashed var(--classical-border);
-        }
-        
-        .tag-link {
-            padding: 8px 16px;
-            background: linear-gradient(135deg, rgba(193, 154, 107, 0.1), rgba(139, 69, 19, 0.1));
-            border: 1px solid var(--classical-gold);
-            border-radius: 20px;
-            color: var(--classical-brown);
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-        }
-        
-        .tag-link:hover {
-            background: linear-gradient(135deg, var(--classical-gold), var(--classical-brown));
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .article-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 50px;
-            padding: 0 20px;
-        }
-        
-        .nav-button {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 20px 30px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid var(--classical-border);
-            border-radius: 15px;
-            text-decoration: none;
-            color: var(--classical-ink);
-            transition: all 0.3s;
-            max-width: 45%;
-            width: 100%;
-        }
-        
-        .nav-button:hover {
-            transform: translateY(-5px);
-            border-color: var(--classical-red);
-            box-shadow: 0 10px 25px var(--classical-shadow);
-        }
-        
-        .nav-prev .nav-icon {
-            background: linear-gradient(135deg, var(--classical-blue), var(--classical-gold));
-        }
-        
-        .nav-next .nav-icon {
-            background: linear-gradient(135deg, var(--classical-gold), var(--classical-red));
-        }
-        
-        .nav-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-        
-        .nav-content h4 {
-            color: var(--classical-brown);
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-        }
-        
-        .nav-content span {
-            color: var(--classical-ink);
-            font-size: 1rem;
-            display: block;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-        }
-        
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 40px;
-            padding: 12px 25px;
-            background: var(--classical-gold);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s;
-        }
-        
-        .back-link:hover {
-            background: var(--classical-brown);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
-        }
-        
-        .classical-footer {
-            background: rgba(248, 245, 230, 0.95);
-            border-top: 2px solid var(--classical-border);
-            padding: 50px 0 40px;
-            margin-top: 80px;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .footer-nav {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .footer-link {
-            font-family: 'Noto Serif SC', serif;
-            color: var(--classical-ink);
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            border: 1px solid var(--classical-border);
-            transition: all 0.3s;
-            font-size: 0.95rem;
-        }
-        
-        .footer-link:hover {
-            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
-            border-color: transparent;
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .footer-info {
-            text-align: center;
-            color: var(--classical-blue);
-            padding-top: 30px;
-            border-top: 1px solid var(--classical-border);
-            font-size: 0.9rem;
-            line-height: 1.8;
-        }
-        
-        .footer-seal {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: var(--classical-red);
-            color: white;
-            border-radius: 50%;
-            line-height: 40px;
-            margin: 0 10px;
-            font-weight: bold;
-        }
-        
-        /* 预览效果样式 */
-        .article-preview {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(58, 38, 21, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.5s ease;
-        }
-        
-        .article-preview.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .preview-container {
-            max-width: 800px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-            background: var(--classical-paper);
-            border-radius: 20px;
-            padding: 40px;
-            border: 3px solid var(--classical-gold);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            transform: scale(0.9);
-            transition: transform 0.5s ease;
-        }
-        
-        .article-preview.active .preview-container {
-            transform: scale(1);
-        }
-        
-        .preview-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--classical-border);
-        }
-        
-        .preview-title {
-            font-family: 'Ma Shan Zheng', cursive;
-            color: var(--classical-red);
-            font-size: 1.8rem;
-        }
-        
-        .close-preview {
-            background: var(--classical-red);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-        }
-        
-        .close-preview:hover {
-            background: var(--classical-brown);
-            transform: rotate(90deg);
-        }
-        
-        .preview-content {
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-        
-        .preview-excerpt {
-            font-style: italic;
-            color: var(--classical-brown);
-            border-left: 3px solid var(--classical-gold);
-            padding-left: 20px;
-            margin: 20px 0;
-        }
-        
-        @media (max-width: 768px) {
-            .article-title {
-                font-size: 2rem;
-            }
-            
-            .article-content {
-                padding: 40px 20px;
-            }
-            
-            .article-navigation {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .nav-button {
-                max-width: 100%;
-            }
-            
-            .article-meta {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- 古典页眉 -->
-    <header class="classical-header">
-        <div class="header-container">
-            <a href="/poetry-garden/" class="site-logo">
-                <i class="fas fa-feather-alt"></i>
-                踏月诗阁
-            </a>
-            
-            <nav class="classical-nav">
-                <a href="/poetry-garden/" class="nav-link">
-                    <i class="fas fa-home"></i> 首页
-                </a>
-                <a href="/poetry-garden/archives" class="nav-link">
-                    <i class="fas fa-archive"></i> 归档
-                </a>
-                <a href="/poetry-garden/categories" class="nav-link">
-                    <i class="fas fa-layer-group"></i> 分类
-                </a>
-                <a href="/poetry-garden/tags" class="nav-link">
-                    <i class="fas fa-tags"></i> 标签
-                </a>
-                <a href="/poetry-garden/about" class="nav-link active">
-                    <i class="fas fa-book"></i> 文章
-                </a>
-            </nav>
-        </div>
-    </header>
-    
-    <!-- 文章预览模态框 -->
-    <div class="article-preview" id="articlePreview">
-        <div class="preview-container">
-            <div class="preview-header">
-                <h2 class="preview-title">文章预览</h2>
-                <button class="close-preview" onclick="closePreview()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="preview-content" id="previewContent">
-                <!-- 预览内容将通过JavaScript动态填充 -->
-            </div>
-        </div>
-    </div>
-    
-    <main class="article-container">
-        <!-- 文章头部 -->
-        <header class="article-header">
-            <h1 class="article-title">《沁园春·天悠》</h1>
-            
-            <div class="article-meta">
-                
-                <div class="meta-item">
-                    <i class="far fa-calendar-alt"></i>
-                    <span>2026年01月29日</span>
-                </div>
-                
-                
-                
-                
-                
-                <div class="meta-item">
-                    <i class="fas fa-sync-alt"></i>
-                    <span>更新于：2026-01-17</span>
-                </div>
-                
-                
-                <!-- 添加预览按钮 -->
-                <div class="meta-item" onclick="showPreview()" style="cursor: pointer; background: linear-gradient(135deg, var(--classical-gold), var(--classical-red)); color: white;">
-                    <i class="fas fa-eye"></i>
-                    <span>预览效果</span>
-                </div>
-            </div>
-        </header>
-        
-        <!-- 文章内容 -->
-        <article class="article-content">
-            &lt;div style=&#34;font-family: &#39;STKaiti&#39;, &#39;SimSun&#39;, &#39;Source Han Serif SC&#39;, serif; line-height: 1.8; color: #2c3e50; max-width: 800px; margin: 0 auto; padding: 0 1rem;&#34;&gt;
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>沁园春·天悠 · 踏月诗阁</title><meta name="description" content="沁园春·天悠
 
-&lt;!-- 标题区域 --&gt;
-&lt;div style=&#34;background: linear-gradient(135deg, #0c4b33 0%, #1e6e50 50%, #0c4b33 100%); color: white; padding: 3.5rem 2rem 3rem 2rem; margin: 2rem 0 4rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2); min-height: 280px; display: flex; flex-direction: column; justify-content: center; border-radius: 18px; width: 100%;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
+
+
+
+
+
+
+逝水裁川浮生驿一盂霜月养心秋
+
+
+
+
+
+宋词 · 人生三境
+
+
+
+
+
+
+
+
+2026-01-29
+
+|
+
+
+原创词作
+
+|
+
+
+沁园春
+
+
+
+
+
+
+
+
+
+
+
+
+📜 词牌简介 · 沁园春
+
+《沁园春》词牌名源自东汉沁水公主园林，双调一百十四字，前段十三句四平韵，后段十二句"><meta name="og:description" content="沁园春·天悠
+
+
+
+
+
+
+
+逝水裁川浮生驿一盂霜月养心秋
+
+
+
+
+
+宋词 · 人生三境
+
+
+
+
+
+
+
+
+2026-01-29
+
+|
+
+
+原创词作
+
+|
+
+
+沁园春
+
+
+
+
+
+
+
+
+
+
+
+
+📜 词牌简介 · 沁园春
+
+《沁园春》词牌名源自东汉沁水公主园林，双调一百十四字，前段十三句四平韵，后段十二句"><meta name="twitter:site" content="踏月诗阁"><meta name="twitter:title" content="沁园春·天悠"><meta name="twitter:card" content="summary"><meta name="keywords" content="诗词,宋词,古典诗词,文学,诗歌"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/poetry-garden/css/bootstrap.min.css"><link rel="stylesheet" href="/poetry-garden/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/poetry-garden/">대문</a></li><li><a href="/poetry-garden/archives">아카이브</a></li><li><a href="/poetry-garden/categories">카테고리</a></li><li><a href="/poetry-garden/tags">태그</a></li><!-- +make_page_links() // 暂时禁用--><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post"><h1 class="post-title">沁园春·天悠</h1><div class="post-meta"><span class="post-time">post.posted 2026-01-29</span> | <span class="post-category"><a href="/poetry-garden/categories/%E8%AF%8D%E4%BD%9C/">词作</a></span> | <span class="post-tags"><a href="/poetry-garden/tags/%E5%AE%8B%E8%AF%8D/">宋词</a>, <a href="/poetry-garden/tags/%E8%B6%85%E8%84%B1/">超脱</a>, <a href="/poetry-garden/tags/%E6%B2%81%E5%9B%AD%E6%98%A5/">沁园春</a>, <a href="/poetry-garden/tags/%E5%A4%A9%E6%82%A0/">天悠</a>, <a href="/poetry-garden/tags/%E4%BA%BA%E7%94%9F%E5%A2%83%E7%95%8C/">人生境界</a>, <a href="/poetry-garden/tags/%E5%BD%92%E5%BF%83/">归心</a></span></div><div class="post-content"><div style="font-family: 'STKaiti', 'SimSun', 'Source Han Serif SC', serif; line-height: 1.8; color: #2c3e50; max-width: 800px; margin: 0 auto; padding: 0 1rem;">
+
+<!-- 标题区域 -->
+<div style="background: linear-gradient(135deg, #0c4b33 0%, #1e6e50 50%, #0c4b33 100%); color: white; padding: 3.5rem 2rem 3rem 2rem; margin: 2rem 0 4rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2); min-height: 280px; display: flex; flex-direction: column; justify-content: center; border-radius: 18px; width: 100%;">
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
     radial-gradient(circle at 20% 40%, rgba(39, 174, 96, 0.4) 0%, transparent 50%),
     radial-gradient(circle at 80% 60%, rgba(33, 150, 83, 0.3) 0%, transparent 50%),
-    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.08) 2px, rgba(255,255,255,0.08) 4px);&#34;&gt;&lt;/div&gt;
-&lt;div style=&#34;position: relative; z-index: 2;&#34;&gt;
-&lt;!-- 主要标题 --&gt;
-&lt;div style=&#34;font-size: 2.8rem; font-weight: bold; margin: 0; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9); letter-spacing: 3px; font-family: &#39;STKaiti&#39;, serif; line-height: 1.2; padding-bottom: 0.5rem;&#34;&gt;
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.08) 2px, rgba(255,255,255,0.08) 4px);"></div>
+<div style="position: relative; z-index: 2;">
+<!-- 主要标题 -->
+<div style="font-size: 2.8rem; font-weight: bold; margin: 0; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9); letter-spacing: 3px; font-family: 'STKaiti', serif; line-height: 1.2; padding-bottom: 0.5rem;">
 沁园春·天悠
-&lt;/div&gt;
+</div>
 
-&lt;!-- 分隔线 --&gt;
-&lt;div style=&#34;width: 120px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent); margin: 1.5rem auto; opacity: 0.7;&#34;&gt;&lt;/div&gt;
+<!-- 分隔线 -->
+<div style="width: 120px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent); margin: 1.5rem auto; opacity: 0.7;"></div>
 
-&lt;!-- 核心句 --&gt;
-&lt;div style=&#34;font-size: 1.3rem; opacity: 0.95; margin: 0; font-weight: 300; letter-spacing: 1px; line-height: 1.5; padding: 0 1rem;&#34;&gt;
-逝水裁川浮生驿&lt;br&gt;一盂霜月养心秋
-&lt;/div&gt;
+<!-- 核心句 -->
+<div style="font-size: 1.3rem; opacity: 0.95; margin: 0; font-weight: 300; letter-spacing: 1px; line-height: 1.5; padding: 0 1rem;">
+逝水裁川浮生驿<br>一盂霜月养心秋
+</div>
 
-&lt;!-- 装饰性点缀 --&gt;
-&lt;div style=&#34;margin-top: 2rem;&#34;&gt;
-&lt;div style=&#34;display: inline-block; background: rgba(255, 255, 255, 0.15); padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2);&#34;&gt;
+<!-- 装饰性点缀 -->
+<div style="margin-top: 2rem;">
+<div style="display: inline-block; background: rgba(255, 255, 255, 0.15); padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2);">
 宋词 · 人生三境
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;!-- 日期信息 --&gt;
-&lt;div style=&#34;margin-top: 2.5rem;&#34;&gt;
-&lt;div style=&#34;display: flex; justify-content: center; align-items: center; gap: 1.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.85);&#34;&gt;
-&lt;span style=&#34;font-weight: 300; display: flex; align-items: center;&#34;&gt;
-&lt;svg style=&#34;width: 16px; height: 16px; margin-right: 0.4rem;&#34; fill=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path d=&#34;M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 6v2h14V6H5z&#34;/&gt;&lt;/svg&gt;
+<!-- 日期信息 -->
+<div style="margin-top: 2.5rem;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.85);">
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 6v2h14V6H5z"/></svg>
 2026-01-29
-&lt;/span&gt;
-&lt;span style=&#34;color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;&#34;&gt;|&lt;/span&gt;
-&lt;span style=&#34;font-weight: 300; display: flex; align-items: center;&#34;&gt;
-&lt;svg style=&#34;width: 16px; height: 16px; margin-right: 0.4rem;&#34; fill=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path d=&#34;M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z&#34;/&gt;&lt;/svg&gt;
+</span>
+<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;">|</span>
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
 原创词作
-&lt;/span&gt;
-&lt;span style=&#34;color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;&#34;&gt;|&lt;/span&gt;
-&lt;span style=&#34;font-weight: 300; display: flex; align-items: center;&#34;&gt;
-&lt;svg style=&#34;width: 16px; height: 16px; margin-right: 0.4rem;&#34; fill=&#34;currentColor&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path d=&#34;M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z&#34;/&gt;&lt;/svg&gt;
+</span>
+<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;">|</span>
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
 沁园春
-&lt;/span&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+</span>
+</div>
+</div>
 
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;!-- 元信息卡片 --&gt;
-&lt;div style=&#34;position: relative; z-index: 1; margin-top: 0;&#34;&gt;
+<!-- 元信息卡片 -->
+<div style="position: relative; z-index: 1; margin-top: 0;">
 
-&lt;!-- 词牌简介 --&gt;
-&lt;div style=&#34;background: rgba(39, 174, 96, 0.08); padding: 2.2rem; border-radius: 12px; margin: 0 0 3rem 0; border-left: 4px solid #27ae60; min-height: 180px;&#34;&gt;
-&lt;div style=&#34;color: #0c4b33; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;&#34;&gt;📜 词牌简介 · 沁园春&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.8; font-size: 1.05rem; padding: 0.5rem 0;&#34;&gt;
+<!-- 词牌简介 -->
+<div style="background: rgba(39, 174, 96, 0.08); padding: 2.2rem; border-radius: 12px; margin: 0 0 3rem 0; border-left: 4px solid #27ae60; min-height: 180px;">
+<div style="color: #0c4b33; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">📜 词牌简介 · 沁园春</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem; padding: 0.5rem 0;">
 《沁园春》词牌名源自东汉沁水公主园林，双调一百十四字，前段十三句四平韵，后段十二句五平韵。此调格局开阔，气度恢宏，适宜抒发壮阔情怀与人生感慨。苏轼首开豪放之风，辛弃疾、陆游等继之。本词依正格填制，于人生三境中见天地澄明。
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;!-- 词前小序 --&gt;
-&lt;div style=&#34;background: linear-gradient(145deg, rgba(39, 174, 96, 0.1), rgba(33, 150, 83, 0.05)); padding: 2.5rem; border-radius: 14px; border: 1px solid rgba(39, 174, 96, 0.2); margin: 2.5rem 0; font-style: italic; color: #4a5568; position: relative; min-height: 200px;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: -14px; left: 25px; background: white; color: #27ae60; padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: bold; border: 1px solid rgba(39, 174, 96, 0.3); box-shadow: 0 3px 8px rgba(0,0,0,0.08);&#34;&gt;词前小序&lt;/div&gt;
-&lt;div style=&#34;padding-top: 1.2rem; font-size: 1.08rem; line-height: 1.9;&#34;&gt;
+<!-- 词前小序 -->
+<div style="background: linear-gradient(145deg, rgba(39, 174, 96, 0.1), rgba(33, 150, 83, 0.05)); padding: 2.5rem; border-radius: 14px; border: 1px solid rgba(39, 174, 96, 0.2); margin: 2.5rem 0; font-style: italic; color: #4a5568; position: relative; min-height: 200px;">
+<div style="position: absolute; top: -14px; left: 25px; background: white; color: #27ae60; padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: bold; border: 1px solid rgba(39, 174, 96, 0.3); box-shadow: 0 3px 8px rgba(0,0,0,0.08);">词前小序</div>
+<div style="padding-top: 1.2rem; font-size: 1.08rem; line-height: 1.9;">
 暮年回望，人生如逝水裁川，浮生系驿。少年时气凌牛斗，中年时琴剑沧洲。春梦惊秋，莺声碎露，惯看飞花不系舟。而今危阑独立，任寒云自卷，影共天悠。笑世人蚁穴槐根苦计谋，幸得清风明月相伴，山光溪韵为友。趁此灵辰，解尘锁，振袂长歌入远丘。归来但见一盂霜月，独养心秋。遂填此词，以记人生三境之悟。
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;h2 id=&#34;词文详析&#34;&gt;&lt;a href=&#34;#词文详析&#34; class=&#34;headerlink&#34; title=&#34;词文详析&#34;&gt;&lt;/a&gt;词文详析&lt;/h2&gt;&lt;!-- 上阕 --&gt;
-&lt;div style=&#34;background: linear-gradient(145deg, #e8f8f1 0%, #d4f3e3 100%); border: 2px solid #27ae60; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 450px;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: -16px; left: 25px; background: #27ae60; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);&#34;&gt;上阕&lt;/div&gt;
+<h2 id="词文详析"><a href="#词文详析" class="headerlink" title="词文详析"></a>词文详析</h2><!-- 上阕 -->
+<div style="background: linear-gradient(145deg, #e8f8f1 0%, #d4f3e3 100%); border: 2px solid #27ae60; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 450px;">
+<div style="position: absolute; top: -16px; left: 25px; background: #27ae60; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">上阕</div>
 
-&lt;div style=&#34;text-align: center; margin-bottom: 2rem;&#34;&gt;
-&lt;div style=&#34;color: #0c4b33; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; font-family: &#39;STKaiti&#39;, serif; letter-spacing: 0.5px;&#34;&gt;逝水裁川，浮生系驿，雪浪封头。&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 2; font-size: 1.15rem; letter-spacing: 0.5px;&#34;&gt;
-记少年豪气，气凌牛斗；中年琴剑，影烙沧洲。&lt;br&gt;
-春梦惊秋，莺声碎露，惯看飞花不系舟。&lt;br&gt;
+<div style="text-align: center; margin-bottom: 2rem;">
+<div style="color: #0c4b33; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; font-family: 'STKaiti', serif; letter-spacing: 0.5px;">逝水裁川，浮生系驿，雪浪封头。</div>
+<div style="color: #4a5568; line-height: 2; font-size: 1.15rem; letter-spacing: 0.5px;">
+记少年豪气，气凌牛斗；中年琴剑，影烙沧洲。<br>
+春梦惊秋，莺声碎露，惯看飞花不系舟。<br>
 危阑立，任寒云自卷，影共天悠。
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;!-- 上阕解析 --&gt;
-&lt;div style=&#34;background: rgba(39, 174, 96, 0.1); padding: 2.2rem; border-radius: 12px; margin-top: 2.2rem; border-left: 3px solid #27ae60; min-height: 320px;&#34;&gt;
-&lt;div style=&#34;color: #0c4b33; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🌊 上阕解析 · 人生三境&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.85; font-size: 1.05rem;&#34;&gt;
-&lt;strong&gt;&#34;逝水裁川，浮生系驿，雪浪封头。&#34;&lt;/strong&gt; 开篇三句，以水喻人生，境界全出。&#34;逝水裁川&#34;喻时光如流水切割山川，改变地貌；&#34;浮生系驿&#34;喻人生如羁旅，短暂停驻；&#34;雪浪封头&#34;既写实景浪花如雪，亦喻白发如雪覆盖头顶。三句层层递进，时空交织。&lt;br&gt;&lt;br&gt;
+<!-- 上阕解析 -->
+<div style="background: rgba(39, 174, 96, 0.1); padding: 2.2rem; border-radius: 12px; margin-top: 2.2rem; border-left: 3px solid #27ae60; min-height: 320px;">
+<div style="color: #0c4b33; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🌊 上阕解析 · 人生三境</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+<strong>"逝水裁川，浮生系驿，雪浪封头。"</strong> 开篇三句，以水喻人生，境界全出。"逝水裁川"喻时光如流水切割山川，改变地貌；"浮生系驿"喻人生如羁旅，短暂停驻；"雪浪封头"既写实景浪花如雪，亦喻白发如雪覆盖头顶。三句层层递进，时空交织。<br><br>
 
-&lt;p&gt;&lt;strong&gt;“记少年豪气，气凌牛斗；中年琴剑，影烙沧洲。”&lt;/strong&gt; 扇面对工整精妙，概括人生两境。”气凌牛斗”写少年壮志凌云，豪气干云；”影烙沧洲”写中年漂泊沧桑，身影烙印在江湖。”琴剑”意象尤妙，琴表文心，剑表武胆，文武双全却漂泊不定。&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;“春梦惊秋，莺声碎露，惯看飞花不系舟。”&lt;/strong&gt; 转入人生感悟。”春梦惊秋”写美好转瞬，季节突变；”莺声碎露”以声写静，露珠破碎如心碎；”惯看飞花不系舟”是全词眼目，看透人生如飞花飘零，如不系之舟漂泊，已”惯看”而淡然。&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;“危阑立，任寒云自卷，影共天悠。”&lt;/strong&gt; 上阕收束，境界升华。”危阑立”显独立苍茫之姿；”任寒云自卷”见超然物外之心；”影共天悠”四字尤妙，身影与天地同悠，个体融入宇宙，达天人合一之境。&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<p><strong>“记少年豪气，气凌牛斗；中年琴剑，影烙沧洲。”</strong> 扇面对工整精妙，概括人生两境。”气凌牛斗”写少年壮志凌云，豪气干云；”影烙沧洲”写中年漂泊沧桑，身影烙印在江湖。”琴剑”意象尤妙，琴表文心，剑表武胆，文武双全却漂泊不定。<br><br></p>
+<p><strong>“春梦惊秋，莺声碎露，惯看飞花不系舟。”</strong> 转入人生感悟。”春梦惊秋”写美好转瞬，季节突变；”莺声碎露”以声写静，露珠破碎如心碎；”惯看飞花不系舟”是全词眼目，看透人生如飞花飘零，如不系之舟漂泊，已”惯看”而淡然。<br><br></p>
+<p><strong>“危阑立，任寒云自卷，影共天悠。”</strong> 上阕收束，境界升华。”危阑立”显独立苍茫之姿；”任寒云自卷”见超然物外之心；”影共天悠”四字尤妙，身影与天地同悠，个体融入宇宙，达天人合一之境。</p>
+</div>
+</div>
+</div>
 
-&lt;!-- 下阕 --&gt;
-&lt;div style=&#34;background: linear-gradient(145deg, #f0f8ff 0%, #e6f7ff 100%); border: 2px solid #3498db; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 450px;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: -16px; left: 25px; background: #3498db; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);&#34;&gt;下阕&lt;/div&gt;
+<!-- 下阕 -->
+<div style="background: linear-gradient(145deg, #f0f8ff 0%, #e6f7ff 100%); border: 2px solid #3498db; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 450px;">
+<div style="position: absolute; top: -16px; left: 25px; background: #3498db; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">下阕</div>
 
-&lt;div style=&#34;text-align: center; margin-bottom: 2rem;&#34;&gt;
-&lt;div style=&#34;color: #1a5276; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; font-family: &#39;STKaiti&#39;, serif; letter-spacing: 0.5px;&#34;&gt;风烟扫眼都休。笑蚁穴槐根苦计谋。&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 2; font-size: 1.15rem; letter-spacing: 0.5px;&#34;&gt;
-幸清风翻户，明月藏袖；山光堪酿，溪韵新喉。&lt;br&gt;
-趁此灵辰，解将尘锁，振袂长歌入远丘。&lt;br&gt;
+<div style="text-align: center; margin-bottom: 2rem;">
+<div style="color: #1a5276; font-size: 1.3rem; font-weight: bold; margin-bottom: 1.2rem; font-family: 'STKaiti', serif; letter-spacing: 0.5px;">风烟扫眼都休。笑蚁穴槐根苦计谋。</div>
+<div style="color: #4a5568; line-height: 2; font-size: 1.15rem; letter-spacing: 0.5px;">
+幸清风翻户，明月藏袖；山光堪酿，溪韵新喉。<br>
+趁此灵辰，解将尘锁，振袂长歌入远丘。<br>
 归来处，有一盂霜月，独养心秋。
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
 
-&lt;!-- 下阕解析 --&gt;
-&lt;div style=&#34;background: rgba(52, 152, 219, 0.1); padding: 2.2rem; border-radius: 12px; margin-top: 2.2rem; border-left: 3px solid #3498db; min-height: 320px;&#34;&gt;
-&lt;div style=&#34;color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;&#34;&gt;🌌 下阕解析 · 心秋澄明&lt;/div&gt;
-&lt;div style=&#34;color: #4a5568; line-height: 1.85; font-size: 1.05rem;&#34;&gt;
-&lt;strong&gt;&#34;风烟扫眼都休。笑蚁穴槐根苦计谋。&#34;&lt;/strong&gt; 过片转折，从观照人生到批判世相。&#34;风烟扫眼&#34;喻看尽世间纷扰；&#34;都休&#34;二字决绝；&#34;蚁穴槐根&#34;用南柯一梦典故，笑世人如蚂蚁在槐树下苦心经营，终是黄粱一梦。一个&#34;笑&#34;字，显超脱智慧。&lt;br&gt;&lt;br&gt;
+<!-- 下阕解析 -->
+<div style="background: rgba(52, 152, 219, 0.1); padding: 2.2rem; border-radius: 12px; margin-top: 2.2rem; border-left: 3px solid #3498db; min-height: 320px;">
+<div style="color: #1a5276; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🌌 下阕解析 · 心秋澄明</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+<strong>"风烟扫眼都休。笑蚁穴槐根苦计谋。"</strong> 过片转折，从观照人生到批判世相。"风烟扫眼"喻看尽世间纷扰；"都休"二字决绝；"蚁穴槐根"用南柯一梦典故，笑世人如蚂蚁在槐树下苦心经营，终是黄粱一梦。一个"笑"字，显超脱智慧。<br><br>
 
-&lt;p&gt;&lt;strong&gt;“幸清风翻户，明月藏袖；山光堪酿，溪韵新喉。”&lt;/strong&gt; 扇面对工丽，写自然之乐。”清风翻户”写风之灵动；”明月藏袖”写月之亲近；”山光堪酿”化山色为酒；”溪韵新喉”化溪声为歌。四句将自然景物人格化、艺术化，展现与天地精神往来的境界。&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;“趁此灵辰，解将尘锁，振袂长歌入远丘。”&lt;/strong&gt; 行动宣言，豪情迸发。”灵辰”指清明时刻；”解尘锁”喻摆脱世俗束缚；”振袂长歌”写潇洒姿态；”入远丘”写归隐自然。三句节奏渐快，情感渐浓。&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;“归来处，有一盂霜月，独养心秋。”&lt;/strong&gt; 全词收束，意境至高。”一盂霜月”意象绝妙：盂为容器，霜月为内容，将无边月色收入小小器皿，见以小见大的禅意。”独养心秋”更妙，”心秋”非凄凉之秋，而是澄明、成熟、宁静的内心境界。”养”字见修行功夫，如养玉养气。&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<p><strong>“幸清风翻户，明月藏袖；山光堪酿，溪韵新喉。”</strong> 扇面对工丽，写自然之乐。”清风翻户”写风之灵动；”明月藏袖”写月之亲近；”山光堪酿”化山色为酒；”溪韵新喉”化溪声为歌。四句将自然景物人格化、艺术化，展现与天地精神往来的境界。<br><br></p>
+<p><strong>“趁此灵辰，解将尘锁，振袂长歌入远丘。”</strong> 行动宣言，豪情迸发。”灵辰”指清明时刻；”解尘锁”喻摆脱世俗束缚；”振袂长歌”写潇洒姿态；”入远丘”写归隐自然。三句节奏渐快，情感渐浓。<br><br></p>
+<p><strong>“归来处，有一盂霜月，独养心秋。”</strong> 全词收束，意境至高。”一盂霜月”意象绝妙：盂为容器，霜月为内容，将无边月色收入小小器皿，见以小见大的禅意。”独养心秋”更妙，”心秋”非凄凉之秋，而是澄明、成熟、宁静的内心境界。”养”字见修行功夫，如养玉养气。</p>
+</div>
+</div>
+</div>
 
-&lt;h2 id=&#34;三重境界流转&#34;&gt;&lt;a href=&#34;#三重境界流转&#34; class=&#34;headerlink&#34; title=&#34;三重境界流转&#34;&gt;&lt;/a&gt;三重境界流转&lt;/h2&gt;&lt;div style=&#34;background: linear-gradient(145deg, #e8f8f1 0%, #d4f3e3 100%); border: 2px solid #27ae60; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(39, 174, 96, 0.12); min-height: 480px;&#34;&gt;
+<h2 id="三重境界流转"><a href="#三重境界流转" class="headerlink" title="三重境界流转"></a>三重境界流转</h2><div style="background: linear-gradient(145deg, #e8f8f1 0%, #d4f3e3 100%); border: 2px solid #27ae60; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(39, 174, 96, 0.12); min-height: 480px;">
 
-&lt;div style=&#34;text-align: center; margin-bottom: 2.8rem;&#34;&gt;
-&lt;div style=&#34;color: #0c4b33; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;&#34;&gt;🔄 人生境界三重转&lt;/div&gt;
-&lt;div style=&#34;color: #718096; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;&#34;&gt;从少年豪气到中年沧桑，从看破世相到心秋澄明&lt;/div&gt;
-&lt;/div&gt;
+<div style="text-align: center; margin-bottom: 2.8rem;">
+<div style="color: #0c4b33; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🔄 人生境界三重转</div>
+<div style="color: #718096; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">从少年豪气到中年沧桑，从看破世相到心秋澄明</div>
+</div>
 
-&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;&#34;&gt;
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
 
-&lt;!-- 第一境 --&gt;
-&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #e74c3c; position: relative; overflow: hidden; min-height: 280px;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(231, 76, 60, 0.1); border-radius: 0 0 0 70px;&#34;&gt;&lt;/div&gt;
-&lt;div style=&#34;color: #c0392b; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;🔥 第一境 · 少年豪气&lt;/div&gt;
-&lt;ul style=&#34;color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;&#34;&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;气凌牛斗&lt;/strong&gt; - 壮志凌云，豪气干云&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;雪浪封头&lt;/strong&gt; - 喻白发未生，青春正盛&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;逝水裁川&lt;/strong&gt; - 时光如刀，塑造人生&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;浮生系驿&lt;/strong&gt; - 人生如旅，刚刚启程&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div style=&#34;color: #e74c3c; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
-&#34;少年心事当拏云&#34;——李贺诗意在此重现
-&lt;/div&gt;
-&lt;/div&gt;
+<!-- 第一境 -->
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #e74c3c; position: relative; overflow: hidden; min-height: 280px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(231, 76, 60, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #c0392b; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🔥 第一境 · 少年豪气</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>气凌牛斗</strong> - 壮志凌云，豪气干云</li>
+<li style="margin-bottom: 0.8rem;"><strong>雪浪封头</strong> - 喻白发未生，青春正盛</li>
+<li style="margin-bottom: 0.8rem;"><strong>逝水裁川</strong> - 时光如刀，塑造人生</li>
+<li><strong>浮生系驿</strong> - 人生如旅，刚刚启程</li>
+</ul>
+<div style="color: #e74c3c; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
+"少年心事当拏云"——李贺诗意在此重现
+</div>
+</div>
 
-&lt;!-- 第二境 --&gt;
-&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #3498db; position: relative; overflow: hidden; min-height: 280px;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(52, 152, 219, 0.1); border-radius: 0 0 0 70px;&#34;&gt;&lt;/div&gt;
-&lt;div style=&#34;color: #2980b9; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;🌊 第二境 · 中年沧桑&lt;/div&gt;
-&lt;ul style=&#34;color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;&#34;&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;影烙沧洲&lt;/strong&gt; - 漂泊江湖，身影沧桑&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;春梦惊秋&lt;/strong&gt; - 美好易逝，季节突转&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;惯看飞花不系舟&lt;/strong&gt; - 看透漂泊本质&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;莺声碎露&lt;/strong&gt; - 美好而脆弱的瞬间&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div style=&#34;color: #3498db; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
-&#34;江湖夜雨十年灯&#34;——黄庭坚的沧桑在此共鸣
-&lt;/div&gt;
-&lt;/div&gt;
+<!-- 第二境 -->
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #3498db; position: relative; overflow: hidden; min-height: 280px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(52, 152, 219, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #2980b9; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🌊 第二境 · 中年沧桑</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>影烙沧洲</strong> - 漂泊江湖，身影沧桑</li>
+<li style="margin-bottom: 0.8rem;"><strong>春梦惊秋</strong> - 美好易逝，季节突转</li>
+<li style="margin-bottom: 0.8rem;"><strong>惯看飞花不系舟</strong> - 看透漂泊本质</li>
+<li><strong>莺声碎露</strong> - 美好而脆弱的瞬间</li>
+</ul>
+<div style="color: #3498db; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
+"江湖夜雨十年灯"——黄庭坚的沧桑在此共鸣
+</div>
+</div>
 
-&lt;!-- 第三境 --&gt;
-&lt;div style=&#34;background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #27ae60; position: relative; overflow: hidden; min-height: 280px;&#34;&gt;
-&lt;div style=&#34;position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(39, 174, 96, 0.1); border-radius: 0 0 0 70px;&#34;&gt;&lt;/div&gt;
-&lt;div style=&#34;color: #229954; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;&#34;&gt;🌙 第三境 · 心秋澄明&lt;/div&gt;
-&lt;ul style=&#34;color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;&#34;&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;一盂霜月&lt;/strong&gt; - 禅意容器，盛满澄明&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;独养心秋&lt;/strong&gt; - 内心修行，境界自成&lt;/li&gt;
-&lt;li style=&#34;margin-bottom: 0.8rem;&#34;&gt;&lt;strong&gt;影共天悠&lt;/strong&gt; - 天人合一，与宇宙同悠&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;笑蚁穴槐根&lt;/strong&gt; - 超脱世相，智慧观照&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div style=&#34;color: #27ae60; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;&#34;&gt;
-&#34;采菊东篱下，悠然见南山&#34;——陶渊明境界的当代回响
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<!-- 第三境 -->
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #27ae60; position: relative; overflow: hidden; min-height: 280px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(39, 174, 96, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #229954; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🌙 第三境 · 心秋澄明</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>一盂霜月</strong> - 禅意容器，盛满澄明</li>
+<li style="margin-bottom: 0.8rem;"><strong>独养心秋</strong> - 内心修行，境界自成</li>
+<li style="margin-bottom: 0.8rem;"><strong>影共天悠</strong> - 天人合一，与宇宙同悠</li>
+<li><strong>笑蚁穴槐根</strong> - 超脱世相，智慧观照</li>
+</ul>
+<div style="color: #27ae60; font-size: 0.95rem; font-style: italic; padding-top: 1.2rem; border-top: 1px dashed #e2e8f0;">
+"采菊东篱下，悠然见南山"——陶渊明境界的当代回响
+</div>
+</div>
+</div>
 
-&lt;/div&gt;
+</div>
 
-&lt;!-- 艺术特色分析 --&gt;
-&lt;div style=&#34;background: linear-gradient(145deg, #fef9e7 0%, #fcf3cf 100%); border: 2px solid #f39c12; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(243, 156, 18, 0.1); min-height: 420px;&#34;&gt;
+<!-- 艺术特色分析 -->
+<div style="background: linear-gradient(145deg, #fef9e7 0%, #fcf3cf 100%); border: 2px solid #f39c12; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(243, 156, 18, 0.1); min-height: 420px;">
 
-&lt;div style=&#34;text-align: center; margin-bottom: 2.5rem;&#34;&gt;
-&lt;div style=&#34;color: #b9770e; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;&#34;&gt;🎭 艺术特色分析&lt;/div&gt;
-&lt;div style=&#34;color: #d68910; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;&#34;&gt;扇面对工丽、意象创新、禅意融汇、境界浑成&lt;/div&gt;
-&lt;/div&gt;
+<div style="text-align: center; margin-bottom: 2.5rem;">
+<div style="color: #b9770e; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🎭 艺术特色分析</div>
+<div style="color: #d68910; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">扇面对工丽、意象创新、禅意融汇、境界浑成</div>
+</div>
 
-&lt;div style=&#34;display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;&#34;&gt;
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
 
-&lt;!-- 扇面对工丽 --&gt;
-&lt;div style=&#34;background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 340px;&#34;&gt;
-&lt;div style=&#34;color: #b9770e; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 2px solid #f8f1d9; padding-bottom: 1rem; font-size: 1.2rem;&#34;&gt;🔄 扇面对工丽&lt;/div&gt;
-&lt;div style=&#34;margin-top: 1.2rem;&#34;&gt;
-&lt;div style=&#34;margin-bottom: 1.5rem;&#34;&gt;
-&lt;div style=&#34;color: #d35400; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;&#34;&gt;记少年豪气，气凌牛斗；中年琴剑，影烙沧洲&lt;/div&gt;
-&lt;div style=&#34;color: #718096; font-size: 1rem; line-height: 1.7;&#34;&gt;四句两对，工整精妙。&#34;少年&#34;对&#34;中年&#34;，&#34;豪气&#34;对&#34;琴剑&#34;，&#34;气凌&#34;对&#34;影烙&#34;，&#34;牛斗&#34;对&#34;沧洲&#34;。时空对举，意象鲜明，概括人生两境。&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;margin-bottom: 1.5rem;&#34;&gt;
-&lt;div style=&#34;color: #d35400; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;&#34;&gt;幸清风翻户，明月藏袖；山光堪酿，溪韵新喉&lt;/div&gt;
-&lt;div style=&#34;color: #718096; font-size: 1rem; line-height: 1.7;&#34;&gt;四句四景，清风明月对山光溪韵。动词精准：&#34;翻户&#34;写风之动，&#34;藏袖&#34;写月之亲，&#34;堪酿&#34;化色为酒，&#34;新喉&#34;化声为歌。工丽中见灵动。&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<!-- 扇面对工丽 -->
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 340px;">
+<div style="color: #b9770e; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 2px solid #f8f1d9; padding-bottom: 1rem; font-size: 1.2rem;">🔄 扇面对工丽</div>
+<div style="margin-top: 1.2rem;">
+<div style="margin-bottom: 1.5rem;">
+<div style="color: #d35400; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">记少年豪气，气凌牛斗；中年琴剑，影烙沧洲</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">四句两对，工整精妙。"少年"对"中年"，"豪气"对"琴剑"，"气凌"对"影烙"，"牛斗"对"沧洲"。时空对举，意象鲜明，概括人生两境。</div>
+</div>
+<div style="margin-bottom: 1.5rem;">
+<div style="color: #d35400; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">幸清风翻户，明月藏袖；山光堪酿，溪韵新喉</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">四句四景，清风明月对山光溪韵。动词精准："翻户"写风之动，"藏袖"写月之亲，"堪酿"化色为酒，"新喉"化声为歌。工丽中见灵动。</div>
+</div>
+</div>
+</div>
 
-&lt;!-- 意象创新 --&gt;
-&lt;div style=&#34;background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 340px;&#34;&gt;
-&lt;div style=&#34;color: #b9770e; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 2px solid #f8f1d9; padding-bottom: 1rem; font-size: 1.2rem;&#34;&gt;🎨 意象创新&lt;/div&gt;
-&lt;div style=&#34;margin-top: 1.2rem;&#34;&gt;
-&lt;div style=&#34;margin-bottom: 1.5rem;&#34;&gt;
-&lt;div style=&#34;color: #d35400; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;&#34;&gt;一盂霜月&lt;/div&gt;
-&lt;div style=&#34;color: #718096; font-size: 1rem; line-height: 1.7;&#34;&gt;独创意象，禅意盎然。&#34;盂&#34;为容器，小；&#34;霜月&#34;为月色，大。以小容大，见佛家&#34;芥子纳须弥&#34;境界。霜月既清冷又澄明，喻心境。&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;margin-bottom: 1.5rem;&#34;&gt;
-&lt;div style=&#34;color: #d35400; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;&#34;&gt;独养心秋&lt;/div&gt;
-&lt;div style=&#34;color: #718096; font-size: 1rem; line-height: 1.7;&#34;&gt;&#34;心秋&#34;为独创词，非凄凉之秋，而是成熟、澄明、宁静的内心季节。&#34;养&#34;字见修行功夫，如养玉养气，需时间沉淀。&lt;/div&gt;
-&lt;/div&gt;
-&lt;div style=&#34;margin-bottom: 1.5rem;&#34;&gt;
-&lt;div style=&#34;color: #d35400; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;&#34;&gt;飞花不系舟&lt;/div&gt;
-&lt;div style=&#34;color: #718096; font-size: 1rem; line-height: 1.7;&#34;&gt;化用庄子&#34;不系之舟&#34;，加&#34;飞花&#34;意象。飞花喻人生短暂美好，不系舟喻漂泊无定。两意象叠加，深化人生感悟。&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<!-- 意象创新 -->
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 340px;">
+<div style="color: #b9770e; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 2px solid #f8f1d9; padding-bottom: 1rem; font-size: 1.2rem;">🎨 意象创新</div>
+<div style="margin-top: 1.2rem;">
+<div style="margin-bottom: 1.5rem;">
+<div style="color: #d35400; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">一盂霜月</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">独创意象，禅意盎然。"盂"为容器，小；"霜月"为月色，大。以小容大，见佛家"芥子纳须弥"境界。霜月既清冷又澄明，喻心境。</div>
+</div>
+<div style="margin-bottom: 1.5rem;">
+<div style="color: #d35400; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">独养心秋</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">"心秋"为独创词，非凄凉之秋，而是成熟、澄明、宁静的内心季节。"养"字见修行功夫，如养玉养气，需时间沉淀。</div>
+</div>
+<div style="margin-bottom: 1.5rem;">
+<div style="color: #d35400; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">飞花不系舟</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">化用庄子"不系之舟"，加"飞花"意象。飞花喻人生短暂美好，不系舟喻漂泊无定。两意象叠加，深化人生感悟。</div>
+</div>
+</div>
+</div>
 
-&lt;/div&gt;
+</div>
 
-&lt;/div&gt;
+</div>
 
-&lt;/div&gt; &lt;!-- 关闭z-index包装div --&gt;
+</div> <!-- 关闭z-index包装div -->
 
-&lt;/div&gt; &lt;!-- 关闭主容器div --&gt;
-
-        </article>
-        
-        <!-- 标签 -->
-        
-        <div class="article-tags">
-            <i class="fas fa-tags" style="color: var(--classical-brown); margin-right: 10px;"></i>
-            
-                <a href="/poetry-garden/tags/%E5%AE%8B%E8%AF%8D/" class="tag-link">
-                    宋词
-                </a>
-            
-                <a href="/poetry-garden/tags/%E8%B6%85%E8%84%B1/" class="tag-link">
-                    超脱
-                </a>
-            
-                <a href="/poetry-garden/tags/%E6%B2%81%E5%9B%AD%E6%98%A5/" class="tag-link">
-                    沁园春
-                </a>
-            
-                <a href="/poetry-garden/tags/%E5%A4%A9%E6%82%A0/" class="tag-link">
-                    天悠
-                </a>
-            
-                <a href="/poetry-garden/tags/%E4%BA%BA%E7%94%9F%E5%A2%83%E7%95%8C/" class="tag-link">
-                    人生境界
-                </a>
-            
-                <a href="/poetry-garden/tags/%E5%BD%92%E5%BF%83/" class="tag-link">
-                    归心
-                </a>
-            
-        </div>
-        
-        
-        <!-- 文章导航 -->
-        <div class="article-navigation">
-            
-            <a href="/poetry-garden/2026/01/29/%E5%A3%B0%E5%A3%B0%E6%85%A2-%E4%B8%87%E7%B1%81%E4%BF%B1%E6%B2%89/" class="nav-button nav-prev">
-                <div class="nav-icon">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-                <div class="nav-content">
-                    <h4>上一篇</h4>
-                    <span>声声慢·万籁俱沉</span>
-                </div>
-            </a>
-            
-            
-            
-            <a href="/poetry-garden/2026/01/29/%E5%A3%B0%E5%A3%B0%E6%85%A2-%E9%82%80%E6%9C%88/" class="nav-button nav-next">
-                <div class="nav-content">
-                    <h4>下一篇</h4>
-                    <span>声声慢·邀月</span>
-                </div>
-                <div class="nav-icon">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </a>
-            
-        </div>
-        
-        <!-- 返回链接 -->
-        <div style="text-align: center; margin-top: 50px;">
-            <a href="/poetry-garden/" class="back-link">
-                <i class="fas fa-home"></i> 返回首页
-            </a>
-        </div>
-    </main>
-    
-    <!-- 页脚 -->
-    <footer class="classical-footer">
-        <div class="footer-container">
-            <nav class="footer-nav">
-                <a href="/poetry-garden/" class="footer-link">首页</a>
-                <a href="/poetry-garden/archives" class="footer-link">文章归档</a>
-                <a href="/poetry-garden/categories" class="footer-link">分类目录</a>
-                <a href="/poetry-garden/tags" class="footer-link">标签云</a>
-                <a href="/poetry-garden/about" class="footer-link">关于我们</a>
-            </nav>
-            
-            <div class="footer-info">
-                <p>
-                    <span class="footer-seal">詩</span>
-                    版权所有 © 2026 踏月诗阁
-                    <span class="footer-seal">閣</span>
-                </p>
-                <p style="margin-top: 10px;">传承古典文化，品味诗意人生</p>
-                <p style="margin-top: 5px; font-size: 0.8rem; color: var(--classical-gold);">
-                    基于 踏月诗客 · 倾心呈现
-                </p>
-            </div>
-        </div>
-    </footer>
-    
-    <script>
-        // 页面滚动效果
-        document.addEventListener('DOMContentLoaded', function() {
-            const header = document.querySelector('.classical-header');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    header.style.boxShadow = '0 5px 20px rgba(58, 38, 21, 0.1)';
-                    header.style.background = 'rgba(248, 245, 230, 0.98)';
-                } else {
-                    header.style.boxShadow = '0 2px 10px rgba(58, 38, 21, 0.1)';
-                    header.style.background = 'rgba(248, 245, 230, 0.98)';
-                }
-            });
-            
-            // 文章内容块渐入效果
-            const contentBlocks = document.querySelectorAll('.article-content h1, .article-content h2, .article-content h3, .article-content p, .article-content blockquote');
-            contentBlocks.forEach((block, index) => {
-                block.style.opacity = '0';
-                block.style.transform = 'translateY(20px)';
-                block.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                
-                setTimeout(() => {
-                    block.style.opacity = '1';
-                    block.style.transform = 'translateY(0)';
-                }, index * 100);
-            });
-            
-            // 为链接添加预览效果
-            document.querySelectorAll('.article-content a').forEach(link => {
-                link.addEventListener('mouseenter', function(e) {
-                    const ripple = document.createElement('span');
-                    ripple.style.cssText = `
-                        position: absolute;
-                        background: rgba(195, 51, 51, 0.1);
-                        border-radius: 50%;
-                        transform: scale(0);
-                        animation: ripple 0.6s linear;
-                        pointer-events: none;
-                    `;
-                    
-                    const size = Math.max(this.offsetWidth, this.offsetHeight);
-                    ripple.style.width = ripple.style.height = size + 'px';
-                    ripple.style.left = e.offsetX - size/2 + 'px';
-                    ripple.style.top = e.offsetY - size/2 + 'px';
-                    
-                    this.style.position = 'relative';
-                    this.style.overflow = 'hidden';
-                    this.appendChild(ripple);
-                    
-                    setTimeout(() => ripple.remove(), 600);
-                });
-            });
-            
-            // 替换页面中的英文文本
-            replaceEnglishText();
-        });
-        
-        // 显示预览效果
-        function showPreview() {
-            const preview = document.getElementById('articlePreview');
-            const previewContent = document.getElementById('previewContent');
-            
-            // 获取文章的实际内容（纯文本）
-            let content = '';
-            const articleContent = document.querySelector('.article-content');
-            if (articleContent) {
-                content = articleContent.innerText;
-            }
-            
-            // 截取前300字作为预览
-            let excerpt = content.substring(0, 300);
-            if (content.length > 300) {
-                excerpt += '...';
-            }
-            
-            previewContent.innerHTML = `
-                <div class="preview-excerpt">
-                    <p>${excerpt}</p>
-                </div>
-                <p>这是文章《沁园春·天悠》的预览效果。您可以在此处提前查看文章的部分内容。</p>
-                <p>古典风格的页面设计将传统美学与现代网页技术完美融合，为您带来沉浸式的阅读体验。</p>
-                <p style="color: var(--classical-red); margin-top: 20px;">
-                    <i class="fas fa-heart"></i> 点击关闭按钮或ESC键可以退出预览模式
-                </p>
-                <p style="margin-top: 20px; padding: 15px; background: rgba(193, 154, 107, 0.1); border-radius: 10px;">
-                    <i class="fas fa-info-circle"></i> 预览功能仅显示部分内容，阅读全文请返回文章页面
-                </p>
-            `;
-            
-            preview.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        // 关闭预览效果
-        function closePreview() {
-            const preview = document.getElementById('articlePreview');
-            preview.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-        
-        // 按ESC键关闭预览
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closePreview();
-            }
-        });
-        
-        // 点击预览区域外部关闭
-        document.getElementById('articlePreview').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closePreview();
-            }
-        });
-        
-        // 替换英文文本为中文
-        function replaceEnglishText() {
-            // 替换导航中的可能存在的英文
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                if (link.textContent.includes('Home')) {
-                    link.innerHTML = '<i class="fas fa-home"></i> 首页';
-                }
-                if (link.textContent.includes('Archive')) {
-                    link.innerHTML = '<i class="fas fa-archive"></i> 归档';
-                }
-                if (link.textContent.includes('Categories')) {
-                    link.innerHTML = '<i class="fas fa-layer-group"></i> 分类';
-                }
-                if (link.textContent.includes('Tags')) {
-                    link.innerHTML = '<i class="fas fa-tags"></i> 标签';
-                }
-                if (link.textContent.includes('About')) {
-                    link.innerHTML = '<i class="fas fa-book"></i> 关于';
-                }
-            });
-            
-            // 替换页脚中的可能存在的英文
-            const footerLinks = document.querySelectorAll('.footer-link');
-            footerLinks.forEach(link => {
-                if (link.textContent.includes('Home')) {
-                    link.textContent = '首页';
-                }
-                if (link.textContent.includes('Archive')) {
-                    link.textContent = '文章归档';
-                }
-                if (link.textContent.includes('Categories')) {
-                    link.textContent = '分类目录';
-                }
-                if (link.textContent.includes('Tags')) {
-                    link.textContent = '标签云';
-                }
-                if (link.textContent.includes('About')) {
-                    link.textContent = '关于我们';
-                }
-            });
-            
-            // 检查并替换页脚信息
-            const footerInfo = document.querySelector('.footer-info');
-            if (footerInfo) {
-                footerInfo.innerHTML = footerInfo.innerHTML
-                    .replace(/© \d{4}.*?Theme.*?by.*?/g, '')
-                    .replace(/Proudly published with Hexo/g, '基于Hexo · 倾心呈现');
-            }
-            
-            // 检查并替换其他可能的英文文本
-            document.body.innerHTML = document.body.innerHTML
-                .replace(/Read More/g, '阅读全文')
-                .replace(/Comments/g, '评论')
-                .replace(/Posted on/g, '发布于')
-                .replace(/Share/g, '分享')
-                .replace(/Category/g, '分类')
-                .replace(/Tag/g, '标签')
-                .replace(/Posted in/g, '分类')
-                .replace(/Author/g, '作者');
-        }
-        
-        // 添加CSS动画
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-            
-            @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(30px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            
-            .article-content {
-                animation: fadeInUp 0.8s ease-out;
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
-<!-- hexo injector body_end start -->
+</div> <!-- 关闭主容器div -->
+</div></div><div class="share"><span>공유하기</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://lyluchao.github.io/2026/01/29/沁园春-天悠/%20踏月诗阁%20沁园春·天悠"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/poetry-garden/2026/01/29/%E5%A3%B0%E5%A3%B0%E6%85%A2-%E4%B8%87%E7%B1%81%E4%BF%B1%E6%B2%89/" title="声声慢·万籁俱沉"><i class="fa fa-angle-double-left"></i>&nbsp;이전 포스트: 声声慢·万籁俱沉</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/poetry-garden/2026/01/29/%E5%A3%B0%E5%A3%B0%E6%85%A2-%E9%82%80%E6%9C%88/" title="声声慢·邀月">다음 포스트: 声声慢·邀月&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/poetry-garden/js/jquery-3.1.0.min.js"></script><script src="/poetry-garden/js/bootstrap.min.js"></script><script src="/poetry-garden/js/jquery-migrate-1.2.1.min.js"></script><script src="/poetry-garden/js/jquery.appear.js"></script><script src="/poetry-garden/js/google-analytics.js"></script><script src="/poetry-garden/js/typography.js"></script><!-- hexo injector body_end start -->
 <script>
 // 检测是否需要加载 Mermaid
 if (document.querySelector('.mermaid')) {
@@ -1394,8 +624,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-<!-- hexo injector body_end end --></body>
-</html>
+<!-- hexo injector body_end end --></body></html>
     </main>
     
     <!-- 古典页脚 -->
