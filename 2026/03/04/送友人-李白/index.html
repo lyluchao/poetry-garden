@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>踏月诗阁 | 星河照卷帙，墨锋映秋霜</title>
+    
+    <!-- 引入Google字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    
+    <!-- 引入Font Awesome图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* 古典诗词主题色调 */
+            --classical-paper: #f8f5e6;      /* 宣纸底色 */
+            --classical-ink: #3a2615;        /* 墨色 */
+            --classical-red: #c33;           /* 朱砂红 */
+            --classical-gold: #c19a6b;       /* 金色 */
+            --classical-brown: #8b4513;      /* 赭石色 */
+            --classical-blue: #5d8aa8;       /* 石青色 */
+            --classical-border: #d4b483;     /* 边框色 */
+            --classical-shadow: rgba(58, 38, 21, 0.1); /* 阴影色 */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: var(--classical-paper);
+            color: var(--classical-ink);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(193, 154, 107, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.05) 0%, transparent 30%),
+                linear-gradient(135deg, #f8f5e6 0%, #f0e6d6 100%);
+        }
+        
+        /* === 古典页眉 === */
+        .classical-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(248, 245, 230, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--classical-border);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px var(--classical-shadow);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .site-logo {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 1.8rem;
+            color: var(--classical-brown);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .site-logo i {
+            color: var(--classical-red);
+            font-size: 1.5rem;
+        }
+        
+        /* === 古典导航 === */
+        .classical-nav {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--classical-red);
+            border-color: var(--classical-red);
+            background: rgba(195, 51, 51, 0.05);
+        }
+        
+        .nav-link.active {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            color: white;
+            border: none;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+        
+        /* === 主容器 === */
+        .classical-container {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 30px 20px;
+            min-height: calc(100vh - 150px);
+        }
+        
+        /* === 古典页脚 === */
+        .classical-footer {
+            background: rgba(248, 245, 230, 0.95);
+            border-top: 2px solid var(--classical-border);
+            padding: 50px 0 40px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--classical-ink);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid var(--classical-border);
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .footer-link:hover {
+            background: linear-gradient(135deg, var(--classical-brown), var(--classical-gold));
+            border-color: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .footer-info {
+            text-align: center;
+            color: var(--classical-blue);
+            padding-top: 30px;
+            border-top: 1px solid var(--classical-border);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .footer-seal {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--classical-red);
+            color: white;
+            border-radius: 50%;
+            line-height: 40px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        
+        /* === 响应式设计 === */
+        @media (max-width: 900px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .classical-nav {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .footer-nav {
+                gap: 15px;
+            }
+            
+            .nav-link {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <!-- 古典页眉 -->
+    <header class="classical-header">
+        <div class="header-container">
+            <a href="/poetry-garden/" class="site-logo">
+                <i class="fas fa-feather-alt"></i>
+                踏月诗阁
+            </a>
+            
+            <nav class="classical-nav">
+                <a href="/poetry-garden/" class="nav-link ">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="/poetry-garden/archives" class="nav-link ">
+                    <i class="fas fa-archive"></i> 归档
+                </a>
+                <a href="/poetry-garden/categories" class="nav-link ">
+                    <i class="fas fa-layer-group"></i> 分类
+                </a>
+                <a href="/poetry-garden/tags" class="nav-link ">
+                    <i class="fas fa-tags"></i> 标签
+                </a>
+                <a href="/poetry-garden/about" class="nav-link ">
+                    <i class="fas fa-book"></i> 关于
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- 主内容 -->
+    <main class="classical-container">
+        <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>送友人-李白 · 踏月诗阁</title><meta name="description" content="送友人
+
+
+
+青山横北郭，白水绕东城
+
+
+
+诗仙送别 · 情景交融
+
+
+
+
+
+
+盛唐·约738年
+
+|
+
+
+李白·诗仙
+
+|
+
+
+五言律诗
+
+
+
+
+
+
+
+
+
+🎋 诗体简介 · 五言律诗
+
+《送友人》是唐代诗人李白创作的一首脍炙人口的送别诗，为李白名篇之一。全诗八句四十字，通过送别环境的刻画、气氛的"><meta name="og:description" content="送友人
+
+
+
+青山横北郭，白水绕东城
+
+
+
+诗仙送别 · 情景交融
+
+
+
+
+
+
+盛唐·约738年
+
+|
+
+
+李白·诗仙
+
+|
+
+
+五言律诗
+
+
+
+
+
+
+
+
+
+🎋 诗体简介 · 五言律诗
+
+《送友人》是唐代诗人李白创作的一首脍炙人口的送别诗，为李白名篇之一。全诗八句四十字，通过送别环境的刻画、气氛的"><meta name="twitter:site" content="踏月诗阁"><meta name="twitter:title" content="送友人-李白"><meta name="twitter:card" content="summary"><meta name="keywords" content="诗词,宋词,古典诗词,文学,诗歌"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/poetry-garden/css/bootstrap.min.css"><link rel="stylesheet" href="/poetry-garden/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="container" id="stage"><div class="row"><div class="col-sm-3 col-xs-12 side-container invisible" id="side-bar"><div class="vertical-text site-title"><h3 class="site-title-small" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h3><h1 class="site-title-large" tabindex="-1"><a class="a-title" href="/poetry-garden/"></a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div class="site-title-links" id="site-nav"><ul><li><a href="/poetry-garden/">대문</a></li><li><a href="/poetry-garden/archives">아카이브</a></li><li><a href="/poetry-garden/categories">카테고리</a></li><li><a href="/poetry-garden/tags">태그</a></li><!-- +make_page_links() // 暂时禁用--><li class="soc"></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div class="col-sm-9 col-xs-12 main-container invisible" id="main-container"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post"><h1 class="post-title">送友人-李白</h1><div class="post-meta"><span class="post-time">post.posted 2026-03-04</span> | <span class="post-category"><a href="/poetry-garden/categories/%E8%AF%97%E4%BD%9C%E9%89%B4%E8%B5%8F/">诗作鉴赏</a></span> | <span class="post-tags"><a href="/poetry-garden/tags/%E6%9D%8E%E7%99%BD/">李白</a>, <a href="/poetry-garden/tags/%E5%94%90%E8%AF%97/">唐诗</a>, <a href="/poetry-garden/tags/%E4%BA%94%E8%A8%80%E5%BE%8B%E8%AF%97/">五言律诗</a>, <a href="/poetry-garden/tags/%E9%80%81%E5%8F%8B%E4%BA%BA/">送友人</a>, <a href="/poetry-garden/tags/%E9%80%81%E5%88%AB%E8%AF%97/">送别诗</a>, <a href="/poetry-garden/tags/%E5%8F%8B%E6%83%85/">友情</a></span></div><div class="post-content"><div style="font-family: 'STKaiti', 'SimSun', 'Source Han Serif SC', serif; line-height: 1.8; color: #2c3e50; max-width: 800px; margin: 0 auto; padding: 0 1rem;">
+
+<!-- 标题区域 - 山水夕阳风格 -->
+<div style="background: linear-gradient(135deg, #2c5f3f 0%, #b8860b 50%, #8b4513 100%); color: white; padding: 3.5rem 2rem 3rem 2rem; margin: 2rem 0 4rem 0; text-align: center; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.25); min-height: 280px; display: flex; flex-direction: column; justify-content: center; border-radius: 18px; width: 100%;">
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: 
+    radial-gradient(circle at 20% 40%, rgba(218, 165, 32, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 60%, rgba(139, 69, 19, 0.4) 0%, transparent 50%),
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.08) 2px, rgba(255,255,255,0.08) 4px);"></div>
+<div style="position: relative; z-index: 2;">
+<div style="font-size: 2.8rem; font-weight: bold; margin: 0; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9); letter-spacing: 3px; font-family: 'STKaiti', serif; line-height: 1.2; padding-bottom: 0.5rem;">
+送友人
+</div>
+<div style="width: 120px; height: 2px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent); margin: 1.5rem auto; opacity: 0.7;"></div>
+<div style="font-size: 1.3rem; opacity: 0.95; margin: 0; font-weight: 300; letter-spacing: 1px; line-height: 1.5; padding: 0 1rem;">
+青山横北郭，白水绕东城
+</div>
+<div style="margin-top: 2rem;">
+<div style="display: inline-block; background: rgba(255, 255, 255, 0.15); padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.9rem; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2);">
+诗仙送别 · 情景交融
+</div>
+</div>
+<div style="margin-top: 2.5rem;">
+<div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.85);">
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 6v2h14V6H5z"/></svg>
+盛唐·约738年
+</span>
+<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;">|</span>
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+李白·诗仙
+</span>
+<span style="color: rgba(255, 255, 255, 0.5); font-size: 0.8rem;">|</span>
+<span style="font-weight: 300; display: flex; align-items: center;">
+<svg style="width: 16px; height: 16px; margin-right: 0.4rem;" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+五言律诗
+</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 诗体简介 -->
+<div style="position: relative; z-index: 1; margin-top: 0;">
+<div style="background: rgba(139, 117, 69, 0.08); padding: 2.2rem; border-radius: 12px; margin: 0 0 3rem 0; border-left: 4px solid #8B4513; min-height: 180px;">
+<div style="color: #5D3A1A; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">🎋 诗体简介 · 五言律诗</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem; padding: 0.5rem 0;">
+《送友人》是唐代诗人李白创作的一首脍炙人口的送别诗，为李白名篇之一。全诗八句四十字，通过送别环境的刻画、气氛的渲染，表达了对友人依依不舍之情与豁达的胸襟。此诗写得情深意切，境界开朗，对仗工整，自然流畅。诗中“青山横北郭，白水绕东城”以工对起笔，“浮云游子意，落日故人情”更被誉为千古佳句。明代朱谏《李诗选注》评此诗：“句法清新，出于天授。……白自脑中流出，不求巧而自巧，非唐人所能及也。”
+</div>
+</div>
+
+<!-- 诗前小序 - 创作背景 -->
+<div style="background: linear-gradient(145deg, rgba(139, 117, 69, 0.1), rgba(139, 69, 19, 0.05)); padding: 2.5rem; border-radius: 14px; border: 1px solid rgba(139, 69, 19, 0.2); margin: 2.5rem 0; font-style: italic; color: #4a5568; position: relative; min-height: 200px;">
+<div style="position: absolute; top: -14px; left: 25px; background: white; color: #8B4513; padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: bold; border: 1px solid rgba(139, 69, 19, 0.3); box-shadow: 0 3px 8px rgba(0,0,0,0.08);">诗前小序</div>
+<div style="padding-top: 1.2rem; font-size: 1.08rem; line-height: 1.9;">
+此诗创作时间、地点历来众说纷纭。安旗《李白全诗编年注释》认为此诗作于唐玄宗开元二十六年（738年），地点在南阳。郁贤皓则疑为天宝六载（747年）于金陵所作。一说地点在安徽宣城市区别士桥，该桥原名“镇宁桥”，因这首诗而被改称为别士桥。李白一生交游广阔，喜以诗赠友。诗中“青山”“白水”“浮云”“落日”等意象，既是对眼前景的描绘，更是诗人内心情感的寄托，展现了他“以景寓情，以景染情”的高超艺术手法。
+</div>
+</div>
+
+<h2 id="全诗原文"><a href="#全诗原文" class="headerlink" title="全诗原文"></a>全诗原文</h2><div style="background: linear-gradient(145deg, #f5f0e6 0%, #efe5d5 100%); border: 2px solid #8B4513; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08);">
+<div style="position: absolute; top: -16px; left: 25px; background: #8B4513; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">送友人</div>
+
+<div style="text-align: center; margin: 3rem 0 2rem 0; font-family: 'STKaiti', serif; font-size: 1.8rem; line-height: 2.5; color: #5D3A1A; font-weight: bold;">
+青山横北郭，白水绕东城。<br>
+此地一为别，孤蓬万里征。<br>
+浮云游子意，落日故人情。<br>
+挥手自兹去，萧萧班马鸣。
+</div>
+
+<div style="background: rgba(139, 69, 19, 0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+<div style="color: #5D3A1A; font-weight: bold; margin-bottom: 0.5rem;">📋 注释</div>
+<div style="color: #4a5568; font-size: 0.95rem; line-height: 1.8;">
+<strong>郭</strong>：古代在城外修筑的外墙，即外城。<br>
+<strong>白水</strong>：清澈的水。<br>
+<strong>一</strong>：助词，加强语气。<br>
+<strong>蓬</strong>：古书上说的一种植物，干枯后根株断开，遇风飞旋，也称“飞蓬”。诗人用“孤蓬”喻指远行的朋友。<br>
+<strong>征</strong>：远行。<br>
+<strong>浮云游子意</strong>：曹丕《杂诗》有“西北有浮云”之句，后世以浮云飘飞无定喻游子四方漂游。<br>
+<strong>兹</strong>：此，现在。<br>
+<strong>萧萧</strong>：马的呻吟嘶叫声。<br>
+<strong>班马</strong>：离群的马，这里指载人远离的马。班，分别、离别。
+</div>
+</div>
+
+<div style="background: rgba(139, 69, 19, 0.05); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+<div style="color: #5D3A1A; font-weight: bold; margin-bottom: 0.5rem;">🌾 白话译文</div>
+<div style="color: #4a5568; font-size: 1rem; line-height: 1.8;">
+青翠的山峦横卧在城墙的北面，波光粼粼的流水环绕着城的东边。<br>
+在此地我们相互道别，你就像孤蓬那样随风飘荡，到万里之外远行去了。<br>
+浮云像游子一样行踪不定，夕阳徐徐下山，似乎有所留恋。<br>
+挥挥手从此分离，友人骑的那匹将要载他远行的马萧萧长鸣，似乎不忍离去。
+</div>
+</div>
+</div>
+
+<h2 id="诗文详析·四联层递"><a href="#诗文详析·四联层递" class="headerlink" title="诗文详析·四联层递"></a>诗文详析·四联层递</h2><div style="background: linear-gradient(145deg, #f5f0e6 0%, #efe5d5 100%); border: 2px solid #8B4513; border-radius: 16px; padding: 2.8rem; margin: 2.8rem 0; position: relative; box-shadow: 0 8px 25px rgba(0,0,0,0.08); min-height: 420px;">
+<div style="position: absolute; top: -16px; left: 25px; background: #8B4513; color: white; padding: 0.5rem 1.5rem; border-radius: 6px; font-size: 1rem; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">结构四联</div>
+
+<div style="margin-top: 2rem; background: rgba(139, 69, 19, 0.08); padding: 2.2rem; border-radius: 12px; border-left: 3px solid #8B4513;">
+<div style="color: #5D3A1A; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">📜 四联解析 · 情景相生</div>
+<div style="color: #4a5568; line-height: 1.85; font-size: 1.05rem;">
+
+<p><strong>首联·送别之地</strong><br><br>“青山横北郭，白水绕东城。”首联即用工整的对仗交代送别地点。青山对白水，北郭对东城，青白相间，色彩明丽。“横”字刻画出青山的静态，横亘北郭，如屏障般沉稳；“绕”字描画出白水的动态，绕城东流，如绸带般轻柔。这一静一动，一山一水，既是眼前实景，也暗含诗人留居故地、友人即将远行的寓意。未见“送别”二字，而惜别之情已寓于景中。<br><br></p>
+<p><strong>颔联·关切之情</strong><br><br>“此地一为别，孤蓬万里征。”此联从语意上看是流水对，即两联语义相承。“一为别”语意陡转，将上联的诗情画意轻轻扯破，透出离别的伤感。“孤蓬”喻指友人——蓬草干枯后根断，随风飞旋，身不由己，正是远行游子的写照。想到友人将如孤蓬般飘泊万里，诗人心中涌起无限的关切与不忍。此联体现了李白“天然去雕饰”的诗风，不以形式束缚内容。<br><br></p>
+<p><strong>颈联·情景交融</strong><br><br>“浮云游子意，落日故人情。”此联是千古名句，纯以名词意象组成，不用谓语连接，留白处供读者想象填充。浮云飘忽无定，恰似游子行踪；落日徐徐而下，仿佛故人留恋。王琦注《李太白集》云：“浮云一往而无定迹，故以比游子之意；落日衔山而不遽去，故以比故人之情”。这两句将眼前景与心中情完美融合，对仗工整，意味深远，仇兆鳌赞其“对景怀人，意味深远”。<br><br></p>
+<p><strong>尾联·余韵悠长</strong><br><br>“挥手自兹去，萧萧班马鸣。”送君千里终须一别，“挥手”是离别时的动作，千言万语尽在其中。诗人不直写人的伤感，而借马鸣烘托离情。“班马”指离群的马，《诗经·小雅·车攻》有“萧萧马鸣”句，诗人化用此语，嵌入“班”字，翻出新意。马犹不愿离群而萧萧长鸣，何况有情之人？以马衬人，更见缱绻情谊，诚如《唐风怀》所评：“倏忽万里，念此黯然销魂”。</p>
+</div>
+</div>
+</div>
+
+<h2 id="艺术特色·四重维度"><a href="#艺术特色·四重维度" class="headerlink" title="艺术特色·四重维度"></a>艺术特色·四重维度</h2><div style="background: linear-gradient(145deg, #f5f0e6 0%, #efe5d5 100%); border: 2px solid #8B4513; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(139, 69, 19, 0.1); min-height: 450px;">
+<div style="text-align: center; margin-bottom: 2.8rem;">
+<div style="color: #5D3A1A; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🎭 艺术特色四重维度</div>
+<div style="color: #8B4513; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">工对与流水相间 · 景语皆情语 · 化典无痕 · 色彩明丽</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #8B4513; position: relative; overflow: hidden; min-height: 320px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(139, 69, 19, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #5D3A1A; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">⚙️ 第一重·对仗艺术</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>首联工对</strong> - “青山”对“白水”，“北郭”对“东城”，颜色、景物、方位一一对应</li>
+<li style="margin-bottom: 0.8rem;"><strong>颔联流水对</strong> - “此地一为别，孤蓬万里征”语义相承，行云流水</li>
+<li style="margin-bottom: 0.8rem;"><strong>颈联工对</strong> - “浮云”对“落日”，“游子意”对“故人情”，意象与情感双对</li>
+<li><strong>沈德潜评</strong>：“三、四流走，竟亦有散行者，然起句必须整齐。”</li>
+</ul>
+</div>
+
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #b87c4b; position: relative; overflow: hidden; min-height: 320px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(184, 124, 75, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #7D4E2C; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🎨 第二重·色彩明丽</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>青白相间</strong> - “青山”“白水”相映成趣，色彩明快</li>
+<li style="margin-bottom: 0.8rem;"><strong>落日余晖</strong> - “落日”一词带出暖色调，与浮云形成光影层次</li>
+<li style="margin-bottom: 0.8rem;"><strong>画面如绘</strong> - 青山、白水、浮云、落日，构成一幅色彩斑斓的送别图</li>
+<li><strong>施重光评</strong>：“每句整齐。结得洒脱，悠然不尽。”</li>
+</ul>
+</div>
+
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #a35f3a; position: relative; overflow: hidden; min-height: 320px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(163, 95, 58, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #6B4226; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">🌅 第三重·情景交融</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>首联景中寓情</strong> - 山静水动，暗喻我留君去</li>
+<li style="margin-bottom: 0.8rem;"><strong>颈联情寄于景</strong> - 浮云落日，皆成情语</li>
+<li style="margin-bottom: 0.8rem;"><strong>尾联以物衬情</strong> - 马犹不忍，何况于人</li>
+<li><strong>知网评</strong>：“把依依惜别之情与自然之景相结合，以景寓情，以景染情，化景为情，因而自然隽永。”</li>
+</ul>
+</div>
+
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-top: 4px solid #8B5A2B; position: relative; overflow: hidden; min-height: 320px;">
+<div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: rgba(139, 90, 43, 0.1); border-radius: 0 0 0 70px;"></div>
+<div style="color: #5D3F2A; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.2rem;">📚 第四重·用典自然</div>
+<ul style="color: #4a5568; font-size: 1.05rem; padding-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.8rem;"><strong>孤蓬之喻</strong> - 以蓬草飘飞喻游子漂泊，古已有之，李白信手拈来</li>
+<li style="margin-bottom: 0.8rem;"><strong>浮云典</strong> - 脱胎于曹丕《杂诗》“西北有浮云”，自然化用</li>
+<li style="margin-bottom: 0.8rem;"><strong>班马典</strong> - 化用《诗经》“萧萧马鸣”，嵌入“班”字，翻出新意</li>
+<li><strong>原评</strong>：“写出马犹不愿离群，何况人乎？烘出缱绻情谊，真是鬼斧神工。”</li>
+</ul>
+</div>
+</div>
+</div>
+
+<h2 id="意象分析·三组核心意象"><a href="#意象分析·三组核心意象" class="headerlink" title="意象分析·三组核心意象"></a>意象分析·三组核心意象</h2><div style="background: linear-gradient(145deg, #e8e0d5 0%, #dacfc0 100%); border: 2px solid #7D5535; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(125, 85, 53, 0.1); min-height: 500px;">
+<div style="text-align: center; margin-bottom: 2.8rem;">
+<div style="color: #5D3A1A; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">🏞️ 核心意象三组</div>
+<div style="color: #8B4513; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">山水 · 浮云落日 · 班马 —— 三重意象的交响</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.2rem; margin: 2.5rem 0;">
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-left: 4px solid #8B4513;">
+<div style="color: #5D3A1A; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">⛰️ 山水·一静一动</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
+“青山”“白水”是送别之地，也是情感象征。“横”字写出山之稳重不移，是诗人留守的象征；“绕”字写出水之缠绵不舍，是诗人对友人的牵挂。山静水动，一北一东，自然引出下联的离别之情。王国维《人间词话》云“一切景语皆为情语”，此联即是最好的注脚。青山白水之间，已暗含无限留恋之意。
+</div>
+</div>
+
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-left: 4px solid #b87c4b;">
+<div style="color: #7D4E2C; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">☁️ 浮云落日·一往一留</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
+“浮云”“落日”是全诗的灵魂意象。浮云飘忽无定，恰如游子行踪——友人此去，如云之漂泊，不知何日相逢。落日徐徐而下，仿佛故人留恋——诗人心中之情，如夕阳般不舍，却终究无力留住。这两个意象脱胎于古诗“浮云蔽白日，游子不顾返”及“思君如落日”等句，但李白信手拈来，化为己用，既有传统意蕴，又有个人新创。
+</div>
+</div>
+
+<div style="background: white; padding: 2.2rem; border-radius: 14px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border-left: 4px solid #8B5A2B;">
+<div style="color: #5D3F2A; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">🐎 班马·物犹如此</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
+“班马”指离群的马。友人挥手离去，身影渐远，诗人不直写自己如何不舍，而写那匹载友远行的马萧萧长鸣。马犹不愿离群，何况有情之人？以物衬人，以马衬人，情更深、意更切。此句化用《诗经》“萧萧马鸣”，但加一“班”字，便从单纯的马鸣变为离群之马的哀鸣，意境全出，真可谓“鬼斧神工”。
+</div>
+</div>
+</div>
+</div>
+
+<h2 id="创作背景·两种说法"><a href="#创作背景·两种说法" class="headerlink" title="创作背景·两种说法"></a>创作背景·两种说法</h2><div style="background: linear-gradient(145deg, #f5f0e6 0%, #efe5d5 100%); border: 2px solid #8B4513; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(139, 69, 19, 0.1);">
+<div style="text-align: center; margin-bottom: 2rem;">
+<div style="color: #5D3A1A; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">📜 创作背景</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
+<div style="color: #5D3A1A; font-weight: bold; margin-bottom: 1rem; font-size: 1.15rem;">📍 南阳说</div>
+<div style="color: #4a5568; line-height: 1.8;">
+安旗《李白全诗编年注释》认为此诗作于唐玄宗开元二十六年（738年），地点在南阳。此时李白三十八岁，尚在“酒隐安陆，蹉跎十年”的漫游时期，常往来于各地交游赠诗。安旗推测“诗题疑为后人妄加……其城别之池当在南阳”。
+</div>
+</div>
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
+<div style="color: #5D3A1A; font-weight: bold; margin-bottom: 1rem; font-size: 1.15rem;">📍 金陵说</div>
+<div style="color: #4a5568; line-height: 1.8;">
+郁贤皓则疑此诗为天宝六载（747年）于金陵所作。天宝三载李白被“赐金还山”离开长安后，曾漫游梁宋、齐鲁、金陵等地，此间所作送别诗甚多。另有说法认为地点在安徽宣城市区别士桥，该桥原名“镇宁桥”，因这首诗而被改称为别士桥。
+</div>
+</div>
+</div>
+<div style="background: rgba(139, 69, 19, 0.1); padding: 2rem; border-radius: 12px; margin-top: 2rem; border-left: 3px solid #8B4513;">
+<div style="color: #5D3A1A; font-weight: bold; margin-bottom: 0.5rem; font-size: 1.1rem;">💡 诗题</div>
+<div style="color: #4a5568; line-height: 1.8;">
+诗中并未明确所送何人，故安旗疑“诗题为后人妄加”。但正因如此，此诗所抒发的友情感动了历代读者——不论送的是谁，那份“挥手自兹去”的不舍与“萧萧班马鸣”的余韵，是每个人都曾体验的人生况味。
+</div>
+</div>
+</div>
+
+<h2 id="历代评论"><a href="#历代评论" class="headerlink" title="历代评论"></a>历代评论</h2><div style="background: rgba(139, 69, 19, 0.1); padding: 2.2rem; border-radius: 14px; margin: 2.5rem 0; border: 1px dashed #8B4513;">
+<div style="color: #5D3A1A; font-weight: bold; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; font-size: 1.15rem;">📜 历代名家评</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem;">
+- 明·朱谏《李诗选注》：“句法清新，出于天授。唐人之为短律，率多雕琢，白自脑中流出，不求巧而自巧，非唐人所能及也。”<br>
+- 明·仇兆鳌：“太白诗‘浮云游子意，落日故人情’对景怀人，意味深远。”<br>
+- 清·沈德潜《唐诗别裁》：“三、四流走，竟亦有散行者，然起句必须整齐。苏、李赠言，多唏嘘语而无蹶蹙声，知古人之意在不尽矣，太白犹不失斯意。”<br>
+- 清·吴烻《唐诗直解》：“不刻不浅，自是爽词。”<br>
+- 清·屈复《唐诗成法》：“‘青山’、‘白水’，先写送别之地，如此佳景为‘孤蓬万里’对照。……八止写‘马鸣’，黯然销魂，见于言外。”<br>
+- 清·高宗弘历《唐宋诗醇》：“首联整齐，承则流走，而下联健劲，结有萧散之致。大匠运斤，自成规矩。”<br>
+- 日·近藤元粹《李太白诗醇》引严沧浪曰：“五、六澹荡凄远，胜多多语。”
+</div>
+</div>
+
+<h2 id="版本与影响"><a href="#版本与影响" class="headerlink" title="版本与影响"></a>版本与影响</h2><div style="background: linear-gradient(145deg, #e8e0d5 0%, #dacfc0 100%); border: 2px solid #6B4F3C; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(107, 79, 60, 0.1); min-height: 300px;">
+<div style="text-align: center; margin-bottom: 2.5rem;">
+<div style="color: #4A3729; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">📚 版本流传与后世影响</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 2rem 0;">
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
+<div style="color: #5D3A1A; font-weight: bold; margin-bottom: 1.2rem; border-bottom: 2px solid #f0e6d2; padding-bottom: 1rem; font-size: 1.2rem;">🔄 版本异文</div>
+<div style="margin-top: 1.2rem;">
+<div style="margin-bottom: 1rem;">
+<div style="color: #8B4513; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">“班马”与“斑马”</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">诗中“萧萧班马鸣”，有作“斑马”者，实误。“班”意为分别、离别，故“班马”指离群的马。若作“斑马”则成黑白相间之马，失其本意，不可不辨。</div>
+</div>
+<div style="margin-bottom: 1rem;">
+<div style="color: #8B4513; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">“此地一为别”</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">“一”字，有版本作“忽”，但主流版本多作“一”。此字作助词，加强语气，非数词。</div>
+</div>
+</div>
+</div>
+
+<div style="background: white; padding: 2rem; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
+<div style="color: #5D3A1A; font-weight: bold; margin-bottom: 1.2rem; border-bottom: 2px solid #f0e6d2; padding-bottom: 1rem; font-size: 1.2rem;">🌍 文化影响</div>
+<div style="margin-top: 1.2rem;">
+<div style="margin-bottom: 1rem;">
+<div style="color: #8B4513; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">地名文化</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">安徽宣城市有“别士桥”，原名“镇宁桥”，因传说李白在此送别友人而得名。</div>
+</div>
+<div style="margin-bottom: 1rem;">
+<div style="color: #8B4513; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">教材收录</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">此诗长期收录于两岸中小学语文教材，是中国学生最熟悉的送别诗之一。</div>
+</div>
+<div style="margin-bottom: 1rem;">
+<div style="color: #8B4513; font-weight: bold; font-size: 1.05rem; margin-bottom: 0.5rem;">成语化用</div>
+<div style="color: #718096; font-size: 1rem; line-height: 1.7;">“浮云游子意，落日故人情”成为表达离情的经典语句，常被后人引用。</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<h2 id="延伸阅读·李白其他送别诗"><a href="#延伸阅读·李白其他送别诗" class="headerlink" title="延伸阅读·李白其他送别诗"></a>延伸阅读·李白其他送别诗</h2><div style="background: linear-gradient(145deg, #f5f0e6 0%, #efe5d5 100%); border: 2px solid #8B4513; border-radius: 18px; padding: 3rem; margin: 3rem 0; box-shadow: 0 10px 35px rgba(139, 69, 19, 0.1);">
+<div style="text-align: center; margin-bottom: 2rem;">
+<div style="color: #5D3A1A; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; letter-spacing: 1.5px;">📖 延伸阅读·李白送别诗</div>
+<div style="color: #8B4513; font-size: 1.05rem; max-width: 600px; margin: 0 auto; font-style: italic;">“桃花潭水深千尺，不及汪伦送我情”——李白的送别世界</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+<div style="background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #8B4513;">
+<div style="color: #5D3A1A; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">《黄鹤楼送孟浩然之广陵》</div>
+<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
+故人西辞黄鹤楼，烟花三月下扬州。<br>孤帆远影碧空尽，唯见长江天际流。
+</div>
+<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
+评：以景结情，目送孤帆远影，长江天际，余味无穷。
+</div>
+</div>
+
+<div style="background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #b87c4b;">
+<div style="color: #7D4E2C; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">《赠汪伦》</div>
+<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
+李白乘舟将欲行，忽闻岸上踏歌声。<br>桃花潭水深千尺，不及汪伦送我情。
+</div>
+<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
+评：以眼前景（潭水）喻心中情，语浅情深，真挚动人。
+</div>
+</div>
+
+<div style="background: white; padding: 1.8rem; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 3px solid #8B5A2B;">
+<div style="color: #5D3F2A; font-weight: bold; margin-bottom: 0.8rem; font-size: 1.1rem;">《金陵酒肆留别》</div>
+<div style="color: #4a5568; font-size: 1rem; line-height: 1.7; font-family: 'STKaiti', serif;">
+风吹柳花满店香，吴姬压酒唤客尝。<br>金陵子弟来相送，欲行不行各尽觞。<br>请君试问东流水，别意与之谁短长。
+</div>
+<div style="color: #7f8c8d; font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
+评：以流水比别意，翻出新意，与《送友人》手法相通。
+</div>
+</div>
+</div>
+</div>
+
+<!-- 结语 -->
+<div style="margin: 4rem 0 2rem 0; padding: 2rem; text-align: center; border-top: 2px solid #e2e8f0;">
+<div style="color: #5D3A1A; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem;">🏁 结语</div>
+<div style="color: #4a5568; line-height: 1.8; font-size: 1.05rem; max-width: 700px; margin: 0 auto;">
+《送友人》是李白送别诗中的典范之作。首联以工对起笔，青山白水，色彩明丽；颔联流水自然，孤蓬万里，关切之情溢于言表；颈联情景交融，浮云落日，千古名句由此而生；尾联以马鸣收束，化用《诗经》而翻出新意，余韵悠长。全诗将自然美与人情美完美融合，既有离别的感伤，又不失豁达的气度，正如《唐诗归折衷》所评：“深情婉转，老致纷披”。千载之下，读此诗犹见青山白水之间，诗人与友人挥手作别，马鸣萧萧，情意不尽——这便是李白，便是唐诗，便是中国古典诗歌中永恒的人情之美。
+</div>
+</div>
+
+</div>
+</div></div></div><div class="share"><span>공유하기</span>&nbsp;<span class="soc"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></span><span class="soc"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></span><span class="soc"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=https://lyluchao.github.io/2026/03/04/送友人-李白/%20踏月诗阁%20送友人-李白"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/poetry-garden/2026/03/04/%E7%90%B5%E7%90%B6%E8%A1%8C-%E7%99%BD%E5%B1%85%E6%98%93/" title="琵琶行-白居易"><i class="fa fa-angle-double-left"></i>&nbsp;이전 포스트: 琵琶行-白居易</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/poetry-garden/2026/02/20/%E4%B8%89%E9%97%AE%E8%87%BB%E8%B5%8B%E5%B9%B6%E5%BA%8F/" title="三问臻赋并序">다음 포스트: 三问臻赋并序&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2026&nbsp;<a target="_blank" href="https://lyluchao.github.io" rel="noopener noreferrer">踏月诗客</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/poetry-garden/js/jquery-3.1.0.min.js"></script><script src="/poetry-garden/js/bootstrap.min.js"></script><script src="/poetry-garden/js/jquery-migrate-1.2.1.min.js"></script><script src="/poetry-garden/js/jquery.appear.js"></script><script src="/poetry-garden/js/google-analytics.js"></script><script src="/poetry-garden/js/typography.js"></script><!-- hexo injector body_end start -->
+<script>
+// 检测是否需要加载 Mermaid
+if (document.querySelector('.mermaid')) {
+  // 动态加载 Mermaid 库
+  const script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js';
+  script.onload = function() {
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      flowchart: {
+        useMaxWidth: true,
+        htmlLabels: true
+      },
+      securityLevel: 'loose'
+    });
+    
+    // 重新渲染所有图表
+    mermaid.init();
+  };
+  document.head.appendChild(script);
+}
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 为可折叠 callout 添加点击事件
+  const collapsibleCallouts = document.querySelectorAll('.callout.is-collapsible');
+  
+  collapsibleCallouts.forEach(function(callout) {
+    const title = callout.querySelector('.callout-title');
+    
+    if (title) {
+      // 添加点击事件
+      title.addEventListener('click', function(e) {
+        // 如果点击的是链接，不触发折叠
+        if (e.target.tagName === 'A') return;
+        
+        callout.classList.toggle('is-collapsed');
+      });
+      
+      // 添加鼠标悬停效果
+      title.addEventListener('mouseenter', function() {
+        this.style.cursor = 'pointer';
+      });
+      
+      // 添加键盘支持（可访问性）
+      title.setAttribute('tabindex', '0');
+      title.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          callout.classList.toggle('is-collapsed');
+        }
+      });
+    }
+  });
+});
+</script>
+<!-- hexo injector body_end end --></body></html>
+    </main>
+    
+    <!-- 古典页脚 -->
+    <footer class="classical-footer">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <a href="/poetry-garden/" class="footer-link">
+                    <i class="fas fa-home"></i> 首页
+                </a>
+                <a href="/poetry-garden/archives" class="footer-link">
+                    <i class="fas fa-archive"></i> 归档
+                </a>
+                <a href="/poetry-garden/categories" class="footer-link">
+                    <i class="fas fa-layer-group"></i> 分类
+                </a>
+                <a href="/poetry-garden/tags" class="footer-link">
+                    <i class="fas fa-tags"></i> 标签
+                </a>
+                <a href="/poetry-garden/about" class="footer-link">
+                    <i class="fas fa-book"></i> 关于
+                </a>
+            </nav>
+            
+            <div class="footer-info">
+                <div>
+                    © 2026 <span class="footer-seal">诗</span> 踏月诗阁 <span class="footer-seal">阁</span> <a href="https://lyluchao.github.io/prose-garden" style="color: #42b983; font-weight: bold;">🌸 散文花园</a>
+  <a href="https://lyluchao.github.io/mokewenxue.github.io/" style="color: #42b983; font-weight: bold;">⚔️ 汉语星河剑阵</a>
+                </div>
+<span style="margin: 0 8px; color: #d4b483;">|</span>
+        <a href="/poetry-garden/atom.xml" class="rss-footer-link" title="RSS订阅">
+            <i class="fas fa-rss"></i> 订阅诗韵
+        </a>
+                <div style="margin-top: 15px; font-style: italic; color: var(--classical-gold);">
+                    墨香永驻 · 诗魂长存 · 雅韵流芳
+                </div>    
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 页眉滚动效果
+            const header = document.querySelector('.classical-header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 5px 20px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                } else {
+                    header.style.boxShadow = '0 2px 10px rgba(58, 38, 21, 0.1)';
+                    header.style.background = 'rgba(248, 245, 230, 0.98)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
